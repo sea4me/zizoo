@@ -1,4 +1,0 @@
-zizoo
-=====
-
-zizoo application repository
