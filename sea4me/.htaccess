@@ -1,0 +1,10 @@
+#AddType x-mapp-php5 .php
+#AddHandler x-mapp-php5 .php
+
+RewriteEngine ON
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php/$0 [PT,L]
+#RewriteRule ^(.*)$ /index.php?q=$1 [L,QSA]
+
+Options All -Indexes
