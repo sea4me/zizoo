@@ -1,6 +1,12 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+function gethouserules($id)
+{
+        $query = $this->db->get_where('amnities',array('id' => $id));
+        $q = $query->result();
+        return "Hello";
+}
 
 function get_user_by_id($id)
 {

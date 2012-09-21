@@ -45,7 +45,6 @@
 		?>
 	</li>
 	
-	<?php if ( !$this->facebook->logged_in() ): ?>
 	<li id="rooms">
 	<?php
 	if($this->uri->segment(2) == 'change_password')
@@ -54,6 +53,5 @@
 		echo anchor('auth/change_password/'.$this->dx_auth->get_user_id(),translate("Change Password"),array("class" => "")); 
 		?>
 	</li>
-	<?php endif; ?>
 	
 </ul>

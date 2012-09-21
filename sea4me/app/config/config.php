@@ -343,8 +343,8 @@ $config['language_code'] 				= 'english';
 
 //DB
 $config['hostname'] = "localhost";
-$config['db_username'] = "zizoo";
-$config['db_password'] = "password";
+$config['db_username'] = "root";
+$config['db_password'] = "";
 $config['db'] = "zizoo";
 //Common listings limit
 $config['listing_limit'] 				= 10;

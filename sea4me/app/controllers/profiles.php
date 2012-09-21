@@ -25,12 +25,10 @@ class Profiles extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('DX_Auth');  
-  $this->load->library('Form_validation');  		
+                $this->load->library('Form_validation');  		
 		$this->load->helper('form');
 		$this->load->library('session');
-		$this->load->library('facebook');
 		$this->load->helper('file');
-		$this->facebook->enable_debug(TRUE);
 		
 		$this->path = realpath(APPPATH . '../images');
 		//initailizations 

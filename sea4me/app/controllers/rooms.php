@@ -12,15 +12,12 @@ class Rooms extends CI_Controller
 		$this->load->library('Form_validation');
 		$this->load->library('DX_Auth');  	
 		$this->load->library('session');
-		$this->load->library('facebook');
 		
 		$this->load->model('dx_auth/users', 'users'); 
 		$this->load->model('Email_model');
 		$this->load->model('Message_model');
 		$this->load->model('Trips_model');
 				
-		
-		$this->facebook->enable_debug(TRUE);
 		}
 
 

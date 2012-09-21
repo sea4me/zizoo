@@ -7,4 +7,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php/$0 [PT,L]
 #RewriteRule ^(.*)$ /index.php?q=$1 [L,QSA]
 
-Options All -Indexes
+Options -Indexes

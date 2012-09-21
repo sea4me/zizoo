@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('facebook','DX_Auth','session','curl');
+$autoload['libraries'] = array('DX_Auth','session','curl');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('facebook','DX_Auth','session','curl');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('translate','facebook','user');
+$autoload['helper'] = array('translate','user');
 
 
 /*

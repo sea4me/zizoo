@@ -24,7 +24,6 @@ class Paypal extends CI_Controller {
 		$this->load->library('Paypal_Lib');
 
 		$this->load->library('DX_Auth');  
-		$this->load->library('facebook');
 		$this->load->library('session');
 		$this->load->library('email');
 		
@@ -34,8 +33,6 @@ class Paypal extends CI_Controller {
 		
 		$this->load->model('Email_model');
 		$this->load->model('Message_model');
-		
-		$this->facebook->enable_debug(TRUE);
         
 	}
 	

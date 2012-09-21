@@ -30,12 +30,7 @@ class Home extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('cookie');
 		$this->load->library('session');
-		$this->load->library('facebook');
-		
-		
-		
-		$this->facebook->enable_debug(TRUE);
-		
+	
 		//initailizations 
 		
 		//Tiny MCE initializations
@@ -344,8 +339,7 @@ class Home extends CI_Controller {
 		     $data["title"] = "CLone of Air BNB";
          $this->dx_auth->logout();  
          $data['auth_message'] = 'You have been logged out.';   
-         if( $this->facebook->logged_in() )
-         	$this->facebook->logout();
+
          redirect('/home/signin','refresh');       
      }
 	

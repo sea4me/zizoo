@@ -8,6 +8,8 @@
 		function Gallery()
 		{
 			parent::__construct();
+                        $this->load->helper('url');
+                        
 			$this->path = realpath(APPPATH . '../images');
 			$this->gallery_path_url = base_url().'images/';
 			$this->logopath = realpath(APPPATH . '../');

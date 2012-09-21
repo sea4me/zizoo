@@ -25,10 +25,8 @@ class Message extends CI_Controller {
 		
 		$this->load->library('DX_Auth');  	
 		$this->load->library('session');
-		$this->load->library('facebook');
 		
 		$this->load->model('Message_model');
-		$this->facebook->enable_debug(TRUE);
 	}
 	
 	public	function inbox()

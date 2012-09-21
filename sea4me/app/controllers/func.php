@@ -27,7 +27,6 @@ class Func extends CI_Controller {
 		$this->load->library('DX_Auth');  
   $this->load->library('Form_validation');  		
 		$this->load->library('session');
-		$this->load->library('facebook');
 		$this->load->library('email');
 		
 		$this->load->helper('form');
@@ -37,7 +36,6 @@ class Func extends CI_Controller {
 		$this->load->model('Message_model');
 		$this->load->model('Trips_model');
 		
-		$this->facebook->enable_debug(TRUE);
 	}
 	
 	public function addNewEntry()

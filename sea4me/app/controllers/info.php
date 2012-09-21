@@ -24,9 +24,6 @@ class Info extends CI_Controller {
 		$this->load->library('DX_Auth');  	
 		$this->load->library('session');
 		$this->load->helper('cookie');
-		$this->load->library('facebook');
-		
-		$this->facebook->enable_debug(TRUE);
 	}
 	
 	public	function index()

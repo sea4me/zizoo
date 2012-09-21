@@ -31,24 +31,9 @@
         <div class="CenterPannel">
         <div class="clearfix">
           <div class="clsFloatRight clsSign_Up1_Lft"> <span class="login_prompt">
-            <?php echo translate("Sign in using Facebook:"); ?>
+            <?php echo translate("Sign in using :"); ?>
             </span><br/>
-            <div class="my-account">
-              <?php if ( !$this->facebook->logged_in() ): ?>
-              <a href="<?php echo $this->facebook->login_url()?>"><img src="<?php echo base_url(); ?>images/facebook_login_button.png" /></a>
-              <fb:facepile></fb:facepile>
-              <?php else:?>
-              <?php redirect('facebook_test/login'); ?>
-              <!-- 
-			<img class="avatar" src="<?php echo facebook_picture('me')?>" />
-			<?php $user = $this->facebook->user();?>
-			<h2><?php echo $user->name?> ( <a href="<?php echo site_url('facebook_test/logout')?>">Logout</a> )</h2>
-			<fb:like></fb:like>
-			<?php $result = $this->facebook->call('get', 'me', array('metadata' => 1));?>
-			 -->
-
-     <?php endif;?>
-            </div>
+            
           </div>
           <!-- <div style="padding-top:5px;height:20px;"><span>FB-Login</span></div> -->
           <div class="clsFloatLeft clsSign_Up1_Rft"> <span class="login_prompt">
@@ -140,26 +125,9 @@
         <!-- Login using Facebook -->
         <div class="clsFloatRight clsSign_Up1_Lft">
         <span class="login_prompt">
-        <?php echo translate("Sign in using Facebook:"); ?>
+        <?php echo translate("Sign in using :"); ?>
         </span>
-        <div style="padding-top:5px;height:20px;">
-          <div class="my-account">
-            <?php if ( !$this->facebook->logged_in() ): ?>
-            <a href="<?php echo $this->facebook->login_url()?>"><img src="<?php echo base_url(); ?>images/facebook_login_button.png" /></a>
-            <fb:facepile></fb:facepile>
-            <?php else:?>
-            <?php redirect('facebook_test/login'); ?>
-            <!-- 
->>>>>>> .r41
-			<img class="avatar" src="<?php echo facebook_picture('me')?>" />
-			<?php $user = $this->facebook->user();?>
-			<h2><?php echo $user->name?> ( <a href="<?php echo site_url('facebook_test/logout')?>">Logout</a> )</h2>
-			<fb:like></fb:like>
-			<?php $result = $this->facebook->call('get', 'me', array('metadata' => 1));?>
-			 -->
-            <?php endif;?>
-          </div>
-        </div>
+        
         </div>
         <!-- End of facebook login -->
          <div class="clsFloatLeft clsSign_Up1_Rft">

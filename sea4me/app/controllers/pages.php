@@ -27,13 +27,11 @@ class Pages extends CI_Controller {
 		$this->load->helper('url');
 		
 		$this->load->library('DX_Auth');  
-  $this->load->library('Form_validation');  		
+                $this->load->library('Form_validation');  		
 		$this->load->library('session');
-		$this->load->library('facebook');
 		
 		$this->load->model('common_model');
-		
-		$this->facebook->enable_debug(TRUE);
+
 	}
 	
 	//Main control handler
