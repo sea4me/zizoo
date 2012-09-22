@@ -3,7 +3,7 @@
   But do not hide them in the print stylesheet!
   --------------------------------------------------*/
 .payment_tabs .payment_method_hidden, .payment_tabs_live .payment_method_hidden, .payment_method_hidden {
- display:none;
+    display:none;
 }
 
 /*--------------------------------------------------
@@ -13,11 +13,11 @@
 .payment_tabs {
 }
 .payment_tabs_live {
- margin-top:1em;
- float:left;
- width: 950px;
- padding:10px 0 0 0;
- overflow:hidden;
+    margin-top:1em;
+    float:left;
+    width: 950px;
+    padding:10px 0 0 0;
+    overflow:hidden;
 }
 
 /*--------------------------------------------------
@@ -26,18 +26,18 @@
   --------------------------------------------------*/
 ul.payment_methods_nav
 {
- margin:0;
- padding: 3px 0 8px 0;
- border-bottom: 1px solid #d1d1c9;
- font-size:14px;
- line-height:16px;
+    margin:0;
+    padding: 3px 0 8px 0;
+    border-bottom: 1px solid #d1d1c9;
+    font-size:14px;
+    line-height:16px;
 }
 
 ul.payment_methods_nav li
 {
- list-style: none;
- margin: 0;
- display: inline;
+    list-style: none;
+    margin: 0;
+    display: inline;
 }
 
 ul.payment_methods_nav li a
@@ -57,24 +57,24 @@ ul.payment_methods_nav li a:visited { color: #5f5f56; }
 
 ul.payment_methods_nav li a:hover
 {
- color: #000000;
- background: #d4d4d4;
- border-color: #d1d1c9;
+    color: #000000;
+    background: #d4d4d4;
+    border-color: #d1d1c9;
 }
 
 ul.payment_methods_nav li.payment_method_active a
 {
- background-color: #f8f8f8;
- border-bottom: 1px solid #f8f8f8;
- color:#000000;
- -moz-box-shadow:none;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
+    color:#000000;
+    -moz-box-shadow:none;
 }
 
 ul.payment_methods_nav li.payment_method_active a:hover
 {
- color: #000000;
- background: #f8f8f8;
- border-bottom: 1px solid #f8f8f8;
+    color: #000000;
+    background: #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
 }
 
 /*--------------------------------------------------
@@ -90,23 +90,23 @@ ul.payment_methods_nav li.payment_method_active a:hover
     -moz-border-radius-topleft:0; -webkit-border-top-left-radius: 0;
     -moz-border-radius-topright:0; -webkit-border-top-right-radius: 0;
 
- /* If you don't want the tab size changing whenever a tab is changed
-    you can set a fixed height */
+    /* If you don't want the tab size changing whenever a tab is changed
+       you can set a fixed height */
 
- /* height:200px; */
+    /* height:200px; */
 
- /* If you set a fix height set overflow to auto and you will get a
-    scrollbar when necessary */
+    /* If you set a fix height set overflow to auto and you will get a
+       scrollbar when necessary */
 
- /* overflow:auto; */
+    /* overflow:auto; */
 }
 
 /* If desired, hide the heading since a heading is provided by the tab */
 .payment_tabs_live .payment_method_content h2 {
- display:none;
+    display:none;
 }
 .payment_tabs_live .payment_method_content h3 {
- display:none;
+    display:none;
 }
 
 /* Example of using an ID to set different styles for the tabs on the page */
@@ -115,7 +115,7 @@ ul.payment_methods_nav li.payment_method_active a:hover
 .payment_tabs_live#tab2 {
 }
 .payment_tabs_live#tab2 .payment_method_content {
- height:200px;
- overflow:auto;
+    height:200px;
+    overflow:auto;
 }
 

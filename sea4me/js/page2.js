@@ -808,8 +808,8 @@ var CogzidelSearch = {
                 }
             });
             jQuery("#search_form").cogzidelInputDateSpan("enableClearDatesButton");
-           /* jQuery("ul.collapsable_filters li input:checkbox, ul#lightbox_filters input:checkbox").live("click", function () {*/
-              jQuery("ul#lightbox_filters input:checkbox").live("click", function () {																																																																																																																													
+            /* jQuery("ul.collapsable_filters li input:checkbox, ul#lightbox_filters input:checkbox").live("click", function () {*/
+            jQuery("ul#lightbox_filters input:checkbox").live("click", function () {																																																																																																																													
                 var t = false;
                 var u = jQuery(this).attr("id");
                 var r = jQuery(this).attr("name");
@@ -940,17 +940,17 @@ var CogzidelSearch = {
         }
         AMM.new_bounds = AMM.mapLoaded ? (AMM.map.getBounds() || false) : false;
         switch (CogzidelSearch.currentViewType) {
-        case "list":
-            CogzidelSearch.params.search_view = 1;
-            break;
-        case "photo":
-            CogzidelSearch.params.search_view = 2;
-            break;
-        case "map":
-            CogzidelSearch.params.search_view = 3;
-            break;
-        default:
-            CogzidelSearch.params.search_view = 1
+            case "list":
+                CogzidelSearch.params.search_view = 1;
+                break;
+            case "photo":
+                CogzidelSearch.params.search_view = 2;
+                break;
+            case "map":
+                CogzidelSearch.params.search_view = 3;
+                break;
+            default:
+                CogzidelSearch.params.search_view = 1
         }
         CogzidelSearch.params.min_bedrooms = jQuery("#min_bedrooms").val() || "0";
         CogzidelSearch.params.min_bathrooms = jQuery("#min_bathrooms").val() || "0";
@@ -1620,9 +1620,9 @@ var SearchFilters = {
     min_bathrooms: [],
     group_ids: [],
     room_types: [
-        [0, [Translations.private_room, 0]],
-        [1, [Translations.shared_room, 0]],
-        [2, [Translations.entire_place, 0]]
+    [0, [Translations.private_room, 0]],
+    [1, [Translations.shared_room, 0]],
+    [2, [Translations.entire_place, 0]]
     ],
     minPrice: 10,
     maxPrice: 300,
@@ -1753,52 +1753,52 @@ var SearchFilters = {
         var d = jQuery(a).closest("li");
         var b = jQuery(d).attr("id").replace("applied_filter_", "");
         switch (b) {
-        case "neighborhoods":
-            SearchFilters.clearNeighborhoods();
-            break;
-        case "price":
-            c = false;
-            SearchFilters.clearPrice();
-            break;
-        case "hosting_amenities":
-            SearchFilters.clearAmenities();
-            break;
-        case "room_types":
-            SearchFilters.clearRoomTypes();
-            break;
-        case "keywords":
-            SearchFilters.clearKeywords();
-            break;
-        case "property_type_id":
-            SearchFilters.clearPropertyTypes();
-            break;
-        case "min_bedrooms":
-            SearchFilters.clearMinBedrooms();
-            break;
-        case "min_bathrooms":
-            SearchFilters.clearMinBathrooms();
-            break;
-        case "min_beds":
-            SearchFilters.clearMinBeds();
-            break;
-        case "languages":
-            SearchFilters.clearLanguages();
-            break;
-        case "collections":
-            SearchFilters.clearCollections();
-            break;
-        case "starred":
-            SearchFilters.clearStarred();
-        case "host":
-            SearchFilters.clearHost();
-            break;
-        case "group":
-            SearchFilters.clearGroup();
-            break;
-        case "connections":
-            SearchFilters.clearConnections();
-            break;
-        default:
+            case "neighborhoods":
+                SearchFilters.clearNeighborhoods();
+                break;
+            case "price":
+                c = false;
+                SearchFilters.clearPrice();
+                break;
+            case "hosting_amenities":
+                SearchFilters.clearAmenities();
+                break;
+            case "room_types":
+                SearchFilters.clearRoomTypes();
+                break;
+            case "keywords":
+                SearchFilters.clearKeywords();
+                break;
+            case "property_type_id":
+                SearchFilters.clearPropertyTypes();
+                break;
+            case "min_bedrooms":
+                SearchFilters.clearMinBedrooms();
+                break;
+            case "min_bathrooms":
+                SearchFilters.clearMinBathrooms();
+                break;
+            case "min_beds":
+                SearchFilters.clearMinBeds();
+                break;
+            case "languages":
+                SearchFilters.clearLanguages();
+                break;
+            case "collections":
+                SearchFilters.clearCollections();
+                break;
+            case "starred":
+                SearchFilters.clearStarred();
+            case "host":
+                SearchFilters.clearHost();
+                break;
+            case "group":
+                SearchFilters.clearGroup();
+                break;
+            case "connections":
+                SearchFilters.clearConnections();
+                break;
+            default:
         }
         d.remove();
         if (c === true) {

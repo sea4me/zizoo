@@ -1,2287 +1,2287 @@
 /* global colors */
 /******* Command_Center (/dashboard) *******/
 #command_center #inbox, #command_center #dashboard, #command_center #trips, #command_center #account, #command_center #calendar, #command_center #friend_recommendations, #command_center #my_listings, #command_center #standbys, #command_center #craigslist, #command_center #transaction_history, #command_center #pricing {
-  margin-top: 5px;
-  color: #4c4c46; }
+    margin-top: 5px;
+    color: #4c4c46; }
 
 #command_center div.print_button {
-  float: right;
-  width: 120px;
-  padding: 2px 4px;
-  border: 1px solid #e1e1e1;
-  text-align: center; }
+    float: right;
+    width: 120px;
+    padding: 2px 4px;
+    border: 1px solid #e1e1e1;
+    text-align: center; }
 
 #command_center div.print_button img {
-  vertical-align: text-bottom; }
+    vertical-align: text-bottom; }
 
 .pending {
-  color: #ef8d00; }
+    color: #ef8d00; }
 
 /*color:#f8df87;}*/
 .special_offer {
-  color: #ef8d00; }
+    color: #ef8d00; }
 
 .reservation_accepted, .reservation_pending, .reservation_bad {
-  color: #ffffff;
-  padding: 1px 5px; }
+    color: #ffffff;
+    padding: 1px 5px; }
 
 .reservation_accepted {
-  background: #65b300; }
+    background: #65b300; }
 
 .reservation_pending {
-  background: #ef8d00; }
+    background: #ef8d00; }
 
 .reservation_bad {
-  background: #e51e18; }
+    background: #e51e18; }
 
 .reservation_inquiry {
-  color: #999999;
-  background: none; }
+    color: #999999;
+    background: none; }
 
 #command_center hr {
-  height: 1px;
-  border: none;
-  background: #b4ad8e;
-  margin: 10px 0; }
+    height: 1px;
+    border: none;
+    background: #b4ad8e;
+    margin: 10px 0; }
 
 #command_center p.no_listings {
-  font-size: 14px;
-  padding: 10px 0 30px; }
+    font-size: 14px;
+    padding: 10px 0 30px; }
 
 #command_center p.no_listings a {
-  font-size: 18px; }
+    font-size: 18px; }
 
 #command_center div.admin {
-  border: 4px solid red;
-  width: 882px;
-  margin-top: 50px; }
+    border: 4px solid red;
+    width: 882px;
+    margin-top: 50px; }
 
 
 #command_center a {
- color:#56544a;
+    color:#56544a;
 }
 #command_center ul#nav {
-  background: #aba796;
-  border-top-right-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -webkit-border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -webkit-border-top-left-radius: 10px;
-  width: 978px;
-  height: 42px;
-  list-style-type: none;
-  margin: 0;
-  padding: 9px 0 0 0;
-  border-bottom: 1px dotted #d4d4bb; }
+    background: #aba796;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    width: 978px;
+    height: 42px;
+    list-style-type: none;
+    margin: 0;
+    padding: 9px 0 0 0;
+    border-bottom: 1px dotted #d4d4bb; }
 
 #command_center ul#nav a {
-  color: #f3ebc6;
-  font-weight: bold;
-  text-decoration: none; }
+    color: #f3ebc6;
+    font-weight: bold;
+    text-decoration: none; }
 
 #command_center ul#nav a:hover {
-  color: #434d51; }
+    color: #434d51; }
 
 #command_center ul#nav li {
-  display: inline;
-  height: 30px;
-  padding: 10px 10px;
-  margin: 0 5px 0 0;
-  font-size: 24px; }
+    display: inline;
+    height: 30px;
+    padding: 10px 10px;
+    margin: 0 5px 0 0;
+    font-size: 24px; }
 
 #command_center ul#nav li.active a {
-  color: #434d51; }
+    color: #434d51; }
 
 #command_center ul.subnav {
-  background: #aba796;
-  list-style-type: none;
-  padding: 5px 3px 3px;
-  border-bottom-right-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-   color: #000000; }
+    background: #aba796;
+    list-style-type: none;
+    padding: 5px 3px 3px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    color: #000000; }
 
 #command_center ul.subnav a {
-  color: #000;
-  font-weight: normal;
-  text-decoration: none; }
+    color: #000;
+    font-weight: normal;
+    text-decoration: none; }
 
 #command_center ul.subnav a:hover {
-  color: #f2e7bb !important; }
+    color: #f2e7bb !important; }
 
 #command_center ul.subnav li {
-  display:inline;
-  height: 22px;
-  padding: 0 7px;
-  font-size: 14px;
-  line-height: 1.5em; }
+    display:inline;
+    height: 22px;
+    padding: 0 7px;
+    font-size: 14px;
+    line-height: 1.5em; }
 
 #command_center ul.subnav li.active a {
-  color: #f2e7bb; }
+    color: #f2e7bb; }
 
 #command_center ul.subnav li.starred {
-  margin-left: 8px;
-  background: transparent url("../images/favorites/star.png") no-repeat -18px 0;
-  padding-left: 25px; }
+    margin-left: 8px;
+    background: transparent url("../images/favorites/star.png") no-repeat -18px 0;
+    padding-left: 25px; }
 
 #command_center .top, #command_center .bottom {
-  display: none; }
+    display: none; }
 
 #command_center .middle {
-  clear: both;
-  }
+    clear: both;
+}
 
 *html #command_center .middle {
-  height: 40px; }
+    height: 40px; }
 
 #command_center #dashboard {
-  color: #434d51; }
+    color: #434d51; }
 
 #command_center #dashboard a {
-  color: #434D51; }
+    color: #434D51; }
 
 #command_center #dashboard #left {
- width: 259px;
-  min-height: 200px;
-  float: left; }
+    width: 259px;
+    min-height: 200px;
+    float: left; }
 
 #command_center #dashboard #main {
-  width: 709px !important;
-  background: transparent;
-  float: left;
-  margin-left: 7px; }
+    width: 709px !important;
+    background: transparent;
+    float: left;
+    margin-left: 7px; }
 
 *html #command_center #dashboard #main {
-  margin-left: 3px;
-  overflow: hidden; }
+    margin-left: 3px;
+    overflow: hidden; }
 
 #command_center #dashboard .notice {
-  background: #ffffff; }
+    background: #ffffff; }
 
 /* left_col boxes */
 #command_center #dashboard #left .box .middle {
-  width: 234px;
-  min-height: 40px;
- }
+    width: 234px;
+    min-height: 40px;
+}
 
 *html #command_center #dashboard #left .box .middle {
-  height: 40px; }
+    height: 40px; }
 
 #command_center #dashboard #left .box h2 {
-  font-size: 18px;
-  font-weight: normal;
- }
+    font-size: 18px;
+    font-weight: normal;
+}
 
 #command_center #dashboard #left .box ul {
-  width: 235px;
-  padding: 0; }
+    width: 235px;
+    padding: 0; }
 
 #command_center #dashboard #left .box ul li {
-  border: none;
-  background: #EFF7FB; }
+    border: none;
+    background: #EFF7FB; }
 
 /* main_col boxes */
 #command_center #dashboard #main .box {
-  color: #434d51; }
+    color: #434d51; }
 
 #command_center #dashboard #main .box .middle {
-  /*padding: 15px;*/
-  min-height: 40px;
- /* margin-bottom: 18px;*/ }
+    /*padding: 15px;*/
+    min-height: 40px;
+    /* margin-bottom: 18px;*/ }
 
 *html #command_center #dashboard #main .box .middle {
-  height: 40px; }
+    height: 40px; }
 
 #command_center #dashboard #main .box h2 {
-  font-size: 18px;
-  font-weight: normal;
-  margin-bottom: 5px; }
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px; }
 
 #command_center #dashboard #main #system_alert {
-  font-size: 18px; }
+    font-size: 18px; }
 
 #command_center #dashboard #main #system_alert .middle {
-  background: transparent;
-  padding-bottom: 0;
-  min-height: 23px; }
+    background: transparent;
+    padding-bottom: 0;
+    min-height: 23px; }
 
 *html #command_center #dashboard #main .system_alert .middle {
-  height: 23px; }
+    height: 23px; }
 
 /* * * * * * * * * * D A S H B O A R D  * * * * * * * * * * * * * /
 /*** User ***/
 #user_box {
-  position: relative; }
+    position: relative; }
 
 #user_box h1 {
-  font-size: 25px; }
+    font-size: 25px; }
 
 #user_box #user_pic {
-  width: 209px;
-  height: 225px;
-  position: relative;
-  z-index: 100;
-  cursor: pointer; }
+    width: 209px;
+    height: 225px;
+    position: relative;
+    z-index: 100;
+    cursor: pointer; }
 
 #user_box #user_pic .user_edit_link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 16px;
-  width: 18px;
-  background: transparent url("../images/command_center/user_edit_notepad.png") no-repeat 0 0; }
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 16px;
+    width: 18px;
+    background: transparent url("../images/command_center/user_edit_notepad.png") no-repeat 0 0; }
 
 #user_box ul li {
-  height: 21px;
-  padding: 9px 0 0 0; }
+    height: 21px;
+    padding: 9px 0 0 0; }
 
 #edit_image_hover {
-  width: 207px;
-  background: #fff;
-  top: 1px;
-  left: 1px;
-  position: absolute;
-  z-index: 150;
-  height: 22px;
-  text-align: center;
-  opacity: .7;
-  filter: alpha(opacity=70);
-  cursor: pointer; }
+    width: 207px;
+    background: #fff;
+    top: 1px;
+    left: 1px;
+    position: absolute;
+    z-index: 150;
+    height: 22px;
+    text-align: center;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    cursor: pointer; }
 
 #edit_image_hover p {
-  padding: 3px 4px;
-  margin: 0; }
+    padding: 3px 4px;
+    margin: 0; }
 
 #ajax_upload_container {
-  width: 258px;
-  height: 181px;
-  position: absolute;
-  right: -250px;
-  top: 12px;
-  padding: 20px 44px 30px 30px;
-  z-index: 200;
-  background: transparent url("../images/uiwidgets/user_ajax_image_bg_medium.png") no-repeat 0 0; }
+    width: 258px;
+    height: 181px;
+    position: absolute;
+    right: -250px;
+    top: 12px;
+    padding: 20px 44px 30px 30px;
+    z-index: 200;
+    background: transparent url("../images/uiwidgets/user_ajax_image_bg_medium.png") no-repeat 0 0; }
 
 #ajax_upload_container input#user_image {
-  width: 150px; }
+    width: 150px; }
 
 #ajax_upload_container h3 {
-  color: #de3999;
-  font-size: 18px;
-  margin: 0 0 5px 0;
-  padding: 0; }
+    color: #de3999;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+    padding: 0; }
 
 #ajax_upload_container p.about_photos {
-  padding-bottom: 5px; }
+    padding-bottom: 5px; }
 
 #ajax_upload_container #ajax_upload_form {
-  width: 180px; }
+    width: 180px; }
 
 #ajax_upload_container #upload_feedback p {
-  padding: 3px 2px;
-  font-size: 16px; }
+    padding: 3px 2px;
+    font-size: 16px; }
 
 #ajax_upload_container #upload_feedback p.smaller {
-  font-size: 13px; }
+    font-size: 13px; }
 
 /*** Snapshot ***/
 #command_center #dashboard #left #snapshot h2 {
-  padding: 0 0 8px 15px;
-  border-bottom: 1px solid #e1e1e1;
-  margin: -5px -15px 8px -15px; }
+    padding: 0 0 8px 15px;
+    border-bottom: 1px solid #e1e1e1;
+    margin: -5px -15px 8px -15px; }
 
 #command_center #dashboard #left #snapshot ul li {
-  padding: 5px 0;
-  background: #f3faff;
-  margin: -8px -15px 0 -15px; }
+    padding: 5px 0;
+    background: #f3faff;
+    margin: -8px -15px 0 -15px; }
 
 #command_center #dashboard #left #snapshot ul li.alt {
-  background: #ffffff; }
+    background: #ffffff; }
 
 #command_center #dashboard #left #snapshot div {
-  float: left;
-  overflow: hidden; }
+    float: left;
+    overflow: hidden; }
 
 #command_center #dashboard #left #snapshot div.stat_name {
-  width: 87px;
-  padding: 8px 0 0 13px; }
+    width: 87px;
+    padding: 8px 0 0 13px; }
 
 #command_center #dashboard #left #snapshot div.stat_value {
-  font-size: 26px;
-  font-weight: bold;
-  width: 125px;
-  text-align: right;
-  padding-right: 10px; }
+    font-size: 26px;
+    font-weight: bold;
+    width: 125px;
+    text-align: right;
+    padding-right: 10px; }
 
 *html #command_center #dashboard #left #snapshot div {
-  overflow: visible; }
+    overflow: visible; }
 
 /*** quick_links ***/
 #command_center #dashboard #left #quick_links h2 {
- /* padding: 0 0 8px 15px;
-  border-bottom: 1px solid #b4ad8e;
-  margin: -5px -15px 8px -15px;*/ }
+    /* padding: 0 0 8px 15px;
+     border-bottom: 1px solid #b4ad8e;
+     margin: -5px -15px 8px -15px;*/ }
 
 #command_center #dashboard #left #quick_links ul li {
-  padding: 5px 0;
-  float: left;
-  width: 195px;
-  background: transparent;
-  /*border-bottom: 1px dotted #B4AD8E;*/
-  margin: 0 0; }
+    padding: 5px 0;
+    float: left;
+    width: 195px;
+    background: transparent;
+    /*border-bottom: 1px dotted #B4AD8E;*/
+    margin: 0 0; }
 
 *html #command_center #dashboard #left #quick_links ul li {
-  margin: 2px 5px; }
+    margin: 2px 5px; }
 
 #command_center #dashboard #left #quick_links ul li.alt {
-  background: #ffffff; }
+    background: #ffffff; }
 
 #command_center #dashboard #left #quick_links div {
-  /*float: left;*/
-  overflow: hidden; }
+    /*float: left;*/
+    overflow: hidden; }
 
 *html #command_center #dashboard #left #quick_links div {
-  overflow: visible; }
+    overflow: visible; }
 
 #command_center #dashboard #left #quick_links ul li.starred {
-  background: transparent url("../images/favorites/star.png") no-repeat -21px 0;
-  padding-left: 23px;
-  width: 175px; }
+    background: transparent url("../images/favorites/star.png") no-repeat -21px 0;
+    padding-left: 23px;
+    width: 175px; }
 
 /* * * * * Main Column * * * * */
 /*** Alerts ***/
 #command_center #dashboard #main #alerts {
-  font-size: 15px; }
+    font-size: 15px; }
 
 #command_center #dashboard #main #alerts a img {
-  margin: 0 0 -1px 3px; }
+    margin: 0 0 -1px 3px; }
 
 #command_center #dashboard #main #alerts ul li {
-  border-top: 1px solid #e1e0de;
-  min-height: 27px;
-  padding: 9px 10px 9px 25px;
-  background: #eff7fb; }
+    border-top: 1px solid #e1e0de;
+    min-height: 27px;
+    padding: 9px 10px 9px 25px;
+    background: #eff7fb; }
 
 #command_center #dashboard #main #alerts ul li:last-of-type {
-  border-bottom: 1px solid #e1e0de; }
+    border-bottom: 1px solid #e1e0de; }
 
 *html #command_center #dashboard #main #alerts ul li {
-  height: 27px; }
+    height: 27px; }
 
 #command_center #dashboard #main #alerts ul li.alt {
-  background: #ffffff; }
+    background: #ffffff; }
 
 #command_center #dashboard #main #alerts ul li.reservation_request {
-  background-image: url("../images/command_center/alert_reservation_request.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px;
-  position: relative; }
+    background-image: url("../images/command_center/alert_reservation_request.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px;
+    position: relative; }
 
 #command_center #dashboard #main #alerts ul li.reservation_request .countdown {
-  position: absolute;
-  right: 10px;
-  top: 0; }
+    position: absolute;
+    right: 10px;
+    top: 0; }
 
 #command_center #dashboard #main #alerts ul li.default {
-  background-image: url("../images/command_center/alert_exclamation_point.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px; }
+    background-image: url("../images/command_center/alert_exclamation_point.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.airplane {
-  background-image: url("../images/command_center/alert_airplane.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px; }
+    background-image: url("../images/command_center/alert_airplane.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.camera {
-  background-image: url("../images/command_center/alert_right_arrow.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px; }
+    background-image: url("../images/command_center/alert_right_arrow.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.rocket {
-  background-image: url("../images/command_center/alert_aircrew.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px; }
+    background-image: url("../images/command_center/alert_aircrew.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.cell_phone {
-  background-image: url("../images/command_center/alert_cell_phone.png");
-  background-repeat: no-repeat;
-  background-position: 5px 10px; }
+    background-image: url("../images/command_center/alert_cell_phone.png");
+    background-repeat: no-repeat;
+    background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.recommend_review {
-  background-image: url("../images/command_center/alert_recommend_review_on.png");
-  background-repeat: no-repeat;
-  background-position: 6px 11px;
-  padding-left: 30px; }
+    background-image: url("../images/command_center/alert_recommend_review_on.png");
+    background-repeat: no-repeat;
+    background-position: 6px 11px;
+    padding-left: 30px; }
 
 /*** Messages ***/
 #command_center #dashboard #main #messages ul {
-  border-bottom: 1px solid #e1e0de; }
+    border-bottom: 1px solid #e1e0de; }
 
 #command_center #dashboard #main #messages ul li {
-  border-top: 1px solid #e1e0de;
-  margin: 1px 0;
-  padding: 3px;
-  background: #ffffff;
-  height: 50px;
-  overflow: hidden; }
+    border-top: 1px solid #e1e0de;
+    margin: 1px 0;
+    padding: 3px;
+    background: #ffffff;
+    height: 50px;
+    overflow: hidden; }
 
 #command_center #dashboard #main #messages ul li.unread {
-  background: #efefef; }
+    background: #efefef; }
 
 #command_center #dashboard #main #messages ul li:hover {
-  background: #f7f7f7; }
+    background: #f7f7f7; }
 
 #command_center #dashboard #main #messages ul li div.user {
-  height: 50px;
-  width: 170px;
-  margin: 0 15px 0 0;
-  float: left; }
+    height: 50px;
+    width: 170px;
+    margin: 0 15px 0 0;
+    float: left; }
 
 #command_center #dashboard #main #messages ul li div.user img {
-  height: 50px;
-  width: 50px;
-  display: block;
-  margin-right: 10px;
-  float: left; }
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-right: 10px;
+    float: left; }
 
 #command_center #dashboard #main #messages ul li div.user p {
-  width: 110px;
-  height: 33px;
-  padding: 11px 0 0 0;
-  display: block;
-  float: left;
-  font-size: 11px; }
+    width: 110px;
+    height: 33px;
+    padding: 11px 0 0 0;
+    display: block;
+    float: left;
+    font-size: 11px; }
 
 #command_center #dashboard #main #messages ul li div.user p a {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #dashboard #main #messages ul li div.message_details {
-  height: 50px;
-  float: left;
-  padding: 0;
-  width: 370px; }
+    height: 50px;
+    float: left;
+    padding: 0;
+    width: 370px; }
 
 #command_center #dashboard #main #messages ul li div.message_details p {
-  padding: 11px 0 0 0;
-  font-size: 11px; }
+    padding: 11px 0 0 0;
+    font-size: 11px; }
 
 #command_center #dashboard #main #messages ul li div.message_details p a {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #dashboard #main #messages ul li.unread div.message_details p a {
-  font-weight: bold;
-  font-size: 14px; }
+    font-weight: bold;
+    font-size: 14px; }
 
 #command_center #dashboard #main #messages ul li div.status div.offer {
-  width: 86px;
-  height: 38px;
-  padding: 12px 0 0 0;
-  float: left; }
+    width: 86px;
+    height: 38px;
+    padding: 12px 0 0 0;
+    float: left; }
 
 #command_center #dashboard #main #messages ul li div.status div.offer p {
-  font-size: 13px; }
+    font-size: 13px; }
 
 #command_center #dashboard #main #messages ul li div.status div.offer span.value {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #dashboard #main #messages #more_messages {
-  font-size: 12px;
-  text-align: right;
-  position: relative;
-  right: 0;
-  margin: 10px 0 -5px 0; }
+    font-size: 12px;
+    text-align: right;
+    position: relative;
+    right: 0;
+    margin: 10px 0 -5px 0; }
 
 #command_center .box_button {
-  float: right;
-  background: #DEEDBF; }
+    float: right;
+    background: #DEEDBF; }
 
 #command_center .box_button a {
-  background: url("../images/command_center/box_bottom_right_button_bg_green.png") left bottom no-repeat;
-  width: 128px;
-  display: block;
-  text-align: center;
-  padding: 6px;
-  color: gray; }
+    background: url("../images/command_center/box_bottom_right_button_bg_green.png") left bottom no-repeat;
+    width: 128px;
+    display: block;
+    text-align: center;
+    padding: 6px;
+    color: gray; }
 
 #command_center #dashboard .box_button a {
-  color: #404c51;
-  font-size: 13px; }
+    color: #404c51;
+    font-size: 13px; }
 
 /************** INBOX ************/
 /* Inbox boxes */
 #command_center #inbox {
-  color: #434d51; }
+    color: #434d51; }
 
 #command_center #inbox h2 {
-  font-size: 18px;
-  font-weight: normal;
-  margin-bottom: 5px; }
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px; }
 
 #command_center #inbox p {
-  color: #50504d;
-  font-size: 11px; }
+    color: #50504d;
+    font-size: 11px; }
 
 #command_center #inbox a {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #inbox p.inbox_empty {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #inbox ul {
-  padding: 0;
-  overflow: hidden; }
+    padding: 0;
+    overflow: hidden; }
 
 #command_center #inbox ul li {
-  border-top: 1px solid #e1e0de;
-  margin: 1px 0;
-  padding: 3px;
-  background: #ffffff;
-  height: 50px;
-  overflow: hidden; }
+    border-top: 1px solid #e1e0de;
+    margin: 1px 0;
+    padding: 3px;
+    background: #ffffff;
+    height: 50px;
+    overflow: hidden; }
 
 #command_center #inbox ul li.unread {
-  background: #efefef; }
+    background: #efefef; }
 
 #command_center #inbox ul li:hover {
-  background: #f7f7f7; }
+    background: #f7f7f7; }
 
 #command_center #inbox_filters {
-  width: 900px;
-  padding: 0;
-  margin-bottom: 10px; }
+    width: 900px;
+    padding: 0;
+    margin-bottom: 10px; }
 
 #command_center #inbox_filter_form {
-  width: 400px;
-  float: left; }
+    width: 400px;
+    float: left; }
 
 #command_center #inbox_filters select {
-  width: 220px;
-  border: 1px solid #dbdbdb;
-  background: white;
-  padding: 1px;
-  margin: 10px; }
+    width: 220px;
+    border: 1px solid #dbdbdb;
+    background: white;
+    padding: 1px;
+    margin: 10px; }
 
 #command_center #inbox_filters select option {
-  background: #ffffff;
-  padding: 2px; }
+    background: #ffffff;
+    padding: 2px; }
 
 #command_center #inbox #inbox_top_pagination {
-  font-size: 18px;
-  float: left;
-  width: 500px;
-  padding: 10px 0; }
+    font-size: 18px;
+    float: left;
+    width: 500px;
+    padding: 10px 0; }
 
 #command_center #inbox #inbox_top_pagination .page-links {
-  font-size: 18px; }
+    font-size: 18px; }
 
 #command_center #inbox ul li div.user {
-  height: 50px;
-  width: 150px;
-  margin: 0 15px 0 0;
-  float: left; }
+    height: 50px;
+    width: 150px;
+    margin: 0 15px 0 0;
+    float: left; }
 
 #command_center #inbox ul li div.user img {
-  height: 50px;
-  width: 50px;
-  display: block;
-  margin-right: 10px;
-  float: left; }
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-right: 10px;
+    float: left; }
 
 #command_center #inbox ul li div.user p {
-  width: 90px;
-  height: 33px;
-  padding: 11px 0 0 0;
-  display: block;
-  float: left; }
+    width: 90px;
+    height: 33px;
+    padding: 11px 0 0 0;
+    display: block;
+    float: left; }
 
 #command_center #inbox ul li div.message_details {
-  width: 500px;
-  height: 50px;
-  float: left;
-  padding: 0;
-  margin-right: 9px; }
+    width: 500px;
+    height: 50px;
+    float: left;
+    padding: 0;
+    margin-right: 9px; }
 
 #command_center #inbox ul li div.message_details p {
-  padding: 11px 0 0 0; }
+    padding: 11px 0 0 0; }
 
 #command_center #inbox ul li.unread div.message_details p a {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #inbox ul li div.status {
-  width: 220px;
-  height: 50px;
-  float: left;
-  padding: 0;
-  padding: 0; }
+    width: 220px;
+    height: 50px;
+    float: left;
+    padding: 0;
+    padding: 0; }
 
 #command_center #inbox ul li div.status div {
-  float: left; }
+    float: left; }
 
 #command_center #inbox ul li div.status div.offer {
-  width: 123px;
-  height: 38px;
-  padding: 12px 0 0 0; }
+    width: 123px;
+    height: 38px;
+    padding: 12px 0 0 0; }
 
 #command_center #inbox ul li div.status div.offer p {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #inbox ul li div.status div.offer span.value {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #inbox ul li div.status div.options {
-  width: 92px;
-  height: 33px;
-  padding: 17px 0 0 5px; }
+    width: 92px;
+    height: 33px;
+    padding: 17px 0 0 5px; }
 
 #command_center #inbox ul li div.status div.options div.star {
-  width: 22px; }
+    width: 22px; }
 
 #command_center #inbox ul li div.status div.options div.hide {
-  width: 60px;
-  margin: 4px 0 0 10px; }
+    width: 60px;
+    margin: 4px 0 0 10px; }
 
 #command_center #inbox ul li div.status div.options div.hide a {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #inbox ul li.message_nav {
-  padding-top: 1px;
-  font-size: 18px;
-  padding-top: 10px;
-  height: 35px; }
+    padding-top: 1px;
+    font-size: 18px;
+    padding-top: 10px;
+    height: 35px; }
 
 #command_center #inbox ul li.message_nav:hover {
-  background: none; }
+    background: none; }
 
 #command_center #inbox .page-links a {
-  font-size: 18px; }
+    font-size: 18px; }
 
 /************** TRIPS ************/
 #command_center #trips {
-  color: #434d51;
-  font-size: 14px;
-  color: #757569; }
+    color: #434d51;
+    font-size: 14px;
+    color: #757569; }
 
 #command_center #trips h2 {
-  font-size: 26px;
-  color: #2f2f2f;
-  margin-left: 80px;
-  font-weight: bold; }
+    font-size: 26px;
+    color: #2f2f2f;
+    margin-left: 80px;
+    font-weight: bold; }
 
 #command_center #trips h2.travel_dates {
-  font-size: 18px;
-  color: #5b5b5b;
-  margin-bottom: 10px;
-  font-weight: normal; }
+    font-size: 18px;
+    color: #5b5b5b;
+    margin-bottom: 10px;
+    font-weight: normal; }
 
 #command_center #trips h2.check_in_out_info {
-  font-size: 14px !important;
-  color: #5B5B5B;
-  margin-bottom: 1px;
-  font-weight: normal; }
+    font-size: 14px !important;
+    color: #5B5B5B;
+    margin-bottom: 1px;
+    font-weight: normal; }
 
 #command_center #trips h3 {
-  font-size: 18px;
-  color: #dd0078;
-  margin-top: 30px;
-  margin-bottom: 4px; }
+    font-size: 18px;
+    color: #dd0078;
+    margin-top: 30px;
+    margin-bottom: 4px; }
 
 #command_center #trips h4 {
-  color: #dd0078;
-  margin-top: 20px;
-  margin-bottom: 4px; }
+    color: #dd0078;
+    margin-top: 20px;
+    margin-bottom: 4px; }
 
 #command_center #trips img.accepted_button {
-  position: relative;
-  top: -16px;
-  left: -10px; }
+    position: relative;
+    top: -16px;
+    left: -10px; }
 
 #command_center a.action_button_link {
-  display: block;
-  border: 1px solid #b1d6f0;
-  background: #f1f2e8;
-  font-size: 11px;
-  width: 100px;
-  padding: 3px 4px;
-  text-align: center;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin-top: 10px; }
+    display: block;
+    border: 1px solid #b1d6f0;
+    background: #f1f2e8;
+    font-size: 11px;
+    width: 100px;
+    padding: 3px 4px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 10px; }
 
 #command_center #trips #primary_info {
-  width: 450px;
-  float: left; }
+    width: 450px;
+    float: left; }
 
 #command_center #trips #secondary_info {
-  width: 450px;
-  float: left;
-  min-height: 500px; }
+    width: 450px;
+    float: left;
+    min-height: 500px; }
 
 #command_center #trips #secondary_info .map {
-  width: 439px;
-  height: 439px; }
+    width: 439px;
+    height: 439px; }
 
 #command_center #trips #secondary_info input {
-  width: 400px;
-  padding: 2px;
-  margin-bottom: 4px; }
+    width: 400px;
+    padding: 2px;
+    margin-bottom: 4px; }
 
 #command_center #trips #secondary_info label {
-  display: block; }
+    display: block; }
 
 #command_center #trips #where_are_you_going {
-  width: 400px;
-  margin-left: 200px;
-  text-align: center; }
+    width: 400px;
+    margin-left: 200px;
+    text-align: center; }
 
 #command_center #trips ul.previous_trips {
-  color: #919191; }
+    color: #919191; }
 
 #command_center #trips ul.previous_trips li {
-  border-bottom: 1px solid #e7e7e7;
-  padding: 0;
-  margin: 0;
-  float: left;
-  width: 900px;
-  position: relative; }
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 900px;
+    position: relative; }
 
 #command_center #trips ul.previous_trips li.headings {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #trips ul.previous_trips li p {
-  width: 125px;
-  float: left;
-  overflow: hidden;
-  padding: 17px 0 0 0;
-  height: 35px; }
+    width: 125px;
+    float: left;
+    overflow: hidden;
+    padding: 17px 0 0 0;
+    height: 35px; }
 
 #command_center #trips ul.previous_trips li p.status {
-  width: 90px; }
+    width: 90px; }
 
 #command_center #trips ul.previous_trips li p.location {
-  width: 300px; }
+    width: 300px; }
 
 #command_center #trips ul.previous_trips li p.host {
-  width: 150px; }
+    width: 150px; }
 
 #command_center #trips ul.previous_trips li p.dates {
-  width: 150px; }
+    width: 150px; }
 
 #command_center #trips ul.previous_trips li p.options {
-  width: 200px;
-  text-align: center;
-  height: auto; }
+    width: 200px;
+    text-align: center;
+    height: auto; }
 
 #command_center #trips ul.previous_trips li a.option_link {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #trips ul.previous_trips li:last-of-type {
-  border-bottom: none; }
+    border-bottom: none; }
 
 #command_center #trips ul.previous_trips span.options_content {
-  position: relative;
-  width: 150px;
-  padding: 10px;
-  background: #ffffff;
-  display: block;
-  margin: 4px 0 0 25px;
-  padding: 0 10px 10px 10px; }
+    position: relative;
+    width: 150px;
+    padding: 10px;
+    background: #ffffff;
+    display: block;
+    margin: 4px 0 0 25px;
+    padding: 0 10px 10px 10px; }
 
 #command_center #trips ul.previous_trips span.options_content a {
-  margin-left: 17px;
-  margin-top: 2px; }
+    margin-left: 17px;
+    margin-top: 2px; }
 
 /* current trips */
 #command_center .current_trips h2 {
-  margin-left: 0 !important; }
+    margin-left: 0 !important; }
 
 /************* ACCOUNT *************/
 #command_center #account h1,
 #command_center #account h2 {
-  padding: 5px 8px;
-  margin: 10px 0px;
-  background-color: #DCDCDC;
-  font-size: 18px;
-  font-weight: bold; }
+    padding: 5px 8px;
+    margin: 10px 0px;
+    background-color: #DCDCDC;
+    font-size: 18px;
+    font-weight: bold; }
 
 #command_center #account input[type='text'] {
-  padding: 5px; }
+    padding: 5px; }
 
 #command_center #account div.buttons {
-  text-align: right; }
+    text-align: right; }
 
 #command_center div.preference_section {
-  padding: 20px 5px;
-  width: 890px; }
+    padding: 20px 5px;
+    width: 890px; }
 
 #command_center div.preference_section h2 {
-  font-size: 18px;
-  color: #434d51; }
+    font-size: 18px;
+    color: #434d51; }
 
 #command_center div.preference_section h3 {
-  font-size: 14px;
-  margin-bottom: 10px; }
+    font-size: 14px;
+    margin-bottom: 10px; }
 
 #command_center div.preference_section h2.admin {
-  color: red; }
+    color: red; }
 
 #command_center #transaction_history {
-  color: #545f64; }
+    color: #545f64; }
 
 #command_center #transaction_history .nugget {
-  width: 180px;
-  padding: 10px 0;
-  float: left;
-  margin-left: 10px; }
+    width: 180px;
+    padding: 10px 0;
+    float: left;
+    margin-left: 10px; }
 
 #command_center #transaction_history .nugget h4 {
-  font-size: 18px;
-  text-align: center; }
+    font-size: 18px;
+    text-align: center; }
 
 #command_center #transaction_history .nugget h4.money {
-  font-size: 36px;
-  font-weight: bold; }
+    font-size: 36px;
+    font-weight: bold; }
 
 #command_center #transaction_history h3 {
-  font-size: 18px;
-  margin: 5px 0 10px 0;
-  color: #7e7e7e; }
+    font-size: 18px;
+    margin: 5px 0 10px 0;
+    color: #7e7e7e; }
 
 #command_center #transaction_history p.good_news {
-  font-size: 14px;
-  padding: 10px 0;
-  margin: 0 0 10px 0; }
+    font-size: 14px;
+    padding: 10px 0;
+    margin: 0 0 10px 0; }
 
 #command_center #transaction_history p.good_news span.account_warning {
-  color: #fd7979;
-  padding: 2px; }
+    color: #fd7979;
+    padding: 2px; }
 
 #command_center #transaction_history p.sort_links {
-  font-size: 12px;
-  padding: 10px 0;
-  margin: 0 0 10px 0; }
+    font-size: 12px;
+    padding: 10px 0;
+    margin: 0 0 10px 0; }
 
 #command_center #transaction_history ul {
-  color: #7e7e7e; }
+    color: #7e7e7e; }
 
 #command_center #transaction_history ul {
-  color: #545f64;
-  font-size: 14px; }
+    color: #545f64;
+    font-size: 14px; }
 
 #command_center #transaction_history ul li {
-  border-bottom: 1px solid #e7e7e7;
-  padding: 0;
-  margin: 0;
-  float: left;
-  width: 900px; }
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 900px; }
 
 #command_center #transaction_history ul li.headings {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #transaction_history ul li.alt {
-  background-color: #f5fbff; }
+    background-color: #f5fbff; }
 
 #command_center #transaction_history ul li:last-of-type {
-  border-bottom: none; }
+    border-bottom: none; }
 
 #command_center #transaction_history ul p {
-  width: 125px;
-  float: left;
-  padding: 6px 0 6px 1px;
-  height: 20px;
-  line-height: 20px; }
+    width: 125px;
+    float: left;
+    padding: 6px 0 6px 1px;
+    height: 20px;
+    line-height: 20px; }
 
 #command_center #transaction_history ul p.date {
-  width: 100px; }
+    width: 100px; }
 
 #command_center #transaction_history ul p.amount {
-  width: 80px; }
+    width: 80px; }
 
 #command_center #transaction_history ul p.type {
-  width: 125px; }
+    width: 125px; }
 
 #command_center #transaction_history ul p.details {
-  width: 500px;
-  font-size: 12px; }
+    width: 500px;
+    font-size: 12px; }
 
 #command_center #transaction_history ul p.status {
-  width: 200px; }
+    width: 200px; }
 
 #command_center #transaction_history ul li.headings p {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #transaction_history ul li.headings p.details {
-  font-size: 14px; }
+    font-size: 14px; }
 
 /************* LISTINGS *************/
 /***** My Listings *****/
 /******* OLD CODE ***********/
 /* My Travels / Listings */
 #command_center #my_listings ul.my_reservations {
-  color: #919191;
-  font-size: 14px; }
+    color: #919191;
+    font-size: 14px; }
 
 #command_center #my_listings ul.my_reservations li {
-  border-bottom: 1px solid #e7e7e7;
-  padding: 0;
-  margin: 0;
-  float: left;
-  width: 900px;
-  position: relative; }
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 900px;
+    position: relative; }
 
 #command_center #my_listings ul.my_reservations li.headings {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #my_listings ul.my_reservations li p {
-  width: 125px;
-  float: left;
-  overflow: hidden;
-  padding: 12px 0; }
+    width: 125px;
+    float: left;
+    overflow: hidden;
+    padding: 12px 0; }
 
 #command_center #my_listings ul.my_reservations li p.status {
-  width: 109px;
-  padding-left: 1px; }
+    width: 109px;
+    padding-left: 1px; }
 
 #command_center #my_listings ul.my_reservations li p.location {
-  width: 280px; }
+    width: 280px; }
 
 #command_center #my_listings ul.my_reservations li p.guest {
-  width: 310px; }
+    width: 310px; }
 
 #command_center #my_listings ul.my_reservations li p.details {
-  width: 200px; }
+    width: 200px; }
 
 #command_center #my_listings ul.my_reservations li a.option_link {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #my_listings ul.my_reservations li:last-of-type {
-  border-bottom: none; }
+    border-bottom: none; }
 
 #command_center #my_listings ul.my_reservations li p.guest span.guest_photo {
-  width: 50px;
-  float: left; }
+    width: 50px;
+    float: left; }
 
 #command_center #my_listings ul.my_reservations li p.guest span.guest_details {
-  width: 240px;
-  float: left;
-  padding: 0 10px; }
+    width: 240px;
+    float: left;
+    padding: 0 10px; }
 
 #command_center #my_listings ul.my_reservations li .countdown_row {
-  font-size: 14px;
-  padding: 0 0 0 0; }
+    font-size: 14px;
+    padding: 0 0 0 0; }
 
 #command_center a.action_button_link {
-  margin-top: 1px; }
+    margin-top: 1px; }
 
 #command_center div.show_all_reservations {
-  text-align: right;
-  border-top: 1px solid #e7e7e7;
-  padding-top: 5px; }
+    text-align: right;
+    border-top: 1px solid #e7e7e7;
+    padding-top: 5px; }
 
 #command_center div.show_all_reservations a {
-  font-size: 14px; }
+    font-size: 14px; }
 
 /**** Standbys ****/
 #command_center #standbys p {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  line-height: 17px; }
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 17px; }
 
 #command_center #standbys td.name {
-  padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: bold; }
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold; }
 
 #command_center #standbys td.dates {
-  padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  width: 350px; }
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 350px; }
 
 #command_center #standbys td.offer {
-  font-size: 14px;
-  font-weight: bold; }
+    font-size: 14px;
+    font-weight: bold; }
 
 #command_center #standbys td.image {
-  width: 125px; }
+    width: 125px; }
 
 #command_center #standbys td.description {
-  vertical-align: top; }
+    vertical-align: top; }
 
 /***** Policies *****/
 #command_center #policies h2 {
-  font-size: 18px;
-  color: #434d51;
-  margin: 5px 0 0 0; }
+    font-size: 18px;
+    color: #434d51;
+    margin: 5px 0 0 0; }
 
 #command_center #policies ul {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #policies ul li {
-  color: #434d51;
-  margin: 8px 0 0 0;
-  padding: 8px 2px 0;
-  border-top: 1px solid #e1e1e1; }
+    color: #434d51;
+    margin: 8px 0 0 0;
+    padding: 8px 2px 0;
+    border-top: 1px solid #e1e1e1; }
 
 /*** Craigslist ***/
 #command_center #craigslist h2 {
-  font-size: 18px;
-  color: #434d51;
-  margin-top: 15px;
-  margin-bottom: 5px; }
+    font-size: 18px;
+    color: #434d51;
+    margin-top: 15px;
+    margin-bottom: 5px; }
 
 #command_center #craigslist .preference_section {
-  padding: 5px 5px 5px 5px;
-  border-bottom: none; }
+    padding: 5px 5px 5px 5px;
+    border-bottom: none; }
 
 #command_center #craigslist .preference_section p {
-  font-size: 14px;
-  color: #757569;
-  margin-bottom: 20px; }
+    font-size: 14px;
+    color: #757569;
+    margin-bottom: 20px; }
 
 #command_center #craigslist ul.wizard li {
-  height: 40px; }
+    height: 40px; }
 
 #command_center #craigslist ul.wizard li p {
-  width: 570px;
-  float: left;
-  padding: 5px;
-  font-size: 18px; }
+    width: 570px;
+    float: left;
+    padding: 5px;
+    font-size: 18px; }
 
 #command_center #craigslist ul.wizard li p.label {
-  width: 310px;
-  color: #de3999; }
+    width: 310px;
+    color: #de3999; }
 
 #command_center #craigslist ul.wizard li p select {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #craigslist ul.wizard li p input {
-  font-size: 18px;
-  color: #757569;
-  width: 450px; }
+    font-size: 18px;
+    color: #757569;
+    width: 450px; }
 
 #command_center #craigslist ul.wizard li p button {
-  display: block;
-  border: 1px solid #b1d6f0;
-  background: #d7edfd;
-  font-size: 18px;
-  padding: 10px 8px;
-  text-align: center;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  color: #2291dd;
-  cursor: pointer; }
+    display: block;
+    border: 1px solid #b1d6f0;
+    background: #d7edfd;
+    font-size: 18px;
+    padding: 10px 8px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #2291dd;
+    cursor: pointer; }
 
 #command_center #craigslist ul.wizard li p.checkbox {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #craigslist ul.wizard li p.checkbox input {
-  width: 20px;
-  text-align: center;
-  background: lightGrey; }
+    width: 20px;
+    text-align: center;
+    background: lightGrey; }
 
 #command_center #craigslist h1 {
-  margin-bottom: 0px; }
+    margin-bottom: 0px; }
 
 #command_center #craigslist div.nav_links {
-  margin-bottom: 25px; }
+    margin-bottom: 25px; }
 
 #command_center #craigslist #manual_tool ol {
-  list-style-type: decimal;
-  list-style-position: inside;
-  font-size: 14px;
-  line-height: 25px; }
+    list-style-type: decimal;
+    list-style-position: inside;
+    font-size: 14px;
+    line-height: 25px; }
 
 #command_center #craigslist #manual_tool ul {
-  list-style-type: disc;
-  list-style-position: inside; }
+    list-style-type: disc;
+    list-style-position: inside; }
 
 #command_center #craigslist .tip_why {
-  margin: 3px 0px 5px 10px;
-  color: #3e3e3e; }
+    margin: 3px 0px 5px 10px;
+    color: #3e3e3e; }
 
 #command_center #craigslist table.wizard td {
-  padding: 3px; }
+    padding: 3px; }
 
 #command_center #craigslist table.wizard td.label {
-  width: 150px; }
+    width: 150px; }
 
 /***** Calendar *****/
 /* style rows on mouseover */
 #command_center #calendar .x-grid3-row-over .hosting {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-header {
-  /* margin-bottom:5px; */
-  background: none;
-  border-bottom: #E5E6DB 15px solid; }
+    /* margin-bottom:5px; */
+    background: none;
+    border-bottom: #E5E6DB 15px solid; }
 
 #command_center #calendar .x-grid3-row {
-  border: none; }
+    border: none; }
 
 #command_center #calendar .x-grid3-hd-inner {
-  text-align: center;
-  height: 100%;
-  padding: 0; }
+    text-align: center;
+    height: 100%;
+    padding: 0; }
 
 #command_center #calendar .x-grid3-cell-inner {
-  overflow: visible;
-  height: 24px;
-  padding: 5px 0px 0px 0px;
-  cursor: pointer;
-  position: relative; }
+    overflow: visible;
+    height: 24px;
+    padding: 5px 0px 0px 0px;
+    cursor: pointer;
+    position: relative; }
 
 #command_center #calendar .x-panel-bwrap {
-  overflow: visible; }
+    overflow: visible; }
 
 #command_center #calendar span.calendar_link {
-  color: #2E91E9;
-  text-decoration: underline;
-  cursor: pointer; }
+    color: #2E91E9;
+    text-decoration: underline;
+    cursor: pointer; }
 
 #command_center #calendar #lwlb_normal_section table tr {
-  height: 25px; }
+    height: 25px; }
 
 #command_center #calendar .both .x-grid3-cell-inner {
-  font-weight: bold;
-  padding-left: 10px; }
+    font-weight: bold;
+    padding-left: 10px; }
 
 #command_center #calendar .right .x-grid3-cell-inner {
-  font-weight: bold;
-  padding-left: 10px; }
+    font-weight: bold;
+    padding-left: 10px; }
 
 /* --- AV --- */
 #command_center #calendar .av_left {
-  background: url("/images/scheduling2/av_left.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_left.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_right {
-  background: url("/images/scheduling2/av_right.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both {
-  background: url("/images/scheduling2/av_both.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single {
-  background: url("/images/scheduling2/av_single.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_single.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_left_past {
-  background: url("/images/scheduling2/av_left_past.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_left_past.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_right_past {
-  background: url("/images/scheduling2/av_right_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_past {
-  background: url("/images/scheduling2/av_both_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_past {
-  background: url("/images/scheduling2/av_single_past.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_single_past.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .av_left {
-  background: url("/images/scheduling2/av_left_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_right {
-  background: url("/images/scheduling2/av_right_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_both {
-  background: url("/images/scheduling2/av_both_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_single {
-  background: url("/images/scheduling2/av_single_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_left_past {
-  background: url("/images/scheduling2/av_left_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_right_past {
-  background: url("/images/scheduling2/av_right_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_both_past {
-  background: url("/images/scheduling2/av_both_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_single_past {
-  background: url("/images/scheduling2/av_single_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_single_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_left_click {
-  background: url("/images/scheduling2/av_left_click.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_left_click.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_right_click {
-  background: url("/images/scheduling2/av_right_click.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_click {
-  background: url("/images/scheduling2/av_both_click.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_click {
-  background: url("/images/scheduling2/av_single_click.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_single_click.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_left_past_click {
-  background: url("/images/scheduling2/av_left_click_past.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_left_click_past.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 #command_center #calendar .av_right_past_click {
-  background: url("/images/scheduling2/av_right_click_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_right_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_past_click {
-  background: url("/images/scheduling2/av_both_click_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/av_both_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_past_click {
-  background: url("/images/scheduling2/av_single_click_past.gif") no-repeat 0 0;
-  color: #434d51;
-  font-weight: bold; }
+    background: url("/images/scheduling2/av_single_click_past.gif") no-repeat 0 0;
+    color: #434d51;
+    font-weight: bold; }
 
 /* --- RS --- */
 #command_center #calendar .rs_left {
-  background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .rs_right {
-  background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_both {
-  background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_single {
-  background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .rs_left_past {
-  background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .rs_right_past {
-  background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_both_past {
-  background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_single_past {
-  background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .rs_left {
-  background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_right {
-  background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_both {
-  background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_single {
-  background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_left_past {
-  background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_right_past {
-  background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_both_past {
-  background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_single_past {
-  background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
 
 /* --- TP --- */
 #command_center #calendar .tp_left {
-  background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .tp_right {
-  background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_both {
-  background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_single {
-  background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .tp_left_past {
-  background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .tp_right_past {
-  background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_both_past {
-  background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_single_past {
-  background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .tp_left {
-  background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_right {
-  background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_both {
-  background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_single {
-  background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_left_past {
-  background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_right_past {
-  background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_both_past {
-  background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_single_past {
-  background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
 
 /* --- BS --- */
 #command_center #calendar .bs_left {
-  background: url("/images/scheduling2/bs_left.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_left.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_right {
-  background: url("/images/scheduling2/bs_right.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both {
-  background: url("/images/scheduling2/bs_both.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single {
-  background: url("/images/scheduling2/bs_single.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_single.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_left_past {
-  background: url("/images/scheduling2/bs_left_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_left_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_right_past {
-  background: url("/images/scheduling2/bs_right_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_past {
-  background: url("/images/scheduling2/bs_both_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_past {
-  background: url("/images/scheduling2/bs_single_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_single_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .bs_left {
-  background: url("/images/scheduling2/bs_left_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_right {
-  background: url("/images/scheduling2/bs_right_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_both {
-  background: url("/images/scheduling2/bs_both_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_single {
-  background: url("/images/scheduling2/bs_single_roll.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_left_past {
-  background: url("/images/scheduling2/bs_left_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_right_past {
-  background: url("/images/scheduling2/bs_right_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_both_past {
-  background: url("/images/scheduling2/bs_both_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_single_past {
-  background: url("/images/scheduling2/bs_single_roll_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_single_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_left_click {
-  background: url("/images/scheduling2/bs_left_click.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_left_click.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_right_click {
-  background: url("/images/scheduling2/bs_right_click.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_click {
-  background: url("/images/scheduling2/bs_both_click.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_click {
-  background: url("/images/scheduling2/bs_single_click.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_single_click.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_left_past_click {
-  background: url("/images/scheduling2/bs_left_click_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_left_click_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .bs_right_past_click {
-  background: url("/images/scheduling2/bs_right_click_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_right_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_past_click {
-  background: url("/images/scheduling2/bs_both_click_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/bs_both_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_past_click {
-  background: url("/images/scheduling2/bs_single_click_past.gif") no-repeat 0 0;
-  color: white;
-  font-weight: bold; }
+    background: url("/images/scheduling2/bs_single_click_past.gif") no-repeat 0 0;
+    color: white;
+    font-weight: bold; }
 
 #command_center #calendar .address_bar_past {
-  background: url("/images/scheduling2/address_bar_past.gif") no-repeat 0 0; }
+    background: url("/images/scheduling2/address_bar_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .address_bar_past .x-grid3-cell-inner {
-  cursor: auto; }
+    cursor: auto; }
 
 #command_center #calendar .address_bar .x-grid3-cell-inner {
-  cursor: auto;
-  background-color: white; }
+    cursor: auto;
+    background-color: white; }
 
 #command_center #calendar .selected {
-  border: 1px black solid; }
+    border: 1px black solid; }
 
 #command_center #calendar img.arrow {
-  vertical-align: text-bottom; }
+    vertical-align: text-bottom; }
 
 /* Contents of cell*/
 #command_center #calendar .left .x-grid3-cell-inner {
-  padding-left: 10px; }
+    padding-left: 10px; }
 
 #command_center #calendar .single .x-grid3-cell-inner {
-  padding-left: 10px; }
+    padding-left: 10px; }
 
 /* #command_center #calendar .week_border { border-right: 1px dotted #ABABAB; } */
 #command_center #calendar .past {
-  color: gray; }
+    color: gray; }
 
 #command_center #calendar .today {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #calendar .x-grid3-hd-inner .today {
-  background: url("/images/scheduling2/date_box_today.gif") no-repeat 0 0;
-  height: 100%;
-  padding-top: 12px; }
+    background: url("/images/scheduling2/date_box_today.gif") no-repeat 0 0;
+    height: 100%;
+    padding-top: 12px; }
 
 #command_center #calendar .x-grid3-hd-inner .past {
-  background: url("/images/scheduling2/date_box_past.gif") no-repeat 0 0;
-  height: 100%;
-  padding-top: 12px; }
+    background: url("/images/scheduling2/date_box_past.gif") no-repeat 0 0;
+    height: 100%;
+    padding-top: 12px; }
 
 #command_center #calendar .x-grid3-hd-inner .future {
-  background: url("/images/scheduling2/date_box_default.gif") no-repeat 0 0;
-  height: 100%;
-  padding-top: 12px; }
+    background: url("/images/scheduling2/date_box_default.gif") no-repeat 0 0;
+    height: 100%;
+    padding-top: 12px; }
 
 #command_center #calendar .hosting {
-  height: 29px; }
+    height: 29px; }
 
 #command_center #calendar .hosting .x-grid3-cell-inner {
-  overflow: hidden; }
+    overflow: hidden; }
 
 #command_center #calendar .location_address .x-grid3-cell-inner {
-  padding-left: 5px;
-  background-color: white;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: auto; }
+    padding-left: 5px;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: auto; }
 
 #command_center #calendar .hosting_not_available {
-  color: #d14848; }
+    color: #d14848; }
 
 #command_center #calendar .hosting_available {
-  color: #32abff; }
+    color: #32abff; }
 
 #command_center #calendar .hosting .x-grid3-cell-inner {
-  background-color: #F3FAFF;
-  padding: 0px 5px;
-  font-size: 12px;
-  height: 24px; }
+    background-color: #F3FAFF;
+    padding: 0px 5px;
+    font-size: 12px;
+    height: 24px; }
 
 #command_center #calendar .hosting .x-grid3-cell-inner .offset {
-  margin-left: 0;
-  margin-top: 3px; }
+    margin-left: 0;
+    margin-top: 3px; }
 
 ul.ext-menu-list {
-  height: 120px; }
+    height: 120px; }
 
 #command_center #calendar .x-grid3-row-over .hosting .x-grid3-cell-inner {
-  background: #dcf2fe url("/images/scheduling2/arrow_blue.png") no-repeat 236px 4px; }
+    background: #dcf2fe url("/images/scheduling2/arrow_blue.png") no-repeat 236px 4px; }
 
 #command_center #calendar .x-grid3-hd-row td {
-  height: 51px;
-  /* height:35px; */
-  border-left: none;
-  border-right: none; }
+    height: 51px;
+    /* height:35px; */
+    border-left: none;
+    border-right: none; }
 
 #command_center #calendar .x-panel-body {
-  border: none; }
+    border: none; }
 
 #command_center #calendar .x-grid3-header {
-  padding: 0; }
+    padding: 0; }
 
 #command_center #calendar .x-grid3-row td, .x-grid3-summary-row td {
-  padding-left: 0px;
-  padding-right: 0px; }
+    padding-left: 0px;
+    padding-right: 0px; }
 
 .x-table-layout td {
-  width: 20%; }
+    width: 20%; }
 
 #command_center #calendar input.filter_date {
-  width: 75px; }
+    width: 75px; }
 
 #command_center #calendar #ext-gen8 {
-  border-right: #E5E6DB 15px solid;
-  width: 250px; }
+    border-right: #E5E6DB 15px solid;
+    width: 250px; }
 
 #command_center #calendar .x-grid3-locked {
-  border-right: #E5E6DB 1px solid; }
+    border-right: #E5E6DB 1px solid; }
 
 /* #command_center #calendar .x-grid3-header { border-bottom:none; } */
 #ext-gen7 {
-  background-color: #E5E6DB; }
+    background-color: #E5E6DB; }
 
 #ext-gen10 {
-  background-color: #E5E6DB; }
+    background-color: #E5E6DB; }
 
 #command_center #calendar #ext-gen7 .x-grid3-hd-inner {
-  text-align: left;
-  background-color: #E5E6DB; }
+    text-align: left;
+    background-color: #E5E6DB; }
 
 #command_center #calendar .x-grid3-header-offset {
-  padding-left: 0px;
-  border-right: #E5E6DB 1px solid; }
+    padding-left: 0px;
+    border-right: #E5E6DB 1px solid; }
 
 /****** Single Calendar ******/
 #command_center #calendar2 #backdrop {
-  background: url("/images/modules/messaging_tile_gray.png") repeat;
-  padding: 10px 10px 10px 12px;
-  width: 763px;
-  margin: 0 0 0 57px; }
+    background: url("/images/modules/messaging_tile_gray.png") repeat;
+    padding: 10px 10px 10px 12px;
+    width: 763px;
+    margin: 0 0 0 57px; }
 
 *html #command_center #calendar2 #backdrop {
-  padding: 10px 10px; }
+    padding: 10px 10px; }
 
 #command_center #calendar2 .full_bubble {
-  padding-bottom: 10px;
-  background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat left bottom; }
+    padding-bottom: 10px;
+    background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat left bottom; }
 
 #command_center #calendar2 .full_bubble .inner {
-  padding-left: 10px;
-  padding-right: 10px;
-  background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat 0 0; }
+    padding-left: 10px;
+    padding-right: 10px;
+    background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat 0 0; }
 
 * #command_center #calendar2 .full_bubble .inner {
-  padding-left: 10px;
-  padding-right: 10px; }
+    padding-left: 10px;
+    padding-right: 10px; }
 
 #command_center #calendar2 .day_header {
-  float: left;
-  width: 106px;
-  text-align: center;
-  font-weight: bold;
-  color: #c6c7c4; }
+    float: left;
+    width: 106px;
+    text-align: center;
+    font-weight: bold;
+    color: #c6c7c4; }
 
 #command_center #calendar2 .tile_selected {
-  float: left;
-  width: 106px;
-  height: 80px;
-  background: url("/images/scheduling/tile_selected.gif") no-repeat;
-  cursor: pointer; }
+    float: left;
+    width: 106px;
+    height: 80px;
+    background: url("/images/scheduling/tile_selected.gif") no-repeat;
+    cursor: pointer; }
 
 #command_center #calendar2 .tile_disabled {
-  float: left;
-  width: 106px;
-  height: 80px;
-  background: url("/images/scheduling/tile_disabled.gif") no-repeat; }
+    float: left;
+    width: 106px;
+    height: 80px;
+    background: url("/images/scheduling/tile_disabled.gif") no-repeat; }
 
 #command_center #calendar2 .tile {
-  float: left;
-  width: 106px;
-  height: 80px;
-  background: url("/images/scheduling/tile_normal.gif") no-repeat;
-  cursor: pointer; }
+    float: left;
+    width: 106px;
+    height: 80px;
+    background: url("/images/scheduling/tile_normal.gif") no-repeat;
+    cursor: pointer; }
 
 #command_center #calendar2 .day {
-  margin: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #c6c7c4; }
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c6c7c4; }
 
 #command_center #calendar2 .price {
-  padding: 4px 0px 4px 20px;
-  font-size: 14px;
-  font-weight: bold; }
+    padding: 4px 0px 4px 20px;
+    font-size: 14px;
+    font-weight: bold; }
 
 #command_center #calendar2 .line_reg {
-  width: 106px;
-  height: 26px;
-  margin-top: 12px;
-  padding-top: 5px;
-  padding-left: 20px;
-  white-space: nowrap;
-  position: relative; }
+    width: 106px;
+    height: 26px;
+    margin-top: 12px;
+    padding-top: 5px;
+    padding-left: 20px;
+    white-space: nowrap;
+    position: relative; }
 
 #command_center #calendar2 .line_eow {
-  width: 82px;
-  height: 26px;
-  margin-top: 12px;
-  padding-top: 5px;
-  padding-left: 20px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden; }
+    width: 82px;
+    height: 26px;
+    margin-top: 12px;
+    padding-top: 5px;
+    padding-left: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
 
 /******* Friend Recommendations ********/
 #command_center #friend_recommendations .preference_section h2 {
-  font-size: 18px;
-  font-weight: normal;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #e1e1e1; }
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e1e1e1; }
 
 #command_center #friend_recommendations .preference_section p {
-  font-size: 13px;
-  width: auto;
-  margin-bottom: 10px; }
+    font-size: 13px;
+    width: auto;
+    margin-bottom: 10px; }
 
 #command_center #friend_recommendations .preference_section {
-  border-top: 1px solid #7e7e7e;
-  border-bottom: none; }
+    border-top: 1px solid #7e7e7e;
+    border-bottom: none; }
 
 #command_center #friend_recommendations #single_import {
-  border-top: 1px solid #7e7e7e;
-  padding-top: 10px;
-  margin-top: 10px; }
+    border-top: 1px solid #7e7e7e;
+    padding-top: 10px;
+    margin-top: 10px; }
 
 #command_center #friend_recommendations #pending_recommendations {
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 15px 5px;
-  margin: 0 5px 0 0;
-  background: #f7f7f7; }
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 15px 5px;
+    margin: 0 5px 0 0;
+    background: #f7f7f7; }
 
 #command_center #friend_recommendations input.big_blue_button {
-  padding: 10px;
-  border: 1px solid #79b6d9;
-  background: #d7edfc;
-  color: #2291dd;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  display: block; }
+    padding: 10px;
+    border: 1px solid #79b6d9;
+    background: #d7edfc;
+    color: #2291dd;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block; }
 
 #command_center #friend_recommendations input.big_blue_button:hover {
-  background: lightGrey; }
+    background: lightGrey; }
 
 #command_center #friend_recommendations div#manual_emails {
-  float: left;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 0 0 15px 0;
-  margin-bottom: 15px; }
+    float: left;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0 0 15px 0;
+    margin-bottom: 15px; }
 
 #command_center #friend_recommendations form#individual_emails {
-  width: 350px;
-  float: left; }
+    width: 350px;
+    float: left; }
 
 #command_center #friend_recommendations div#found_email_addresses {
-  width: 530px;
-  float: left;
-  margin-left: 20px; }
+    width: 530px;
+    float: left;
+    margin-left: 20px; }
 
 #command_center #friend_recommendations div#found_email_addresses ul li {
-  font-size: 14px;
-  padding: 2px 0; }
+    font-size: 14px;
+    padding: 2px 0; }
 
 #command_center #friend_recommendations .individual_address_submit_button {
-  margin: 5px 0 0 177px; }
+    margin: 5px 0 0 177px; }
 
 #command_center #friend_recommendations table tr {
-  font-size: 15px; }
+    font-size: 15px; }
 
 #command_center #friend_recommendations table th {
-  font-weight: bold;
-  padding: 4px 16px 4px 4px; }
+    font-weight: bold;
+    padding: 4px 16px 4px 4px; }
 
 #command_center #friend_recommendations table td {
-  padding: 4px 16px 4px 4px; }
+    padding: 4px 16px 4px 4px; }
 
 #command_center #friend_recommendations h2 {
-  font-size: 18px;
-  color: #434d51;
-  padding-top-top: 15px;
-  margin-bottom: 5px; }
+    font-size: 18px;
+    color: #434d51;
+    padding-top-top: 15px;
+    margin-bottom: 5px; }
 
 #command_center #friend_recommendations p.header_info {
-  margin-bottom: 30px; }
+    margin-bottom: 30px; }
 
 #command_center #friend_recommendations div.panes p {
-  width: 730px;
-  float: left;
-  padding: 5px;
-  font-size: 18px; }
+    width: 730px;
+    float: left;
+    padding: 5px;
+    font-size: 18px; }
 
 #command_center #friend_recommendations div.panes p.label {
-  width: 150px;
-  color: #de3999; }
+    width: 150px;
+    color: #de3999; }
 
 #command_center #friend_recommendations div.panes input {
-  font-size: 16px; }
+    font-size: 16px; }
 
 .rec_continue_button {
-  margin: 20px 0 0 282px; }
+    margin: 20px 0 0 282px; }
 
 #command_center #friend_recommendations p.notice {
-  width: auto;
-  text-align: center; }
+    width: auto;
+    text-align: center; }
 
 #command_center #friend_recommendations ul.feedback {
-  margin-bottom: 20px; }
+    margin-bottom: 20px; }
 
 #command_center #friend_recommendations ul.feedback li {
-  padding: 10px 10px;
-  font-size: 14px;
-  color: #50504d;
-  margin-bottom: 1px;
-  border-bottom: 1px solid #e1e1e1;
-  float: left;
-  width: 880px; }
+    padding: 10px 10px;
+    font-size: 14px;
+    color: #50504d;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #e1e1e1;
+    float: left;
+    width: 880px; }
 
 #command_center #friend_recommendations ul.feedback li p.from_name {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #friend_recommendations ul.feedback li p.from_text {
-  font-size: 14px; }
+    font-size: 14px; }
 
 #command_center #friend_recommendations ul.feedback li div {
-  float: left;
-  display: block;
-  min-height: 0;
-  padding: 0;
-  background: none; }
+    float: left;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: none; }
 
 #command_center #friend_recommendations ul.feedback li div.user_image {
-  width: 50px;
-  padding: 0;
-  margin: 0; }
+    width: 50px;
+    padding: 0;
+    margin: 0; }
 
 #command_center #friend_recommendations ul.feedback li div.feedback_body {
-  width: 810px;
-  padding: 2px 10px 0 10px; }
+    width: 810px;
+    padding: 2px 10px 0 10px; }
 
 #command_center #friend_recommendations ul.feedback li div.feedback_body p.from_text {
-  width: 600px; }
+    width: 600px; }
 
 #command_center #friend_recommendations ul.feedback li div.feedback_body p.from_name {
-  width: 600px; }
+    width: 600px; }
 
 #command_center #friend_recommendations ul.reviews li {
-  background: #F6E6EE; }
+    background: #F6E6EE; }
 
 #command_center #friend_recommendations ul.recommendations li {
-  background: #ebf7ff; }
+    background: #ebf7ff; }
 
 #command_center #friend_recommendations ul.reviews_to_give li {
-  background: #ffffff;
-  border: none;
-  width: 880px; }
+    background: #ffffff;
+    border: none;
+    width: 880px; }
 
 #command_center #friend_recommendations ul.reviews_to_give li.alt {
-  background: #eff7fb; }
+    background: #eff7fb; }
 
 #command_center #friend_recommendations #pending_recommendations {
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 15px 5px;
-  margin: 0 5px 27px;
-  background: #f7f7f7; }
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 15px 5px;
+    margin: 0 5px 27px;
+    background: #f7f7f7; }
 
 #command_center #friend_recommendations div#definitions {
-  font-size: 15px;
-  padding: 6px;
-  background: #f7f7f7; }
+    font-size: 15px;
+    padding: 6px;
+    background: #f7f7f7; }
 
 #command_center #friend_recommendations div#definitions span.definition_header {
-  font-weight: bold;
-  background: #F6E6EE;
-  padding: 2px; }
+    font-weight: bold;
+    background: #F6E6EE;
+    padding: 2px; }
 
 /* override for shared styles on reputation page */
 #command_center #friend_recommendations #reputation div.panes p {
-  padding: 0;
-  font-size: 14px; }
+    padding: 0;
+    font-size: 14px; }
 
 #command_center #friend_recommendations #reputation p.checkbox {
-  font-size: 15px; }
+    font-size: 15px; }
 
 #command_center #friend_recommendations #reputation span.new_icon {
-  background: transparent url(http://www.cogzidel.com/images/page2/v3/new_icon.png) no-repeat 0px 0px;
-  float: right;
-  height: 15px;
-  margin: 2px 0px 0px 7px;
-  width: 29px; }
+    background: transparent url(http://www.cogzidel.com/images/page2/v3/new_icon.png) no-repeat 0px 0px;
+    float: right;
+    height: 15px;
+    margin: 2px 0px 0px 7px;
+    width: 29px; }
 
 #command_center #friend_recommendations #reputation .split_line {
-  width: 100%;
-  height: 5px;
-  border-bottom: 1px solid lightGrey;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: lightGrey; }
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px solid lightGrey;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: lightGrey; }
 
 #command_center #friend_recommendations #reputation .blurb {
-  font-size: 15px;
-  color: #BFC2C4; }
+    font-size: 15px;
+    color: #BFC2C4; }
 
 /* External Calendars */
 #command_center #sync_calendars #wide {
-  background: #E0E1D8; }
+    background: #E0E1D8; }
 
 #command_center #sync_calendars h2 {
-  background: white;
-  font-size: 18px;
-  margin-bottom: 5px; }
+    background: white;
+    font-size: 18px;
+    margin-bottom: 5px; }
 
 #command_center #sync_calendars h3 {
-  font-size: 20px;
-  background: #ffffff;
-  padding: 10px;
-  color: black;
-  border-bottom: 1px solid #E0E1D8;
-  margin-bottom: 8px; }
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px;
+    color: black;
+    border-bottom: 1px solid #E0E1D8;
+    margin-bottom: 8px; }
 
 #command_center #sync_calendars p {
-  font-size: 13px;
-  margin-bottom: 10px; }
+    font-size: 13px;
+    margin-bottom: 10px; }
 
 #command_center #sync_calendars p.error {
-  background: #f6e36a;
-  padding: 4px 6px 4px;
-  border-left: 10px solid #e8bf56; }
+    background: #f6e36a;
+    padding: 4px 6px 4px;
+    border-left: 10px solid #e8bf56; }
 
 #command_center #sync_calendars #add_calendars {
-  background: white;
-  width: 490px;
-  float: left;
-  margin: 0 0 10px 20px; }
+    background: white;
+    width: 490px;
+    float: left;
+    margin: 0 0 10px 20px; }
 
 #command_center #sync_calendars .middle {
-  padding-top: 10px; }
+    padding-top: 10px; }
 
 #command_center #sync_calendars h4 {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-top: 1px solid #fff;
-  background: #0068ca;
-  margin: 0;
-  color: #ffffff; }
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-top: 1px solid #fff;
+    background: #0068ca;
+    margin: 0;
+    color: #ffffff; }
 
 #command_center #sync_calendars ul {
-  padding: 0 1px; }
+    padding: 0 1px; }
 
 #command_center #sync_calendars ul li {
-  padding: 0 0 4px 0;
-  margin-bottom: 2px; }
+    padding: 0 0 4px 0;
+    margin-bottom: 2px; }
 
 #command_center #sync_calendars ul li span.name {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #sync_calendars ul li span.url {
-  font-style: italic; }
+    font-style: italic; }
 
 #command_center #sync_calendars ul.existing_calendars {
-  padding: 0 4px;
-  color: #444; }
+    padding: 0 4px;
+    color: #444; }
 
 #command_center #sync_calendars ul.existing_calendars li {
-  margin-bottom: 0; }
+    margin-bottom: 0; }
 
 #command_center #sync_calendars ul.existing_calendars li.status {
-  font-style: normal;
-  font-weight: normal;
-  color: #444; }
+    font-style: normal;
+    font-weight: normal;
+    color: #444; }
 
 #command_center #sync_calendars #external_calendar_mapping_url {
-  width: 442px;
-  font-size: 16px; }
+    width: 442px;
+    font-size: 16px; }
 
 #command_center #sync_calendars h4 span.emphasis {
-  font-size: 16px; }
+    font-size: 16px; }
 
 #command_center #sync_calendars span.emphasis {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #command_center #sync_calendars div.form_section {
-  background: white;
-  margin-bottom: 1px;
-  border: 1px solid #0068ca;
-  border-top: none;
-  padding: 10px 20px; }
+    background: white;
+    margin-bottom: 1px;
+    border: 1px solid #0068ca;
+    border-top: none;
+    padding: 10px 20px; }
 
 #command_center #sync_calendars p.form_help {
-  border: none;
-  padding: 6px 6px;
-  margin: 0;
-  color: #444; }
+    border: none;
+    padding: 6px 6px;
+    margin: 0;
+    color: #444; }
 
 #command_center #sync_calendars #id {
-  font-size: 12px;
-  margin: 5px 10px 10px 4px; }
+    font-size: 12px;
+    margin: 5px 10px 10px 4px; }
 
 #command_center #sync_calendars select {
-  padding: 1px; }
+    padding: 1px; }
 
 #command_center #sync_calendars #external_calendar_mapping_calendar_source {
-  font-size: 12px;
-  padding: 1px;
-  margin: 5px 0 10px 0; }
+    font-size: 12px;
+    padding: 1px;
+    margin: 5px 0 10px 0; }
 
 #command_center #sync_calendars span.select_property {
-  font-size: 12px; }
+    font-size: 12px; }
 
 #command_center #sync_calendars #add_external_calendar_submit_button {
-  font-size: 14px;
-  margin: 10px 0 0 20px; }
+    font-size: 14px;
+    margin: 10px 0 0 20px; }
 
 #command_center #sync_calendars .how_it_works {
-  background: #FFFED3;
-  float: left;
-  width: 310px;
-  margin: 0 0 10px 25px;
-  padding: 15px; }
+    background: #FFFED3;
+    float: left;
+    width: 310px;
+    margin: 0 0 10px 25px;
+    padding: 15px; }
 
 .ui_dialog {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px; }
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px; }
 
 span.new:before {
-  content: "New! ";
-  font-weight: bold;
-  color: #f11; }
+    content: "New! ";
+    font-weight: bold;
+    color: #f11; }
 
 span.new {
-  display: block; }
+    display: block; }
 
 span.new strong {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #backdrop div.row {
-  clear: both; }
+    clear: both; }
 
 #backdrop div.row div.col {
-  background: #fff;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 9px 8px;
-  float: left; }
+    background: #fff;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 9px 8px;
+    float: left; }
 
 #backdrop div.row div.col:first-child {
-  margin-right: 10px; }
+    margin-right: 10px; }
 
 #backdrop div.row div.col:last-child {
-  margin-right: 0 !important; }
+    margin-right: 0 !important; }
 
 #backdrop div.row div.col img {
-  vertical-align: middle;
-  margin-top: -3px; }
+    vertical-align: middle;
+    margin-top: -3px; }
 
 #backdrop div.row div.col.listing_actions {
-  width: 560px;
-  height: 25px; }
+    width: 560px;
+    height: 25px; }
 
 #backdrop div.row div.col.listing_status {
-  width: 158px;
-  height: 25px; }
+    width: 158px;
+    height: 25px; }
 
 #backdrop div.row div.col.cal_admin {
-  margin-top: 10px;
-  width: 745px; }
+    margin-top: 10px;
+    width: 745px; }
 
 #backdrop div.row div.col.cal_admin strong {
-  font-weight: bold; }
+    font-weight: bold; }
 
 #backdrop div.row div.col h3 {
-  font-size: 1.5em;
-  font-weight: bold;
-  background: #EEF;
-  padding: 3px 8px;
-  margin: -7px -6px 5px -6px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px; }
+    font-size: 1.5em;
+    font-weight: bold;
+    background: #EEF;
+    padding: 3px 8px;
+    margin: -7px -6px 5px -6px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
 
 #backdrop div.row div.col h3 a.add_cal {
-  font-size: 0.5em; }
+    font-size: 0.5em; }
 
 div.sync_status span.ok {
-  color: #aaa;
-  font-style: italic; }
+    color: #aaa;
+    font-style: italic; }
 
 div.sync_status span.error {
-  color: #f33;
-  font-weight: bold; }
+    color: #f33;
+    font-weight: bold; }
 
 div#existing_calendars h3 {
-  font-size: 2em;
-  margin-bottom: 0 !important;
-  margin-top: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #aaa; }
+    font-size: 2em;
+    margin-bottom: 0 !important;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #aaa; }
 
 div#existing_calendars h3 a {
-  font-size: 0.5em;
-  font-weight: normal;
-  margin-left: 5px; }
+    font-size: 0.5em;
+    font-weight: normal;
+    margin-left: 5px; }
 
 div#existing_calendars h3 img {
-  width: 30px;
-  vertical-align: middle;
-  margin-top: -3px;
-  margin-right: 10px; }
+    width: 30px;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 10px; }
 
 ul.existing_calendars li {
-  cursor: default;
-  padding: 5px;
-  height: 17px; }
+    cursor: default;
+    padding: 5px;
+    height: 17px; }
 
 ul.existing_calendars li:hover {
-  background: #eee; }
+    background: #eee; }
 
 ul.existing_calendars li div.information {
-  float: left; }
+    float: left; }
 
 ul.existing_calendars li div.actions {
-  float: right; }
+    float: right; }
 
 ul.existing_calendars li span.name {
-  font-weight: bold;
-  font-size: 1.2em; }
+    font-weight: bold;
+    font-size: 1.2em; }
 
 ul.existing_calendars li span.url {
-  display: none; }
+    display: none; }
 
 ul.existing_calendars li span.status {
-  margin-left: 10px;
-  color: #ccc;
-  font-style: italic;
-  font-size: 0.8em; }
+    margin-left: 10px;
+    color: #ccc;
+    font-style: italic;
+    font-size: 0.8em; }
 
 ul.existing_calendars li span.status img {
-  vertical-align: middle;
-  margin-top: -4px; }
+    vertical-align: middle;
+    margin-top: -4px; }
 
 ul.existing_calendars li span.status.error {
-  color: #F00; }
+    color: #F00; }
 
 ul.cal_actions {
-  float: right; }
+    float: right; }
 
 ul.cal_actions li {
-  display: inline;
-  width: auto;
-  padding: 0 0 0 5px;
-  margin: 0 0 0 5px;
-  border-left: 1px solid #aaa; }
+    display: inline;
+    width: auto;
+    padding: 0 0 0 5px;
+    margin: 0 0 0 5px;
+    border-left: 1px solid #aaa; }
 
 ul.cal_actions li:first-child {
-  padding-left: 0;
-  margin-left: 0;
-  border-left: 0; }
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0; }
 
 div.ical_link {
-  border: 1px solid #dda;
-  padding: 5px 10px;
-  margin: 15px 0px;
-  background: #ffe;
-  font-size: 1.3em; }
+    border: 1px solid #dda;
+    padding: 5px 10px;
+    margin: 15px 0px;
+    background: #ffe;
+    font-size: 1.3em; }
 
 ul.cal_instructions, ul.cal_instructions li {
-  display: inline; }
+    display: inline; }
 
 ul.cal_instructions li {
-  border-left: 1px solid #aaa;
-  padding-left: 5px; }
+    border-left: 1px solid #aaa;
+    padding-left: 5px; }
 
 ul.cal_instructions li:first-child {
-  border-left: 0;
-  padding-left: 0;
-  margin-right: 5px; }
+    border-left: 0;
+    padding-left: 0;
+    margin-right: 5px; }
 
 a.old-calendar {
-  color: #393c3d !important;
-  text-shadow: 0 1px 1px #fff;
-  padding: 12px 5px;
-  margin: 10px 10px;
-  box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  border: 1px solid #ddd;
-  display: block;
-  text-align: center;
-  background: -moz-linear-gradient(top, white, #f5f5f0);
-  background: -webkit-gradient(linear, center top, center bottom, from(white), to(#f5f5f0)); }
+    color: #393c3d !important;
+    text-shadow: 0 1px 1px #fff;
+    padding: 12px 5px;
+    margin: 10px 10px;
+    box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    background: -moz-linear-gradient(top, white, #f5f5f0);
+    background: -webkit-gradient(linear, center top, center bottom, from(white), to(#f5f5f0)); }
 
 a.old-calendar strong {
-  font-weight: bold; }
+    font-weight: bold; }
 
 a.old-calendar:hover {
-  text-decoration: none;
-  background: -moz-linear-gradient(top, #f5f5f0, white);
-  background: -webkit-gradient(linear, center top, center bottom, from(#f5f5f0), to(white)); }
+    text-decoration: none;
+    background: -moz-linear-gradient(top, #f5f5f0, white);
+    background: -webkit-gradient(linear, center top, center bottom, from(#f5f5f0), to(white)); }
 
 ul.listings li.listing {
-  clear: both;
-  padding-top: 9px;
-  border-bottom: 1px dotted #e1e1df;
-  margin-top: 4px;
-  padding-bottom: 12px; }
+    clear: both;
+    padding-top: 9px;
+    border-bottom: 1px dotted #e1e1df;
+    margin-top: 4px;
+    padding-bottom: 12px; }
 
 ul.listings li.listing:first-child {
-  clear: both;
-  padding-top: 0;
-  margin-top: 0;
-  border: 0; }
+    clear: both;
+    padding-top: 0;
+    margin-top: 0;
+    border: 0; }
 
 ul.listings li.listing div.thumbnail {
-  float: left; }
+    float: left; }
 
 ul.listings li.listing div.thumbnail img {
-  width: 100px;
-  height: 65px;
-  background: #fff;
-  padding: 3px;
-  border: 1px solid #ccc;
-  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2); }
+    width: 100px;
+    height: 65px;
+    background: #fff;
+    padding: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2); }
 
 ul.listings li.listing div.listing-info {
-  float: left;
-  margin-left: 15px; 
-  width: 785px;}
+    float: left;
+    margin-left: 15px; 
+    width: 785px;}
 
 ul.listings li.listing div.listing-info h3 {
-  color: #1d95cb;
-  margin-bottom: 10px;
-  font-size: 2em;
- }
+    color: #1d95cb;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
 
 ul.listings li.listing div.listing-info h3 a {
-  text-decoration: none; }
+    text-decoration: none; }
 
 span.no-listings {
-  color: #666; }
+    color: #666; }
 
 span.no-listings h3 {
-  font-size: 2em;
-  margin-bottom: 5px;
-  color: #333; }
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: #333; }
 
 span.no-listings p {
-  font-size: 1.2em;
-  margin-bottom: 10px; }
+    font-size: 1.2em;
+    margin-bottom: 10px; }
 
 ul.listings li.listing div.set-availability {
-  margin-top: 5px;
-  float: right; }
+    margin-top: 5px;
+    float: right; }
 
 div.row div.col.cal_admin div.privacy {
-  font-weight: bold; }
+    font-weight: bold; }
 
 div.sort-header {
-  height: 36px;
- /* margin: -16px -16px 15px -16px;
-  padding: 8px;*/
-  background: transparent;
- }
-  div.sort-header span#view_cal {
+    height: 36px;
+    /* margin: -16px -16px 15px -16px;
+     padding: 8px;*/
+    background: transparent;
+}
+div.sort-header span#view_cal {
     float: right; }
-  div.sort-header .action_button {
+div.sort-header .action_button {
     cursor: pointer; }
-  div.sort-header span#listings-filter {
+div.sort-header span#listings-filter {
     position: absolute; }
-    div.sort-header span#listings-filter.expand div.toggle-filter {
-      display: block;
-	  clear:both;
-	  
-	  }
-  div.sort-header .display-filter span.icon span.showing {
+div.sort-header span#listings-filter.expand div.toggle-filter {
+    display: block;
+    clear:both;
+
+}
+div.sort-header .display-filter span.icon span.showing {
     color: #848484 !important; }
-    div.sort-header .display-filter span.icon span.showing:after {
-      content: ""; }
-  div.sort-header div.toggle-filter {
+div.sort-header .display-filter span.icon span.showing:after {
+    content: ""; }
+div.sort-header div.toggle-filter {
     display: none; }
-    div.sort-header div.toggle-filter .icon {
-		
-      }
-    div.sort-header div.toggle-filter div:hover {
-      background: #878474;
-      }
-      div.sort-header div.toggle-filter div:hover .icon {
-        color: #fff !important;
-        text-shadow: none !important;
-		text-decoration:none !important; }
-  div.sort-header span.action_button span.icon.always {
+div.sort-header div.toggle-filter .icon {
+
+}
+div.sort-header div.toggle-filter div:hover {
+    background: #878474;
+}
+div.sort-header div.toggle-filter div:hover .icon {
+    color: #fff !important;
+    text-shadow: none !important;
+    text-decoration:none !important; }
+div.sort-header span.action_button span.icon.always {
     display: inline !important;
     padding-right: 0; }
-  div.sort-header span.action_button .display-filter span.icon.active, div.sort-header span.action_button .display-filter span.icon.inactive {
+div.sort-header span.action_button .display-filter span.icon.active, div.sort-header span.action_button .display-filter span.icon.inactive {
     display: none; }
-  div.sort-header span.action_button .display-filter span.icon.none {
+div.sort-header span.action_button .display-filter span.icon.none {
     display: inline; }
-  div.sort-header span.action_button.active .display-filter span.icon.inactive, div.sort-header span.action_button.active .display-filter span.icon.none {
+div.sort-header span.action_button.active .display-filter span.icon.inactive, div.sort-header span.action_button.active .display-filter span.icon.none {
     display: none; }
-  div.sort-header span.action_button.active .display-filter span.icon.active {
+div.sort-header span.action_button.active .display-filter span.icon.active {
     display: inline-block; }
-  div.sort-header span.action_button.inactive .display-filter span.icon.active, div.sort-header span.action_button.inactive .display-filter span.icon.none {
+div.sort-header span.action_button.inactive .display-filter span.icon.active, div.sort-header span.action_button.inactive .display-filter span.icon.none {
     display: none; }
-  div.sort-header span.action_button.inactive .display-filter span.icon.inactive {
+div.sort-header span.action_button.inactive .display-filter span.icon.inactive {
     display: inline-block; }
 .sort-header .action_button {
-background:#b0aa8d;
-width:150px;
+    background:#b0aa8d;
+    width:150px;
 }
 #listings-container .action_button {
-background:url(../images/button_host.png) no-repeat center top;
- height: 29px;
+    background:url(../images/button_host.png) no-repeat center top;
+    height: 29px;
     text-align: center;
     width: 109px;
 }
 ul.listings li.listing div.listing-info .action_button a {
-color:#fff !important;
-padding:0px !important;
-font-size:12px!important;
-line-height:29px;
+    color:#fff !important;
+    padding:0px !important;
+    font-size:12px!important;
+    line-height:29px;
 }
 .listing .listing-info h3 a {
-color:#56544a !important;
-font-size: 19px;
+    color:#56544a !important;
+    font-size: 19px;
 }
 ul.listings li.listing div.listing-info .action_button a:hover {
-text-decoration:none !important;
+    text-decoration:none !important;
 }
 #dashboard .clsSide_border_Samll h2 {
-background:url(../images/border_small.png) no-repeat center bottom;
-padding-left: 5px;
-padding-bottom: 13px;
+    background:url(../images/border_small.png) no-repeat center bottom;
+    padding-left: 5px;
+    padding-bottom: 13px;
 }
 .clsSide_border_Samll {
-float:none !important;
+    float:none !important;
 }

@@ -1,29 +1,29 @@
 var photo_gallery_loaded = false;
 var initPhotoGallery = function () {
-        if (photo_gallery_loaded) {
-            return
+    if (photo_gallery_loaded) {
+        return
+    }
+    photo_gallery_loaded = true;
+    jQuery("#galleria_container").galleria({
+        imagePosition: "top",
+        transition: "fade",
+        transitionSpeed: 100,
+        thumbFit: false
+    });
+    var a = Galleria.get(0);
+    jQuery(".share-button-container").hover(function () {
+        jQuery("#share_buttons").fadeIn(200)
+    }, function () {
+        jQuery("#share_buttons").fadeOut(200)
+    }).click(function () {
+        a.next()
+    });
+    a.bind("loadstart", function (b) {
+        if (b.index > 0) {
+            jQuery(".image-placeholder").hide()
         }
-        photo_gallery_loaded = true;
-        jQuery("#galleria_container").galleria({
-            imagePosition: "top",
-            transition: "fade",
-            transitionSpeed: 100,
-            thumbFit: false
-        });
-        var a = Galleria.get(0);
-        jQuery(".share-button-container").hover(function () {
-            jQuery("#share_buttons").fadeIn(200)
-        }, function () {
-            jQuery("#share_buttons").fadeOut(200)
-        }).click(function () {
-            a.next()
-        });
-        a.bind("loadstart", function (b) {
-            if (b.index > 0) {
-                jQuery(".image-placeholder").hide()
-            }
-        })
-    };
+    })
+};
 var Page3 = {
     showInstantBookButton: function () {
         jQuery("#book_it_button").addClass("force_hide");
@@ -153,68 +153,68 @@ function copy_message_fields_to_book_it() {
 }
 function refresh_subtotal() {
     var a = function (c, e, d) {
-            var b;
-            if (c.available) {
-                jQuery("#book_it_disabled").hide();
-                jQuery("#book_it_enabled").show();
-                b = jQuery("#price_amount").html(c.price_per_night).data("nightly-price", c.price_per_night);
-                jQuery("#service_fee").html(c.service_fee);
-                CogzidelRooms.staggered = c.staggered;
-                if (CogzidelRooms.staggered === true) {
-                    if (CogzidelRooms.stayOffered !== 0) {
-                        jQuery("#payment_period").hide();
-                        jQuery("#per_month").show();
-                        CogzidelRooms.$cancellationVal.text(Translations.long_term);
-                        jQuery("#includesFees").show();
-                        jQuery("#book_it_default").addClass("monthly")
-                    }
-                    jQuery("#subtotal_area").hide();
-                    jQuery("#show_more_subtotal_info").hide();
-                    jQuery("#price_amount").text(Cogzidel.Utils.decode(c.staggered_price));
-                    b.data("monthly-price", c.staggered_price)
-                } else {
-                    if (CogzidelRooms.stayOffered === 2) {
-                        jQuery("#per_month").hide();
-                        CogzidelRooms.$cancellationVal.text(CogzidelRooms.originalCancellationPolicy);
-                        jQuery("#includesFees").hide();
-                        jQuery("#book_it_default").removeClass("monthly");
-                        jQuery("#payment_period").show()
-                    }
-                    jQuery("#subtotal_area ").show();
-                    jQuery("#subtotal_area").find("p").show();
-                    jQuery("#show_more_subtotal_info").show();
-                    jQuery("#subtotal").html(c.total_price);
-                    jQuery("#payment_period").val("per_night");
-                    b.removeAttr("data-monthly-price")
-                }
-                if (c.can_instant_book) {
-                    Page3.showInstantBookButton()
-                } else {
-                    Page3.showBookItButton()
-                }
-            } else {
-                if (CogzidelRooms.stayOffered === 1) {
+        var b;
+        if (c.available) {
+            jQuery("#book_it_disabled").hide();
+            jQuery("#book_it_enabled").show();
+            b = jQuery("#price_amount").html(c.price_per_night).data("nightly-price", c.price_per_night);
+            jQuery("#service_fee").html(c.service_fee);
+            CogzidelRooms.staggered = c.staggered;
+            if (CogzidelRooms.staggered === true) {
+                if (CogzidelRooms.stayOffered !== 0) {
                     jQuery("#payment_period").hide();
                     jQuery("#per_month").show();
                     CogzidelRooms.$cancellationVal.text(Translations.long_term);
-                    jQuery("#includesFees").show()
-                } else {
-                    jQuery("#book_it_default").removeClass("monthly");
-                    jQuery("#payment_period").show();
+                    jQuery("#includesFees").show();
+                    jQuery("#book_it_default").addClass("monthly")
+                }
+                jQuery("#subtotal_area").hide();
+                jQuery("#show_more_subtotal_info").hide();
+                jQuery("#price_amount").text(Cogzidel.Utils.decode(c.staggered_price));
+                b.data("monthly-price", c.staggered_price)
+            } else {
+                if (CogzidelRooms.stayOffered === 2) {
                     jQuery("#per_month").hide();
                     CogzidelRooms.$cancellationVal.text(CogzidelRooms.originalCancellationPolicy);
                     jQuery("#includesFees").hide();
-                    jQuery("#price_amount").html(jQuery("#price_amount").data("nightly-price"))
+                    jQuery("#book_it_default").removeClass("monthly");
+                    jQuery("#payment_period").show()
                 }
-                jQuery("#book_it_disabled_message").html(c.reason_message);
-                jQuery("#book_it_enabled").hide();
-                jQuery("#book_it_disabled").show();
-                jQuery("#show_more_subtotal_info").hide()
+                jQuery("#subtotal_area ").show();
+                jQuery("#subtotal_area").find("p").show();
+                jQuery("#show_more_subtotal_info").show();
+                jQuery("#subtotal").html(c.total_price);
+                jQuery("#payment_period").val("per_night");
+                b.removeAttr("data-monthly-price")
             }
-            jQuery("#book_it_status").effect("pulsate", {
-                times: 1
-            }, 600)
-        };
+            if (c.can_instant_book) {
+                Page3.showInstantBookButton()
+            } else {
+                Page3.showBookItButton()
+            }
+        } else {
+            if (CogzidelRooms.stayOffered === 1) {
+                jQuery("#payment_period").hide();
+                jQuery("#per_month").show();
+                CogzidelRooms.$cancellationVal.text(Translations.long_term);
+                jQuery("#includesFees").show()
+            } else {
+                jQuery("#book_it_default").removeClass("monthly");
+                jQuery("#payment_period").show();
+                jQuery("#per_month").hide();
+                CogzidelRooms.$cancellationVal.text(CogzidelRooms.originalCancellationPolicy);
+                jQuery("#includesFees").hide();
+                jQuery("#price_amount").html(jQuery("#price_amount").data("nightly-price"))
+            }
+            jQuery("#book_it_disabled_message").html(c.reason_message);
+            jQuery("#book_it_enabled").hide();
+            jQuery("#book_it_disabled").show();
+            jQuery("#show_more_subtotal_info").hide()
+        }
+        jQuery("#book_it_status").effect("pulsate", {
+            times: 1
+        }, 600)
+    };
     jQuery("#book_it_button").removeAttr("disabled");
     jQuery("#subtotal_area").find("p").hide();
     jQuery("#subtotal_area").show();
@@ -251,37 +251,37 @@ function action_facebook() {
     FB.ui(a, function (b) {})
 }
 var load_pano = function () {
-        var a = jQuery("#pano").data("streetView");
-        var f;
-        if (!a) {
-            var e = jQuery("#pano").data("lat");
-            var c = jQuery("#pano").data("lng");
-            var b = new google.maps.LatLng(e, c);
-            var d = new google.maps.StreetViewPanorama(document.getElementById("pano"), {
-                position: b,
-                visible: false,
-                scrollwheel: false,
-                enableCloseButton: false
-            });
-            new google.maps.StreetViewService().getPanoramaByLocation(b, 50, function (h, g) {
-                if (g !== google.maps.StreetViewStatus.OK) {
-                    jQuery("#pano_error").show();
-                    jQuery("#pano_no_error").hide();
-                    return
+    var a = jQuery("#pano").data("streetView");
+    var f;
+    if (!a) {
+        var e = jQuery("#pano").data("lat");
+        var c = jQuery("#pano").data("lng");
+        var b = new google.maps.LatLng(e, c);
+        var d = new google.maps.StreetViewPanorama(document.getElementById("pano"), {
+            position: b,
+            visible: false,
+            scrollwheel: false,
+            enableCloseButton: false
+        });
+        new google.maps.StreetViewService().getPanoramaByLocation(b, 50, function (h, g) {
+            if (g !== google.maps.StreetViewStatus.OK) {
+                jQuery("#pano_error").show();
+                jQuery("#pano_no_error").hide();
+                return
+            }
+            d.setPosition(h.location.latLng);
+            d.setVisible(true);
+            f = window.setInterval(function () {
+                if (jQuery("#auto_pan_pano").is(":checked")) {
+                    var i = d.getPov();
+                    i.heading += 2;
+                    d.setPov(i)
                 }
-                d.setPosition(h.location.latLng);
-                d.setVisible(true);
-                f = window.setInterval(function () {
-                    if (jQuery("#auto_pan_pano").is(":checked")) {
-                        var i = d.getPov();
-                        i.heading += 2;
-                        d.setPov(i)
-                    }
-                }, 200)
-            });
-            jQuery("#pano").data("streetView", d)
-        }
-    };
+            }, 200)
+        });
+        jQuery("#pano").data("streetView", d)
+    }
+};
 
 function load_google_map() {
     var k = 14;
@@ -289,7 +289,7 @@ function load_google_map() {
     var b;
     var g = [];
     var f = [],
-        j;
+    j;
     var h = new google.maps.LatLng(jQuery("#map").data("lat"), jQuery("#map").data("lng"));
     var a = new google.maps.LatLngBounds();
     a.extend(h);
@@ -380,7 +380,7 @@ var CogzidelRooms = {
         a.data("weekly-price", d.weeklyPrice);
         a.data("monthly-price", d.monthlyPrice);
         if (!this.isMonthly) {
-            /*a.html(a.data("nightly-price"))*/
+        /*a.html(a.data("nightly-price"))*/
         }
         jQuery("#checkin").val(b);
         jQuery("#checkout").val(b);
@@ -415,28 +415,28 @@ var CogzidelRooms = {
         jQuery("#payment_period").change(function () {
             var l, k, i;
             var j = jQuery("#price_amount"),
-                h = jQuery("#subtotal_area"),
-                m = jQuery("#show_more_subtotal_info");
+            h = jQuery("#subtotal_area"),
+            m = jQuery("#show_more_subtotal_info");
             switch (this.value) {
-            case "per_night":
-                j.html(j.data("nightly-price"));
-                break;
-            case "per_week":
-                k = j.data("weekly-price");
-                i = parseInt(k.match(/\d+/), 10);
-                j.html(k.replace(/(\d+)/, i));
-                break;
-            case "per_month":
-                if (CogzidelRooms.stayOffered === 1 || CogzidelRooms.stayOffered === 2) {
-                    k = "" + CogzidelRooms.staggeredPrice
-                } else {
-                    k = j.data("monthly-price")
-                }
-                i = parseInt(k.match(/\d+/), 10);
-                j.html(k.replace(/(\d+)/, i));
-                break;
-            default:
-                break
+                case "per_night":
+                    j.html(j.data("nightly-price"));
+                    break;
+                case "per_week":
+                    k = j.data("weekly-price");
+                    i = parseInt(k.match(/\d+/), 10);
+                    j.html(k.replace(/(\d+)/, i));
+                    break;
+                case "per_month":
+                    if (CogzidelRooms.stayOffered === 1 || CogzidelRooms.stayOffered === 2) {
+                        k = "" + CogzidelRooms.staggeredPrice
+                    } else {
+                        k = j.data("monthly-price")
+                    }
+                    i = parseInt(k.match(/\d+/), 10);
+                    j.html(k.replace(/(\d+)/, i));
+                    break;
+                default:
+                    break
             }
         });
         var f = jQuery("#videos_div embed");
@@ -460,35 +460,35 @@ var CogzidelRooms = {
         var c = e.data("review-type");
         var g = e.data("hosting-id");
         switch (c) {
-        case "listing_has_reviews":
-            select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
-            jQuery.ajax({
-                url: "/rooms/this_hosting_reviews_first/" + g,
-                success: function (j, h, i) {
-                    if (jQuery.trim(j) !== "") {
-                        jQuery("#this_hosting_reviews").html(j)
+            case "listing_has_reviews":
+                select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
+                jQuery.ajax({
+                    url: "/rooms/this_hosting_reviews_first/" + g,
+                    success: function (j, h, i) {
+                        if (jQuery.trim(j) !== "") {
+                            jQuery("#this_hosting_reviews").html(j)
+                        }
                     }
-                }
-            });
-            break;
-        case "host_has_reviews":
-            select_tab("rep", "other_hosting_reviews", jQuery("#other_hosting_reviews_link"));
-            jQuery.ajax({
-                url: "/rooms/other_hosting_reviews_first/" + g,
-                success: function (h) {
-                    if (jQuery.trim(h) !== "") {
-                        jQuery("#other_hosting_reviews").html(h)
+                });
+                break;
+            case "host_has_reviews":
+                select_tab("rep", "other_hosting_reviews", jQuery("#other_hosting_reviews_link"));
+                jQuery.ajax({
+                    url: "/rooms/other_hosting_reviews_first/" + g,
+                    success: function (h) {
+                        if (jQuery.trim(h) !== "") {
+                            jQuery("#other_hosting_reviews").html(h)
+                        }
                     }
-                }
-            });
-            break;
-        case "host_has_recommendations":
-            select_tab("rep", "friends", jQuery("#friends_link"));
-            break;
-        case "no_reviews":
-        default:
-            select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
-            break
+                });
+                break;
+            case "host_has_recommendations":
+                select_tab("rep", "friends", jQuery("#friends_link"));
+                break;
+            case "no_reviews":
+            default:
+                select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
+                break
         }
     },
     Helper: {},
@@ -504,11 +504,11 @@ var CogzidelRooms = {
     },
     video_profile_init: function (g) {
         var b = jQuery("#play_button_small"),
-            d = jQuery("#user_small_pic"),
-            f = jQuery("#play_button_big"),
-            c = jQuery("#user_big_pic"),
-            e = jQuery("#video_wrapper"),
-            a = jQuery("<iframe title='CogzidelTV Video Player' src='http://tv.cogzidel.com/player/" + g + "/autoplay' width='225' height='225' frameborder='0'></iframe>");
+        d = jQuery("#user_small_pic"),
+        f = jQuery("#play_button_big"),
+        c = jQuery("#user_big_pic"),
+        e = jQuery("#video_wrapper"),
+        a = jQuery("<iframe title='CogzidelTV Video Player' src='http://tv.cogzidel.com/player/" + g + "/autoplay' width='225' height='225' frameborder='0'></iframe>");
         Helper = {
             play_video: function () {
                 f.hide();
@@ -556,1052 +556,1052 @@ var CogzidelRooms = {
 };
 (function (e) {
     var b, l = this,
-        t = l.document,
-        k = e(t),
-        d = false,
-        p = navigator.userAgent.toLowerCase(),
-        n = l.location.hash.replace(/#\//, ""),
-        f = function () {
-            return i.TOUCH ? "touchstart" : "click"
-        },
-        m = (function () {
-            var u = 3,
-                x = t.createElement("div"),
-                w = x.getElementsByTagName("i");
-            do {
-                x.innerHTML = "<!--[if gt IE " + (++u) + "]><i></i><![endif]-->"
-            } while (w[0]);
-            return u > 4 ? u : b
-        }()),
-        s = function () {
-            return {
-                html: t.documentElement,
-                body: t.body,
-                head: t.getElementsByTagName("head")[0],
-                title: t.title
+    t = l.document,
+    k = e(t),
+    d = false,
+    p = navigator.userAgent.toLowerCase(),
+    n = l.location.hash.replace(/#\//, ""),
+    f = function () {
+        return i.TOUCH ? "touchstart" : "click"
+    },
+    m = (function () {
+        var u = 3,
+        x = t.createElement("div"),
+        w = x.getElementsByTagName("i");
+        do {
+            x.innerHTML = "<!--[if gt IE " + (++u) + "]><i></i><![endif]-->"
+        } while (w[0]);
+        return u > 4 ? u : b
+    }()),
+    s = function () {
+        return {
+            html: t.documentElement,
+            body: t.body,
+            head: t.getElementsByTagName("head")[0],
+            title: t.title
+        }
+    },
+    g = "data ready thumbnail loadstart loadfinish image play pause progress fullscreen_enter fullscreen_exit idle_enter idle_exit rescale lightbox_open lightbox_close lightbox_image",
+    q = (function () {
+        var u = [];
+        e.each(g.split(" "), function (v, w) {
+            u.push(w);
+            if (/_/.test(w)) {
+                u.push(w.replace(/_/g, ""))
             }
-        },
-        g = "data ready thumbnail loadstart loadfinish image play pause progress fullscreen_enter fullscreen_exit idle_enter idle_exit rescale lightbox_open lightbox_close lightbox_image",
-        q = (function () {
-            var u = [];
-            e.each(g.split(" "), function (v, w) {
-                u.push(w);
-                if (/_/.test(w)) {
-                    u.push(w.replace(/_/g, ""))
-                }
-            });
+        });
+        return u
+    }()),
+    r = function (u) {
+        var v;
+        if (typeof u !== "object") {
             return u
-        }()),
-        r = function (u) {
-            var v;
-            if (typeof u !== "object") {
-                return u
-            }
-            e.each(u, function (w, x) {
-                if (/^[a-z]+_/.test(w)) {
-                    v = "";
-                    e.each(w.split("_"), function (z, y) {
-                        v += z > 0 ? y.substr(0, 1).toUpperCase() + y.substr(1) : y
-                    });
-                    u[v] = x;
-                    delete u[w]
-                }
-            });
-            return u
-        },
-        a = function (u) {
-            if (e.inArray(u, q) > -1) {
-                return i[u.toUpperCase()]
-            }
-            return u
-        },
-        h = {
-            trunk: {},
-            add: function (y, x, w, v) {
-                v = v || false;
-                this.clear(y);
-                if (v) {
-                    var u = x;
-                    x = function () {
-                        u();
-                        h.add(y, x, w)
-                    }
-                }
-                this.trunk[y] = l.setTimeout(x, w)
-            },
-            clear: function (w) {
-                var u = function (x) {
-                        l.clearTimeout(this.trunk[x]);
-                        delete this.trunk[x]
-                    },
-                    v;
-                if ( !! w && w in this.trunk) {
-                    u.call(h, w)
-                } else {
-                    if (typeof w === "undefined") {
-                        for (v in this.trunk) {
-                            if (this.trunk.hasOwnProperty(v)) {
-                                u.call(h, v)
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        o = [],
-        c = (function () {
-            return {
-                array: function (u) {
-                    return Array.prototype.slice.call(u)
-                },
-                create: function (u, w) {
-                    w = w || "div";
-                    var v = t.createElement(w);
-                    v.className = u;
-                    return v
-                },
-                forceStyles: function (v, u) {
-                    v = e(v);
-                    if (v.attr("style")) {
-                        v.data("styles", v.attr("style")).removeAttr("style")
-                    }
-                    v.css(u)
-                },
-                revertStyles: function () {
-                    e.each(c.array(arguments), function (u, v) {
-                        v = e(v).removeAttr("style");
-                        if (v.data("styles")) {
-                            v.attr("style", v.data("styles")).data("styles", null)
-                        }
-                    })
-                },
-                moveOut: function (u) {
-                    c.forceStyles(u, {
-                        position: "absolute",
-                        left: -10000
-                    })
-                },
-                moveIn: function () {
-                    c.revertStyles.apply(c, c.array(arguments))
-                },
-                hide: function (v, w, x) {
-                    v = e(v);
-                    if (!v.data("opacity")) {
-                        v.data("opacity", v.css("opacity"))
-                    }
-                    var u = {
-                        opacity: 0
-                    };
-                    if (w) {
-                        v.stop().animate(u, w, x)
-                    } else {
-                        v.css(u)
-                    }
-                },
-                show: function (w, x, y) {
-                    w = e(w);
-                    var v = parseFloat(w.data("opacity")) || 1,
-                        u = {
-                            opacity: v
-                        };
-                    if (x) {
-                        w.stop().animate(u, x, y)
-                    } else {
-                        w.css(u)
-                    }
-                },
-                addTimer: function () {
-                    h.add.apply(h, c.array(arguments));
-                    return this
-                },
-                clearTimer: function () {
-                    h.clear.apply(h, c.array(arguments));
-                    return this
-                },
-                wait: function (w) {
-                    w = e.extend({
-                        until: function () {
-                            return false
-                        },
-                        success: function () {},
-                        error: function () {
-                            i.raise("Could not complete wait function.")
-                        },
-                        timeout: 3000
-                    }, w);
-                    var y = c.timestamp(),
-                        u, v, x = function () {
-                            v = c.timestamp();
-                            u = v - y;
-                            if (w.until(u)) {
-                                w.success();
-                                return false
-                            }
-                            if (v >= y + w.timeout) {
-                                w.error();
-                                return false
-                            }
-                            l.setTimeout(x, 2)
-                        };
-                    l.setTimeout(x, 2)
-                },
-                toggleQuality: function (u, v) {
-                    if ((m !== 7 && m !== 8) || !u) {
-                        return
-                    }
-                    if (typeof v === "undefined") {
-                        v = u.style.msInterpolationMode === "nearest-neighbor"
-                    }
-                    u.style.msInterpolationMode = v ? "bicubic" : "nearest-neighbor"
-                },
-                insertStyleTag: function (w) {
-                    var v = t.createElement("style");
-                    s().head.appendChild(v);
-                    if (v.styleSheet) {
-                        v.styleSheet.cssText = w
-                    } else {
-                        var u = t.createTextNode(w);
-                        v.appendChild(u)
-                    }
-                },
-                loadScript: function (w, x) {
-                    var u = false,
-                        v = e("<script>").attr({
-                            src: w,
-                            async: true
-                        }).get(0);
-                    v.onload = v.onreadystatechange = function () {
-                        if (!u && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
-                            u = true;
-                            v.onload = v.onreadystatechange = null;
-                            if (typeof x === "function") {
-                                x.call(this, this)
-                            }
-                        }
-                    };
-                    s().head.appendChild(v)
-                },
-                parseValue: function (v) {
-                    if (typeof v === "number") {
-                        return v
-                    } else {
-                        if (typeof v === "string") {
-                            var u = v.match(/\-?\d/g);
-                            return u && u.constructor === Array ? parseInt(u.join(""), 10) : 0
-                        } else {
-                            return 0
-                        }
-                    }
-                },
-                timestamp: function () {
-                    return new Date().getTime()
-                },
-                loadCSS: function (u, z, y) {
-                    var x, v = false,
-                        w;
-                    e('link[rel="stylesheet"]').each(function () {
-                        if (new RegExp(u).test(this.href)) {
-                            x = this;
-                            return false
-                        }
-                    });
-                    if (typeof z === "function") {
-                        y = z;
-                        z = b
-                    }
-                    y = y ||
-                    function () {};
-                    if (x) {
-                        y.call(x, x);
-                        return x
-                    }
-                    w = t.styleSheets.length;
-                    if (d) {
-                        u += "?" + c.timestamp()
-                    }
-                    if (e("#" + z).length) {
-                        e("#" + z).attr("href", u);
-                        w--;
-                        v = true
-                    } else {
-                        x = e("<link>").attr({
-                            rel: "stylesheet",
-                            href: u,
-                            id: z
-                        }).get(0);
-                        l.setTimeout(function () {
-                            var A = e('link[rel="stylesheet"], style');
-                            if (A.length) {
-                                A.get(0).parentNode.insertBefore(x, A[0])
-                            } else {
-                                s().head.appendChild(x)
-                            }
-                            if (m) {
-                                x.attachEvent("onreadystatechange", function (B) {
-                                    if (x.readyState === "complete") {
-                                        v = true
-                                    }
-                                })
-                            } else {
-                                v = true
-                            }
-                        }, 10)
-                    }
-                    if (typeof y === "function") {
-                        c.wait({
-                            until: function () {
-                                return v && t.styleSheets.length > w
-                            },
-                            success: function () {
-                                c.addTimer("css", function () {
-                                    y.call(x, x)
-                                }, 100)
-                            },
-                            error: function () {
-                                i.raise("Theme CSS could not load")
-                            },
-                            timeout: 10000
-                        })
-                    }
-                    return x
-                }
-            }
-        }()),
-        j = {
-            fade: function (v, u) {
-                e(v.next).css("opacity", 0).show().animate({
-                    opacity: 1
-                }, v.speed, u);
-                if (v.prev) {
-                    e(v.prev).css("opacity", 1).show().animate({
-                        opacity: 0
-                    }, v.speed)
-                }
-            },
-            flash: function (v, u) {
-                e(v.next).css("opacity", 0);
-                if (v.prev) {
-                    e(v.prev).animate({
-                        opacity: 0
-                    }, (v.speed / 2), function () {
-                        e(v.next).animate({
-                            opacity: 1
-                        }, v.speed, u)
-                    })
-                } else {
-                    e(v.next).animate({
-                        opacity: 1
-                    }, v.speed, u)
-                }
-            },
-            pulse: function (v, u) {
-                if (v.prev) {
-                    e(v.prev).hide()
-                }
-                e(v.next).css("opacity", 0).animate({
-                    opacity: 1
-                }, v.speed, u)
-            },
-            slide: function (y, v) {
-                var x = e(y.next).parent(),
-                    u = this.$("images"),
-                    w = this._stageWidth,
-                    z = this.getOptions("easing");
-                x.css({
-                    left: w * (y.rewind ? -1 : 1)
+        }
+        e.each(u, function (w, x) {
+            if (/^[a-z]+_/.test(w)) {
+                v = "";
+                e.each(w.split("_"), function (z, y) {
+                    v += z > 0 ? y.substr(0, 1).toUpperCase() + y.substr(1) : y
                 });
-                u.animate({
-                    left: w * (y.rewind ? 1 : -1)
-                }, {
-                    duration: y.speed,
-                    queue: false,
-                    easing: z,
-                    complete: function () {
-                        u.css("left", 0);
-                        x.css("left", 0);
-                        v()
+                u[v] = x;
+                delete u[w]
+            }
+        });
+        return u
+    },
+    a = function (u) {
+        if (e.inArray(u, q) > -1) {
+            return i[u.toUpperCase()]
+        }
+        return u
+    },
+    h = {
+        trunk: {},
+        add: function (y, x, w, v) {
+            v = v || false;
+            this.clear(y);
+            if (v) {
+                var u = x;
+                x = function () {
+                    u();
+                    h.add(y, x, w)
+                }
+            }
+            this.trunk[y] = l.setTimeout(x, w)
+        },
+        clear: function (w) {
+            var u = function (x) {
+                l.clearTimeout(this.trunk[x]);
+                delete this.trunk[x]
+            },
+            v;
+            if ( !! w && w in this.trunk) {
+                u.call(h, w)
+            } else {
+                if (typeof w === "undefined") {
+                    for (v in this.trunk) {
+                        if (this.trunk.hasOwnProperty(v)) {
+                            u.call(h, v)
+                        }
+                    }
+                }
+            }
+        }
+    },
+    o = [],
+    c = (function () {
+        return {
+            array: function (u) {
+                return Array.prototype.slice.call(u)
+            },
+            create: function (u, w) {
+                w = w || "div";
+                var v = t.createElement(w);
+                v.className = u;
+                return v
+            },
+            forceStyles: function (v, u) {
+                v = e(v);
+                if (v.attr("style")) {
+                    v.data("styles", v.attr("style")).removeAttr("style")
+                }
+                v.css(u)
+            },
+            revertStyles: function () {
+                e.each(c.array(arguments), function (u, v) {
+                    v = e(v).removeAttr("style");
+                    if (v.data("styles")) {
+                        v.attr("style", v.data("styles")).data("styles", null)
                     }
                 })
             },
-            fadeslide: function (w, v) {
-                var u = 0,
-                    z = this.getOptions("easing"),
-                    y = this.getStageWidth();
-                if (w.prev) {
-                    u = c.parseValue(e(w.prev).css("left"));
-                    e(w.prev).css({
-                        opacity: 1,
-                        left: u
-                    }).animate({
-                        opacity: 0,
-                        left: u + (y * (w.rewind ? 1 : -1))
-                    }, {
-                        duration: w.speed,
-                        queue: false,
-                        easing: z
+            moveOut: function (u) {
+                c.forceStyles(u, {
+                    position: "absolute",
+                    left: -10000
+                })
+            },
+            moveIn: function () {
+                c.revertStyles.apply(c, c.array(arguments))
+            },
+            hide: function (v, w, x) {
+                v = e(v);
+                if (!v.data("opacity")) {
+                    v.data("opacity", v.css("opacity"))
+                }
+                var u = {
+                    opacity: 0
+                };
+                if (w) {
+                    v.stop().animate(u, w, x)
+                } else {
+                    v.css(u)
+                }
+            },
+            show: function (w, x, y) {
+                w = e(w);
+                var v = parseFloat(w.data("opacity")) || 1,
+                u = {
+                    opacity: v
+                };
+                if (x) {
+                    w.stop().animate(u, x, y)
+                } else {
+                    w.css(u)
+                }
+            },
+            addTimer: function () {
+                h.add.apply(h, c.array(arguments));
+                return this
+            },
+            clearTimer: function () {
+                h.clear.apply(h, c.array(arguments));
+                return this
+            },
+            wait: function (w) {
+                w = e.extend({
+                    until: function () {
+                        return false
+                    },
+                    success: function () {},
+                    error: function () {
+                        i.raise("Could not complete wait function.")
+                    },
+                    timeout: 3000
+                }, w);
+                var y = c.timestamp(),
+                u, v, x = function () {
+                    v = c.timestamp();
+                    u = v - y;
+                    if (w.until(u)) {
+                        w.success();
+                        return false
+                    }
+                    if (v >= y + w.timeout) {
+                        w.error();
+                        return false
+                    }
+                    l.setTimeout(x, 2)
+                };
+                l.setTimeout(x, 2)
+            },
+            toggleQuality: function (u, v) {
+                if ((m !== 7 && m !== 8) || !u) {
+                    return
+                }
+                if (typeof v === "undefined") {
+                    v = u.style.msInterpolationMode === "nearest-neighbor"
+                }
+                u.style.msInterpolationMode = v ? "bicubic" : "nearest-neighbor"
+            },
+            insertStyleTag: function (w) {
+                var v = t.createElement("style");
+                s().head.appendChild(v);
+                if (v.styleSheet) {
+                    v.styleSheet.cssText = w
+                } else {
+                    var u = t.createTextNode(w);
+                    v.appendChild(u)
+                }
+            },
+            loadScript: function (w, x) {
+                var u = false,
+                v = e("<script>").attr({
+                    src: w,
+                    async: true
+                }).get(0);
+                v.onload = v.onreadystatechange = function () {
+                    if (!u && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                        u = true;
+                        v.onload = v.onreadystatechange = null;
+                        if (typeof x === "function") {
+                            x.call(this, this)
+                        }
+                    }
+                };
+                s().head.appendChild(v)
+            },
+            parseValue: function (v) {
+                if (typeof v === "number") {
+                    return v
+                } else {
+                    if (typeof v === "string") {
+                        var u = v.match(/\-?\d/g);
+                        return u && u.constructor === Array ? parseInt(u.join(""), 10) : 0
+                    } else {
+                        return 0
+                    }
+                }
+            },
+            timestamp: function () {
+                return new Date().getTime()
+            },
+            loadCSS: function (u, z, y) {
+                var x, v = false,
+                w;
+                e('link[rel="stylesheet"]').each(function () {
+                    if (new RegExp(u).test(this.href)) {
+                        x = this;
+                        return false
+                    }
+                });
+                if (typeof z === "function") {
+                    y = z;
+                    z = b
+                }
+                y = y ||
+                function () {};
+                if (x) {
+                    y.call(x, x);
+                    return x
+                }
+                w = t.styleSheets.length;
+                if (d) {
+                    u += "?" + c.timestamp()
+                }
+                if (e("#" + z).length) {
+                    e("#" + z).attr("href", u);
+                    w--;
+                    v = true
+                } else {
+                    x = e("<link>").attr({
+                        rel: "stylesheet",
+                        href: u,
+                        id: z
+                    }).get(0);
+                    l.setTimeout(function () {
+                        var A = e('link[rel="stylesheet"], style');
+                        if (A.length) {
+                            A.get(0).parentNode.insertBefore(x, A[0])
+                        } else {
+                            s().head.appendChild(x)
+                        }
+                        if (m) {
+                            x.attachEvent("onreadystatechange", function (B) {
+                                if (x.readyState === "complete") {
+                                    v = true
+                                }
+                            })
+                        } else {
+                            v = true
+                        }
+                    }, 10)
+                }
+                if (typeof y === "function") {
+                    c.wait({
+                        until: function () {
+                            return v && t.styleSheets.length > w
+                        },
+                        success: function () {
+                            c.addTimer("css", function () {
+                                y.call(x, x)
+                            }, 100)
+                        },
+                        error: function () {
+                            i.raise("Theme CSS could not load")
+                        },
+                        timeout: 10000
                     })
                 }
-                u = c.parseValue(e(w.next).css("left"));
-                e(w.next).css({
-                    left: u + (y * (w.rewind ? -1 : 1)),
+                return x
+            }
+        }
+    }()),
+    j = {
+        fade: function (v, u) {
+            e(v.next).css("opacity", 0).show().animate({
+                opacity: 1
+            }, v.speed, u);
+            if (v.prev) {
+                e(v.prev).css("opacity", 1).show().animate({
                     opacity: 0
-                }).animate({
+                }, v.speed)
+            }
+        },
+        flash: function (v, u) {
+            e(v.next).css("opacity", 0);
+            if (v.prev) {
+                e(v.prev).animate({
+                    opacity: 0
+                }, (v.speed / 2), function () {
+                    e(v.next).animate({
+                        opacity: 1
+                    }, v.speed, u)
+                })
+            } else {
+                e(v.next).animate({
+                    opacity: 1
+                }, v.speed, u)
+            }
+        },
+        pulse: function (v, u) {
+            if (v.prev) {
+                e(v.prev).hide()
+            }
+            e(v.next).css("opacity", 0).animate({
+                opacity: 1
+            }, v.speed, u)
+        },
+        slide: function (y, v) {
+            var x = e(y.next).parent(),
+            u = this.$("images"),
+            w = this._stageWidth,
+            z = this.getOptions("easing");
+            x.css({
+                left: w * (y.rewind ? -1 : 1)
+            });
+            u.animate({
+                left: w * (y.rewind ? 1 : -1)
+            }, {
+                duration: y.speed,
+                queue: false,
+                easing: z,
+                complete: function () {
+                    u.css("left", 0);
+                    x.css("left", 0);
+                    v()
+                }
+            })
+        },
+        fadeslide: function (w, v) {
+            var u = 0,
+            z = this.getOptions("easing"),
+            y = this.getStageWidth();
+            if (w.prev) {
+                u = c.parseValue(e(w.prev).css("left"));
+                e(w.prev).css({
                     opacity: 1,
                     left: u
+                }).animate({
+                    opacity: 0,
+                    left: u + (y * (w.rewind ? 1 : -1))
                 }, {
                     duration: w.speed,
-                    complete: v,
                     queue: false,
                     easing: z
                 })
             }
-        };
+            u = c.parseValue(e(w.next).css("left"));
+            e(w.next).css({
+                left: u + (y * (w.rewind ? -1 : 1)),
+                opacity: 0
+            }).animate({
+                opacity: 1,
+                left: u
+            }, {
+                duration: w.speed,
+                complete: v,
+                queue: false,
+                easing: z
+            })
+        }
+    };
     var i = function () {
-            var C = this;
-            this._theme = b;
-            this._options = {};
-            this._playing = false;
-            this._playtime = 5000;
-            this._active = null;
-            this._queue = {
-                length: 0
-            };
-            this._data = [];
-            this._dom = {};
-            this._thumbnails = [];
-            this._initialized = false;
-            this._stageWidth = 0;
-            this._stageHeight = 0;
-            this._target = b;
-            this._id = Math.random();
-            var y = "container stage images image-nav image-nav-left image-nav-right info info-text info-title info-description thumbnails thumbnails-list thumbnails-container thumb-nav-left thumb-nav-right loader counter tooltip",
-                x = "current total";
-            e.each(y.split(" "), function (E, F) {
-                C._dom[F] = c.create("galleria-" + F)
-            });
-            e.each(x.split(" "), function (E, F) {
-                C._dom[F] = c.create("galleria-" + F, "span")
-            });
-            var w = this._keyboard = {
-                keys: {
-                    UP: 38,
-                    DOWN: 40,
-                    LEFT: 37,
-                    RIGHT: 39,
-                    RETURN: 13,
-                    ESCAPE: 27,
-                    BACKSPACE: 8,
-                    SPACE: 32
-                },
-                map: {},
-                bound: false,
-                press: function (F) {
-                    var E = F.keyCode || F.which;
-                    if (E in w.map && typeof w.map[E] === "function") {
-                        w.map[E].call(C, F)
+        var C = this;
+        this._theme = b;
+        this._options = {};
+        this._playing = false;
+        this._playtime = 5000;
+        this._active = null;
+        this._queue = {
+            length: 0
+        };
+        this._data = [];
+        this._dom = {};
+        this._thumbnails = [];
+        this._initialized = false;
+        this._stageWidth = 0;
+        this._stageHeight = 0;
+        this._target = b;
+        this._id = Math.random();
+        var y = "container stage images image-nav image-nav-left image-nav-right info info-text info-title info-description thumbnails thumbnails-list thumbnails-container thumb-nav-left thumb-nav-right loader counter tooltip",
+        x = "current total";
+        e.each(y.split(" "), function (E, F) {
+            C._dom[F] = c.create("galleria-" + F)
+        });
+        e.each(x.split(" "), function (E, F) {
+            C._dom[F] = c.create("galleria-" + F, "span")
+        });
+        var w = this._keyboard = {
+            keys: {
+                UP: 38,
+                DOWN: 40,
+                LEFT: 37,
+                RIGHT: 39,
+                RETURN: 13,
+                ESCAPE: 27,
+                BACKSPACE: 8,
+                SPACE: 32
+            },
+            map: {},
+            bound: false,
+            press: function (F) {
+                var E = F.keyCode || F.which;
+                if (E in w.map && typeof w.map[E] === "function") {
+                    w.map[E].call(C, F)
+                }
+            },
+            attach: function (G) {
+                var F, E;
+                for (F in G) {
+                    if (G.hasOwnProperty(F)) {
+                        E = F.toUpperCase();
+                        if (E in w.keys) {
+                            w.map[w.keys[E]] = G[F]
+                        } else {
+                            w.map[E] = G[F]
+                        }
                     }
-                },
-                attach: function (G) {
-                    var F, E;
-                    for (F in G) {
-                        if (G.hasOwnProperty(F)) {
-                            E = F.toUpperCase();
-                            if (E in w.keys) {
-                                w.map[w.keys[E]] = G[F]
+                }
+                if (!w.bound) {
+                    w.bound = true;
+                    k.bind("keydown", w.press)
+                }
+            },
+            detach: function () {
+                w.bound = false;
+                w.map = {};
+                k.unbind("keydown", w.press)
+            }
+        };
+        var A = this._controls = {
+            0: b,
+            1: b,
+            active: 0,
+            swap: function () {
+                A.active = A.active ? 0 : 1
+            },
+            getActive: function () {
+                return A[A.active]
+            },
+            getNext: function () {
+                return A[1 - A.active]
+            }
+        };
+        var B = this._carousel = {
+            next: C.$("thumb-nav-right"),
+            prev: C.$("thumb-nav-left"),
+            width: 0,
+            current: 0,
+            max: 0,
+            hooks: [],
+            update: function () {
+                var F = 0,
+                G = 0,
+                E = [0];
+                e.each(C._thumbnails, function (I, H) {
+                    if (H.ready) {
+                        F += H.outerWidth || e(H.container).outerWidth(true);
+                        E[I + 1] = F;
+                        G = Math.max(G, H.outerHeight || e(H.container).outerHeight(true))
+                    }
+                });
+                C.$("thumbnails").css({
+                    width: F + 10,
+                    height: G
+                });
+                B.max = F;
+                B.hooks = E;
+                B.width = C.$("thumbnails-list").width();
+                B.setClasses();
+                C.$("thumbnails-container").toggleClass("galleria-carousel", F > B.width);
+                B.width = C.$("thumbnails-list").width()
+            },
+            bindControls: function () {
+                var E;
+                B.next.bind(f(), function (F) {
+                    F.preventDefault();
+                    if (C._options.carouselSteps === "auto") {
+                        for (E = B.current; E < B.hooks.length; E++) {
+                            if (B.hooks[E] - B.hooks[B.current] > B.width) {
+                                B.set(E - 2);
+                                break
+                            }
+                        }
+                    } else {
+                        B.set(B.current + C._options.carouselSteps)
+                    }
+                });
+                B.prev.bind(f(), function (F) {
+                    F.preventDefault();
+                    if (C._options.carouselSteps === "auto") {
+                        for (E = B.current; E >= 0; E--) {
+                            if (B.hooks[B.current] - B.hooks[E] > B.width) {
+                                B.set(E + 2);
+                                break
                             } else {
-                                w.map[E] = G[F]
-                            }
-                        }
-                    }
-                    if (!w.bound) {
-                        w.bound = true;
-                        k.bind("keydown", w.press)
-                    }
-                },
-                detach: function () {
-                    w.bound = false;
-                    w.map = {};
-                    k.unbind("keydown", w.press)
-                }
-            };
-            var A = this._controls = {
-                0: b,
-                1: b,
-                active: 0,
-                swap: function () {
-                    A.active = A.active ? 0 : 1
-                },
-                getActive: function () {
-                    return A[A.active]
-                },
-                getNext: function () {
-                    return A[1 - A.active]
-                }
-            };
-            var B = this._carousel = {
-                next: C.$("thumb-nav-right"),
-                prev: C.$("thumb-nav-left"),
-                width: 0,
-                current: 0,
-                max: 0,
-                hooks: [],
-                update: function () {
-                    var F = 0,
-                        G = 0,
-                        E = [0];
-                    e.each(C._thumbnails, function (I, H) {
-                        if (H.ready) {
-                            F += H.outerWidth || e(H.container).outerWidth(true);
-                            E[I + 1] = F;
-                            G = Math.max(G, H.outerHeight || e(H.container).outerHeight(true))
-                        }
-                    });
-                    C.$("thumbnails").css({
-                        width: F + 10,
-                        height: G
-                    });
-                    B.max = F;
-                    B.hooks = E;
-                    B.width = C.$("thumbnails-list").width();
-                    B.setClasses();
-                    C.$("thumbnails-container").toggleClass("galleria-carousel", F > B.width);
-                    B.width = C.$("thumbnails-list").width()
-                },
-                bindControls: function () {
-                    var E;
-                    B.next.bind(f(), function (F) {
-                        F.preventDefault();
-                        if (C._options.carouselSteps === "auto") {
-                            for (E = B.current; E < B.hooks.length; E++) {
-                                if (B.hooks[E] - B.hooks[B.current] > B.width) {
-                                    B.set(E - 2);
+                                if (E === 0) {
+                                    B.set(0);
                                     break
                                 }
                             }
-                        } else {
-                            B.set(B.current + C._options.carouselSteps)
                         }
-                    });
-                    B.prev.bind(f(), function (F) {
-                        F.preventDefault();
-                        if (C._options.carouselSteps === "auto") {
-                            for (E = B.current; E >= 0; E--) {
-                                if (B.hooks[B.current] - B.hooks[E] > B.width) {
-                                    B.set(E + 2);
-                                    break
-                                } else {
-                                    if (E === 0) {
-                                        B.set(0);
-                                        break
-                                    }
-                                }
-                            }
-                        } else {
-                            B.set(B.current - C._options.carouselSteps)
-                        }
-                    })
-                },
-                set: function (E) {
-                    E = Math.max(E, 0);
-                    while (B.hooks[E - 1] + B.width >= B.max && E >= 0) {
-                        E--
-                    }
-                    B.current = E;
-                    B.animate()
-                },
-                getLast: function (E) {
-                    return (E || B.current) - 1
-                },
-                follow: function (E) {
-                    if (E === 0 || E === B.hooks.length - 2) {
-                        B.set(E);
-                        return
-                    }
-                    var F = B.current;
-                    while (B.hooks[F] - B.hooks[B.current] < B.width && F <= B.hooks.length) {
-                        F++
-                    }
-                    if (E - 1 < B.current) {
-                        B.set(E - 1)
                     } else {
-                        if (E + 2 > F) {
-                            B.set(E - F + B.current + 2)
-                        }
+                        B.set(B.current - C._options.carouselSteps)
                     }
-                },
-                setClasses: function () {
-                    B.prev.toggleClass("disabled", !B.current);
-                    B.next.toggleClass("disabled", B.hooks[B.current] + B.width >= B.max)
-                },
-                animate: function (F) {
-                    B.setClasses();
-                    var E = B.hooks[B.current] * -1;
-                    if (isNaN(E)) {
-                        return
+                })
+            },
+            set: function (E) {
+                E = Math.max(E, 0);
+                while (B.hooks[E - 1] + B.width >= B.max && E >= 0) {
+                    E--
+                }
+                B.current = E;
+                B.animate()
+            },
+            getLast: function (E) {
+                return (E || B.current) - 1
+            },
+            follow: function (E) {
+                if (E === 0 || E === B.hooks.length - 2) {
+                    B.set(E);
+                    return
+                }
+                var F = B.current;
+                while (B.hooks[F] - B.hooks[B.current] < B.width && F <= B.hooks.length) {
+                    F++
+                }
+                if (E - 1 < B.current) {
+                    B.set(E - 1)
+                } else {
+                    if (E + 2 > F) {
+                        B.set(E - F + B.current + 2)
                     }
-                    C.$("thumbnails").animate({
-                        left: E
-                    }, {
-                        duration: C._options.carouselSpeed,
-                        easing: C._options.easing,
-                        queue: false
+                }
+            },
+            setClasses: function () {
+                B.prev.toggleClass("disabled", !B.current);
+                B.next.toggleClass("disabled", B.hooks[B.current] + B.width >= B.max)
+            },
+            animate: function (F) {
+                B.setClasses();
+                var E = B.hooks[B.current] * -1;
+                if (isNaN(E)) {
+                    return
+                }
+                C.$("thumbnails").animate({
+                    left: E
+                }, {
+                    duration: C._options.carouselSpeed,
+                    easing: C._options.easing,
+                    queue: false
+                })
+            }
+        };
+        var D = this._tooltip = {
+            initialized: false,
+            open: false,
+            init: function () {
+                D.initialized = true;
+                var E = ".galleria-tooltip{padding:3px 8px;max-width:50%;background:#ffe;color:#000;z-index:3;position:absolute;font-size:11px;line-height:1.3opacity:0;box-shadow:0 0 2px rgba(0,0,0,.4);-moz-box-shadow:0 0 2px rgba(0,0,0,.4);-webkit-box-shadow:0 0 2px rgba(0,0,0,.4);}";
+                c.insertStyleTag(E);
+                C.$("tooltip").css("opacity", 0.8);
+                c.hide(C.get("tooltip"))
+            },
+            move: function (L) {
+                var K = C.getMousePosition(L).x,
+                J = C.getMousePosition(L).y,
+                H = C.$("tooltip"),
+                N = K,
+                M = J,
+                O = H.outerHeight(true) + 1,
+                G = H.outerWidth(true),
+                I = O + 15;
+                var F = C.$("container").width() - G - 2,
+                E = C.$("container").height() - O - 2;
+                if (!isNaN(N) && !isNaN(M)) {
+                    N += 10;
+                    M -= 30;
+                    N = Math.max(0, Math.min(F, N));
+                    M = Math.max(0, Math.min(E, M));
+                    if (J < I) {
+                        M = I
+                    }
+                    H.css({
+                        left: N,
+                        top: M
                     })
                 }
-            };
-            var D = this._tooltip = {
-                initialized: false,
-                open: false,
-                init: function () {
-                    D.initialized = true;
-                    var E = ".galleria-tooltip{padding:3px 8px;max-width:50%;background:#ffe;color:#000;z-index:3;position:absolute;font-size:11px;line-height:1.3opacity:0;box-shadow:0 0 2px rgba(0,0,0,.4);-moz-box-shadow:0 0 2px rgba(0,0,0,.4);-webkit-box-shadow:0 0 2px rgba(0,0,0,.4);}";
-                    c.insertStyleTag(E);
-                    C.$("tooltip").css("opacity", 0.8);
-                    c.hide(C.get("tooltip"))
-                },
-                move: function (L) {
-                    var K = C.getMousePosition(L).x,
-                        J = C.getMousePosition(L).y,
-                        H = C.$("tooltip"),
-                        N = K,
-                        M = J,
-                        O = H.outerHeight(true) + 1,
-                        G = H.outerWidth(true),
-                        I = O + 15;
-                    var F = C.$("container").width() - G - 2,
-                        E = C.$("container").height() - O - 2;
-                    if (!isNaN(N) && !isNaN(M)) {
-                        N += 10;
-                        M -= 30;
-                        N = Math.max(0, Math.min(F, N));
-                        M = Math.max(0, Math.min(E, M));
-                        if (J < I) {
-                            M = I
+            },
+            bind: function (F, G) {
+                if (!D.initialized) {
+                    D.init()
+                }
+                var E = function (H, I) {
+                    D.define(H, I);
+                    e(H).hover(function () {
+                        c.clearTimer("switch_tooltip");
+                        C.$("container").unbind("mousemove", D.move).bind("mousemove", D.move).trigger("mousemove");
+                        D.show(H);
+                        i.utils.addTimer("tooltip", function () {
+                            C.$("tooltip").stop().show();
+                            c.show(C.get("tooltip"), 400);
+                            D.open = true
+                        }, D.open ? 0 : 500)
+                    }, function () {
+                        C.$("container").unbind("mousemove", D.move);
+                        c.clearTimer("tooltip");
+                        C.$("tooltip").stop();
+                        c.hide(C.get("tooltip"), 200, function () {
+                            C.$("tooltip").hide();
+                            c.addTimer("switch_tooltip", function () {
+                                D.open = false
+                            }, 1000)
+                        })
+                    })
+                };
+                if (typeof G === "string") {
+                    E((F in C._dom ? C.get(F) : F), G)
+                } else {
+                    e.each(F, function (H, I) {
+                        E(C.get(H), I)
+                    })
+                }
+            },
+            show: function (E) {
+                E = e(E in C._dom ? C.get(E) : E);
+                var G = E.data("tt"),
+                F = function (H) {
+                    l.setTimeout((function (I) {
+                        return function () {
+                            D.move(I)
                         }
-                        H.css({
-                            left: N,
-                            top: M
-                        })
+                    }(H)), 10);
+                    E.unbind("mouseup", F)
+                };
+                G = typeof G === "function" ? G() : G;
+                if (!G) {
+                    return
+                }
+                C.$("tooltip").html(G.replace(/\s/, "&nbsp;"));
+                E.bind("mouseup", F)
+            },
+            define: function (F, G) {
+                if (typeof G !== "function") {
+                    var E = G;
+                    G = function () {
+                        return E
                     }
+                }
+                F = e(F in C._dom ? C.get(F) : F).data("tt", G);
+                D.show(F)
+            }
+        };
+        var z = this._fullscreen = {
+            scrolled: 0,
+            active: false,
+            keymap: C._keyboard.map,
+            enter: function (K) {
+                z.active = true;
+                c.hide(C.getActiveImage());
+                C.$("container").addClass("fullscreen");
+                z.scrolled = e(l).scrollTop();
+                c.forceStyles(C.get("container"), {
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    zIndex: 10000
+                });
+                var H = {
+                    height: "100%",
+                    overflow: "hidden",
+                    margin: 0,
+                    padding: 0
                 },
-                bind: function (F, G) {
-                    if (!D.initialized) {
-                        D.init()
-                    }
-                    var E = function (H, I) {
-                            D.define(H, I);
-                            e(H).hover(function () {
-                                c.clearTimer("switch_tooltip");
-                                C.$("container").unbind("mousemove", D.move).bind("mousemove", D.move).trigger("mousemove");
-                                D.show(H);
-                                i.utils.addTimer("tooltip", function () {
-                                    C.$("tooltip").stop().show();
-                                    c.show(C.get("tooltip"), 400);
-                                    D.open = true
-                                }, D.open ? 0 : 500)
-                            }, function () {
-                                C.$("container").unbind("mousemove", D.move);
-                                c.clearTimer("tooltip");
-                                C.$("tooltip").stop();
-                                c.hide(C.get("tooltip"), 200, function () {
-                                    C.$("tooltip").hide();
-                                    c.addTimer("switch_tooltip", function () {
-                                        D.open = false
-                                    }, 1000)
-                                })
-                            })
-                        };
-                    if (typeof G === "string") {
-                        E((F in C._dom ? C.get(F) : F), G)
-                    } else {
-                        e.each(F, function (H, I) {
-                            E(C.get(H), I)
-                        })
-                    }
-                },
-                show: function (E) {
-                    E = e(E in C._dom ? C.get(E) : E);
-                    var G = E.data("tt"),
-                        F = function (H) {
-                            l.setTimeout((function (I) {
-                                return function () {
-                                    D.move(I)
+                J = C.getData();
+                c.forceStyles(s().html, H);
+                c.forceStyles(s().body, H);
+                z.keymap = e.extend({}, C._keyboard.map);
+                C.attachKeyboard({
+                    escape: C.exitFullscreen,
+                    right: C.next,
+                    left: C.prev
+                });
+                if (J && J.big && J.image !== J.big) {
+                    var E = new i.Picture(),
+                    I = E.isCached(J.big),
+                    G = C.getIndex(),
+                    F = C._thumbnails[G];
+                    C.trigger({
+                        type: i.LOADSTART,
+                        cached: I,
+                        index: G,
+                        imageTarget: C.getActiveImage(),
+                        thumbTarget: F
+                    });
+                    E.load(J.big, function (L) {
+                        C._scaleImage(L, {
+                            complete: function (M) {
+                                C.trigger({
+                                    type: i.LOADFINISH,
+                                    cached: I,
+                                    index: G,
+                                    imageTarget: M.image,
+                                    thumbTarget: F
+                                });
+                                var N = C._controls.getActive().image;
+                                if (N) {
+                                    e(N).width(M.image.width).height(M.image.height).attr("style", e(M.image).attr("style")).attr("src", M.image.src)
                                 }
-                            }(H)), 10);
-                            E.unbind("mouseup", F)
-                        };
-                    G = typeof G === "function" ? G() : G;
+                            }
+                        })
+                    })
+                }
+                C.rescale(function () {
+                    c.addTimer("fullscreen_enter", function () {
+                        c.show(C.getActiveImage());
+                        if (typeof K === "function") {
+                            K.call(C)
+                        }
+                    }, 100);
+                    C.trigger(i.FULLSCREEN_ENTER)
+                });
+                e(l).resize(function () {
+                    z.scale()
+                })
+            },
+            scale: function () {
+                C.rescale()
+            },
+            exit: function (E) {
+                z.active = false;
+                c.hide(C.getActiveImage());
+                C.$("container").removeClass("fullscreen");
+                c.revertStyles(C.get("container"), s().html, s().body);
+                l.scrollTo(0, z.scrolled);
+                C.detachKeyboard();
+                C.attachKeyboard(z.keymap);
+                C.rescale(function () {
+                    c.addTimer("fullscreen_exit", function () {
+                        c.show(C.getActiveImage());
+                        if (typeof E === "function") {
+                            E.call(C)
+                        }
+                    }, 50);
+                    C.trigger(i.FULLSCREEN_EXIT)
+                });
+                e(l).unbind("resize", z.scale)
+            }
+        };
+        var v = this._idle = {
+            trunk: [],
+            bound: false,
+            add: function (F, H) {
+                if (!F) {
+                    return
+                }
+                if (!v.bound) {
+                    v.addEvent()
+                }
+                F = e(F);
+                var G = {},
+                E;
+                for (E in H) {
+                    if (H.hasOwnProperty(E)) {
+                        G[E] = F.css(E)
+                    }
+                }
+                F.data("idle", {
+                    from: G,
+                    to: H,
+                    complete: true,
+                    busy: false
+                });
+                v.addTimer();
+                v.trunk.push(F)
+            },
+            remove: function (E) {
+                E = jQuery(E);
+                e.each(v.trunk, function (F, G) {
+                    if (G.length && !G.not(E).length) {
+                        C._idle.show(E);
+                        C._idle.trunk.splice(F, 1)
+                    }
+                });
+                if (!v.trunk.length) {
+                    v.removeEvent();
+                    c.clearTimer("idle")
+                }
+            },
+            addEvent: function () {
+                v.bound = true;
+                C.$("container").bind("mousemove click", v.showAll)
+            },
+            removeEvent: function () {
+                v.bound = false;
+                C.$("container").unbind("mousemove click", v.showAll)
+            },
+            addTimer: function () {
+                c.addTimer("idle", function () {
+                    C._idle.hide()
+                }, C._options.idleTime)
+            },
+            hide: function () {
+                C.trigger(i.IDLE_ENTER);
+                e.each(v.trunk, function (E, F) {
+                    var G = F.data("idle");
                     if (!G) {
                         return
                     }
-                    C.$("tooltip").html(G.replace(/\s/, "&nbsp;"));
-                    E.bind("mouseup", F)
-                },
-                define: function (F, G) {
-                    if (typeof G !== "function") {
-                        var E = G;
-                        G = function () {
-                            return E
-                        }
-                    }
-                    F = e(F in C._dom ? C.get(F) : F).data("tt", G);
-                    D.show(F)
-                }
-            };
-            var z = this._fullscreen = {
-                scrolled: 0,
-                active: false,
-                keymap: C._keyboard.map,
-                enter: function (K) {
-                    z.active = true;
-                    c.hide(C.getActiveImage());
-                    C.$("container").addClass("fullscreen");
-                    z.scrolled = e(l).scrollTop();
-                    c.forceStyles(C.get("container"), {
-                        position: "fixed",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        zIndex: 10000
-                    });
-                    var H = {
-                        height: "100%",
-                        overflow: "hidden",
-                        margin: 0,
-                        padding: 0
-                    },
-                        J = C.getData();
-                    c.forceStyles(s().html, H);
-                    c.forceStyles(s().body, H);
-                    z.keymap = e.extend({}, C._keyboard.map);
-                    C.attachKeyboard({
-                        escape: C.exitFullscreen,
-                        right: C.next,
-                        left: C.prev
-                    });
-                    if (J && J.big && J.image !== J.big) {
-                        var E = new i.Picture(),
-                            I = E.isCached(J.big),
-                            G = C.getIndex(),
-                            F = C._thumbnails[G];
-                        C.trigger({
-                            type: i.LOADSTART,
-                            cached: I,
-                            index: G,
-                            imageTarget: C.getActiveImage(),
-                            thumbTarget: F
-                        });
-                        E.load(J.big, function (L) {
-                            C._scaleImage(L, {
-                                complete: function (M) {
-                                    C.trigger({
-                                        type: i.LOADFINISH,
-                                        cached: I,
-                                        index: G,
-                                        imageTarget: M.image,
-                                        thumbTarget: F
-                                    });
-                                    var N = C._controls.getActive().image;
-                                    if (N) {
-                                        e(N).width(M.image.width).height(M.image.height).attr("style", e(M.image).attr("style")).attr("src", M.image.src)
-                                    }
-                                }
-                            })
-                        })
-                    }
-                    C.rescale(function () {
-                        c.addTimer("fullscreen_enter", function () {
-                            c.show(C.getActiveImage());
-                            if (typeof K === "function") {
-                                K.call(C)
-                            }
-                        }, 100);
-                        C.trigger(i.FULLSCREEN_ENTER)
-                    });
-                    e(l).resize(function () {
-                        z.scale()
+                    F.data("idle").complete = false;
+                    F.stop().animate(G.to, {
+                        duration: C._options.idleSpeed,
+                        queue: false,
+                        easing: "swing"
                     })
-                },
-                scale: function () {
-                    C.rescale()
-                },
-                exit: function (E) {
-                    z.active = false;
-                    c.hide(C.getActiveImage());
-                    C.$("container").removeClass("fullscreen");
-                    c.revertStyles(C.get("container"), s().html, s().body);
-                    l.scrollTo(0, z.scrolled);
-                    C.detachKeyboard();
-                    C.attachKeyboard(z.keymap);
-                    C.rescale(function () {
-                        c.addTimer("fullscreen_exit", function () {
-                            c.show(C.getActiveImage());
-                            if (typeof E === "function") {
-                                E.call(C)
-                            }
-                        }, 50);
-                        C.trigger(i.FULLSCREEN_EXIT)
-                    });
-                    e(l).unbind("resize", z.scale)
-                }
-            };
-            var v = this._idle = {
-                trunk: [],
-                bound: false,
-                add: function (F, H) {
-                    if (!F) {
-                        return
-                    }
-                    if (!v.bound) {
-                        v.addEvent()
-                    }
-                    F = e(F);
-                    var G = {},
-                        E;
-                    for (E in H) {
-                        if (H.hasOwnProperty(E)) {
-                            G[E] = F.css(E)
-                        }
-                    }
-                    F.data("idle", {
-                        from: G,
-                        to: H,
-                        complete: true,
-                        busy: false
-                    });
-                    v.addTimer();
-                    v.trunk.push(F)
-                },
-                remove: function (E) {
-                    E = jQuery(E);
-                    e.each(v.trunk, function (F, G) {
-                        if (G.length && !G.not(E).length) {
-                            C._idle.show(E);
-                            C._idle.trunk.splice(F, 1)
-                        }
-                    });
-                    if (!v.trunk.length) {
-                        v.removeEvent();
-                        c.clearTimer("idle")
-                    }
-                },
-                addEvent: function () {
-                    v.bound = true;
-                    C.$("container").bind("mousemove click", v.showAll)
-                },
-                removeEvent: function () {
-                    v.bound = false;
-                    C.$("container").unbind("mousemove click", v.showAll)
-                },
-                addTimer: function () {
-                    c.addTimer("idle", function () {
-                        C._idle.hide()
-                    }, C._options.idleTime)
-                },
-                hide: function () {
-                    C.trigger(i.IDLE_ENTER);
-                    e.each(v.trunk, function (E, F) {
-                        var G = F.data("idle");
-                        if (!G) {
-                            return
-                        }
-                        F.data("idle").complete = false;
-                        F.stop().animate(G.to, {
-                            duration: C._options.idleSpeed,
-                            queue: false,
-                            easing: "swing"
-                        })
-                    })
-                },
-                showAll: function () {
+                })
+            },
+            showAll: function () {
+                c.clearTimer("idle");
+                e.each(C._idle.trunk, function (E, F) {
+                    C._idle.show(F)
+                })
+            },
+            show: function (E) {
+                var F = E.data("idle");
+                if (!F.busy && !F.complete) {
+                    F.busy = true;
+                    C.trigger(i.IDLE_EXIT);
                     c.clearTimer("idle");
-                    e.each(C._idle.trunk, function (E, F) {
-                        C._idle.show(F)
+                    E.stop().animate(F.from, {
+                        duration: C._options.idleSpeed / 2,
+                        queue: false,
+                        easing: "swing",
+                        complete: function () {
+                            e(this).data("idle").busy = false;
+                            e(this).data("idle").complete = true
+                        }
+                    })
+                }
+                v.addTimer()
+            }
+        };
+        var u = this._lightbox = {
+            width: 0,
+            height: 0,
+            initialized: false,
+            active: null,
+            image: null,
+            elems: {},
+            init: function () {
+                C.trigger(i.LIGHTBOX_OPEN);
+                if (u.initialized) {
+                    return
+                }
+                u.initialized = true;
+                var E = "overlay box content shadow title info close prevholder prev nextholder next counter image",
+                F = {},
+                G = C._options,
+                J = "",
+                M = "position:absolute;",
+                I = "lightbox-",
+                H = {
+                    overlay: "position:fixed;display:none;opacity:" + G.overlayOpacity + ";filter:alpha(opacity=" + (G.overlayOpacity * 100) + ");top:0;left:0;width:100%;height:100%;background:" + G.overlayBackground + ";z-index:99990",
+                    box: "position:fixed;display:none;width:400px;height:400px;top:50%;left:50%;margin-top:-200px;margin-left:-200px;z-index:99991",
+                    shadow: M + "background:#000;width:100%;height:100%;",
+                    content: M + "background-color:#fff;top:10px;left:10px;right:10px;bottom:10px;overflow:hidden",
+                    info: M + "bottom:10px;left:10px;right:10px;color:#444;font:11px/13px arial,sans-serif;height:13px",
+                    close: M + "top:10px;right:10px;height:20px;width:20px;background:#fff;text-align:center;cursor:pointer;color:#444;font:16px/22px arial,sans-serif;z-index:99999",
+                    image: M + "top:10px;left:10px;right:10px;bottom:30px;overflow:hidden;display:block;",
+                    prevholder: M + "width:50%;top:0;bottom:40px;cursor:pointer;",
+                    nextholder: M + "width:50%;top:0;bottom:40px;right:-1px;cursor:pointer;",
+                    prev: M + "top:50%;margin-top:-20px;height:40px;width:30px;background:#fff;left:20px;display:none;text-align:center;color:#000;font:bold 16px/36px arial,sans-serif",
+                    next: M + "top:50%;margin-top:-20px;height:40px;width:30px;background:#fff;right:20px;left:auto;display:none;font:bold 16px/36px arial,sans-serif;text-align:center;color:#000",
+                    title: "float:left",
+                    counter: "float:right;margin-left:8px;"
+                },
+                K = function (N) {
+                    return N.hover(function () {
+                        e(this).css("color", "#bbb")
+                    }, function () {
+                        e(this).css("color", "#444")
                     })
                 },
-                show: function (E) {
-                    var F = E.data("idle");
-                    if (!F.busy && !F.complete) {
-                        F.busy = true;
-                        C.trigger(i.IDLE_EXIT);
-                        c.clearTimer("idle");
-                        E.stop().animate(F.from, {
-                            duration: C._options.idleSpeed / 2,
-                            queue: false,
-                            easing: "swing",
-                            complete: function () {
-                                e(this).data("idle").busy = false;
-                                e(this).data("idle").complete = true
-                            }
-                        })
-                    }
-                    v.addTimer()
+                L = {};
+                if (m === 8) {
+                    H.nextholder += "background:#000;filter:alpha(opacity=0);";
+                    H.prevholder += "background:#000;filter:alpha(opacity=0);"
                 }
-            };
-            var u = this._lightbox = {
-                width: 0,
-                height: 0,
-                initialized: false,
-                active: null,
-                image: null,
-                elems: {},
-                init: function () {
-                    C.trigger(i.LIGHTBOX_OPEN);
-                    if (u.initialized) {
+                e.each(H, function (N, O) {
+                    J += ".galleria-" + I + N + "{" + O + "}"
+                });
+                c.insertStyleTag(J);
+                e.each(E.split(" "), function (N, O) {
+                    C.addElement("lightbox-" + O);
+                    F[O] = u.elems[O] = C.get("lightbox-" + O)
+                });
+                u.image = new i.Picture();
+                e.each({
+                    box: "shadow content close prevholder nextholder",
+                    info: "title counter",
+                    content: "info image",
+                    prevholder: "prev",
+                    nextholder: "next"
+                }, function (O, P) {
+                    var N = [];
+                    e.each(P.split(" "), function (Q, R) {
+                        N.push(I + R)
+                    });
+                    L[I + O] = N
+                });
+                C.append(L);
+                e(F.image).append(u.image.container);
+                e(s().body).append(F.overlay, F.box);
+                K(e(F.close).bind(f(), u.hide).html("&#215;"));
+                e.each(["Prev", "Next"], function (Q, O) {
+                    var P = e(F[O.toLowerCase()]).html(/v/.test(O) ? "&#8249;&nbsp;" : "&nbsp;&#8250;"),
+                    N = e(F[O.toLowerCase() + "holder"]);
+                    N.bind(f(), function () {
+                        u["show" + O]()
+                    });
+                    if (m < 8) {
+                        P.show();
                         return
                     }
-                    u.initialized = true;
-                    var E = "overlay box content shadow title info close prevholder prev nextholder next counter image",
-                        F = {},
-                        G = C._options,
-                        J = "",
-                        M = "position:absolute;",
-                        I = "lightbox-",
-                        H = {
-                            overlay: "position:fixed;display:none;opacity:" + G.overlayOpacity + ";filter:alpha(opacity=" + (G.overlayOpacity * 100) + ");top:0;left:0;width:100%;height:100%;background:" + G.overlayBackground + ";z-index:99990",
-                            box: "position:fixed;display:none;width:400px;height:400px;top:50%;left:50%;margin-top:-200px;margin-left:-200px;z-index:99991",
-                            shadow: M + "background:#000;width:100%;height:100%;",
-                            content: M + "background-color:#fff;top:10px;left:10px;right:10px;bottom:10px;overflow:hidden",
-                            info: M + "bottom:10px;left:10px;right:10px;color:#444;font:11px/13px arial,sans-serif;height:13px",
-                            close: M + "top:10px;right:10px;height:20px;width:20px;background:#fff;text-align:center;cursor:pointer;color:#444;font:16px/22px arial,sans-serif;z-index:99999",
-                            image: M + "top:10px;left:10px;right:10px;bottom:30px;overflow:hidden;display:block;",
-                            prevholder: M + "width:50%;top:0;bottom:40px;cursor:pointer;",
-                            nextholder: M + "width:50%;top:0;bottom:40px;right:-1px;cursor:pointer;",
-                            prev: M + "top:50%;margin-top:-20px;height:40px;width:30px;background:#fff;left:20px;display:none;text-align:center;color:#000;font:bold 16px/36px arial,sans-serif",
-                            next: M + "top:50%;margin-top:-20px;height:40px;width:30px;background:#fff;right:20px;left:auto;display:none;font:bold 16px/36px arial,sans-serif;text-align:center;color:#000",
-                            title: "float:left",
-                            counter: "float:right;margin-left:8px;"
-                        },
-                        K = function (N) {
-                            return N.hover(function () {
-                                e(this).css("color", "#bbb")
-                            }, function () {
-                                e(this).css("color", "#444")
-                            })
-                        },
-                        L = {};
-                    if (m === 8) {
-                        H.nextholder += "background:#000;filter:alpha(opacity=0);";
-                        H.prevholder += "background:#000;filter:alpha(opacity=0);"
-                    }
-                    e.each(H, function (N, O) {
-                        J += ".galleria-" + I + N + "{" + O + "}"
-                    });
-                    c.insertStyleTag(J);
-                    e.each(E.split(" "), function (N, O) {
-                        C.addElement("lightbox-" + O);
-                        F[O] = u.elems[O] = C.get("lightbox-" + O)
-                    });
-                    u.image = new i.Picture();
-                    e.each({
-                        box: "shadow content close prevholder nextholder",
-                        info: "title counter",
-                        content: "info image",
-                        prevholder: "prev",
-                        nextholder: "next"
-                    }, function (O, P) {
-                        var N = [];
-                        e.each(P.split(" "), function (Q, R) {
-                            N.push(I + R)
-                        });
-                        L[I + O] = N
-                    });
-                    C.append(L);
-                    e(F.image).append(u.image.container);
-                    e(s().body).append(F.overlay, F.box);
-                    K(e(F.close).bind(f(), u.hide).html("&#215;"));
-                    e.each(["Prev", "Next"], function (Q, O) {
-                        var P = e(F[O.toLowerCase()]).html(/v/.test(O) ? "&#8249;&nbsp;" : "&nbsp;&#8250;"),
-                            N = e(F[O.toLowerCase() + "holder"]);
-                        N.bind(f(), function () {
-                            u["show" + O]()
-                        });
-                        if (m < 8) {
-                            P.show();
-                            return
-                        }
-                        N.hover(function () {
-                            P.show()
-                        }, function (R) {
-                            P.stop().fadeOut(200)
-                        })
-                    });
-                    e(F.overlay).bind(f(), u.hide)
-                },
-                rescale: function (I) {
-                    var H = Math.min(e(l).width() - 40, u.width),
-                        E = Math.min(e(l).height() - 60, u.height),
-                        G = Math.min(H / u.width, E / u.height),
-                        F = (u.width * G) + 40,
-                        K = (u.height * G) + 60,
-                        J = {
-                            width: F,
-                            height: K,
-                            marginTop: Math.ceil(K / 2) * -1,
-                            marginLeft: Math.ceil(F / 2) * -1
-                        };
-                    if (I) {
-                        e(u.elems.box).css(J)
-                    } else {
-                        e(u.elems.box).animate(J, C._options.lightboxTransitionSpeed, C._options.easing, function () {
-                            var M = u.image,
-                                L = C._options.lightboxFadeSpeed;
-                            C.trigger({
-                                type: i.LIGHTBOX_IMAGE,
-                                imageTarget: M.image
-                            });
-                            e(M.container).show();
-                            c.show(M.image, L);
-                            c.show(u.elems.info, L)
-                        })
-                    }
-                },
-                hide: function () {
-                    u.image.image = null;
-                    e(l).unbind("resize", u.rescale);
-                    e(u.elems.box).hide();
-                    c.hide(u.elems.info);
-                    c.hide(u.elems.overlay, 200, function () {
-                        e(this).hide().css("opacity", C._options.overlayOpacity);
-                        C.trigger(i.LIGHTBOX_CLOSE)
+                    N.hover(function () {
+                        P.show()
+                    }, function (R) {
+                        P.stop().fadeOut(200)
                     })
-                },
-                showNext: function () {
-                    u.show(C.getNext(u.active))
-                },
-                showPrev: function () {
-                    u.show(C.getPrev(u.active))
-                },
-                show: function (E) {
-                    u.active = E = typeof E === "number" ? E : C.getIndex();
-                    if (!u.initialized) {
-                        u.init()
-                    }
-                    e(l).unbind("resize", u.rescale);
-                    var G = C.getData(E),
-                        F = C.getDataLength();
-                    c.hide(u.elems.info);
-                    u.image.load(G.image, function (H) {
-                        u.width = H.original.width;
-                        u.height = H.original.height;
-                        e(H.image).css({
-                            width: "100.5%",
-                            height: "100.5%",
-                            top: 0,
-                            zIndex: 99998
+                });
+                e(F.overlay).bind(f(), u.hide)
+            },
+            rescale: function (I) {
+                var H = Math.min(e(l).width() - 40, u.width),
+                E = Math.min(e(l).height() - 60, u.height),
+                G = Math.min(H / u.width, E / u.height),
+                F = (u.width * G) + 40,
+                K = (u.height * G) + 60,
+                J = {
+                    width: F,
+                    height: K,
+                    marginTop: Math.ceil(K / 2) * -1,
+                    marginLeft: Math.ceil(F / 2) * -1
+                };
+                if (I) {
+                    e(u.elems.box).css(J)
+                } else {
+                    e(u.elems.box).animate(J, C._options.lightboxTransitionSpeed, C._options.easing, function () {
+                        var M = u.image,
+                        L = C._options.lightboxFadeSpeed;
+                        C.trigger({
+                            type: i.LIGHTBOX_IMAGE,
+                            imageTarget: M.image
                         });
-                        c.hide(H.image);
-                        u.elems.title.innerHTML = G.title;
-                        u.elems.counter.innerHTML = (E + 1) + " / " + F;
-                        e(l).resize(u.rescale);
-                        u.rescale()
-                    });
-                    e(u.elems.overlay).show();
-                    e(u.elems.box).show()
+                        e(M.container).show();
+                        c.show(M.image, L);
+                        c.show(u.elems.info, L)
+                    })
                 }
-            };
-            return this
+            },
+            hide: function () {
+                u.image.image = null;
+                e(l).unbind("resize", u.rescale);
+                e(u.elems.box).hide();
+                c.hide(u.elems.info);
+                c.hide(u.elems.overlay, 200, function () {
+                    e(this).hide().css("opacity", C._options.overlayOpacity);
+                    C.trigger(i.LIGHTBOX_CLOSE)
+                })
+            },
+            showNext: function () {
+                u.show(C.getNext(u.active))
+            },
+            showPrev: function () {
+                u.show(C.getPrev(u.active))
+            },
+            show: function (E) {
+                u.active = E = typeof E === "number" ? E : C.getIndex();
+                if (!u.initialized) {
+                    u.init()
+                }
+                e(l).unbind("resize", u.rescale);
+                var G = C.getData(E),
+                F = C.getDataLength();
+                c.hide(u.elems.info);
+                u.image.load(G.image, function (H) {
+                    u.width = H.original.width;
+                    u.height = H.original.height;
+                    e(H.image).css({
+                        width: "100.5%",
+                        height: "100.5%",
+                        top: 0,
+                        zIndex: 99998
+                    });
+                    c.hide(H.image);
+                    u.elems.title.innerHTML = G.title;
+                    u.elems.counter.innerHTML = (E + 1) + " / " + F;
+                    e(l).resize(u.rescale);
+                    u.rescale()
+                });
+                e(u.elems.overlay).show();
+                e(u.elems.box).show()
+            }
         };
+        return this
+    };
     i.prototype = {
         constructor: i,
         init: function (w, v) {
@@ -1721,8 +1721,8 @@ var CogzidelRooms = {
                             }
                         });
                         var z = function () {
-                                return true
-                            };
+                            return true
+                        };
                         if (u._options.thumbnails) {
                             u.$("thumbnails").append(w);
                             z = function () {
@@ -1869,69 +1869,69 @@ var CogzidelRooms = {
         _createThumbnails: function () {
             this.get("total").innerHTML = this.getDataLength();
             var B, u, v, A, F, G = this,
-                w = this._options,
-                y = (function () {
-                    var H = G.$("thumbnails").find(".active");
-                    if (!H.length) {
-                        return false
-                    }
-                    return H.find("img").attr("src")
-                }()),
-                x = typeof w.thumbnails === "string" ? w.thumbnails.toLowerCase() : null,
-                C = function (H) {
-                    return t.defaultView && t.defaultView.getComputedStyle ? t.defaultView.getComputedStyle(v.container, null)[H] : F.css(H)
-                },
-                D = function (J, I, H) {
-                    return function () {
-                        e(H).append(J);
+            w = this._options,
+            y = (function () {
+                var H = G.$("thumbnails").find(".active");
+                if (!H.length) {
+                    return false
+                }
+                return H.find("img").attr("src")
+            }()),
+            x = typeof w.thumbnails === "string" ? w.thumbnails.toLowerCase() : null,
+            C = function (H) {
+                return t.defaultView && t.defaultView.getComputedStyle ? t.defaultView.getComputedStyle(v.container, null)[H] : F.css(H)
+            },
+            D = function (J, I, H) {
+                return function () {
+                    e(H).append(J);
+                    G.trigger({
+                        type: i.THUMBNAIL,
+                        thumbTarget: J,
+                        index: I
+                    })
+                }
+            },
+            E = function (I) {
+                if (w.pauseOnInteraction) {
+                    G.pause()
+                }
+                var H = e(I.currentTarget).data("index");
+                if (G.getIndex() !== H) {
+                    G.show(H)
+                }
+                I.preventDefault()
+            },
+            z = function (H) {
+                H.scale({
+                    width: H.data.width,
+                    height: H.data.height,
+                    crop: w.thumbCrop,
+                    margin: w.thumbMargin,
+                    complete: function (K) {
+                        var M = ["left", "top"],
+                        J = ["Width", "Height"],
+                        I, L;
+                        e.each(J, function (N, O) {
+                            I = O.toLowerCase();
+                            if ((w.thumbCrop !== true || w.thumbCrop === I) && w.thumbFit) {
+                                L = {};
+                                L[I] = K[I];
+                                e(K.container).css(L);
+                                L = {};
+                                L[M[N]] = 0;
+                                e(K.image).css(L)
+                            }
+                            K["outer" + O] = e(K.container)["outer" + O](true)
+                        });
+                        c.toggleQuality(K.image, w.thumbQuality === true || (w.thumbQuality === "auto" && K.original.width < K.width * 3));
                         G.trigger({
                             type: i.THUMBNAIL,
-                            thumbTarget: J,
-                            index: I
+                            thumbTarget: K.image,
+                            index: K.data.order
                         })
                     }
-                },
-                E = function (I) {
-                    if (w.pauseOnInteraction) {
-                        G.pause()
-                    }
-                    var H = e(I.currentTarget).data("index");
-                    if (G.getIndex() !== H) {
-                        G.show(H)
-                    }
-                    I.preventDefault()
-                },
-                z = function (H) {
-                    H.scale({
-                        width: H.data.width,
-                        height: H.data.height,
-                        crop: w.thumbCrop,
-                        margin: w.thumbMargin,
-                        complete: function (K) {
-                            var M = ["left", "top"],
-                                J = ["Width", "Height"],
-                                I, L;
-                            e.each(J, function (N, O) {
-                                I = O.toLowerCase();
-                                if ((w.thumbCrop !== true || w.thumbCrop === I) && w.thumbFit) {
-                                    L = {};
-                                    L[I] = K[I];
-                                    e(K.container).css(L);
-                                    L = {};
-                                    L[M[N]] = 0;
-                                    e(K.image).css(L)
-                                }
-                                K["outer" + O] = e(K.container)["outer" + O](true)
-                            });
-                            c.toggleQuality(K.image, w.thumbQuality === true || (w.thumbQuality === "auto" && K.original.width < K.width * 3));
-                            G.trigger({
-                                type: i.THUMBNAIL,
-                                thumbTarget: K.image,
-                                index: K.data.order
-                            })
-                        }
-                    })
-                };
+                })
+            };
             this._thumbnails = [];
             this.$("thumbnails").empty();
             for (B = 0; this._data[B]; B++) {
@@ -2031,8 +2031,8 @@ var CogzidelRooms = {
             e(x).find(u).each(function (A, z) {
                 z = e(z);
                 var C = {},
-                    B = z.parent(),
-                    y = B.attr("href");
+                B = z.parent(),
+                y = B.attr("href");
                 C.image = C.big = y;
                 v._data.push(e.extend({
                     title: z.attr("title"),
@@ -2163,54 +2163,54 @@ var CogzidelRooms = {
             }
             C = e(C || this.getActiveImage());
             var M = this,
-                L = C.width() / 2,
-                I = C.height() / 2,
-                K = parseInt(C.css("left"), 10),
-                J = parseInt(C.css("top"), 10),
-                w = K || 0,
-                v = J || 0,
-                H = 0,
-                G = 0,
-                A = false,
-                F = c.timestamp(),
-                u = 0,
-                z = 0,
-                E = function (N, y, O) {
-                    if (N > 0) {
-                        z = Math.round(Math.max(N * -1, Math.min(0, y)));
-                        if (u !== z) {
-                            u = z;
-                            if (m === 8) {
-                                C.parent()["scroll" + O](z * -1)
-                            } else {
-                                var x = {};
-                                x[O.toLowerCase()] = z;
-                                C.css(x)
-                            }
+            L = C.width() / 2,
+            I = C.height() / 2,
+            K = parseInt(C.css("left"), 10),
+            J = parseInt(C.css("top"), 10),
+            w = K || 0,
+            v = J || 0,
+            H = 0,
+            G = 0,
+            A = false,
+            F = c.timestamp(),
+            u = 0,
+            z = 0,
+            E = function (N, y, O) {
+                if (N > 0) {
+                    z = Math.round(Math.max(N * -1, Math.min(0, y)));
+                    if (u !== z) {
+                        u = z;
+                        if (m === 8) {
+                            C.parent()["scroll" + O](z * -1)
+                        } else {
+                            var x = {};
+                            x[O.toLowerCase()] = z;
+                            C.css(x)
                         }
                     }
-                },
-                B = function (x) {
-                    if (c.timestamp() - F < 50) {
-                        return
-                    }
-                    A = true;
-                    L = M.getMousePosition(x).x;
-                    I = M.getMousePosition(x).y
-                },
-                D = function (x) {
-                    if (!A) {
-                        return
-                    }
-                    H = C.width() - M._stageWidth;
-                    G = C.height() - M._stageHeight;
-                    K = L / M._stageWidth * H * -1;
-                    J = I / M._stageHeight * G * -1;
-                    w += (K - w) / M._options.imagePanSmoothness;
-                    v += (J - v) / M._options.imagePanSmoothness;
-                    E(G, v, "Top");
-                    E(H, w, "Left")
-                };
+                }
+            },
+            B = function (x) {
+                if (c.timestamp() - F < 50) {
+                    return
+                }
+                A = true;
+                L = M.getMousePosition(x).x;
+                I = M.getMousePosition(x).y
+            },
+            D = function (x) {
+                if (!A) {
+                    return
+                }
+                H = C.width() - M._stageWidth;
+                G = C.height() - M._stageHeight;
+                K = L / M._stageWidth * H * -1;
+                J = I / M._stageHeight * G * -1;
+                w += (K - w) / M._options.imagePanSmoothness;
+                v += (J - v) / M._options.imagePanSmoothness;
+                E(G, v, "Top");
+                E(H, w, "Left")
+            };
             if (m === 8) {
                 C.parent().scrollTop(v * -1).scrollLeft(w * -1);
                 C.css({
@@ -2302,17 +2302,17 @@ var CogzidelRooms = {
                 x = b
             }
             var y = function () {
-                    w._stageWidth = x || w.$("stage").width();
-                    w._stageHeight = u || w.$("stage").height();
-                    w._scaleImage();
-                    if (w._options.carousel) {
-                        w.updateCarousel()
-                    }
-                    w.trigger(i.RESCALE);
-                    if (typeof v === "function") {
-                        v.call(w)
-                    }
-                };
+                w._stageWidth = x || w.$("stage").width();
+                w._stageHeight = u || w.$("stage").height();
+                w._scaleImage();
+                if (w._options.carousel) {
+                    w.updateCarousel()
+                }
+                w.trigger(i.RESCALE);
+                if (typeof v === "function") {
+                    v.call(w)
+                }
+            };
             if (i.WEBKIT && !x && !u) {
                 c.addTimer("scale", y, 5)
             } else {
@@ -2350,65 +2350,65 @@ var CogzidelRooms = {
         },
         _show: function () {
             var G = this,
-                E = this._queue[0],
-                C = this.getData(E.index);
+            E = this._queue[0],
+            C = this.getData(E.index);
             if (!C) {
                 return
             }
             var u = this.isFullscreen() && "big" in C ? C.big : C.image,
-                A = this._controls.getActive(),
-                D = this._controls.getNext(),
-                z = D.isCached(u),
-                v = this._thumbnails[E.index];
+            A = this._controls.getActive(),
+            D = this._controls.getNext(),
+            z = D.isCached(u),
+            v = this._thumbnails[E.index];
             var x = function () {
-                    var H;
-                    G._queue.stalled = false;
-                    c.toggleQuality(D.image, G._options.imageQuality);
-                    e(A.container).css({
-                        zIndex: 0,
-                        opacity: 0
-                    });
-                    e(D.container).css({
-                        zIndex: 1,
-                        opacity: 1
-                    });
-                    G._controls.swap();
-                    if (G._options.imagePan) {
-                        G.addPan(D.image)
-                    }
-                    if (C.link || G._options.lightbox) {
-                        e(D.image).css({
-                            cursor: "pointer"
-                        }).bind(f(), function () {
-                            if (C.link) {
-                                if (G._options.popupLinks) {
-                                    H = l.open(C.link, "_blank")
-                                } else {
-                                    l.location.href = C.link
-                                }
-                                return
+                var H;
+                G._queue.stalled = false;
+                c.toggleQuality(D.image, G._options.imageQuality);
+                e(A.container).css({
+                    zIndex: 0,
+                    opacity: 0
+                });
+                e(D.container).css({
+                    zIndex: 1,
+                    opacity: 1
+                });
+                G._controls.swap();
+                if (G._options.imagePan) {
+                    G.addPan(D.image)
+                }
+                if (C.link || G._options.lightbox) {
+                    e(D.image).css({
+                        cursor: "pointer"
+                    }).bind(f(), function () {
+                        if (C.link) {
+                            if (G._options.popupLinks) {
+                                H = l.open(C.link, "_blank")
+                            } else {
+                                l.location.href = C.link
                             }
-                            G.openLightbox()
-                        })
-                    }
-                    Array.prototype.shift.call(G._queue);
-                    if (G._queue.length) {
-                        G._show()
-                    }
-                    G._playCheck();
-                    G.trigger({
-                        type: i.IMAGE,
-                        index: E.index,
-                        imageTarget: D.image,
-                        thumbTarget: v.image
+                            return
+                        }
+                        G.openLightbox()
                     })
-                };
+                }
+                Array.prototype.shift.call(G._queue);
+                if (G._queue.length) {
+                    G._show()
+                }
+                G._playCheck();
+                G.trigger({
+                    type: i.IMAGE,
+                    index: E.index,
+                    imageTarget: D.image,
+                    thumbTarget: v.image
+                })
+            };
             if (this._options.carousel && this._options.carouselFollow) {
                 this._carousel.follow(E.index)
             }
             if (this._options.preload) {
                 var w, B, y = this.getNext(),
-                    C;
+                C;
                 try {
                     for (B = this._options.preload; B > 0; B--) {
                         w = new i.Picture();
@@ -2534,29 +2534,29 @@ var CogzidelRooms = {
         },
         _playCheck: function () {
             var v = this,
-                y = 0,
-                u = 20,
-                w = c.timestamp(),
-                z = "play" + this._id;
+            y = 0,
+            u = 20,
+            w = c.timestamp(),
+            z = "play" + this._id;
             if (this._playing) {
                 c.clearTimer(z);
                 var x = function () {
-                        y = c.timestamp() - w;
-                        if (y >= v._playtime && v._playing) {
-                            c.clearTimer(z);
-                            v.next();
-                            return
-                        }
-                        if (v._playing) {
-                            v.trigger({
-                                type: i.PROGRESS,
-                                percent: Math.ceil(y / v._playtime * 100),
-                                seconds: Math.floor(y / 1000),
-                                milliseconds: y
-                            });
-                            c.addTimer(z, x, u)
-                        }
-                    };
+                    y = c.timestamp() - w;
+                    if (y >= v._playtime && v._playing) {
+                        c.clearTimer(z);
+                        v.next();
+                        return
+                    }
+                    if (v._playing) {
+                        v.trigger({
+                            type: i.PROGRESS,
+                            percent: Math.ceil(y / v._playtime * 100),
+                            seconds: Math.floor(y / 1000),
+                            milliseconds: y
+                        });
+                        c.addTimer(z, x, u)
+                    }
+                };
                 c.addTimer(z, x, u)
             }
         },
@@ -2575,8 +2575,8 @@ var CogzidelRooms = {
             this.get("current").innerHTML = v;
             if (m) {
                 var x = this.$("counter"),
-                    u = x.css("opacity"),
-                    w = x.attr("style");
+                u = x.css("opacity"),
+                w = x.attr("style");
                 if (w && parseInt(u, 10) === 1) {
                     x.attr("style", w.replace(/filter[^\;]+\;/i, ""))
                 } else {
@@ -2587,7 +2587,7 @@ var CogzidelRooms = {
         },
         setInfo: function (v) {
             var u = this,
-                w = this.getData(v);
+            w = this.getData(v);
             e.each(["title", "description"], function (x, y) {
                 var z = u.$("info-" + y);
                 if ( !! w[y]) {
@@ -2600,7 +2600,7 @@ var CogzidelRooms = {
         },
         hasInfo: function (v) {
             var u = "title description".split(" "),
-                w;
+            w;
             for (w = 0; u[w]; w++) {
                 if ( !! this.getData(v)[u[w]]) {
                     return true
@@ -2610,7 +2610,7 @@ var CogzidelRooms = {
         },
         jQuery: function (x) {
             var u = this,
-                v = [];
+            v = [];
             e.each(x.split(","), function (y, z) {
                 z = e.trim(z);
                 if (u.get(z)) {
@@ -2658,7 +2658,7 @@ var CogzidelRooms = {
             x.defaults = r(x.defaults)
         }
         var u = false,
-            v;
+        v;
         if (typeof x.css === "string") {
             e("link").each(function (y, z) {
                 v = new RegExp(x.css);
@@ -2695,7 +2695,7 @@ var CogzidelRooms = {
     };
     i.loadTheme = function (x, v) {
         var u = false,
-            w = o.length;
+        w = o.length;
         i.theme = b;
         c.loadScript(x, function () {
             u = true
@@ -2777,24 +2777,24 @@ var CogzidelRooms = {
         cache: {},
         add: function (z) {
             var w = 0,
-                v = this,
-                y = new Image(),
-                u = function () {
-                    e(y).load(x).attr("src", "")
-                },
-                x = function () {
-                    newSrc = e(this).attr("src");
-                    if ((!this.width || !this.height) && w < 1000) {
-                        w++;
-                        e(y).load(x).attr("src", newSrc + "?" + new Date().getTime())
-                    }
-                    v.original = {
-                        height: this.height,
-                        width: this.width
-                    };
-                    v.cache[z] = newSrc;
-                    v.loaded = true
+            v = this,
+            y = new Image(),
+            u = function () {
+                e(y).load(x).attr("src", "")
+            },
+            x = function () {
+                newSrc = e(this).attr("src");
+                if ((!this.width || !this.height) && w < 1000) {
+                    w++;
+                    e(y).load(x).attr("src", newSrc + "?" + new Date().getTime())
+                }
+                v.original = {
+                    height: this.height,
+                    width: this.width
                 };
+                v.cache[z] = newSrc;
+                v.loaded = true
+            };
             e(y).css("display", "block");
             if (v.cache[z]) {
                 y.src = v.cache[z];
@@ -2856,7 +2856,7 @@ var CogzidelRooms = {
                 return this.container
             }
             var x, u, v = this,
-                y = e(v.container);
+            y = e(v.container);
             c.wait({
                 until: function () {
                     x = w.width || y.width() || c.parseValue(y.css("width"));
@@ -2865,14 +2865,14 @@ var CogzidelRooms = {
                 },
                 success: function () {
                     var D = (x - w.margin * 2) / v.original.width,
-                        z = (u - w.margin * 2) / v.original.height,
-                        F = {
-                            "true": Math.max(D, z),
-                            width: D,
-                            height: z,
-                            "false": Math.min(D, z)
-                        },
-                        B = F[w.crop.toString()];
+                    z = (u - w.margin * 2) / v.original.height,
+                    F = {
+                        "true": Math.max(D, z),
+                        width: D,
+                        height: z,
+                        "false": Math.min(D, z)
+                    },
+                    B = F[w.crop.toString()];
                     if (w.max) {
                         B = Math.min(w.max, B)
                     }
@@ -2884,32 +2884,32 @@ var CogzidelRooms = {
                         e(v.image)[H](v.image[H] = v[H] = Math.round(v.original[H] * B))
                     });
                     var G = {},
-                        A = {},
-                        C = function (L, J, K) {
-                            var I = 0;
-                            if (/\%/.test(L)) {
-                                var M = parseInt(L, 10) / 100,
-                                    H = v.image[J] || e(v.image)[J]();
-                                I = Math.ceil(H * -1 * M + K * M)
-                            } else {
-                                I = c.parseValue(L)
-                            }
-                            return I
+                    A = {},
+                    C = function (L, J, K) {
+                        var I = 0;
+                        if (/\%/.test(L)) {
+                            var M = parseInt(L, 10) / 100,
+                            H = v.image[J] || e(v.image)[J]();
+                            I = Math.ceil(H * -1 * M + K * M)
+                        } else {
+                            I = c.parseValue(L)
+                        }
+                        return I
+                    },
+                    E = {
+                        top: {
+                            top: 0
                         },
-                        E = {
-                            top: {
-                                top: 0
-                            },
-                            left: {
-                                left: 0
-                            },
-                            right: {
-                                left: "100%"
-                            },
-                            bottom: {
-                                top: "100%"
-                            }
-                        };
+                        left: {
+                            left: 0
+                        },
+                        right: {
+                            left: "100%"
+                        },
+                        bottom: {
+                            top: "100%"
+                        }
+                    };
                     e.each(w.position.toLowerCase().split(" "), function (H, I) {
                         if (I === "center") {
                             I = "50%"
@@ -2981,8 +2981,8 @@ var CogzidelRooms = {
                 info: ["info-link", "info-close"]
             });
             var d = this.$("info-link,info-close,info-text"),
-                e = Galleria.TOUCH,
-                c = e ? "touchstart" : "click";
+            e = Galleria.TOUCH,
+            c = e ? "touchstart" : "click";
             this.$("loader,counter").show().css("opacity", 0.4);
             if (!e) {
                 this.addIdleState(this.get("counter"), {
@@ -3024,10 +3024,10 @@ var CogzidelRooms = {
 }(jQuery));
 (function (b) {
     var a = function (d, c) {
-            if (d) {
-                this.init(d, c)
-            }
-        };
+        if (d) {
+            this.init(d, c)
+        }
+    };
     b.extend(a.prototype, {
         name: "cogzidelMap",
         init: function (g, f) {
@@ -3079,27 +3079,27 @@ var CogzidelRooms = {
                     clickable: false
                 });
                 var e = function () {
-                        var j = h.marker.getBounds();
-                        var i = h.map.getBounds();
-                        if (j.contains(i.getNorthEast()) && j.contains(i.getSouthWest())) {
-                            if (!h.markerHidden) {
-                                h.marker.setOptions({
-                                    fillOpacity: 0
-                                });
-                                h.markerHidden = true
-                            }
-                        } else {
-                            if (h.markerHidden) {
-                                h.marker.setOptions({
-                                    fillOpacity: 0.25
-                                });
-                                h.markerHidden = false
-                            }
+                    var j = h.marker.getBounds();
+                    var i = h.map.getBounds();
+                    if (j.contains(i.getNorthEast()) && j.contains(i.getSouthWest())) {
+                        if (!h.markerHidden) {
+                            h.marker.setOptions({
+                                fillOpacity: 0
+                            });
+                            h.markerHidden = true
                         }
-                    };
+                    } else {
+                        if (h.markerHidden) {
+                            h.marker.setOptions({
+                                fillOpacity: 0.25
+                            });
+                            h.markerHidden = false
+                        }
+                    }
+                };
                 var c = function () {
-                        h.marker.setRadius(CogzidelConstants.MapCircleSizes[h.map.getZoom()])
-                    };
+                    h.marker.setRadius(CogzidelConstants.MapCircleSizes[h.map.getZoom()])
+                };
                 google.maps.event.addListener(h.map, "bounds_changed", e);
                 google.maps.event.addListener(h.map, "zoom_changed", c)
             } else {
@@ -3145,7 +3145,7 @@ var CogzidelRooms = {
     });
     b.fn.cogzidelMap = function (e) {
         var d = b.makeArray(arguments),
-            g = d.slice(1);
+        g = d.slice(1);
         var c;
         var f = this.each(function () {
             c = b.data(this, "cogzidelMap");

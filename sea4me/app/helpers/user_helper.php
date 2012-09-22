@@ -1,45 +1,43 @@
 <?php
-if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-function gethouserules($id)
-{
-        $query = $this->db->get_where('amnities',array('id' => $id));
-        $q = $query->result();
-        return "Hello";
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+function gethouserules($id) {
+    $query = $this->db->get_where('amnities', array('id' => $id));
+    $q = $query->result();
+    return "Hello";
 }
 
-function get_user_by_id($id)
-{
-$ci     =& get_instance();
+function get_user_by_id($id) {
+    $ci = & get_instance();
 
-$query  = $ci->db->get_where('users', array('id' => $id));
+    $query = $ci->db->get_where('users', array('id' => $id));
 
-return $query->row();
+    return $query->row();
 }
 
+function get_list_by_id($id) {
+    $ci = & get_instance();
 
-function get_list_by_id($id)
-{
-$ci     =& get_instance();
+    $query = $ci->db->get_where('list', array('id' => $id));
 
-$query  = $ci->db->get_where('list', array('id' => $id));
-
-return $query->row();
+    return $query->row();
 }
 
-function getDaysInBetween($startdate, $enddate)
-{
-$period = (strtotime($enddate) - strtotime($startdate))/(60*60*24);
+function getDaysInBetween($startdate, $enddate) {
+    $period = (strtotime($enddate) - strtotime($startdate)) / (60 * 60 * 24);
 
-$dateinfo = $startdate;
+    $dateinfo = $startdate;
 
-	do {
-	$days[] = $dateinfo;
+    do {
+        $days[] = $dateinfo;
 
-	$dateinfo = date ( 'm/d/Y' , strtotime ( '+1 day' , strtotime ( $dateinfo ) ) );
-	$period-- ;
-	} while ($period >= 0);
+        $dateinfo = date('m/d/Y', strtotime('+1 day', strtotime($dateinfo)));
+        $period--;
+    } while ($period >= 0);
 
-	return $days; 
+    return $days;
 }
+
 ?>

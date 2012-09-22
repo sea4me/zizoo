@@ -26,8 +26,8 @@
                 this.setInactive()
             }
             var e = function (f) {
-                    f.data.hidePanel()
-                };
+                f.data.hidePanel()
+            };
             var d = this;
             this.element.hover(function () {
                 jQuery(document).unbind("click", e)
@@ -107,7 +107,7 @@
     });
     a.fn.availabilityWidget = function (c) {
         var b = a.makeArray(arguments),
-            d = b.slice(1);
+        d = b.slice(1);
         return this.each(function () {
             var e = a.data(this, "availabilityWidget");
             if (e) {

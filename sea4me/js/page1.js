@@ -145,11 +145,11 @@ var CogzidelHomePage = {
     locationIsBlank: function () {
         var a = $("#location");
 								
-								/*if($.trim(CogzidelHomePage.defaultSearchValue) == $.trim(a.val()))
+        /*if($.trim(CogzidelHomePage.defaultSearchValue) == $.trim(a.val()))
 									return true;
 								else
 									return false;*/
-							//alert($.trim(default_value) + $.trim(a.val()));
+        //alert($.trim(default_value) + $.trim(a.val()));
         return (!a.val() || $.trim(default_value) === $.trim(a.val()))
     },
     checkInputs: function () {
@@ -285,46 +285,46 @@ var HomePageSlideshow = {
         }
         if (u.constructor == String) {
             switch (u) {
-            case "destroy":
-            case "stop":
-                var w = i(r).data("cycle.opts");
-                if (!w) {
-                    return false
-                }
-                r.cycleStop++;
-                if (r.cycleTimeout) {
-                    clearTimeout(r.cycleTimeout)
-                }
-                r.cycleTimeout = 0;
-                i(r).removeData("cycle.opts");
-                if (u == "destroy") {
-                    q(w)
-                }
-                return false;
-            case "toggle":
-                r.cyclePause = (r.cyclePause === 1) ? 0 : 1;
-                v(r.cyclePause, s, r);
-                return false;
-            case "pause":
-                r.cyclePause = 1;
-                return false;
-            case "resume":
-                r.cyclePause = 0;
-                v(false, s, r);
-                return false;
-            case "prev":
-            case "next":
-                var w = i(r).data("cycle.opts");
-                if (!w) {
-                    f('options not found, "prev/next" ignored');
-                    return false
-                }
-                i.fn.cycle[u](w);
-                return false;
-            default:
-                u = {
-                    fx: u
-                }
+                case "destroy":
+                case "stop":
+                    var w = i(r).data("cycle.opts");
+                    if (!w) {
+                        return false
+                    }
+                    r.cycleStop++;
+                    if (r.cycleTimeout) {
+                        clearTimeout(r.cycleTimeout)
+                    }
+                    r.cycleTimeout = 0;
+                    i(r).removeData("cycle.opts");
+                    if (u == "destroy") {
+                        q(w)
+                    }
+                    return false;
+                case "toggle":
+                    r.cyclePause = (r.cyclePause === 1) ? 0 : 1;
+                    v(r.cyclePause, s, r);
+                    return false;
+                case "pause":
+                    r.cyclePause = 1;
+                    return false;
+                case "resume":
+                    r.cyclePause = 0;
+                    v(false, s, r);
+                    return false;
+                case "prev":
+                case "next":
+                    var w = i(r).data("cycle.opts");
+                    if (!w) {
+                        f('options not found, "prev/next" ignored');
+                        return false
+                    }
+                    i.fn.cycle[u](w);
+                    return false;
+                default:
+                    u = {
+                        fx: u
+                    }
             }
             return u
         } else {
@@ -478,12 +478,12 @@ var HomePageSlideshow = {
         var E = D.containerResize && !z.innerHeight();
         if (E) {
             var x = 0,
-                C = 0;
+            C = 0;
             for (var H = 0; H < v.length; H++) {
                 var r = i(v[H]),
-                    M = r[0],
-                    B = r.outerWidth(),
-                    K = r.outerHeight();
+                M = r[0],
+                B = r.outerWidth(),
+                K = r.outerHeight();
                 if (!B) {
                     B = M.offsetWidth || M.width || r.attr("width")
                 }
@@ -675,7 +675,7 @@ var HomePageSlideshow = {
     function j(s, r) {
         s.addSlide = function (u, v) {
             var t = i(u),
-                w = t[0];
+            w = t[0];
             if (!s.autostopCount) {
                 s.countdown++
             }
@@ -744,8 +744,8 @@ var HomePageSlideshow = {
             return
         }
         var v = r.$cont[0],
-            C = y[r.currSlide],
-            B = y[r.nextSlide];
+        C = y[r.currSlide],
+        B = y[r.nextSlide];
         if (v.cycleStop != r.stopCount || v.cycleTimeout === 0 && !x) {
             return
         }
@@ -784,13 +784,13 @@ var HomePageSlideshow = {
                 })
             }
             var t = function () {
-                    i.each(r.after, function (D, E) {
-                        if (v.cycleStop != r.stopCount) {
-                            return
-                        }
-                        E.apply(B, [C, B, r, A])
-                    })
-                };
+                i.each(r.after, function (D, E) {
+                    if (v.cycleStop != r.stopCount) {
+                        return
+                    }
+                    E.apply(B, [C, B, r, A])
+                })
+            };
             a("tx firing; currSlide: " + r.currSlide + "; nextSlide: " + r.nextSlide);
             r.busy = 1;
             if (r.fxFn) {
@@ -884,7 +884,7 @@ var HomePageSlideshow = {
     function o(t, w) {
         var s = t.elements;
         var v = t.$cont[0],
-            u = v.cycleTimeout;
+        u = v.cycleTimeout;
         if (u) {
             clearTimeout(u);
             v.cycleTimeout = 0
@@ -964,7 +964,7 @@ var HomePageSlideshow = {
             C.preventDefault();
             x.nextSlide = v;
             var B = x.$cont[0],
-                A = B.cycleTimeout;
+            A = B.cycleTimeout;
             if (A) {
                 clearTimeout(A);
                 B.cycleTimeout = 0
@@ -990,7 +990,7 @@ var HomePageSlideshow = {
     };
     i.fn.cycle.hopsFromLast = function (u, t) {
         var s, r = u.lastSlide,
-            v = u.currSlide;
+        v = u.currSlide;
         if (t) {
             s = v > r ? v - r : u.slideCount - r
         } else {
@@ -1040,11 +1040,11 @@ var HomePageSlideshow = {
     };
     i.fn.cycle.custom = function (D, x, r, u, w, s) {
         var C = i(D),
-            y = i(x);
+        y = i(x);
         var t = r.speedIn,
-            B = r.speedOut,
-            v = r.easeIn,
-            A = r.easeOut;
+        B = r.speedOut,
+        v = r.easeIn,
+        A = r.easeOut;
         y.css(r.cssBefore);
         if (s) {
             if (typeof s == "number") {
@@ -1055,8 +1055,8 @@ var HomePageSlideshow = {
             v = A = null
         }
         var z = function () {
-                y.animate(r.animIn, t, v, u)
-            };
+            y.animate(r.animIn, t, v, u)
+        };
         C.animate(r.animOut, B, A, function () {
             if (r.cssAfter) {
                 C.css(r.cssAfter)

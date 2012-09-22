@@ -1,4 +1,5 @@
 <?php
+
 /**
  * DROPinn Change Model Class
  *
@@ -11,34 +12,27 @@
  * @version		Version 1.1
  * @link		http://www.cogzidel.com
  */
+class Change_model extends CI_Model {
 
-	class Change_model extends CI_Model
-	{
-		//Constructor
-		function Change_model()
-		{
-			parent::__construct();
-		}
-		
-		function get_google_lang($id = '')
-		{
-		 if($id != '')
-			{
-		   $this->db->where('id', $id);
-			}
-		return $this->db->get('language');
-		
-		}
-		
-		function get_core_lang($id = '')
-		{
-		 if($id != '')
-			{
-		   $this->db->where('id', $id);
-			}
-		return $this->db->get('language_core');
-		
-		}
-		
-	}
-	?>
+    //Constructor
+    function Change_model() {
+        parent::__construct();
+    }
+
+    function get_google_lang($id = '') {
+        if ($id != '') {
+            $this->db->where('id', $id);
+        }
+        return $this->db->get('language');
+    }
+
+    function get_core_lang($id = '') {
+        if ($id != '') {
+            $this->db->where('id', $id);
+        }
+        return $this->db->get('language_core');
+    }
+
+}
+
+?>

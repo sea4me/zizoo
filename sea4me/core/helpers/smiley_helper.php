@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -24,7 +26,6 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/helpers/smiley_helper.html
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -38,36 +39,31 @@
  * @param	string	field_id if alias name was passed in
  * @return	array
  */
-if ( ! function_exists('smiley_js'))
-{
-	function smiley_js($alias = '', $field_id = '', $inline = TRUE)
-	{
-		static $do_setup = TRUE;
+if (!function_exists('smiley_js')) {
 
-		$r = '';
+    function smiley_js($alias = '', $field_id = '', $inline = TRUE) {
+        static $do_setup = TRUE;
 
-		if ($alias != '' && ! is_array($alias))
-		{
-			$alias = array($alias => $field_id);
-		}
+        $r = '';
 
-		if ($do_setup === TRUE)
-		{
-				$do_setup = FALSE;
+        if ($alias != '' && !is_array($alias)) {
+            $alias = array($alias => $field_id);
+        }
 
-				$m = array();
+        if ($do_setup === TRUE) {
+            $do_setup = FALSE;
 
-				if (is_array($alias))
-				{
-					foreach ($alias as $name => $id)
-					{
-						$m[] = '"'.$name.'" : "'.$id.'"';
-					}
-				}
+            $m = array();
 
-				$m = '{'.implode(',', $m).'}';
+            if (is_array($alias)) {
+                foreach ($alias as $name => $id) {
+                    $m[] = '"' . $name . '" : "' . $id . '"';
+                }
+            }
 
-				$r .= <<<EOF
+            $m = '{' . implode(',', $m) . '}';
+
+            $r .= <<<EOF
 				var smiley_map = {$m};
 
 				function insert_smiley(smiley, field_id) {
@@ -96,27 +92,21 @@ if ( ! function_exists('smiley_js'))
 					}
 				}
 EOF;
-		}
-		else
-		{
-			if (is_array($alias))
-			{
-				foreach ($alias as $name => $id)
-				{
-					$r .= 'smiley_map["'.$name.'"] = "'.$id.'";'."\n";
-				}
-			}
-		}
+        } else {
+            if (is_array($alias)) {
+                foreach ($alias as $name => $id) {
+                    $r .= 'smiley_map["' . $name . '"] = "' . $id . '";' . "\n";
+                }
+            }
+        }
 
-		if ($inline)
-		{
-			return '<script type="text/javascript" charset="utf-8">/*<![CDATA[ */'.$r.'// ]]></script>';
-		}
-		else
-		{
-			return $r;
-		}
-	}
+        if ($inline) {
+            return '<script type="text/javascript" charset="utf-8">/*<![CDATA[ */' . $r . '// ]]></script>';
+        } else {
+            return $r;
+        }
+    }
+
 }
 
 // ------------------------------------------------------------------------
@@ -131,47 +121,42 @@ EOF;
  * @param	string	the URL to the folder containing the smiley images
  * @return	array
  */
-if ( ! function_exists('get_clickable_smileys'))
-{
-	function get_clickable_smileys($image_url, $alias = '', $smileys = NULL)
-	{
-		// For backward compatibility with js_insert_smiley
+if (!function_exists('get_clickable_smileys')) {
 
-		if (is_array($alias))
-		{
-			$smileys = $alias;
-		}
+    function get_clickable_smileys($image_url, $alias = '', $smileys = NULL) {
+        // For backward compatibility with js_insert_smiley
 
-		if ( ! is_array($smileys))
-		{
-			if (FALSE === ($smileys = _get_smiley_array()))
-			{
-				return $smileys;
-			}
-		}
+        if (is_array($alias)) {
+            $smileys = $alias;
+        }
 
-		// Add a trailing slash to the file path if needed
-		$image_url = rtrim($image_url, '/').'/';
+        if (!is_array($smileys)) {
+            if (FALSE === ($smileys = _get_smiley_array())) {
+                return $smileys;
+            }
+        }
 
-		$used = array();
-		foreach ($smileys as $key => $val)
-		{
-			// Keep duplicates from being used, which can happen if the
-			// mapping array contains multiple identical replacements.  For example:
-			// :-) and :) might be replaced with the same image so both smileys
-			// will be in the array.
-			if (isset($used[$smileys[$key][0]]))
-			{
-				continue;
-			}
+        // Add a trailing slash to the file path if needed
+        $image_url = rtrim($image_url, '/') . '/';
 
-			$link[] = "<a href=\"javascript:void(0);\" onclick=\"insert_smiley('".$key."', '".$alias."')\"><img src=\"".$image_url.$smileys[$key][0]."\" width=\"".$smileys[$key][1]."\" height=\"".$smileys[$key][2]."\" alt=\"".$smileys[$key][3]."\" style=\"border:0;\" /></a>";
+        $used = array();
+        foreach ($smileys as $key => $val) {
+            // Keep duplicates from being used, which can happen if the
+            // mapping array contains multiple identical replacements.  For example:
+            // :-) and :) might be replaced with the same image so both smileys
+            // will be in the array.
+            if (isset($used[$smileys[$key][0]])) {
+                continue;
+            }
 
-			$used[$smileys[$key][0]] = TRUE;
-		}
+            $link[] = "<a href=\"javascript:void(0);\" onclick=\"insert_smiley('" . $key . "', '" . $alias . "')\"><img src=\"" . $image_url . $smileys[$key][0] . "\" width=\"" . $smileys[$key][1] . "\" height=\"" . $smileys[$key][2] . "\" alt=\"" . $smileys[$key][3] . "\" style=\"border:0;\" /></a>";
 
-		return $link;
-	}
+            $used[$smileys[$key][0]] = TRUE;
+        }
+
+        return $link;
+    }
+
 }
 
 // ------------------------------------------------------------------------
@@ -186,33 +171,29 @@ if ( ! function_exists('get_clickable_smileys'))
  * @param	string	the URL to the folder containing the smiley images
  * @return	string
  */
-if ( ! function_exists('parse_smileys'))
-{
-	function parse_smileys($str = '', $image_url = '', $smileys = NULL)
-	{
-		if ($image_url == '')
-		{
-			return $str;
-		}
+if (!function_exists('parse_smileys')) {
 
-		if ( ! is_array($smileys))
-		{
-			if (FALSE === ($smileys = _get_smiley_array()))
-			{
-				return $str;
-			}
-		}
+    function parse_smileys($str = '', $image_url = '', $smileys = NULL) {
+        if ($image_url == '') {
+            return $str;
+        }
 
-		// Add a trailing slash to the file path if needed
-		$image_url = preg_replace("/(.+?)\/*$/", "\\1/",  $image_url);
+        if (!is_array($smileys)) {
+            if (FALSE === ($smileys = _get_smiley_array())) {
+                return $str;
+            }
+        }
 
-		foreach ($smileys as $key => $val)
-		{
-			$str = str_replace($key, "<img src=\"".$image_url.$smileys[$key][0]."\" width=\"".$smileys[$key][1]."\" height=\"".$smileys[$key][2]."\" alt=\"".$smileys[$key][3]."\" style=\"border:0;\" />", $str);
-		}
+        // Add a trailing slash to the file path if needed
+        $image_url = preg_replace("/(.+?)\/*$/", "\\1/", $image_url);
 
-		return $str;
-	}
+        foreach ($smileys as $key => $val) {
+            $str = str_replace($key, "<img src=\"" . $image_url . $smileys[$key][0] . "\" width=\"" . $smileys[$key][1] . "\" height=\"" . $smileys[$key][2] . "\" alt=\"" . $smileys[$key][3] . "\" style=\"border:0;\" />", $str);
+        }
+
+        return $str;
+    }
+
 }
 
 // ------------------------------------------------------------------------
@@ -225,26 +206,22 @@ if ( ! function_exists('parse_smileys'))
  * @access	private
  * @return	mixed
  */
-if ( ! function_exists('_get_smiley_array'))
-{
-	function _get_smiley_array()
-	{
-		if (defined('ENVIRONMENT') AND file_exists(APPPATH.'config/'.ENVIRONMENT.'/smileys'.EXT))
-		{
-		    include(APPPATH.'config/'.ENVIRONMENT.'/smileys'.EXT);
-		}
-		elseif (file_exists(APPPATH.'config/smileys'.EXT))
-		{
-			include(APPPATH.'config/smileys'.EXT);
-		}
-		
-		if (isset($smileys) AND is_array($smileys))
-		{
-			return $smileys;
-		}
+if (!function_exists('_get_smiley_array')) {
 
-		return FALSE;
-	}
+    function _get_smiley_array() {
+        if (defined('ENVIRONMENT') AND file_exists(APPPATH . 'config/' . ENVIRONMENT . '/smileys' . EXT)) {
+            include(APPPATH . 'config/' . ENVIRONMENT . '/smileys' . EXT);
+        } elseif (file_exists(APPPATH . 'config/smileys' . EXT)) {
+            include(APPPATH . 'config/smileys' . EXT);
+        }
+
+        if (isset($smileys) AND is_array($smileys)) {
+            return $smileys;
+        }
+
+        return FALSE;
+    }
+
 }
 
 // ------------------------------------------------------------------------
@@ -261,11 +238,10 @@ if ( ! function_exists('_get_smiley_array'))
  * @param	string	field name
  * @return	string
  */
-if ( ! function_exists('js_insert_smiley'))
-{
-	function js_insert_smiley($form_name = '', $form_field = '')
-	{
-		return <<<EOF
+if (!function_exists('js_insert_smiley')) {
+
+    function js_insert_smiley($form_name = '', $form_field = '') {
+        return <<<EOF
 <script type="text/javascript">
 	function insert_smiley(smiley)
 	{
@@ -273,7 +249,8 @@ if ( ! function_exists('js_insert_smiley'))
 	}
 </script>
 EOF;
-	}
+    }
+
 }
 
 

@@ -1,26 +1,28 @@
-<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 
 
-if ( ! function_exists('translate'))
-{
-	function translate($text, $d = '')
-	{
+if (!function_exists('translate')) {
 
-		return $text;
-	}
+    function translate($text, $d = '') {
+
+        return $text;
+    }
+
 }
 
 
 
 
 
-if ( ! function_exists('translate_admin'))
-{
-	function translate_admin($text, $d = '')
-	{	
-		return $text;
-		}
+if (!function_exists('translate_admin')) {
+
+    function translate_admin($text, $d = '') {
+        return $text;
+    }
 
 }	
 

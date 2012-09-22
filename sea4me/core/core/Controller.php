@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -29,38 +31,36 @@
  */
 class CI_Controller {
 
-	private static $instance;
+    private static $instance;
 
-	/**
-	 * Constructor
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
-		
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        self::$instance = & $this;
 
-		$this->load =& load_class('Loader', 'core');
+        // Assign all the class objects that were instantiated by the
+        // bootstrap file (CodeIgniter.php) to local class variables
+        // so that CI can run as one big super object.
+        foreach (is_loaded() as $var => $class) {
+            $this->$var = & load_class($class);
+        }
 
-		$this->load->_base_classes =& is_loaded();
+        $this->load = & load_class('Loader', 'core');
 
-		$this->load->_ci_autoloader();
+        $this->load->_base_classes = & is_loaded();
 
-		log_message('debug', "Controller Class Initialized");
+        $this->load->_ci_autoloader();
 
-	}
+        log_message('debug', "Controller Class Initialized");
+    }
 
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
+    public static function &get_instance() {
+        return self::$instance;
+    }
+
 }
+
 // END Controller class
 
 /* End of file Controller.php */

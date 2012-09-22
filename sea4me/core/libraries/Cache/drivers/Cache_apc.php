@@ -1,4 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 2.0
  * @filesource	
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -24,127 +26,116 @@
  * @author		ExpressionEngine Dev Team
  * @link		
  */
-
 class CI_Cache_apc extends CI_Driver {
 
-	/**
-	 * Get 
-	 *
-	 * Look for a value in the cache.  If it exists, return the data 
-	 * if not, return FALSE
-	 *
-	 * @param 	string	
-	 * @return 	mixed		value that is stored/FALSE on failure
-	 */
-	public function get($id)
-	{
-		$data = apc_fetch($id);
+    /**
+     * Get 
+     *
+     * Look for a value in the cache.  If it exists, return the data 
+     * if not, return FALSE
+     *
+     * @param 	string	
+     * @return 	mixed		value that is stored/FALSE on failure
+     */
+    public function get($id) {
+        $data = apc_fetch($id);
 
-		return (is_array($data)) ? $data[0] : FALSE;
-	}
+        return (is_array($data)) ? $data[0] : FALSE;
+    }
 
-	// ------------------------------------------------------------------------	
-	
-	/**
-	 * Cache Save
-	 *
-	 * @param 	string		Unique Key
-	 * @param 	mixed		Data to store
-	 * @param 	int			Length of time (in seconds) to cache the data
-	 *
-	 * @return 	boolean		true on success/false on failure
-	 */
-	public function save($id, $data, $ttl = 60)
-	{
-		return apc_store($id, array($data, time(), $ttl), $ttl);
-	}
-	
-	// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------	
 
-	/**
-	 * Delete from Cache
-	 *
-	 * @param 	mixed		unique identifier of the item in the cache
-	 * @param 	boolean		true on success/false on failure
-	 */
-	public function delete($id)
-	{
-		return apc_delete($id);
-	}
+    /**
+     * Cache Save
+     *
+     * @param 	string		Unique Key
+     * @param 	mixed		Data to store
+     * @param 	int			Length of time (in seconds) to cache the data
+     *
+     * @return 	boolean		true on success/false on failure
+     */
+    public function save($id, $data, $ttl = 60) {
+        return apc_store($id, array($data, time(), $ttl), $ttl);
+    }
 
-	// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
 
-	/**
-	 * Clean the cache
-	 *
-	 * @return 	boolean		false on failure/true on success
-	 */
-	public function clean()
-	{
-		return apc_clear_cache('user');
-	}
+    /**
+     * Delete from Cache
+     *
+     * @param 	mixed		unique identifier of the item in the cache
+     * @param 	boolean		true on success/false on failure
+     */
+    public function delete($id) {
+        return apc_delete($id);
+    }
 
-	// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
 
-	/**
-	 * Cache Info
-	 *
-	 * @param 	string		user/filehits
-	 * @return 	mixed		array on success, false on failure	
-	 */
-	 public function cache_info($type = NULL)
-	 {
-		 return apc_cache_info($type);
-	 }
+    /**
+     * Clean the cache
+     *
+     * @return 	boolean		false on failure/true on success
+     */
+    public function clean() {
+        return apc_clear_cache('user');
+    }
 
-	// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
 
-	/**
-	 * Get Cache Metadata
-	 *
-	 * @param 	mixed		key to get cache metadata on
-	 * @return 	mixed		array on success/false on failure
-	 */
-	public function get_metadata($id)
-	{
-		$stored = apc_fetch($id);
+    /**
+     * Cache Info
+     *
+     * @param 	string		user/filehits
+     * @return 	mixed		array on success, false on failure	
+     */
+    public function cache_info($type = NULL) {
+        return apc_cache_info($type);
+    }
 
-		if (count($stored) !== 3)
-		{
-			return FALSE;
-		}
+    // ------------------------------------------------------------------------
 
-		list($data, $time, $ttl) = $stored;
+    /**
+     * Get Cache Metadata
+     *
+     * @param 	mixed		key to get cache metadata on
+     * @return 	mixed		array on success/false on failure
+     */
+    public function get_metadata($id) {
+        $stored = apc_fetch($id);
 
-		return array(
-			'expire'	=> $time + $ttl,
-			'mtime'		=> $time,
-			'data'		=> $data
-		);
-	}
+        if (count($stored) !== 3) {
+            return FALSE;
+        }
 
-	// ------------------------------------------------------------------------
+        list($data, $time, $ttl) = $stored;
 
-	/**
-	 * is_supported()
-	 *
-	 * Check to see if APC is available on this system, bail if it isn't.
-	 */
-	public function is_supported()
-	{
-		if ( ! extension_loaded('apc') OR ! function_exists('apc_store'))
-		{
-			log_message('error', 'The APC PHP extension must be loaded to use APC Cache.');
-			return FALSE;
-		}
-		
-		return TRUE;
-	}
+        return array(
+            'expire' => $time + $ttl,
+            'mtime' => $time,
+            'data' => $data
+        );
+    }
 
-	// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
 
-	
+    /**
+     * is_supported()
+     *
+     * Check to see if APC is available on this system, bail if it isn't.
+     */
+    public function is_supported() {
+        if (!extension_loaded('apc') OR !function_exists('apc_store')) {
+            log_message('error', 'The APC PHP extension must be loaded to use APC Cache.');
+            return FALSE;
+        }
+
+        return TRUE;
+    }
+
+    // ------------------------------------------------------------------------
 }
+
 // End Class
 
 /* End of file Cache_apc.php */

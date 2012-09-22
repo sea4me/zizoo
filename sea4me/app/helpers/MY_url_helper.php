@@ -1,28 +1,26 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 
 
 
 
 
-if ( ! function_exists('admin_url'))
+if (!function_exists('admin_url')) {
 
-{
-
-	function admin_url($uri = '')
-
-	{
-
-		
-
-		$CI =& get_instance();
+    function admin_url($uri = '') {
 
 
-		$uri = 'backend/'.$uri ;
 
-		return $CI->config->site_url($uri);
+        $CI = & get_instance();
 
-	}
+
+        $uri = 'backend/' . $uri;
+
+        return $CI->config->site_url($uri);
+    }
 
 }
 
@@ -51,20 +49,14 @@ if ( ! function_exists('admin_url'))
  * @return	string
 
  */
+if (!function_exists('image_url')) {
 
-if ( ! function_exists('image_url'))
-
-{
-
-	function image_url($image_name = '')
-
-	{
-		$CI =& get_instance();
-		$uri = str_replace($CI->config->item('index_page'),"",$CI->config->site_url()).'/css/images/'.$image_name;
-		//echo $uri;exit;
-		return $uri;
-
-	}
+    function image_url($image_name = '') {
+        $CI = & get_instance();
+        $uri = str_replace($CI->config->item('index_page'), "", $CI->config->site_url()) . '/css/images/' . $image_name;
+        //echo $uri;exit;
+        return $uri;
+    }
 
 }
 
@@ -93,24 +85,18 @@ if ( ! function_exists('image_url'))
  * @return	string
 
  */
+if (!function_exists('pimage_url')) {
 
-if ( ! function_exists('pimage_url'))
+    function pimage_url($image_name = '') {
 
-{
 
-	function pimage_url($image_name = '')
 
-	{
+        $CI = & get_instance();
 
-		
+        $uri = str_replace($CI->config->item('index_page'), "", $CI->config->site_url()) . 'files/portfolios/' . $image_name;
 
-		$CI =& get_instance();
-
-		$uri = str_replace($CI->config->item('index_page'),"",$CI->config->site_url()).'files/portfolios/'.$image_name;
-
-		return $uri;
-
-	}
+        return $uri;
+    }
 
 }
 
@@ -139,45 +125,34 @@ if ( ! function_exists('pimage_url'))
  * @return	string
 
  */
+if (!function_exists('uimage_url')) {
 
-if ( ! function_exists('uimage_url'))
+    function uimage_url($image_name = '') {
 
-{
 
-	function uimage_url($image_name = '')
 
-	{
+        $CI = & get_instance();
 
-		
+        $uri = str_replace($CI->config->item('index_page'), "", $CI->config->site_url()) . 'files/logos/' . $image_name;
 
-		$CI =& get_instance();
-
-		$uri = str_replace($CI->config->item('index_page'),"",$CI->config->site_url()).'files/logos/'.$image_name;
-
-		return $uri;
-
-	}
+        return $uri;
+    }
 
 }
 
 
-if ( ! function_exists('prfile_url'))
+if (!function_exists('prfile_url')) {
 
-{
+    function prfile_url($image_name = '') {
 
-	function prfile_url($image_name = '')
 
-	{
 
-		
+        $CI = & get_instance();
 
-		$CI =& get_instance();
+        $uri = str_replace($CI->config->item('index_page'), "", $CI->config->site_url()) . 'files/project_attachment/' . $image_name;
 
-		$uri = str_replace($CI->config->item('index_page'),"",$CI->config->site_url()).'files/project_attachment/'.$image_name;
-
-		return $uri;
-
-	}
+        return $uri;
+    }
 
 }
 
@@ -209,82 +184,25 @@ if ( ! function_exists('prfile_url'))
  * @return	string
 
  */
+if (!function_exists('redirect_admin')) {
 
-if ( ! function_exists('redirect_admin'))
+    function redirect_admin($uri = '', $method = 'location', $http_response_code = 302) {
 
-{
-
-	function redirect_admin($uri = '', $method = 'location', $http_response_code = 302)
-
-	{
-
-		switch($method)
-
-		{
-
-			
-
-			case 'refresh'	: header("Refresh:0;url=".admin_url($uri));
-
-				break;
-
-			default			: header("Location: ".admin_url($uri), TRUE, $http_response_code);
-
-				break;
-
-		}
-
-		exit;
-
-	}
-
-}
+        switch ($method) {
 
 
 
-// ------------------------------------------------------------------------
+            case 'refresh' : header("Refresh:0;url=" . admin_url($uri));
 
+                break;
 
+            default : header("Location: " . admin_url($uri), TRUE, $http_response_code);
 
-/**
+                break;
+        }
 
- * Header Redirect Admin
-
- *
-
- * Header redirect in two flavors
-
- * For very fine grained control over headers, you could use the Output
-
- * Library's set_header() function.
-
- *
-
- * @access	public
-
- * @param	string	the URL
-
- * @param	string	the method: location or redirect
-
- * @return	string
-
- */
-
-if ( ! function_exists('replaceSpaceWithUnderscore'))
-
-{
-
-	function replaceSpaceWithUnderscore($text='')
-
-	{
-
-		$text = str_replace(' ','_',$text);
-
-		return $text;
-
-		
-
-	} //Function replaceSpaceWithUnderscore End
+        exit;
+    }
 
 }
 
@@ -317,21 +235,16 @@ if ( ! function_exists('replaceSpaceWithUnderscore'))
  * @return	string
 
  */
+if (!function_exists('replaceSpaceWithUnderscore')) {
 
-if ( ! function_exists('replaceUnderscoreWithSpace'))
+    function replaceSpaceWithUnderscore($text = '') {
 
-{
+        $text = str_replace(' ', '_', $text);
 
-	function replaceUnderscoreWithSpace($text = '')
+        return $text;
+    }
 
-	{
-
-		$text = str_replace('_',' ',$text);
-
-		return $text;
-
-	}//Function replaceUnderscoreWithSpace End
-
+//Function replaceSpaceWithUnderscore End
 }
 
 
@@ -363,38 +276,62 @@ if ( ! function_exists('replaceUnderscoreWithSpace'))
  * @return	string
 
  */
+if (!function_exists('replaceUnderscoreWithSpace')) {
 
-if ( ! function_exists('linksToCategories'))
+    function replaceUnderscoreWithSpace($text = '') {
 
-{
+        $text = str_replace('_', ' ', $text);
 
-	function linksToCategories($string='')
+        return $text;
+    }
 
-	{
+//Function replaceUnderscoreWithSpace End
+}
 
-		if($string!='')
 
-		{
 
-			$categories = explode(',',$string);
+// ------------------------------------------------------------------------
 
-			if(count($categories)>0)
 
-			{
 
-					
+/**
 
-			}
+ * Header Redirect Admin
 
-			
+ *
 
-		} 
+ * Header redirect in two flavors
 
-		return false;
+ * For very fine grained control over headers, you could use the Output
 
-		
+ * Library's set_header() function.
 
-	}
+ *
+
+ * @access	public
+
+ * @param	string	the URL
+
+ * @param	string	the method: location or redirect
+
+ * @return	string
+
+ */
+if (!function_exists('linksToCategories')) {
+
+    function linksToCategories($string = '') {
+
+        if ($string != '') {
+
+            $categories = explode(',', $string);
+
+            if (count($categories) > 0) {
+                
+            }
+        }
+
+        return false;
+    }
 
 }
 
@@ -403,5 +340,4 @@ if ( ! function_exists('linksToCategories'))
 /* End of file MY_url_helper.php */
 
 /* Location: ./app/helpers/MY_url_helper.php */
-
 ?>

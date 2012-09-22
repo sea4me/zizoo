@@ -4,25 +4,25 @@
  *  I) Page 4 - payments/book
  *  II) Page 5 - different flows
  *
- */
+*/
 textarea {font-family:Arial, Helvetica, Tahoma;}
 
 .narrow_page_bg{/*width:980px; background:#f2f2eb; padding:24px 0;*/
-  background: url("../images/command_center_bg.png") repeat-x scroll center top #F4F2E8;
+    background: url("../images/command_center_bg.png") repeat-x scroll center top #F4F2E8;
     border: 1px solid #FFFFFF;
     color: #56544A;
     margin: 0;
     min-height: 500px;
     padding: 10px;
-    
-	}
+
+}
 .relative {position: relative;}
 
 #book_it{color:#494848; padding:10px; margin:0 auto;}
 #payment_options{overflow:hidden;}
 
 .checkout_icon{
-background:transparent url('/images/uiwidgets/checkout_icons.png') no-repeat 0 0; width:16px; height:16px; overflow:hidden; margin: 2px 10px 0 0;
+    background:transparent url('/images/uiwidgets/checkout_icons.png') no-repeat 0 0; width:16px; height:16px; overflow:hidden; margin: 2px 10px 0 0;
 }
 .icon_cal{background-position:0 0 !important;}
 .icon_person{background-position:0 -16px !important;}
@@ -67,7 +67,7 @@ background:transparent url('/images/uiwidgets/checkout_icons.png') no-repeat 0 0
 
 /* 
  * Generic Dashed Table code
- */
+*/
 .dashed_table {margin-top:10px; float: left;}
 .dashed_table li {width: 925px; float: left; padding-top:0px; border:1px solid #d1d1c9; border-width:0 1px;}
 .dashed_table li.top {border-top-width: 1px; -moz-border-radius-topright:10px;-moz-border-radius-topleft:10px; -webkit-border-top-right-radius: 10px; -webkit-border-top-left-radius: 10px;}
@@ -134,11 +134,11 @@ p.sofort_explanation{background-image:url("/images/payment/v3/logo_sofort.gif");
 p.ideal_explanation{background-image:url("/images/payment/v3/logo_ideal.gif")}
 p.poli_explanation{background-image:url("/images/payment/v3/logo_poli.gif"); min-height:75px; padding:6px 22px 0 190px;}
 p.giropay_explanation{background-image:url("/images/payment/v3/logo_giropay.gif")}
-    *html p.sofort_explanation{height:75px;}
-    *html p.poli_explanation{height:75px;}
+*html p.sofort_explanation{height:75px;}
+*html p.poli_explanation{height:75px;}
 
 #echeck_explanation{background:transparent url(/images/payment/v3/logo_echeck.png) no-repeat 7px 34px; padding:0 0 0 0; height:125px; width:280px; float:left;}
-    p.echeck_call_to_action{height:23px; overflow:hidden; line-height:23px; color:#000000; font-size:14px; padding-left:8px;}
+p.echeck_call_to_action{height:23px; overflow:hidden; line-height:23px; color:#000000; font-size:14px; padding-left:8px;}
 #echeck_fields{width:300px; float:left;}
 
 #book_it input{margin:0 0 10px 0; width:285px; }
@@ -255,7 +255,7 @@ img.message_thread_arrow{position:absolute; left:6px; top:12px; z-index:2;}
 
 /* duplicated styles ONLY below here */
 .message_body{float:left; width:376px; background:#f0faff; border:1px solid #dddddd; margin-left:27px; min-height:40px;}
-    *html .message_body{height:40px;}
+*html .message_body{height:40px;}
 
 .message_body p{padding:10px 12px; font-size:13px; color:#7c7c7c;}
 img.reputation_arrow{position:absolute; left:4px; top:11px; z-index:2;}
@@ -292,40 +292,40 @@ ul#guest_detail_fields span.data{padding:0; width:254px; float:left; display:blo
 
 /*
  * Connections
- */
+*/
 #guest_connections li {
-	float: left;
-	width: 33%;
-	margin: 8px 0;
-	position: relative;
-	display: table;
+    float: left;
+    width: 33%;
+    margin: 8px 0;
+    position: relative;
+    display: table;
 }
 
 #guest_connections .room-connections-title {
-	display: table-cell;
-	vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #guest_connections img {
-	background: #FFFFFF;
-	padding: 1px;
-	border: 1px solid #DADADA;
-	float: left;
-	vertical-align: middle;
-	margin: 0 5px;
+    background: #FFFFFF;
+    padding: 1px;
+    border: 1px solid #DADADA;
+    float: left;
+    vertical-align: middle;
+    margin: 0 5px;
 }
 
 * html #guest_connections .room-connections-title,
 * + html #guest_connections .room-connections-title {
-	position: absolute;
-	top: 50%;
-	width: 145px;
+    position: absolute;
+    top: 50%;
+    width: 145px;
 }
 
 * html #guest_connections .room-connections-title-outer,
 * + html #guest_connections .room-connections-title-outer {
-	position: relative;
-	top: -50%;
+    position: relative;
+    top: -50%;
 }
 
 /* duplicated styles */
@@ -355,7 +355,7 @@ p.no_countdown{color:#9C9C95 !important; font-size:24px !important; font-weight:
 /*
  * explict z-index is necessary for #accept_decline_actions for IE7, so the popup floats OVER the comment box below 
  * See: http://ltslashgt.com/2007/05/16/relative-zindex-and-ie/
- */
+*/
 #accept_decline_actions{position:relative; z-index:9999;} 
 
 #accept_decline_actions span.inner{padding-right:10px;}

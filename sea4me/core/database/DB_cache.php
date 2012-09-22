@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -24,172 +26,155 @@
  */
 class CI_DB_Cache {
 
-	var $CI;
-	var $db;	// allows passing of db object so that multiple database connections and returned db objects can be supported
+    var $CI;
+    var $db; // allows passing of db object so that multiple database connections and returned db objects can be supported
 
-	/**
-	 * Constructor
-	 *
-	 * Grabs the CI super object instance so we can access it.
-	 *
-	 */
-	function CI_DB_Cache(&$db)
-	{
-		// Assign the main CI object to $this->CI
-		// and load the file helper since we use it a lot
-		$this->CI =& get_instance();
-		$this->db =& $db;
-		$this->CI->load->helper('file');
-	}
+    /**
+     * Constructor
+     *
+     * Grabs the CI super object instance so we can access it.
+     *
+     */
 
-	// --------------------------------------------------------------------
+    function CI_DB_Cache(&$db) {
+        // Assign the main CI object to $this->CI
+        // and load the file helper since we use it a lot
+        $this->CI = & get_instance();
+        $this->db = & $db;
+        $this->CI->load->helper('file');
+    }
 
-	/**
-	 * Set Cache Directory Path
-	 *
-	 * @access	public
-	 * @param	string	the path to the cache directory
-	 * @return	bool
-	 */
-	function check_path($path = '')
-	{
-		if ($path == '')
-		{
-			if ($this->db->cachedir == '')
-			{
-				return $this->db->cache_off();
-			}
+    // --------------------------------------------------------------------
 
-			$path = $this->db->cachedir;
-		}
+    /**
+     * Set Cache Directory Path
+     *
+     * @access	public
+     * @param	string	the path to the cache directory
+     * @return	bool
+     */
+    function check_path($path = '') {
+        if ($path == '') {
+            if ($this->db->cachedir == '') {
+                return $this->db->cache_off();
+            }
 
-		// Add a trailing slash to the path if needed
-		$path = preg_replace("/(.+?)\/*$/", "\\1/",  $path);
+            $path = $this->db->cachedir;
+        }
 
-		if ( ! is_dir($path) OR ! is_really_writable($path))
-		{
-			// If the path is wrong we'll turn off caching
-			return $this->db->cache_off();
-		}
+        // Add a trailing slash to the path if needed
+        $path = preg_replace("/(.+?)\/*$/", "\\1/", $path);
 
-		$this->db->cachedir = $path;
-		return TRUE;
-	}
+        if (!is_dir($path) OR !is_really_writable($path)) {
+            // If the path is wrong we'll turn off caching
+            return $this->db->cache_off();
+        }
 
-	// --------------------------------------------------------------------
+        $this->db->cachedir = $path;
+        return TRUE;
+    }
 
-	/**
-	 * Retrieve a cached query
-	 *
-	 * The URI being requested will become the name of the cache sub-folder.
-	 * An MD5 hash of the SQL statement will become the cache file name
-	 *
-	 * @access	public
-	 * @return	string
-	 */
-	function read($sql)
-	{
-		if ( ! $this->check_path())
-		{
-			return $this->db->cache_off();
-		}
+    // --------------------------------------------------------------------
 
-		$segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
+    /**
+     * Retrieve a cached query
+     *
+     * The URI being requested will become the name of the cache sub-folder.
+     * An MD5 hash of the SQL statement will become the cache file name
+     *
+     * @access	public
+     * @return	string
+     */
+    function read($sql) {
+        if (!$this->check_path()) {
+            return $this->db->cache_off();
+        }
 
-		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+        $segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
 
-		$filepath = $this->db->cachedir.$segment_one.'+'.$segment_two.'/'.md5($sql);
+        $segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
 
-		if (FALSE === ($cachedata = read_file($filepath)))
-		{
-			return FALSE;
-		}
+        $filepath = $this->db->cachedir . $segment_one . '+' . $segment_two . '/' . md5($sql);
 
-		return unserialize($cachedata);
-	}
+        if (FALSE === ($cachedata = read_file($filepath))) {
+            return FALSE;
+        }
 
-	// --------------------------------------------------------------------
+        return unserialize($cachedata);
+    }
 
-	/**
-	 * Write a query to a cache file
-	 *
-	 * @access	public
-	 * @return	bool
-	 */
-	function write($sql, $object)
-	{
-		if ( ! $this->check_path())
-		{
-			return $this->db->cache_off();
-		}
+    // --------------------------------------------------------------------
 
-		$segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
+    /**
+     * Write a query to a cache file
+     *
+     * @access	public
+     * @return	bool
+     */
+    function write($sql, $object) {
+        if (!$this->check_path()) {
+            return $this->db->cache_off();
+        }
 
-		$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+        $segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
 
-		$dir_path = $this->db->cachedir.$segment_one.'+'.$segment_two.'/';
+        $segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
 
-		$filename = md5($sql);
+        $dir_path = $this->db->cachedir . $segment_one . '+' . $segment_two . '/';
 
-		if ( ! @is_dir($dir_path))
-		{
-			if ( ! @mkdir($dir_path, DIR_WRITE_MODE))
-			{
-				return FALSE;
-			}
+        $filename = md5($sql);
 
-			@chmod($dir_path, DIR_WRITE_MODE);
-		}
+        if (!@is_dir($dir_path)) {
+            if (!@mkdir($dir_path, DIR_WRITE_MODE)) {
+                return FALSE;
+            }
 
-		if (write_file($dir_path.$filename, serialize($object)) === FALSE)
-		{
-			return FALSE;
-		}
+            @chmod($dir_path, DIR_WRITE_MODE);
+        }
 
-		@chmod($dir_path.$filename, FILE_WRITE_MODE);
-		return TRUE;
-	}
+        if (write_file($dir_path . $filename, serialize($object)) === FALSE) {
+            return FALSE;
+        }
 
-	// --------------------------------------------------------------------
+        @chmod($dir_path . $filename, FILE_WRITE_MODE);
+        return TRUE;
+    }
 
-	/**
-	 * Delete cache files within a particular directory
-	 *
-	 * @access	public
-	 * @return	bool
-	 */
-	function delete($segment_one = '', $segment_two = '')
-	{
-		if ($segment_one == '')
-		{
-			$segment_one  = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
-		}
+    // --------------------------------------------------------------------
 
-		if ($segment_two == '')
-		{
-			$segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
-		}
+    /**
+     * Delete cache files within a particular directory
+     *
+     * @access	public
+     * @return	bool
+     */
+    function delete($segment_one = '', $segment_two = '') {
+        if ($segment_one == '') {
+            $segment_one = ($this->CI->uri->segment(1) == FALSE) ? 'default' : $this->CI->uri->segment(1);
+        }
 
-		$dir_path = $this->db->cachedir.$segment_one.'+'.$segment_two.'/';
+        if ($segment_two == '') {
+            $segment_two = ($this->CI->uri->segment(2) == FALSE) ? 'index' : $this->CI->uri->segment(2);
+        }
 
-		delete_files($dir_path, TRUE);
-	}
+        $dir_path = $this->db->cachedir . $segment_one . '+' . $segment_two . '/';
 
-	// --------------------------------------------------------------------
+        delete_files($dir_path, TRUE);
+    }
 
-	/**
-	 * Delete all existing cache files
-	 *
-	 * @access	public
-	 * @return	bool
-	 */
-	function delete_all()
-	{
-		delete_files($this->db->cachedir, TRUE);
-	}
+    // --------------------------------------------------------------------
+
+    /**
+     * Delete all existing cache files
+     *
+     * @access	public
+     * @return	bool
+     */
+    function delete_all() {
+        delete_files($this->db->cachedir, TRUE);
+    }
 
 }
-
 
 /* End of file DB_cache.php */
 /* Location: ./system/database/DB_cache.php */

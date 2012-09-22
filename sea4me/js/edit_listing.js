@@ -128,8 +128,8 @@ var CogzidelDashboard;
         },
         setLoading: function (b, c) {
             var c = c || {},
-                d = a("div.form-submit span.spinner", c.context),
-                e = a("div.form-submit :submit", c.context);
+            d = a("div.form-submit span.spinner", c.context),
+            e = a("div.form-submit :submit", c.context);
             if (b) {
                 d.show();
                 e.attr("disabled", "disabled")
@@ -147,10 +147,10 @@ var CogzidelDashboard;
 })(jQuery);
 (function (b) {
     var a = function (d, c) {
-            if (d) {
-                this.init(d, c)
-            }
-        };
+        if (d) {
+            this.init(d, c)
+        }
+    };
     b.extend(a.prototype, {
         name: "cogzidelMap",
         init: function (g, f) {
@@ -202,27 +202,27 @@ var CogzidelDashboard;
                     clickable: false
                 });
                 var e = function () {
-                        var j = h.marker.getBounds();
-                        var i = h.map.getBounds();
-                        if (j.contains && j.contains(i.getNorthEast()) && j.contains(i.getSouthWest())) {
-                            if (!h.markerHidden) {
-                                h.marker.setOptions({
-                                    fillOpacity: 0
-                                });
-                                h.markerHidden = true
-                            }
-                        } else {
-                            if (h.markerHidden) {
-                                h.marker.setOptions({
-                                    fillOpacity: 0.25
-                                });
-                                h.markerHidden = false
-                            }
+                    var j = h.marker.getBounds();
+                    var i = h.map.getBounds();
+                    if (j.contains && j.contains(i.getNorthEast()) && j.contains(i.getSouthWest())) {
+                        if (!h.markerHidden) {
+                            h.marker.setOptions({
+                                fillOpacity: 0
+                            });
+                            h.markerHidden = true
                         }
-                    };
+                    } else {
+                        if (h.markerHidden) {
+                            h.marker.setOptions({
+                                fillOpacity: 0.25
+                            });
+                            h.markerHidden = false
+                        }
+                    }
+                };
                 var c = function () {
-                        h.marker.setRadius(CogzidelConstants.MapCircleSizes[h.map.getZoom()])
-                    };
+                    h.marker.setRadius(CogzidelConstants.MapCircleSizes[h.map.getZoom()])
+                };
                 google.maps.event.addListener(h.map, "bounds_changed", e);
                 google.maps.event.addListener(h.map, "zoom_changed", c)
             } else {
@@ -268,7 +268,7 @@ var CogzidelDashboard;
     });
     b.fn.cogzidelMap = function (e) {
         var d = b.makeArray(arguments),
-            g = d.slice(1);
+        g = d.slice(1);
         var c;
         var f = this.each(function () {
             c = b.data(this, "cogzidelMap");
@@ -311,7 +311,7 @@ jQuery(document).ready(function () {
     tooltip()
 });
 var COMPILED = true,
-    goog = goog || {};
+goog = goog || {};
 goog.global = this;
 goog.DEBUG = true;
 goog.LOCALE = "en";
@@ -360,7 +360,7 @@ goog.getObjectByName = function (g, f) {
 };
 goog.globalize = function (f, e) {
     var h = e || goog.global,
-        g;
+    g;
     for (g in f) {
         h[g] = f[g]
     }
@@ -428,7 +428,7 @@ if (!COMPILED) {
             if (goog.inHtmlDocument_()) {
                 for (var f = goog.global.document.getElementsByTagName("script"), e = f.length - 1; e >= 0; --e) {
                     var h = f[e].src,
-                        g = h.lastIndexOf("?");
+                    g = h.lastIndexOf("?");
                     g = g == -1 ? h.length : g;
                     if (h.substr(g - 7, 7) == "base.js") {
                         goog.basePath = h.substr(0, g - 7);
@@ -476,9 +476,9 @@ if (!COMPILED) {
             }
         }
         var f = [],
-            j = {},
-            i = goog.dependencies_,
-            h;
+        j = {},
+        i = goog.dependencies_,
+        h;
         for (h in goog.included_) {
             i.written[h] || g(h)
         }
@@ -638,9 +638,9 @@ goog.mixin = function (e, d) {
     }
 };
 goog.now = Date.now ||
-function () {
-    return +new Date
-};
+    function () {
+        return +new Date
+    };
 goog.globalEval = function (a) {
     if (goog.global.execScript) {
         goog.global.execScript(a, "JavaScript")
@@ -659,7 +659,7 @@ goog.globalEval = function (a) {
                 goog.global.eval(a)
             } else {
                 var b = goog.global.document,
-                    c = b.createElement("script");
+                c = b.createElement("script");
                 c.type = "text/javascript";
                 c.defer = false;
                 c.appendChild(b.createTextNode(a));
@@ -697,7 +697,7 @@ goog.setCssNameMapping = function (d, c) {
 };
 goog.getMsg = function (g, f) {
     var j = f || {},
-        i;
+    i;
     for (i in j) {
         var h = ("" + j[i]).replace(/\$/g, "$$$$");
         g = g.replace(RegExp("\\{\\$" + i + "\\}", "gi"), h)
@@ -823,7 +823,7 @@ goog.string.trimRight = function (b) {
 };
 goog.string.caseInsensitiveCompare = function (f, e) {
     var h = String(f).toLowerCase(),
-        g = String(e).toLowerCase();
+    g = String(e).toLowerCase();
     return h < g ? -1 : h == g ? 0 : 1
 };
 goog.string.numerateCompareRegExp_ = /(\.\d+)|(\d+)|(\D+)/g;
@@ -839,7 +839,7 @@ goog.string.numerateCompare = function (j, i) {
     }
     for (var p = j.toLowerCase().match(goog.string.numerateCompareRegExp_), o = i.toLowerCase().match(goog.string.numerateCompareRegExp_), n = Math.min(p.length, o.length), m = 0; m < n; m++) {
         var l = p[m],
-            k = o[m];
+        k = o[m];
         if (l != k) {
             p = parseInt(l, 10);
             if (!isNaN(p)) {
@@ -916,22 +916,22 @@ goog.string.unescapeEntitiesUsingDom_ = function (d) {
 goog.string.unescapePureXmlEntities_ = function (b) {
     return b.replace(/&([^;]+);/g, function (a, f) {
         switch (f) {
-        case "amp":
-            return "&";
-        case "lt":
-            return "<";
-        case "gt":
-            return ">";
-        case "quot":
-            return '"';
-        default:
-            if (f.charAt(0) == "#") {
-                var e = Number("0" + f.substr(1));
-                if (!isNaN(e)) {
-                    return String.fromCharCode(e)
+            case "amp":
+                return "&";
+            case "lt":
+                return "<";
+            case "gt":
+                return ">";
+            case "quot":
+                return '"';
+            default:
+                if (f.charAt(0) == "#") {
+                    var e = Number("0" + f.substr(1));
+                    if (!isNaN(e)) {
+                        return String.fromCharCode(e)
+                    }
                 }
-            }
-            return a
+                return a
         }
     })
 };
@@ -966,7 +966,7 @@ goog.string.truncateMiddle = function (g, f, j) {
     }
     if (g.length > f) {
         var i = Math.floor(f / 2),
-            h = g.length - i;
+        h = g.length - i;
         i += f % 2;
         g = g.substring(0, i) + "..." + g.substring(h)
     }
@@ -996,7 +996,7 @@ goog.string.quote = function (g) {
     } else {
         for (var f = ['"'], j = 0; j < g.length; j++) {
             var i = g.charAt(j),
-                h = i.charCodeAt(0);
+            h = i.charCodeAt(0);
             f[j + 1] = goog.string.specialEscapeChars_[i] || (h > 31 && h < 127 ? i : goog.string.escapeChar(i))
         }
         f.push('"');
@@ -1017,7 +1017,7 @@ goog.string.escapeChar = function (e) {
         return goog.string.jsEscapeCache_[e] = goog.string.specialEscapeChars_[e]
     }
     var d = e,
-        f = e.charCodeAt(0);
+    f = e.charCodeAt(0);
     if (f > 31 && f < 127) {
         d = e
     } else {
@@ -1086,12 +1086,12 @@ goog.string.getRandomString = function () {
 goog.string.compareVersions = function (B, A) {
     for (var z = 0, y = goog.string.trim(String(B)).split("."), x = goog.string.trim(String(A)).split("."), w = Math.max(y.length, x.length), v = 0; z == 0 && v < w; v++) {
         var u = y[v] || "",
-            t = x[v] || "",
-            s = RegExp("(\\d*)(\\D*)", "g"),
-            q = RegExp("(\\d*)(\\D*)", "g");
+        t = x[v] || "",
+        s = RegExp("(\\d*)(\\D*)", "g"),
+        q = RegExp("(\\d*)(\\D*)", "g");
         do {
             var r = s.exec(u) || ["", "", ""],
-                p = q.exec(t) || ["", "", ""];
+            p = q.exec(t) || ["", "", ""];
             if (r[0].length == 0 && p[0].length == 0) {
                 break
             }
@@ -1207,89 +1207,89 @@ goog.array.peek = function (b) {
 };
 goog.array.ARRAY_PROTOTYPE_ = Array.prototype;
 goog.array.indexOf = goog.array.ARRAY_PROTOTYPE_.indexOf ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.indexOf.call(e, d, f)
-} : function (e, d, f) {
-    f = f == null ? 0 : f < 0 ? Math.max(0, e.length + f) : f;
-    if (goog.isString(e)) {
-        if (!goog.isString(d) || d.length != 1) {
-            return -1
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.indexOf.call(e, d, f)
+    } : function (e, d, f) {
+        f = f == null ? 0 : f < 0 ? Math.max(0, e.length + f) : f;
+        if (goog.isString(e)) {
+            if (!goog.isString(d) || d.length != 1) {
+                return -1
+            }
+            return e.indexOf(d, f)
         }
-        return e.indexOf(d, f)
-    }
-    for (; f < e.length; f++) {
-        if (f in e && e[f] === d) {
-            return f
+        for (; f < e.length; f++) {
+            if (f in e && e[f] === d) {
+                return f
+            }
         }
-    }
-    return -1
-};
+        return -1
+    };
 goog.array.lastIndexOf = goog.array.ARRAY_PROTOTYPE_.lastIndexOf ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.lastIndexOf.call(e, d, f == null ? e.length - 1 : f)
-} : function (e, d, f) {
-    f = f == null ? e.length - 1 : f;
-    if (f < 0) {
-        f = Math.max(0, e.length + f)
-    }
-    if (goog.isString(e)) {
-        if (!goog.isString(d) || d.length != 1) {
-            return -1
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.lastIndexOf.call(e, d, f == null ? e.length - 1 : f)
+    } : function (e, d, f) {
+        f = f == null ? e.length - 1 : f;
+        if (f < 0) {
+            f = Math.max(0, e.length + f)
         }
-        return e.lastIndexOf(d, f)
-    }
-    for (; f >= 0; f--) {
-        if (f in e && e[f] === d) {
-            return f
+        if (goog.isString(e)) {
+            if (!goog.isString(d) || d.length != 1) {
+                return -1
+            }
+            return e.lastIndexOf(d, f)
         }
-    }
-    return -1
-};
+        for (; f >= 0; f--) {
+            if (f in e && e[f] === d) {
+                return f
+            }
+        }
+        return -1
+    };
 goog.array.forEach = goog.array.ARRAY_PROTOTYPE_.forEach ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    goog.array.ARRAY_PROTOTYPE_.forEach.call(e, d, f)
-} : function (h, g, l) {
-    for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
-        i in j && g.call(l, j[i], i, h)
-    }
-};
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        goog.array.ARRAY_PROTOTYPE_.forEach.call(e, d, f)
+    } : function (h, g, l) {
+        for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
+            i in j && g.call(l, j[i], i, h)
+        }
+    };
 goog.array.forEachRight = function (g, f, j) {
     var i = g.length,
-        h = goog.isString(g) ? g.split("") : g;
+    h = goog.isString(g) ? g.split("") : g;
     for (i -= 1; i >= 0; --i) {
         i in h && f.call(j, h[i], i, g)
     }
 };
 goog.array.filter = goog.array.ARRAY_PROTOTYPE_.filter ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.filter.call(e, d, f)
-} : function (r, q, p) {
-    for (var o = r.length, n = [], m = 0, l = goog.isString(r) ? r.split("") : r, k = 0; k < o; k++) {
-        if (k in l) {
-            var j = l[k];
-            if (q.call(p, j, k, r)) {
-                n[m++] = j
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.filter.call(e, d, f)
+    } : function (r, q, p) {
+        for (var o = r.length, n = [], m = 0, l = goog.isString(r) ? r.split("") : r, k = 0; k < o; k++) {
+            if (k in l) {
+                var j = l[k];
+                if (q.call(p, j, k, r)) {
+                    n[m++] = j
+                }
             }
         }
-    }
-    return n
-};
+        return n
+    };
 goog.array.map = goog.array.ARRAY_PROTOTYPE_.map ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.map.call(e, d, f)
-} : function (i, h, n) {
-    for (var m = i.length, l = Array(m), k = goog.isString(i) ? i.split("") : i, j = 0; j < m; j++) {
-        if (j in k) {
-            l[j] = h.call(n, k[j], j, i)
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.map.call(e, d, f)
+    } : function (i, h, n) {
+        for (var m = i.length, l = Array(m), k = goog.isString(i) ? i.split("") : i, j = 0; j < m; j++) {
+            if (j in k) {
+                l[j] = h.call(n, k[j], j, i)
+            }
         }
-    }
-    return l
-};
+        return l
+    };
 goog.array.reduce = function (g, f, j, i) {
     if (g.reduce) {
         return i ? g.reduce(goog.bind(f, i), j) : g.reduce(f, j)
@@ -1311,29 +1311,29 @@ goog.array.reduceRight = function (g, f, j, i) {
     return h
 };
 goog.array.some = goog.array.ARRAY_PROTOTYPE_.some ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.some.call(e, d, f)
-} : function (h, g, l) {
-    for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
-        if (i in j && g.call(l, j[i], i, h)) {
-            return true
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.some.call(e, d, f)
+    } : function (h, g, l) {
+        for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
+            if (i in j && g.call(l, j[i], i, h)) {
+                return true
+            }
         }
-    }
-    return false
-};
+        return false
+    };
 goog.array.every = goog.array.ARRAY_PROTOTYPE_.every ?
-function (e, d, f) {
-    goog.asserts.assert(e.length != null);
-    return goog.array.ARRAY_PROTOTYPE_.every.call(e, d, f)
-} : function (h, g, l) {
-    for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
-        if (i in j && !g.call(l, j[i], i, h)) {
-            return false
+    function (e, d, f) {
+        goog.asserts.assert(e.length != null);
+        return goog.array.ARRAY_PROTOTYPE_.every.call(e, d, f)
+    } : function (h, g, l) {
+        for (var k = h.length, j = goog.isString(h) ? h.split("") : h, i = 0; i < k; i++) {
+            if (i in j && !g.call(l, j[i], i, h)) {
+                return false
+            }
         }
-    }
-    return true
-};
+        return true
+    };
 goog.array.find = function (e, d, f) {
     d = goog.array.findIndex(e, d, f);
     return d < 0 ? null : goog.isString(e) ? e.charAt(d) : e[d]
@@ -1352,7 +1352,7 @@ goog.array.findRight = function (e, d, f) {
 };
 goog.array.findIndexRight = function (g, f, j) {
     var i = g.length,
-        h = goog.isString(g) ? g.split("") : g;
+    h = goog.isString(g) ? g.split("") : g;
     for (i -= 1; i >= 0; i--) {
         if (i in h && f.call(j, h[i], i, g)) {
             return i
@@ -1389,7 +1389,7 @@ goog.array.insertBefore = function (f, e, h) {
 };
 goog.array.remove = function (f, e) {
     var h = goog.array.indexOf(f, e),
-        g;
+    g;
     if (g = h >= 0) {
         goog.array.removeAt(f, h)
     }
@@ -1429,7 +1429,7 @@ goog.array.toArray = function (b) {
 goog.array.extend = function (i) {
     for (var h = 1; h < arguments.length; h++) {
         var n = arguments[h],
-            m;
+        m;
         if (goog.isArray(n) || (m = goog.isArrayLike(n)) && n.hasOwnProperty("callee")) {
             i.push.apply(i, n)
         } else {
@@ -1454,7 +1454,7 @@ goog.array.slice = function (e, d, f) {
 goog.array.removeDuplicates = function (j, i) {
     for (var p = i || j, o = {}, n = 0, m = 0; m < j.length;) {
         var l = j[m++],
-            k = goog.isObject(l) ? "o" + goog.getUid(l) : (typeof l).charAt(0) + l;
+        k = goog.isObject(l) ? "o" + goog.getUid(l) : (typeof l).charAt(0) + l;
         if (!Object.prototype.hasOwnProperty.call(o, k)) {
             o[k] = true;
             p[n++] = l
@@ -1471,7 +1471,7 @@ goog.array.binarySelect = function (e, d, f) {
 goog.array.binarySearch_ = function (t, s, r, q, p) {
     for (var o = 0, n = t.length, m; o < n;) {
         var l = o + n >> 1,
-            k;
+        k;
         k = r ? s.call(p, t[l], l, t) : s(q, t[l]);
         if (k > 0) {
             o = l + 1
@@ -1554,7 +1554,7 @@ goog.array.binaryRemove = function (e, d, f) {
 goog.array.bucket = function (h, g) {
     for (var l = {}, k = 0; k < h.length; k++) {
         var j = h[k],
-            i = g(j, k, h);
+        i = g(j, k, h);
         if (goog.isDef(i)) {
             (l[i] || (l[i] = [])).push(j)
         }
@@ -1604,7 +1604,7 @@ goog.array.zip = function () {
 goog.array.shuffle = function (h, g) {
     for (var l = g || Math.random, k = h.length - 1; k > 0; k--) {
         var j = Math.floor(l() * (k + 1)),
-            i = h[k];
+        i = h[k];
         h[k] = h[j];
         h[j] = i
     }
@@ -1617,7 +1617,7 @@ goog.object.forEach = function (f, e, h) {
 };
 goog.object.filter = function (g, f, j) {
     var i = {},
-        h;
+    h;
     for (h in g) {
         if (f.call(j, g[h], h, g)) {
             i[h] = g[h]
@@ -1627,7 +1627,7 @@ goog.object.filter = function (g, f, j) {
 };
 goog.object.map = function (g, f, j) {
     var i = {},
-        h;
+    h;
     for (h in g) {
         i[h] = f.call(j, g[h], h, g)
     }
@@ -1651,7 +1651,7 @@ goog.object.every = function (f, e, h) {
 };
 goog.object.getCount = function (e) {
     var d = 0,
-        f;
+    f;
     for (f in e) {
         d++
     }
@@ -1672,8 +1672,8 @@ goog.object.contains = function (d, c) {
 };
 goog.object.getValues = function (f) {
     var e = [],
-        h = 0,
-        g;
+    h = 0,
+    g;
     for (g in f) {
         e[h++] = f[g]
     }
@@ -1681,8 +1681,8 @@ goog.object.getValues = function (f) {
 };
 goog.object.getKeys = function (f) {
     var e = [],
-        h = 0,
-        g;
+    h = 0,
+    g;
     for (g in f) {
         e[h++] = g
     }
@@ -1690,7 +1690,7 @@ goog.object.getKeys = function (f) {
 };
 goog.object.getValueByKeys = function (f, e) {
     var h = goog.isArrayLike(e),
-        g = h ? e : arguments;
+    g = h ? e : arguments;
     for (h = h ? 0 : 1; h < g.length; h++) {
         f = f[g[h]];
         if (!goog.isDef(f)) {
@@ -1758,7 +1758,7 @@ goog.object.setIfUndefined = function (e, d, f) {
 };
 goog.object.clone = function (e) {
     var d = {},
-        f;
+    f;
     for (f in e) {
         d[f] = e[f]
     }
@@ -1766,7 +1766,7 @@ goog.object.clone = function (e) {
 };
 goog.object.transpose = function (e) {
     var d = {},
-        f;
+    f;
     for (f in e) {
         d[e[f]] = f
     }
@@ -1876,12 +1876,12 @@ goog.proto2.FieldDescriptor = function (e, d, f) {
     this.nativeType_ = f.type;
     this.deserializationConversionPermitted_ = false;
     switch (this.fieldType_) {
-    case goog.proto2.FieldDescriptor.FieldType.INT64:
-    case goog.proto2.FieldDescriptor.FieldType.UINT64:
-    case goog.proto2.FieldDescriptor.FieldType.FIXED64:
-    case goog.proto2.FieldDescriptor.FieldType.SFIXED64:
-    case goog.proto2.FieldDescriptor.FieldType.SINT64:
-        this.deserializationConversionPermitted_ = true
+        case goog.proto2.FieldDescriptor.FieldType.INT64:
+        case goog.proto2.FieldDescriptor.FieldType.UINT64:
+        case goog.proto2.FieldDescriptor.FieldType.FIXED64:
+        case goog.proto2.FieldDescriptor.FieldType.SFIXED64:
+        case goog.proto2.FieldDescriptor.FieldType.SINT64:
+            this.deserializationConversionPermitted_ = true
     }
     this.defaultValue_ = f.defaultValue
 };
@@ -2034,8 +2034,8 @@ goog.proto2.Message.prototype.equals = function (i) {
         }
         if (this.has(m)) {
             var l = m.isCompositeType(),
-                k = m.getTag(),
-                j = this.values_[k];
+            k = m.getTag(),
+            j = this.values_[k];
             k = i.values_[k];
             if (m.isRepeated()) {
                 if (j.length != k.length) {
@@ -2081,8 +2081,8 @@ goog.proto2.Message.prototype.clone = function () {
 goog.proto2.Message.prototype.initDefaults = function (h) {
     for (var g = this.getDescriptor().getFields(), l = 0; l < g.length; l++) {
         var k = g[l],
-            j = k.getTag(),
-            i = k.isCompositeType();
+        j = k.getTag(),
+        i = k.isCompositeType();
         if (!this.has(k) && !k.isRepeated()) {
             if (i) {
                 this.values_[j] = new(k.getNativeType())
@@ -2192,7 +2192,7 @@ goog.proto2.Message.prototype.clear$Field = function (b) {
 };
 goog.proto2.Message.set$Metadata = function (g, f) {
     var j = [],
-        i, h;
+    i, h;
     for (h in f) {
         if (f.hasOwnProperty(h)) {
             goog.proto2.Util.assert(goog.string.isNumeric(h), "Keys must be numeric");
@@ -3362,2736 +3362,2736 @@ i18n.phonenumbers.metadata.countryCodeToRegionCodeMap = {
 };
 i18n.phonenumbers.metadata.countryToMetadata = {
     AD: [, [, , "(?:[346-9]|180)\\d{5}", "\\d{6,8}"],
-        [, , "[78]\\d{5}", "\\d{6}", , , "712345"],
-        [, , "[346]\\d{5}", "\\d{6}", , , "312345"],
-        [, , "180[02]\\d{4}", "\\d{8}", , , "18001234"],
-        [, , "9\\d{5}", "\\d{6}", , , "912345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AD", 376, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{3})", "$1 $2", ["[346-9]"], "", ""],
-            [, "(180[02])(\\d{4})", "$1 $2", ["1"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[78]\\d{5}", "\\d{6}", , , "712345"],
+    [, , "[346]\\d{5}", "\\d{6}", , , "312345"],
+    [, , "180[02]\\d{4}", "\\d{8}", , , "18001234"],
+    [, , "9\\d{5}", "\\d{6}", , , "912345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AD", 376, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{3})", "$1 $2", ["[346-9]"], "", ""],
+    [, "(180[02])(\\d{4})", "$1 $2", ["1"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     AE: [, [, , "[2-79]\\d{7,8}|800\\d{2,9}", "\\d{5,12}"],
-        [, , "(?:[2-4679][2-8]\\d|600[25])\\d{5}", "\\d{7,9}", , , "22345678"],
-        [, , "5[056]\\d{7}", "\\d{9}", , , "501234567"],
-        [, , "400\\d{6}|800\\d{2,9}", "\\d{5,12}", , , "800123456"],
-        [, , "900[02]\\d{5}", "\\d{9}", , , "900234567"],
-        [, , "700[05]\\d{5}", "\\d{9}", , , "700012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AE", 971, "00", "0", , , "0", , , , [
-            [, "([2-4679])(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-4679][2-8]"], "0$1", ""],
-            [, "(5[056])(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1", ""],
-            [, "([4679]00)(\\d)(\\d{5})", "$1 $2 $3", ["[4679]0"], "$1", ""],
-            [, "(800)(\\d{2,9})", "$1 $2", ["8"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[2-4679][2-8]\\d|600[25])\\d{5}", "\\d{7,9}", , , "22345678"],
+    [, , "5[056]\\d{7}", "\\d{9}", , , "501234567"],
+    [, , "400\\d{6}|800\\d{2,9}", "\\d{5,12}", , , "800123456"],
+    [, , "900[02]\\d{5}", "\\d{9}", , , "900234567"],
+    [, , "700[05]\\d{5}", "\\d{9}", , , "700012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AE", 971, "00", "0", , , "0", , , , [
+    [, "([2-4679])(\\d{3})(\\d{4})", "$1 $2 $3", ["[2-4679][2-8]"], "0$1", ""],
+    [, "(5[056])(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1", ""],
+    [, "([4679]00)(\\d)(\\d{5})", "$1 $2 $3", ["[4679]0"], "$1", ""],
+    [, "(800)(\\d{2,9})", "$1 $2", ["8"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AF: [, [, , "[2-7]\\d{8}", "\\d{7,9}"],
-        [, , "(?:[25][0-8]|[34][0-4]|6[0-5])[2-9]\\d{6}", "\\d{7,9}", , , "234567890"],
-        [, , "7[057-9]\\d{7}", "\\d{9}", , , "701234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AF", 93, "00", "0", , , "0", , , , [
-            [, "([2-7]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[25][0-8]|[34][0-4]|6[0-5])[2-9]\\d{6}", "\\d{7,9}", , , "234567890"],
+    [, , "7[057-9]\\d{7}", "\\d{9}", , , "701234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AF", 93, "00", "0", , , "0", , , , [
+    [, "([2-7]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AG: [, [, , "[289]\\d{9}", "\\d{7,10}"],
-        [, , "268(?:4(?:6[0-3]|84)|56[0-2])\\d{4}", "\\d{7,10}", , , "2684601234"],
-        [, , "268(?:464|7(?:2[0-9]|64|7[0-5]|8[358]))\\d{4}", "\\d{10}", , , "2684641234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "26848[01]\\d{4}", "\\d{10}", , , "2684801234"], "AG", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "268"],
+    [, , "268(?:4(?:6[0-3]|84)|56[0-2])\\d{4}", "\\d{7,10}", , , "2684601234"],
+    [, , "268(?:464|7(?:2[0-9]|64|7[0-5]|8[358]))\\d{4}", "\\d{10}", , , "2684641234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "26848[01]\\d{4}", "\\d{10}", , , "2684801234"], "AG", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "268"],
     AI: [, [, , "[289]\\d{9}", "\\d{7,10}"],
-        [, , "2644(?:6[12]|9[78])\\d{4}", "\\d{7,10}", , , "2644612345"],
-        [, , "264(?:235|476|5(?:3[6-9]|8[1-4])|7(?:29|72))\\d{4}", "\\d{10}", , , "2642351234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AI", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "264"],
+    [, , "2644(?:6[12]|9[78])\\d{4}", "\\d{7,10}", , , "2644612345"],
+    [, , "264(?:235|476|5(?:3[6-9]|8[1-4])|7(?:29|72))\\d{4}", "\\d{10}", , , "2642351234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AI", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "264"],
     AL: [, [, , "[2-57]\\d{7}|6\\d{8}|8\\d{5,7}|9\\d{5}", "\\d{5,9}"],
-        [, , "(?:2(?:[168][1-9]|[247]\\d|9[1-7])|3(?:1[1-3]|[2-6]\\d|[79][1-8]|8[1-9])|4\\d{2}|5(?:1[1-4]|[2-578]\\d|6[1-5]|9[1-7])|8(?:[19][1-5]|[2-6]\\d|[78][1-7]))\\d{5}", "\\d{5,8}", , , "22345678"],
-        [, , "6[6-9]\\d{7}", "\\d{9}", , , "661234567"],
-        [, , "800\\d{4}", "\\d{7}", , , "8001234"],
-        [, , "900\\d{3}", "\\d{6}", , , "900123"],
-        [, , "808\\d{3}", "\\d{6}", , , "808123"],
-        [, , "700\\d{5}", "\\d{8}", , , "70012345"],
-        [, , "NA", "NA"], "AL", 355, "00", "0", , , "0", , , , [
-            [, "(4)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[0-6]"], "0$1", ""],
-            [, "(6[6-9])(\\d{3})(\\d{4})", "$1 $2 $3", ["6"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2358][2-5]|4[7-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3,5})", "$1 $2", ["[235][16-9]|8[016-9]|[79]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:[168][1-9]|[247]\\d|9[1-7])|3(?:1[1-3]|[2-6]\\d|[79][1-8]|8[1-9])|4\\d{2}|5(?:1[1-4]|[2-578]\\d|6[1-5]|9[1-7])|8(?:[19][1-5]|[2-6]\\d|[78][1-7]))\\d{5}", "\\d{5,8}", , , "22345678"],
+    [, , "6[6-9]\\d{7}", "\\d{9}", , , "661234567"],
+    [, , "800\\d{4}", "\\d{7}", , , "8001234"],
+    [, , "900\\d{3}", "\\d{6}", , , "900123"],
+    [, , "808\\d{3}", "\\d{6}", , , "808123"],
+    [, , "700\\d{5}", "\\d{8}", , , "70012345"],
+    [, , "NA", "NA"], "AL", 355, "00", "0", , , "0", , , , [
+    [, "(4)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[0-6]"], "0$1", ""],
+    [, "(6[6-9])(\\d{3})(\\d{4})", "$1 $2 $3", ["6"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[2358][2-5]|4[7-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3,5})", "$1 $2", ["[235][16-9]|8[016-9]|[79]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AM: [, [, , "[1-37-9]\\d{7}", "\\d{5,8}"],
-        [, , "(?:10\\d|2(?:2[2-46]|3[1-8]|4[2-69]|5[2-7]|6[1-9]|8[1-7])|3[12]2)\\d{5}", "\\d{5,8}", , , "10123456"],
-        [, , "(?:77|9[1-49])\\d{6}", "\\d{8}", , , "77123456"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "90[016]\\d{5}", "\\d{8}", , , "90012345"],
-        [, , "80[1-4]\\d{5}", "\\d{8}", , , "80112345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AM", 374, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{6})", "$1 $2", ["[17]|9[1-49]"], "(0$1)", ""],
-            [, "(\\d{3})(\\d{5})", "$1 $2", ["[23]"], "(0$1)", ""],
-            [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["8|90"], "0 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:10\\d|2(?:2[2-46]|3[1-8]|4[2-69]|5[2-7]|6[1-9]|8[1-7])|3[12]2)\\d{5}", "\\d{5,8}", , , "10123456"],
+    [, , "(?:77|9[1-49])\\d{6}", "\\d{8}", , , "77123456"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "90[016]\\d{5}", "\\d{8}", , , "90012345"],
+    [, , "80[1-4]\\d{5}", "\\d{8}", , , "80112345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AM", 374, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{6})", "$1 $2", ["[17]|9[1-49]"], "(0$1)", ""],
+    [, "(\\d{3})(\\d{5})", "$1 $2", ["[23]"], "(0$1)", ""],
+    [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["8|90"], "0 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AN: [, [, , "[13-79]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:318|5(?:25|4\\d|8[239])|7(?:1[578]|50)|9(?:[48]\\d{2}|50\\d|7(?:2[0-2]|[34]\\d|6[35-7]|77)))\\d{4}|416[0239]\\d{3}", "\\d{7,8}", , , "7151234"],
-        [, , "(?:318|5(?:1[01]|2[0-7]|5\\d|8[016-8])|7(?:0[01]|[89]\\d)|9(?:5(?:[1246]\\d|3[01])|6(?:[1679]\\d|3[01])))\\d{4}|416[15-8]\\d{3}", "\\d{7,8}", , , "3181234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "(?:10|69)\\d{5}", "\\d{7,8}", , , "1011234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AN", 599, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", ["[13-7]"], "", ""],
-            [, "(9)(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:318|5(?:25|4\\d|8[239])|7(?:1[578]|50)|9(?:[48]\\d{2}|50\\d|7(?:2[0-2]|[34]\\d|6[35-7]|77)))\\d{4}|416[0239]\\d{3}", "\\d{7,8}", , , "7151234"],
+    [, , "(?:318|5(?:1[01]|2[0-7]|5\\d|8[016-8])|7(?:0[01]|[89]\\d)|9(?:5(?:[1246]\\d|3[01])|6(?:[1679]\\d|3[01])))\\d{4}|416[15-8]\\d{3}", "\\d{7,8}", , , "3181234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "(?:10|69)\\d{5}", "\\d{7,8}", , , "1011234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AN", 599, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", ["[13-7]"], "", ""],
+    [, "(9)(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     AO: [, [, , "[29]\\d{8}", "\\d{9}"],
-        [, , "2\\d(?:[26-9]\\d|\\d[26-9])\\d{5}", "\\d{9}", , , "222123456"],
-        [, , "9[1-3]\\d{7}", "\\d{9}", , , "923123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AO", 244, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2\\d(?:[26-9]\\d|\\d[26-9])\\d{5}", "\\d{9}", , , "222123456"],
+    [, , "9[1-3]\\d{7}", "\\d{9}", , , "923123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AO", 244, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     AR: [, [, , "[1-9]\\d{9,11}", "\\d{6,12}"],
-        [, , "[1-9]\\d{9}", "\\d{6,10}", , , "1123456789"],
-        [, , "9(?:11[2-9]\\d{7}|(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))[2-9]\\d{6}|\\d{4}[2-9]\\d{5})", "\\d{6,12}", , , "91123456789"],
-        [, , "80\\d{8}", "\\d{10}", , , "8012345678"],
-        [, , "6(?:0\\d|10)\\d{7}", "\\d{10}", , , "6001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AR", 54, "00", "0", , , "0(?:(11|2(?:2(?:02?|[13]|2[13-79]|4[1-6]|5[2457]|6[124-8]|7[1-4]|8[13-6]|9[1-367])|3(?:[06]2|1[467]|2[02-6]|3[13-8]|[49][2-6]|5[2-8]|7)|47[3-578]|6(?:1|2[2-7]|4[6-8]?|5[125-8])|9(?:0[1-3]|[19]|2\\d|3[1-6]|4[0-24-68]|5[2-4]|6[2-6]|72?|8[23]?))|3(?:3(?:2[79]|8[2578])|4(?:0[124-9]|[12]|3[5-8]?|4[24-7]|5[4-68]?|6\\d|7[126]|8[237-9]|9[1-36-8])|5(?:1|2[1245]|3[2-4]?|4[1-46-9]|6[2-4]|7[1-6]|8[2-5]?)|7(?:1[15-8]|2[125]|3[1245]|4[13]|5[124-8]|7[2-57]|8[1-36])|8(?:1|2[125-7]|3[23578]|4[13-6]|5[4-8]?|6[1-357-9]|7[5-8]?|8[4-7]?|9[124])))15)?", "9$1", , , [
-            [, "([68]\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], "0$1", ""],
-            [, "9(11)(\\d{4})(\\d{4})", "$1 15-$2-$3", ["91"], "0$1", ""],
-            [, "9(\\d{3})(\\d{3})(\\d{4})", "$1 15-$2-$3", ["9(?:2[2369]|3[458])", "9(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))"], "0$1", ""],
-            [, "9(\\d{4})(\\d{2})(\\d{4})", "$1 15-$2-$3", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[24-9]|3[0-69]|47|6[25]|9[02-68])|3(?:3[28]|4[046-9]|5[2467]|7[1-578]|8[23469]))"], "0$1", ""],
-            [, "(11)(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578])"], "0$1", ""],
-            [, "(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["[23]"], "0$1", ""]
-        ],
-        [
-            [, "([68]\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], , ""],
-            [, "9(11)(\\d{4})(\\d{4})", "9 $1 $2-$3", ["91"], , ""],
-            [, "9(\\d{3})(\\d{3})(\\d{4})", "9 $1 $2-$3", ["9(?:2[2369]|3[458])", "9(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))"], , ""],
-            [, "9(\\d{4})(\\d{2})(\\d{4})", "9 $1 $2-$3", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[24-9]|3[0-69]|47|6[25]|9[02-68])|3(?:3[28]|4[046-9]|5[2467]|7[1-578]|8[23469]))"], , ""],
-            [, "(11)(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], , ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578])"], , ""],
-            [, "(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["[23]"], , ""]
-        ],
-        [, , "NA", "NA"]
+    [, , "[1-9]\\d{9}", "\\d{6,10}", , , "1123456789"],
+    [, , "9(?:11[2-9]\\d{7}|(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))[2-9]\\d{6}|\\d{4}[2-9]\\d{5})", "\\d{6,12}", , , "91123456789"],
+    [, , "80\\d{8}", "\\d{10}", , , "8012345678"],
+    [, , "6(?:0\\d|10)\\d{7}", "\\d{10}", , , "6001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AR", 54, "00", "0", , , "0(?:(11|2(?:2(?:02?|[13]|2[13-79]|4[1-6]|5[2457]|6[124-8]|7[1-4]|8[13-6]|9[1-367])|3(?:[06]2|1[467]|2[02-6]|3[13-8]|[49][2-6]|5[2-8]|7)|47[3-578]|6(?:1|2[2-7]|4[6-8]?|5[125-8])|9(?:0[1-3]|[19]|2\\d|3[1-6]|4[0-24-68]|5[2-4]|6[2-6]|72?|8[23]?))|3(?:3(?:2[79]|8[2578])|4(?:0[124-9]|[12]|3[5-8]?|4[24-7]|5[4-68]?|6\\d|7[126]|8[237-9]|9[1-36-8])|5(?:1|2[1245]|3[2-4]?|4[1-46-9]|6[2-4]|7[1-6]|8[2-5]?)|7(?:1[15-8]|2[125]|3[1245]|4[13]|5[124-8]|7[2-57]|8[1-36])|8(?:1|2[125-7]|3[23578]|4[13-6]|5[4-8]?|6[1-357-9]|7[5-8]?|8[4-7]?|9[124])))15)?", "9$1", , , [
+    [, "([68]\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], "0$1", ""],
+    [, "9(11)(\\d{4})(\\d{4})", "$1 15-$2-$3", ["91"], "0$1", ""],
+    [, "9(\\d{3})(\\d{3})(\\d{4})", "$1 15-$2-$3", ["9(?:2[2369]|3[458])", "9(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))"], "0$1", ""],
+    [, "9(\\d{4})(\\d{2})(\\d{4})", "$1 15-$2-$3", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[24-9]|3[0-69]|47|6[25]|9[02-68])|3(?:3[28]|4[046-9]|5[2467]|7[1-578]|8[23469]))"], "0$1", ""],
+    [, "(11)(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578])"], "0$1", ""],
+    [, "(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["[23]"], "0$1", ""]
+    ],
+    [
+    [, "([68]\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[68]"], , ""],
+    [, "9(11)(\\d{4})(\\d{4})", "9 $1 $2-$3", ["91"], , ""],
+    [, "9(\\d{3})(\\d{3})(\\d{4})", "9 $1 $2-$3", ["9(?:2[2369]|3[458])", "9(?:2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578]))"], , ""],
+    [, "9(\\d{4})(\\d{2})(\\d{4})", "9 $1 $2-$3", ["9(?:2[2-469]|3[3-578])", "9(?:2(?:2[24-9]|3[0-69]|47|6[25]|9[02-68])|3(?:3[28]|4[046-9]|5[2467]|7[1-578]|8[23469]))"], , ""],
+    [, "(11)(\\d{4})(\\d{4})", "$1 $2-$3", ["1"], , ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2-$3", ["2(?:2[013]|37|6[14]|9[179])|3(?:4[1235]|5[138]|8[1578])"], , ""],
+    [, "(\\d{4})(\\d{2})(\\d{4})", "$1 $2-$3", ["[23]"], , ""]
+    ],
+    [, , "NA", "NA"]
     ],
     AS: [, [, , "[689]\\d{9}", "\\d{7,10}"],
-        [, , "6846(?:22|33|44|55|77|88|9[19])\\d{4}", "\\d{7,10}", , , "6846221234"],
-        [, , "684(?:733|258)\\d{4}", "\\d{10}", , , "6847331234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "684"],
+    [, , "6846(?:22|33|44|55|77|88|9[19])\\d{4}", "\\d{7,10}", , , "6846221234"],
+    [, , "684(?:733|258)\\d{4}", "\\d{10}", , , "6847331234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "684"],
     AT: [, [, , "\\d{4,13}", "\\d{3,13}"],
-        [, , "1\\d{3,12}|(?:2(?:1[467]|2[134-8]|5[2357]|6[1-46-8]|7[1-8]|8[124-7]|8[1458])|3(?:1[1-8]|3[23568]|4[5-7]|5[1378]|6[1-38]|8[3-68])|4(?:2[1-8]|35|63|7[1368]|8[2457])|5(?:1[27]|2[1-8]|3[357]|4[147]|5[12578]|6[37])|6(?:13|2[1-47]|4[1-35-8]|5[468]|62)|7(?:2[1-8]|3[25]|4[13478]|5[68]|6[16-8]|7[1-6]|9[45]))\\d{3,10}|5(?:0[1-9]|[79]\\d)\\d{2,10}|720\\d{6,10}", "\\d{3,13}", , , "1234567890"],
-        [, , "6(?:44|5[0-3579]|6[013-9]|[7-9]\\d)\\d{4,10}", "\\d{7,13}", , , "644123456"],
-        [, , "80[02]\\d{6,10}", "\\d{9,13}", , , "800123456"],
-        [, , "(?:711|9(?:0[01]|3[019]))\\d{6,10}", "\\d{9,13}", , , "900123456"],
-        [, , "8(?:10|2[018])\\d{6,10}", "\\d{9,13}", , , "810123456"],
-        [, , "NA", "NA"],
-        [, , "780\\d{6,10}", "\\d{9,13}", , , "780123456"], "AT", 43, "00", "0", , , "0", , , , [
-            [, "([15])(\\d{3,12})", "$1 $2", ["1|5[079]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3,10})", "$1 $2", ["316|46|51|732|6(?:44|5[0-3579]|[6-9])|7(?:1|[28]0)|[89]"], "0$1", ""],
-            [, "(\\d{4})(\\d{3,9})", "$1 $2", ["2|3(?:1[1-578]|[3-8])|4[2378]|5[2-6]|6(?:[12]|4[1-35-9]|5[468])|7(?:2[1-8]|35|4[1-8]|[57-9])"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1\\d{3,12}|(?:2(?:1[467]|2[134-8]|5[2357]|6[1-46-8]|7[1-8]|8[124-7]|8[1458])|3(?:1[1-8]|3[23568]|4[5-7]|5[1378]|6[1-38]|8[3-68])|4(?:2[1-8]|35|63|7[1368]|8[2457])|5(?:1[27]|2[1-8]|3[357]|4[147]|5[12578]|6[37])|6(?:13|2[1-47]|4[1-35-8]|5[468]|62)|7(?:2[1-8]|3[25]|4[13478]|5[68]|6[16-8]|7[1-6]|9[45]))\\d{3,10}|5(?:0[1-9]|[79]\\d)\\d{2,10}|720\\d{6,10}", "\\d{3,13}", , , "1234567890"],
+    [, , "6(?:44|5[0-3579]|6[013-9]|[7-9]\\d)\\d{4,10}", "\\d{7,13}", , , "644123456"],
+    [, , "80[02]\\d{6,10}", "\\d{9,13}", , , "800123456"],
+    [, , "(?:711|9(?:0[01]|3[019]))\\d{6,10}", "\\d{9,13}", , , "900123456"],
+    [, , "8(?:10|2[018])\\d{6,10}", "\\d{9,13}", , , "810123456"],
+    [, , "NA", "NA"],
+    [, , "780\\d{6,10}", "\\d{9,13}", , , "780123456"], "AT", 43, "00", "0", , , "0", , , , [
+    [, "([15])(\\d{3,12})", "$1 $2", ["1|5[079]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3,10})", "$1 $2", ["316|46|51|732|6(?:44|5[0-3579]|[6-9])|7(?:1|[28]0)|[89]"], "0$1", ""],
+    [, "(\\d{4})(\\d{3,9})", "$1 $2", ["2|3(?:1[1-578]|[3-8])|4[2378]|5[2-6]|6(?:[12]|4[1-35-9]|5[468])|7(?:2[1-8]|35|4[1-8]|[57-9])"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AU: [, [, , "[1-578]\\d{5,9}", "\\d{6,10}"],
-        [, , "[2378]\\d{8}", "\\d{8,9}", , , "212345678"],
-        [, , "4[0-68]\\d{7}", "\\d{9}", , , "412345678"],
-        [, , "1(?:80(?:0\\d{2})?|3(?:00\\d{2})?)\\d{4}", "\\d{6,10}", , , "1800123456"],
-        [, , "190[0126]\\d{6}", "\\d{10}", , , "1900123456"],
-        [, , "NA", "NA"],
-        [, , "500\\d{6}", "\\d{9}", , , "500123456"],
-        [, , "550\\d{6}", "\\d{9}", , , "550123456"], "AU", 61, "(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]", "0", , , "0", , "0011", , [
-            [, "([2378])(\\d{4})(\\d{4})", "$1 $2 $3", ["[2378]"], "(0$1)", ""],
-            [, "(4\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["4"], "0$1", ""],
-            [, "(5[05]0)(\\d{3})(\\d{3})", "$1 $2 $3", ["5"], "0$1", ""],
-            [, "(1[389]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[38]0|9)", "1(?:[38]00|9)"], "$1", ""],
-            [, "(180)(\\d{4})", "$1 $2", ["180", "180[1-9]"], "$1", ""],
-            [, "(13)(\\d{2})(\\d{2})", "$1 $2 $3", ["13[1-9]"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2378]\\d{8}", "\\d{8,9}", , , "212345678"],
+    [, , "4[0-68]\\d{7}", "\\d{9}", , , "412345678"],
+    [, , "1(?:80(?:0\\d{2})?|3(?:00\\d{2})?)\\d{4}", "\\d{6,10}", , , "1800123456"],
+    [, , "190[0126]\\d{6}", "\\d{10}", , , "1900123456"],
+    [, , "NA", "NA"],
+    [, , "500\\d{6}", "\\d{9}", , , "500123456"],
+    [, , "550\\d{6}", "\\d{9}", , , "550123456"], "AU", 61, "(?:14(?:1[14]|34|4[17]|[56]6|7[47]|88))?001[14-689]", "0", , , "0", , "0011", , [
+    [, "([2378])(\\d{4})(\\d{4})", "$1 $2 $3", ["[2378]"], "(0$1)", ""],
+    [, "(4\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["4"], "0$1", ""],
+    [, "(5[05]0)(\\d{3})(\\d{3})", "$1 $2 $3", ["5"], "0$1", ""],
+    [, "(1[389]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[38]0|9)", "1(?:[38]00|9)"], "$1", ""],
+    [, "(180)(\\d{4})", "$1 $2", ["180", "180[1-9]"], "$1", ""],
+    [, "(13)(\\d{2})(\\d{2})", "$1 $2 $3", ["13[1-9]"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     AW: [, [, , "[5-9]\\d{6}", "\\d{7}"],
-        [, , "5(?:2\\d{2}|8(?:[2-7]\\d|8[0-79]|9[48]))\\d{3}", "\\d{7}", , , "5212345"],
-        [, , "(?:5[69]\\d|660|9(?:6\\d|9[02-9])|7[34]\\d)\\d{4}", "\\d{7}", , , "5601234"],
-        [, , "800\\d{4}", "\\d{7}", , , "8001234"],
-        [, , "900\\d{4}", "\\d{7}", , , "9001234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AW", 297, "00", , , , , , , , [
-            [, "([5-9]\\d{2})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "5(?:2\\d{2}|8(?:[2-7]\\d|8[0-79]|9[48]))\\d{3}", "\\d{7}", , , "5212345"],
+    [, , "(?:5[69]\\d|660|9(?:6\\d|9[02-9])|7[34]\\d)\\d{4}", "\\d{7}", , , "5601234"],
+    [, , "800\\d{4}", "\\d{7}", , , "8001234"],
+    [, , "900\\d{4}", "\\d{7}", , , "9001234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AW", 297, "00", , , , , , , , [
+    [, "([5-9]\\d{2})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     AZ: [, [, , "[1-8]\\d{7,8}", "\\d{8,9}"],
-        [, , "(?:1(?:(?:[28]\\d|9)\\d|02|1[0-589]|3[358]|4[013-79]|5[0-479]|6[0236-9]|7[0-24-8])|2(?:16|2\\d|3[0-24]|4[1468]|55|6[56]|79)|365?\\d)\\d{5}", "\\d{8,9}", , , "123123456"],
-        [, , "(?:4[04]|5[015]|60|7[07])\\d{7}", "\\d{9}", , , "401234567"],
-        [, , "88\\d{7}", "\\d{9}", , , "881234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "AZ", 994, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1[28]|22|[3-8]"], "", ""],
-            [, "([12]\\d{2})(\\d{5})", "$1 $2", ["1[013-79]|2[013-9]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1(?:(?:[28]\\d|9)\\d|02|1[0-589]|3[358]|4[013-79]|5[0-479]|6[0236-9]|7[0-24-8])|2(?:16|2\\d|3[0-24]|4[1468]|55|6[56]|79)|365?\\d)\\d{5}", "\\d{8,9}", , , "123123456"],
+    [, , "(?:4[04]|5[015]|60|7[07])\\d{7}", "\\d{9}", , , "401234567"],
+    [, , "88\\d{7}", "\\d{9}", , , "881234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "AZ", 994, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["1[28]|22|[3-8]"], "", ""],
+    [, "([12]\\d{2})(\\d{5})", "$1 $2", ["1[013-79]|2[013-9]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BA: [, [, , "[3-689]\\d{7}", "\\d{6,8}"],
-        [, , "(?:[35]\\d|49|81)\\d{6}", "\\d{6,8}", , , "30123456"],
-        [, , "6[1-356]\\d{6}", "\\d{8}", , , "61123456"],
-        [, , "8[08]\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "9[0246]\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "82\\d{6}", "\\d{8}", , , "82123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BA", 387, "00", "0", , , "0", , , , [
-            [, "([3-689]\\d)(\\d{3})(\\d{3})", "$1 $2-$3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[35]\\d|49|81)\\d{6}", "\\d{6,8}", , , "30123456"],
+    [, , "6[1-356]\\d{6}", "\\d{8}", , , "61123456"],
+    [, , "8[08]\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "9[0246]\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "82\\d{6}", "\\d{8}", , , "82123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BA", 387, "00", "0", , , "0", , , , [
+    [, "([3-689]\\d)(\\d{3})(\\d{3})", "$1 $2-$3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BB: [, [, , "[289]\\d{9}", "\\d{7,10}"],
-        [, , "246[2-9]\\d{6}", "\\d{7,10}", , , "2462345678"],
-        [, , "246(?:(?:2[346]|45|82)\\d|25[0-4])\\d{4}", "\\d{10}", , , "2462501234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BB", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "246"],
+    [, , "246[2-9]\\d{6}", "\\d{7,10}", , , "2462345678"],
+    [, , "246(?:(?:2[346]|45|82)\\d|25[0-4])\\d{4}", "\\d{10}", , , "2462501234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BB", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "246"],
     BD: [, [, , "[2-79]\\d{5,9}|1\\d{9}|8[0-7]\\d{4,8}", "\\d{6,10}"],
-        [, , "2(?:7\\d1|8(?:[026]1|[1379][1-5]|8[1-8])|9(?:0[0-2]|1[1-4]|3[3-5]|5[56]|6[67]|71|8[078]))\\d{4}|3(?:[6-8]1|(?:0[23]|[25][12]|82|416)\\d|(?:31|12?[5-7])\\d{2})\\d{3}|4(?:(?:02|[49]6|[68]1)|(?:0[13]|21\\d?|[23]2|[457][12]|6[28])\\d|(?:23|[39]1)\\d{2}|1\\d{3})\\d{3}|5(?:(?:[457-9]1|62)|(?:1\\d?|2[12]|3[1-3]|52)\\d|61{2})|6(?:[45]1|(?:11|2[15]|[39]1)\\d|(?:[06-8]1|62)\\d{2})|7(?:(?:32|91)|(?:02|31|[67][12])\\d|[458]1\\d{2}|21\\d{3})\\d{3}|8(?:(?:4[12]|[5-7]2|1\\d?)|(?:0|3[12]|[5-7]1|217)\\d)\\d{4}|9(?:[35]1|(?:[024]2|81)\\d|(?:1|[24]1)\\d{2})\\d{3}", "\\d{6,9}", , , "27111234"],
-        [, , "(?:1[13-9]\\d|(?:3[78]|44)[02-9]|6(?:44|6[02-9]))\\d{7}", "\\d{10}", , , "1812345678"],
-        [, , "80[03]\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BD", 880, "00[12]?", "0", , , "0", , "00", , [
-            [, "(2)(\\d{7})", "$1 $2", ["2"], "0$1", ""],
-            [, "(\\d{2})(\\d{4,6})", "$1 $2", ["[3-79]1"], "0$1", ""],
-            [, "(\\d{3})(\\d{3,7})", "$1 $2", ["[3-79][2-9]|8"], "0$1", ""],
-            [, "(\\d{4})(\\d{6})", "$1 $2", ["1"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:7\\d1|8(?:[026]1|[1379][1-5]|8[1-8])|9(?:0[0-2]|1[1-4]|3[3-5]|5[56]|6[67]|71|8[078]))\\d{4}|3(?:[6-8]1|(?:0[23]|[25][12]|82|416)\\d|(?:31|12?[5-7])\\d{2})\\d{3}|4(?:(?:02|[49]6|[68]1)|(?:0[13]|21\\d?|[23]2|[457][12]|6[28])\\d|(?:23|[39]1)\\d{2}|1\\d{3})\\d{3}|5(?:(?:[457-9]1|62)|(?:1\\d?|2[12]|3[1-3]|52)\\d|61{2})|6(?:[45]1|(?:11|2[15]|[39]1)\\d|(?:[06-8]1|62)\\d{2})|7(?:(?:32|91)|(?:02|31|[67][12])\\d|[458]1\\d{2}|21\\d{3})\\d{3}|8(?:(?:4[12]|[5-7]2|1\\d?)|(?:0|3[12]|[5-7]1|217)\\d)\\d{4}|9(?:[35]1|(?:[024]2|81)\\d|(?:1|[24]1)\\d{2})\\d{3}", "\\d{6,9}", , , "27111234"],
+    [, , "(?:1[13-9]\\d|(?:3[78]|44)[02-9]|6(?:44|6[02-9]))\\d{7}", "\\d{10}", , , "1812345678"],
+    [, , "80[03]\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BD", 880, "00[12]?", "0", , , "0", , "00", , [
+    [, "(2)(\\d{7})", "$1 $2", ["2"], "0$1", ""],
+    [, "(\\d{2})(\\d{4,6})", "$1 $2", ["[3-79]1"], "0$1", ""],
+    [, "(\\d{3})(\\d{3,7})", "$1 $2", ["[3-79][2-9]|8"], "0$1", ""],
+    [, "(\\d{4})(\\d{6})", "$1 $2", ["1"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BE: [, [, , "[1-9]\\d{7,8}", "\\d{8,9}"],
-        [, , "(?:1[0-69]|[23][2-8]|[49][23]|5\\d|6[013-57-9]|7[18])\\d{6}|8(?:0[1-9]|[1-79]\\d)\\d{5}", "\\d{8}", , , "12345678"],
-        [, , "4(?:7\\d|8[4-9]|9[1-9])\\d{6}", "\\d{9}", , , "470123456"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "(?:90|7[07])\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BE", 32, "00", "0", , , "0", , , , [
-            [, "(4[7-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4[7-9]"], "0$1", ""],
-            [, "([2-49])(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[23]|[49][23]"], "0$1", ""],
-            [, "([15-8]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[156]|7[0178]|8(?:0[1-9]|[1-79])"], "0$1", ""],
-            [, "([89]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:80|9)0"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[0-69]|[23][2-8]|[49][23]|5\\d|6[013-57-9]|7[18])\\d{6}|8(?:0[1-9]|[1-79]\\d)\\d{5}", "\\d{8}", , , "12345678"],
+    [, , "4(?:7\\d|8[4-9]|9[1-9])\\d{6}", "\\d{9}", , , "470123456"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "(?:90|7[07])\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BE", 32, "00", "0", , , "0", , , , [
+    [, "(4[7-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["4[7-9]"], "0$1", ""],
+    [, "([2-49])(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[23]|[49][23]"], "0$1", ""],
+    [, "([15-8]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[156]|7[0178]|8(?:0[1-9]|[1-79])"], "0$1", ""],
+    [, "([89]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["(?:80|9)0"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BF: [, [, , "[2457]\\d{7}", "\\d{8}"],
-        [, , "(?:20(?:49|5[23]|9[016-9])|40(?:4[569]|55|7[0179])|50[34]\\d)\\d{4}", "\\d{8}", , , "20491234"],
-        [, , "7(?:[024-6]\\d|1[0-489]|3[01]|8[013-9]|9[012])\\d{5}", "\\d{8}", , , "70123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BF", 226, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:20(?:49|5[23]|9[016-9])|40(?:4[569]|55|7[0179])|50[34]\\d)\\d{4}", "\\d{8}", , , "20491234"],
+    [, , "7(?:[024-6]\\d|1[0-489]|3[01]|8[013-9]|9[012])\\d{5}", "\\d{8}", , , "70123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BF", 226, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BG: [, [, , "[2-9]\\d{6,8}", "\\d{7,9}"],
-        [, , "(?:2\\d|[36]\\d|5[1-9]|8[1-6]|9[1-7])\\d{5,6}|(?:4(?:[124-7]\\d|3[1-6])|7(?:0[1-9]|[1-9]\\d))\\d{4,5}", "\\d{7,8}", , , "2123456"],
-        [, , "(?:8[7-9]|98)\\d{7}|4(?:3[0789]|8\\d)\\d{5}", "\\d{8,9}", , , "48123456"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "90\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "700\\d{5}", "\\d{7,9}", , , "70012345"],
-        [, , "NA", "NA"], "BG", 359, "00", "0", , , "0", , , , [
-            [, "(2)(\\d{3})(\\d{3,4})", "$1/$2 $3", ["2"], "0$1", ""],
-            [, "(\\d{3})(\\d{4})", "$1/$2", ["43[124-7]|70[1-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3", ["43[124-7]|70[1-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[78]00"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{2,3})", "$1/$2 $3", ["[356]|7[1-9]|8[1-6]|9[1-7]"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["48|8[7-9]|9[08]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2\\d|[36]\\d|5[1-9]|8[1-6]|9[1-7])\\d{5,6}|(?:4(?:[124-7]\\d|3[1-6])|7(?:0[1-9]|[1-9]\\d))\\d{4,5}", "\\d{7,8}", , , "2123456"],
+    [, , "(?:8[7-9]|98)\\d{7}|4(?:3[0789]|8\\d)\\d{5}", "\\d{8,9}", , , "48123456"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "90\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "700\\d{5}", "\\d{7,9}", , , "70012345"],
+    [, , "NA", "NA"], "BG", 359, "00", "0", , , "0", , , , [
+    [, "(2)(\\d{3})(\\d{3,4})", "$1/$2 $3", ["2"], "0$1", ""],
+    [, "(\\d{3})(\\d{4})", "$1/$2", ["43[124-7]|70[1-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3", ["43[124-7]|70[1-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3", ["[78]00"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{2,3})", "$1/$2 $3", ["[356]|7[1-9]|8[1-6]|9[1-7]"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["48|8[7-9]|9[08]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BH: [, [, , "[1367]\\d{7}", "\\d{8}"],
-        [, , "(?:1(?:3[3-6]|6[0156]|7\\d)|6(?:1[16]|6[03469]|9[69])|77\\d)\\d{5}", "\\d{8}", , , "17001234"],
-        [, , "(?:3(?:[369]\\d|77|8[38])|6(?:1[16]|6[03469]|9[69])|77\\d)\\d{5}", "\\d{8}", , , "36001234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BH", 973, "00", , , , , , , , [
-            [, "(\\d{4})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1(?:3[3-6]|6[0156]|7\\d)|6(?:1[16]|6[03469]|9[69])|77\\d)\\d{5}", "\\d{8}", , , "17001234"],
+    [, , "(?:3(?:[369]\\d|77|8[38])|6(?:1[16]|6[03469]|9[69])|77\\d)\\d{5}", "\\d{8}", , , "36001234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BH", 973, "00", , , , , , , , [
+    [, "(\\d{4})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BI: [, [, , "[27]\\d{7}", "\\d{8}"],
-        [, , "22(?:2[0-7]|[3-5]0)\\d{4}", "\\d{8}", , , "22201234"],
-        [, , "(?:29\\d|7(?:1[1-3]|[4-9]\\d))\\d{5}", "\\d{8}", , , "79561234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BI", 257, "00", , , , , , , , [
-            [, "([27]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "22(?:2[0-7]|[3-5]0)\\d{4}", "\\d{8}", , , "22201234"],
+    [, , "(?:29\\d|7(?:1[1-3]|[4-9]\\d))\\d{5}", "\\d{8}", , , "79561234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BI", 257, "00", , , , , , , , [
+    [, "([27]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BJ: [, [, , "[2689]\\d{7}|7\\d{3}", "\\d{4,8}"],
-        [, , "2(?:02|1[037]|2[45]|3[68])\\d{5}", "\\d{8}", , , "20211234"],
-        [, , "66\\d{6}|9(?:0[069]|[35][0-2457-9]|[6-8]\\d)\\d{5}", "\\d{8}", , , "90011234"],
-        [, , "7[3-5]\\d{2}", "\\d{4}", , , "7312"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "857[58]\\d{4}", "\\d{8}", , , "85751234"], "BJ", 229, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:02|1[037]|2[45]|3[68])\\d{5}", "\\d{8}", , , "20211234"],
+    [, , "66\\d{6}|9(?:0[069]|[35][0-2457-9]|[6-8]\\d)\\d{5}", "\\d{8}", , , "90011234"],
+    [, , "7[3-5]\\d{2}", "\\d{4}", , , "7312"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "857[58]\\d{4}", "\\d{8}", , , "85751234"], "BJ", 229, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BL: [, [, , "[56]\\d{8}", "\\d{9}"],
-        [, , "590(?:2[7-9]|5[12]|87)\\d{4}", "\\d{9}", , , "590271234"],
-        [, , "690(?:10|2[27]|66|77|8[78])\\d{4}", "\\d{9}", , , "690221234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BL", 590, "00", "0", , , "0", , , , , , [, , "NA", "NA"]
+    [, , "590(?:2[7-9]|5[12]|87)\\d{4}", "\\d{9}", , , "590271234"],
+    [, , "690(?:10|2[27]|66|77|8[78])\\d{4}", "\\d{9}", , , "690221234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BL", 590, "00", "0", , , "0", , , , , , [, , "NA", "NA"]
     ],
     BM: [, [, , "[489]\\d{9}", "\\d{7,10}"],
-        [, , "441(?:2(?:02|23|61|[3479]\\d)|[46]\\d{2}|5(?:4\\d|60|89)|824)\\d{4}", "\\d{7,10}", , , "4412345678"],
-        [, , "441(?:[37]\\d|5[0-39])\\d{5}", "\\d{10}", , , "4413701234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "441"],
+    [, , "441(?:2(?:02|23|61|[3479]\\d)|[46]\\d{2}|5(?:4\\d|60|89)|824)\\d{4}", "\\d{7,10}", , , "4412345678"],
+    [, , "441(?:[37]\\d|5[0-39])\\d{5}", "\\d{10}", , , "4413701234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "441"],
     BN: [, [, , "[2-578]\\d{6}", "\\d{7}"],
-        [, , "[2-5]\\d{6}", "\\d{7}", , , "2345678"],
-        [, , "[78]\\d{6}", "\\d{7}", , , "7123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BN", 673, "00", "0", , , "0", , , , [
-            [, "([2-578]\\d{2})(\\d{4})", "$1 $2", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2-5]\\d{6}", "\\d{7}", , , "2345678"],
+    [, , "[78]\\d{6}", "\\d{7}", , , "7123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BN", 673, "00", "0", , , "0", , , , [
+    [, "([2-578]\\d{2})(\\d{4})", "$1 $2", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BO: [, [, , "[23467]\\d{7}", "\\d{7,8}"],
-        [, , "(?:2(?:2\\d{2}|5(?:11|[258]\\d|9[67])|6(?:12|2\\d|9[34])|8(?:2[34]|39|62))|3(?:3\\d{2}|4(?:6\\d|8[24])|8(?:25|42|5[257]|86|9[25])|9(?:2\\d|3[234]|4[248]|5[24]|6[2-6]|7\\d))|4(?:4\\d{2}|6(?:11|[24689]\\d|72)))\\d{4}", "\\d{7,8}", , , "22123456"],
-        [, , "[67]\\d{7}", "\\d{8}", , , "71234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BO", 591, "00(1\\d)?", "0", , , "0(1\\d)?", , , , [
-            [, "([234])(\\d{7})", "$1 $2", ["[234]"], "", ""],
-            [, "([67]\\d{7})", "$1", ["[67]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:2\\d{2}|5(?:11|[258]\\d|9[67])|6(?:12|2\\d|9[34])|8(?:2[34]|39|62))|3(?:3\\d{2}|4(?:6\\d|8[24])|8(?:25|42|5[257]|86|9[25])|9(?:2\\d|3[234]|4[248]|5[24]|6[2-6]|7\\d))|4(?:4\\d{2}|6(?:11|[24689]\\d|72)))\\d{4}", "\\d{7,8}", , , "22123456"],
+    [, , "[67]\\d{7}", "\\d{8}", , , "71234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BO", 591, "00(1\\d)?", "0", , , "0(1\\d)?", , , , [
+    [, "([234])(\\d{7})", "$1 $2", ["[234]"], "", ""],
+    [, "([67]\\d{7})", "$1", ["[67]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BR: [, [, , "[1-9]\\d{7,9}", "\\d{8,10}"],
-        [, , "(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[2-5]\\d{7}", "\\d{8,10}", , , "1123456789"],
-        [, , "(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[6-9]\\d{7}", "\\d{10}", , , "1161234567"],
-        [, , "800\\d{6,7}", "\\d{8,10}", , , "800123456"],
-        [, , "[359]00\\d{6,7}", "\\d{8,10}", , , "300123456"],
-        [, , "(?:400\\d|3003)\\d{4}", "\\d{8,10}", , , "40041234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BR", 55, "00(?:1[45]|2[135]|[34]1|43)", "0", , , "0(?:(?:1[245]|2[135]|[34]1)(\\d{10}))?", "$1", , , [
-            [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["[1-9][1-9]"], "($1)", "0 $CC $1"],
-            [, "([34]00\\d)(\\d{4})", "$1-$2", ["[34]00", "400|3003"], "", ""],
-            [, "([3589]00)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["[3589]00"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[2-5]\\d{7}", "\\d{8,10}", , , "1123456789"],
+    [, , "(?:[14689][1-9]|2[12478]|3[1-578]|5[13-5]|7[13-579])[6-9]\\d{7}", "\\d{10}", , , "1161234567"],
+    [, , "800\\d{6,7}", "\\d{8,10}", , , "800123456"],
+    [, , "[359]00\\d{6,7}", "\\d{8,10}", , , "300123456"],
+    [, , "(?:400\\d|3003)\\d{4}", "\\d{8,10}", , , "40041234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BR", 55, "00(?:1[45]|2[135]|[34]1|43)", "0", , , "0(?:(?:1[245]|2[135]|[34]1)(\\d{10}))?", "$1", , , [
+    [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2-$3", ["[1-9][1-9]"], "($1)", "0 $CC $1"],
+    [, "([34]00\\d)(\\d{4})", "$1-$2", ["[34]00", "400|3003"], "", ""],
+    [, "([3589]00)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["[3589]00"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BS: [, [, , "[289]\\d{9}", "\\d{7,10}"],
-        [, , "242(?:3(?:02|[236][1-9]|4[0-24-9]|5[0-68]|7[3467]|8[0-4]|9[2-467])|461|502|6(?:12|7[67]|8[78]|9[89])|702)\\d{4}", "\\d{7,10}", , , "2423456789"],
-        [, , "242(?:3(?:5[79]|[79]5)|4(?:[2-4][1-9]|5[1-8]|6[2-8]|7\\d|81)|5(?:2[34]|3[35]|44|5[1-9]|65|77)|6[34]6|727)\\d{4}", "\\d{10}", , , "2423591234"],
-        [, , "242300\\d{4}|8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "242"],
+    [, , "242(?:3(?:02|[236][1-9]|4[0-24-9]|5[0-68]|7[3467]|8[0-4]|9[2-467])|461|502|6(?:12|7[67]|8[78]|9[89])|702)\\d{4}", "\\d{7,10}", , , "2423456789"],
+    [, , "242(?:3(?:5[79]|[79]5)|4(?:[2-4][1-9]|5[1-8]|6[2-8]|7\\d|81)|5(?:2[34]|3[35]|44|5[1-9]|65|77)|6[34]6|727)\\d{4}", "\\d{10}", , , "2423591234"],
+    [, , "242300\\d{4}|8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "242"],
     BT: [, [, , "(?:17|[2-8])\\d{6}", "\\d{6,8}"],
-        [, , "(?:2[3-6]|[34][5-7]|5[236]|6[2-46]|7[246]|8[2-4])\\d{5}", "\\d{6,7}", , , "2345678"],
-        [, , "17\\d{6}", "\\d{8}", , , "17123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BT", 975, "00", , , , , , , , [
-            [, "(17)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1"], "", ""],
-            [, "([2-8])(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[3-6]|[34][5-7]|5[236]|6[2-46]|7[246]|8[2-4])\\d{5}", "\\d{6,7}", , , "2345678"],
+    [, , "17\\d{6}", "\\d{8}", , , "17123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BT", 975, "00", , , , , , , , [
+    [, "(17)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1"], "", ""],
+    [, "([2-8])(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-8]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BW: [, [, , "[2-9]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:2(?:4[0-48]|6[0-24]|9[0578])|3(?:1[0235-9]|55|6\\d|7[01]|9[0-57])|4(?:6[03]|7[1267]|9[0-5])|5(?:3[0389]|4[0489]|7[1-47]|88|9[0-49])|6(?:2[1-35]|5[149]|8[067]))\\d{4}", "\\d{7}", , , "2401234"],
-        [, , "7(?:[1-3]\\d{6}|4[0-7]\\d{5})", "\\d{8}", , , "71123456"],
-        [, , "8\\d{6}", "\\d{7}", , , "8123456"],
-        [, , "90\\d{5}", "\\d{7}", , , "9012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BW", 267, "00", , , , , , , , [
-            [, "(7[1-4])(\\d{3})(\\d{3})", "$1 $2 $3", ["7"], "", ""],
-            [, "(90)(\\d{5})", "$1 $2", ["9"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:4[0-48]|6[0-24]|9[0578])|3(?:1[0235-9]|55|6\\d|7[01]|9[0-57])|4(?:6[03]|7[1267]|9[0-5])|5(?:3[0389]|4[0489]|7[1-47]|88|9[0-49])|6(?:2[1-35]|5[149]|8[067]))\\d{4}", "\\d{7}", , , "2401234"],
+    [, , "7(?:[1-3]\\d{6}|4[0-7]\\d{5})", "\\d{8}", , , "71123456"],
+    [, , "8\\d{6}", "\\d{7}", , , "8123456"],
+    [, , "90\\d{5}", "\\d{7}", , , "9012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BW", 267, "00", , , , , , , , [
+    [, "(7[1-4])(\\d{3})(\\d{3})", "$1 $2 $3", ["7"], "", ""],
+    [, "(90)(\\d{5})", "$1 $2", ["9"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     BY: [, [, , "[12-4]\\d{8}|[89]\\d{9}", "\\d{7,10}"],
-        [, , "(?:1(?:5(?:1[1-5]|2\\d|6[1-4]|9[1-7])|6(?:[235]\\d|4[1-7])|7\\d{2})|2(?:1(?:[246]\\d|3[0-35-9]|5[1-9])|2(?:[235]\\d|4[0-8])|3(?:2\\d|3[02-79]|4[024-7]|5[0-7])))\\d{5}", "\\d{7,9}", , , "152450911"],
-        [, , "(?:2(?:5[679]|9[1-9])|33\\d|44\\d)\\d{6}", "\\d{9}", , , "294911911"],
-        [, , "80[13]\\d{7}", "\\d{10}", , , "8011234567"],
-        [, , "902\\d{7}", "\\d{10}", , , "9021234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BY", 375, "8~10", "8", , , "80?", , , , [
-            [, "([1-4]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-4]"], "8 0$1", ""],
-            [, "([89]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "8 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1(?:5(?:1[1-5]|2\\d|6[1-4]|9[1-7])|6(?:[235]\\d|4[1-7])|7\\d{2})|2(?:1(?:[246]\\d|3[0-35-9]|5[1-9])|2(?:[235]\\d|4[0-8])|3(?:2\\d|3[02-79]|4[024-7]|5[0-7])))\\d{5}", "\\d{7,9}", , , "152450911"],
+    [, , "(?:2(?:5[679]|9[1-9])|33\\d|44\\d)\\d{6}", "\\d{9}", , , "294911911"],
+    [, , "80[13]\\d{7}", "\\d{10}", , , "8011234567"],
+    [, , "902\\d{7}", "\\d{10}", , , "9021234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BY", 375, "8~10", "8", , , "80?", , , , [
+    [, "([1-4]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-4]"], "8 0$1", ""],
+    [, "([89]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]"], "8 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     BZ: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "BZ", 501, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "BZ", 501, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     CA: [, [, , "[2-9]\\d{9}|3\\d{6}", "\\d{7,10}"],
-        [, , "(?:2(?:04|26|50|89)|306|4(?:03|16|18|38|50|56)|5(?:00|06|14|19|81|87)|6(?:00|04|13|47)|7(?:00|05|09|10|78|80)|8(?:07|19|67))[2-9]\\d{6}|310\\d{4}", "\\d{7,10}", , , "2042345678"],
-        [, , "(?:2(?:04|26|50|89)|306|4(?:03|16|18|38|50|56)|5(?:00|06|14|19|81|87)|6(?:00|04|13|47)|7(?:00|05|09|10|78|80)|8(?:07|19|67)|9(?:02|05))[2-9]\\d{6}", "\\d{7,10}", , , "2042345678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}|310\\d{4}", "\\d{7,10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CA", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"]
+    [, , "(?:2(?:04|26|50|89)|306|4(?:03|16|18|38|50|56)|5(?:00|06|14|19|81|87)|6(?:00|04|13|47)|7(?:00|05|09|10|78|80)|8(?:07|19|67))[2-9]\\d{6}|310\\d{4}", "\\d{7,10}", , , "2042345678"],
+    [, , "(?:2(?:04|26|50|89)|306|4(?:03|16|18|38|50|56)|5(?:00|06|14|19|81|87)|6(?:00|04|13|47)|7(?:00|05|09|10|78|80)|8(?:07|19|67)|9(?:02|05))[2-9]\\d{6}", "\\d{7,10}", , , "2042345678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}|310\\d{4}", "\\d{7,10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CA", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"]
     ],
     CD: [, [, , "[89]\\d{8}|[1-6]\\d{6}", "\\d{7,9}"],
-        [, , "[1-6]\\d{6}", "\\d{7}", , , "1234567"],
-        [, , "(?:8[0149]|9[7-9])\\d{7}", "\\d{9}", , , "991234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CD", 243, "00", "0", , , "0", , , , [
-            [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]"], "0$1", ""],
-            [, "([1-6]\\d)(\\d{5})", "$1 $2", ["[1-6]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[1-6]\\d{6}", "\\d{7}", , , "1234567"],
+    [, , "(?:8[0149]|9[7-9])\\d{7}", "\\d{9}", , , "991234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CD", 243, "00", "0", , , "0", , , , [
+    [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[89]"], "0$1", ""],
+    [, "([1-6]\\d)(\\d{5})", "$1 $2", ["[1-6]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     CF: [, [, , "[278]\\d{7}", "\\d{8}"],
-        [, , "2[12]\\d{6}", "\\d{8}", , , "21612345"],
-        [, , "7[0257]\\d{6}", "\\d{8}", , , "70012345"],
-        [, , "NA", "NA"],
-        [, , "8776\\d{4}", "\\d{8}", , , "87761234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CF", 236, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[12]\\d{6}", "\\d{8}", , , "21612345"],
+    [, , "7[0257]\\d{6}", "\\d{8}", , , "70012345"],
+    [, , "NA", "NA"],
+    [, , "8776\\d{4}", "\\d{8}", , , "87761234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CF", 236, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CG: [, [, , "[24-68]\\d{6}", "\\d{7}"],
-        [, , "(?:2[1-589]|8\\d)\\d{5}", "\\d{7}", , , "2123456"],
-        [, , "[4-6]\\d{6}", "\\d{7}", , , "5012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CG", 242, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[1-589]|8\\d)\\d{5}", "\\d{7}", , , "2123456"],
+    [, , "[4-6]\\d{6}", "\\d{7}", , , "5012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CG", 242, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CH: [, [, , "[2-9]\\d{8}", "\\d{9}"],
-        [, , "(?:2[12467]|3[1-4]|4[134]|5[12568]|6[12]|[7-9]1)\\d{7}", "\\d{9}", , , "212345678"],
-        [, , "7[46-9]\\d{7}", "\\d{9}", , , "741234567"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "90[016]\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "84[0248]\\d{6}", "\\d{9}", , , "840123456"],
-        [, , "878\\d{6}", "\\d{9}", , , "878123456"],
-        [, , "NA", "NA"], "CH", 41, "00", "0", , , "0", , , , [
-            [, "([2-9]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-7]|[89]1"], "0$1", ""],
-            [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8[047]|90"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[12467]|3[1-4]|4[134]|5[12568]|6[12]|[7-9]1)\\d{7}", "\\d{9}", , , "212345678"],
+    [, , "7[46-9]\\d{7}", "\\d{9}", , , "741234567"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "90[016]\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "84[0248]\\d{6}", "\\d{9}", , , "840123456"],
+    [, , "878\\d{6}", "\\d{9}", , , "878123456"],
+    [, , "NA", "NA"], "CH", 41, "00", "0", , , "0", , , , [
+    [, "([2-9]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2-7]|[89]1"], "0$1", ""],
+    [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["8[047]|90"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     CI: [, [, , "[02-5]\\d{7}", "\\d{8}"],
-        [, , "(?:2(?:0[023]|1[02357]|[23][045]|4[03-5])|3(?:0[06]|1[069]|[2-4][07]|5[09]|6[08]))\\d{5}", "\\d{8}", , , "21234567"],
-        [, , "(?:0[1-9]|4[04-9]|50|6[067])\\d{6}", "\\d{8}", , , "01234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CI", 225, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:0[023]|1[02357]|[23][045]|4[03-5])|3(?:0[06]|1[069]|[2-4][07]|5[09]|6[08]))\\d{5}", "\\d{8}", , , "21234567"],
+    [, , "(?:0[1-9]|4[04-9]|50|6[067])\\d{6}", "\\d{8}", , , "01234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CI", 225, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CK: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CK", 682, "00", "00", , , "00", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CK", 682, "00", "00", , , "00", , , 1, , , [, , "NA", "NA"]
     ],
     CL: [, [, , "(?:[2-9]|600|123)\\d{7,8}", "\\d{6,11}"],
-        [, , "(?:2|32|41)\\d{7}|(?:3[3-5]|4[235]|5[1-3578]|6[13-57]|7[1-35])\\d{6,7}", "\\d{6,9}", , , "21234567"],
-        [, , "9[6-9]\\d{7}", "\\d{8,9}", , , "961234567"],
-        [, , "800\\d{6}|1230\\d{7}", "\\d{9,11}", , , "800123456"],
-        [, , "600\\d{7,8}", "\\d{10,11}", , , "6001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "44\\d{7}", "\\d{9}", , , "441234567"], "CL", 56, "(?:0|1(?:1[0-69]|2[0-57]|5[13-58]|69|7[0167]|8[018]))0", "0", , , "(?:0|1(?:1[0-69]|2[0-57]|5[13-58]|69|7[0167]|8[018]))", , , , [
-            [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
-            [, "(\\d{2})(\\d{2,3})(\\d{4})", "$1 $2 $3", ["[357]|4[1-35]|6[13-57]"], "0$1", ""],
-            [, "(9)([6-9]\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
-            [, "(44)(\\d{3})(\\d{4})", "$1 $2 $3", ["44"], "0$1", ""],
-            [, "([68]00)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["60|8"], "$1", ""],
-            [, "(600)(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["60"], "$1", ""],
-            [, "(1230)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2|32|41)\\d{7}|(?:3[3-5]|4[235]|5[1-3578]|6[13-57]|7[1-35])\\d{6,7}", "\\d{6,9}", , , "21234567"],
+    [, , "9[6-9]\\d{7}", "\\d{8,9}", , , "961234567"],
+    [, , "800\\d{6}|1230\\d{7}", "\\d{9,11}", , , "800123456"],
+    [, , "600\\d{7,8}", "\\d{10,11}", , , "6001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "44\\d{7}", "\\d{9}", , , "441234567"], "CL", 56, "(?:0|1(?:1[0-69]|2[0-57]|5[13-58]|69|7[0167]|8[018]))0", "0", , , "(?:0|1(?:1[0-69]|2[0-57]|5[13-58]|69|7[0167]|8[018]))", , , , [
+    [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
+    [, "(\\d{2})(\\d{2,3})(\\d{4})", "$1 $2 $3", ["[357]|4[1-35]|6[13-57]"], "0$1", ""],
+    [, "(9)([6-9]\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
+    [, "(44)(\\d{3})(\\d{4})", "$1 $2 $3", ["44"], "0$1", ""],
+    [, "([68]00)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["60|8"], "$1", ""],
+    [, "(600)(\\d{3})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["60"], "$1", ""],
+    [, "(1230)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     CM: [, [, , "[237-9]\\d{7}", "\\d{8}"],
-        [, , "(?:22|33)\\d{6}", "\\d{8}", , , "22123456"],
-        [, , "[79]\\d{7}", "\\d{8}", , , "71234567"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "88\\d{6}", "\\d{8}", , , "88012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CM", 237, "00", , , , , , , , [
-            [, "([237-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2379]|88"], "", ""],
-            [, "(800)(\\d{2})(\\d{3})", "$1 $2 $3", ["80"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:22|33)\\d{6}", "\\d{8}", , , "22123456"],
+    [, , "[79]\\d{7}", "\\d{8}", , , "71234567"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "88\\d{6}", "\\d{8}", , , "88012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CM", 237, "00", , , , , , , , [
+    [, "([237-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[2379]|88"], "", ""],
+    [, "(800)(\\d{2})(\\d{3})", "$1 $2 $3", ["80"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CN: [, [, , "[1-79]\\d{7,11}|8[0-357-9]\\d{6,9}", "\\d{4,12}"],
-        [, , "21\\d{8,10}|(?:10|2[02-57-9]|3(?:11|7[159])|4[135]1|5(?:1\\d|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898)\\d{8}|(?:3(?:1[02-9]|35|49|5\\d|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5\\d|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]\\d|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))\\d{7}|80(?:29|6[03578]|7[018]|81)\\d{4}", "\\d{4,12}", , , "1012345678"],
-        [, , "1(?:3[0-9]|47|5[0135689]|8[05-9])\\d{8}", "\\d{11}", , , "13123456789"],
-        [, , "(?:10)?800\\d{7}", "\\d{10,12}", , , "8001234567"],
-        [, , "16[08]\\d{5}", "\\d{8}", , , "16812345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "400\\d{7}", "\\d{10}", , , "4001234567"], "CN", 86, "00", "0", , , "0", , , , [
-            [, "(80\\d{2})(\\d{4})", "$1 $2", ["80[2678]"], "0$1", ""],
-            [, "([48]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[48]00"], "", ""],
-            [, "(\\d{3,4})(\\d{4})", "$1 $2", ["[2-9]"], "", ""],
-            [, "(21)(\\d{4})(\\d{4,6})", "$1 $2 $3", ["21"], "0$1", ""],
-            [, "([12]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["10[1-9]|2[02-9]", "10[1-9]|2[02-9]", "10(?:[1-79]|8(?:[1-9]|0[1-9]))|2[02-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["3(?:11|7[159])|4[135]1|5(?:1|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:1[02-9]|35|49|5|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])"], "0$1", ""],
-            [, "(1[3-58]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-58]"], "", ""],
-            [, "(10800)(\\d{3})(\\d{4})", "$1 $2 $3", ["108", "1080", "10800"], "", ""]
-        ],
-        [
-            [, "(21)(\\d{4})(\\d{4,6})", "$1 $2 $3", ["21"], , ""],
-            [, "([12]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["10[1-9]|2[02-9]", "10[1-9]|2[02-9]", "10(?:[1-79]|8(?:[1-9]|0[1-9]))|2[02-9]"], , ""],
-            [, "(80\\d{2})(\\d{4})", "$1 $2", ["80[2678]"], , ""],
-            [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["3(?:11|7[159])|4[135]1|5(?:1|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898"], , ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:1[02-9]|35|49|5|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])"], , ""],
-            [, "(1[3-58]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-58]"], , ""],
-            [, "([48]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[48]00"], , ""],
-            [, "(10800)(\\d{3})(\\d{4})", "$1 $2 $3", ["108", "1080", "10800"], , ""]
-        ],
-        [, , "NA", "NA"]
+    [, , "21\\d{8,10}|(?:10|2[02-57-9]|3(?:11|7[159])|4[135]1|5(?:1\\d|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898)\\d{8}|(?:3(?:1[02-9]|35|49|5\\d|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5\\d|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]\\d|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]\\d|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]\\d|4[13]|5[1-5]))\\d{7}|80(?:29|6[03578]|7[018]|81)\\d{4}", "\\d{4,12}", , , "1012345678"],
+    [, , "1(?:3[0-9]|47|5[0135689]|8[05-9])\\d{8}", "\\d{11}", , , "13123456789"],
+    [, , "(?:10)?800\\d{7}", "\\d{10,12}", , , "8001234567"],
+    [, , "16[08]\\d{5}", "\\d{8}", , , "16812345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "400\\d{7}", "\\d{10}", , , "4001234567"], "CN", 86, "00", "0", , , "0", , , , [
+    [, "(80\\d{2})(\\d{4})", "$1 $2", ["80[2678]"], "0$1", ""],
+    [, "([48]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[48]00"], "", ""],
+    [, "(\\d{3,4})(\\d{4})", "$1 $2", ["[2-9]"], "", ""],
+    [, "(21)(\\d{4})(\\d{4,6})", "$1 $2 $3", ["21"], "0$1", ""],
+    [, "([12]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["10[1-9]|2[02-9]", "10[1-9]|2[02-9]", "10(?:[1-79]|8(?:[1-9]|0[1-9]))|2[02-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["3(?:11|7[159])|4[135]1|5(?:1|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:1[02-9]|35|49|5|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])"], "0$1", ""],
+    [, "(1[3-58]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-58]"], "", ""],
+    [, "(10800)(\\d{3})(\\d{4})", "$1 $2 $3", ["108", "1080", "10800"], "", ""]
+    ],
+    [
+    [, "(21)(\\d{4})(\\d{4,6})", "$1 $2 $3", ["21"], , ""],
+    [, "([12]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["10[1-9]|2[02-9]", "10[1-9]|2[02-9]", "10(?:[1-79]|8(?:[1-9]|0[1-9]))|2[02-9]"], , ""],
+    [, "(80\\d{2})(\\d{4})", "$1 $2", ["80[2678]"], , ""],
+    [, "(\\d{3})(\\d{4})(\\d{4})", "$1 $2 $3", ["3(?:11|7[159])|4[135]1|5(?:1|2[37]|3[12]|7[13-79]|9[15])|7(?:31|5[457]|6[09])|898"], , ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:1[02-9]|35|49|5|7[02-68]|9[1-68])|4(?:1[02-9]|2[179]|[35][2-9]|6[4789]|7[0-46-9]|8[23])|5(?:3[03-9]|4[36]|5|6[1-6]|7[028]|80|9[2-46-9])|6(?:3[1-5]|6[0238]|9[12])|7(?:01|[1579]|2[248]|3[04-9]|4[3-6]|6[2368])|8(?:1[236-8]|2[5-7]|[37]|5[1-9]|8[3678]|9[1-7])|9(?:0[1-3689]|1[1-79]|[379]|4[13]|5[1-5])"], , ""],
+    [, "(1[3-58]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["1[3-58]"], , ""],
+    [, "([48]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[48]00"], , ""],
+    [, "(10800)(\\d{3})(\\d{4})", "$1 $2 $3", ["108", "1080", "10800"], , ""]
+    ],
+    [, , "NA", "NA"]
     ],
     CO: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CO", 57, "(?:00[579]|#555|#999)", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CO", 57, "(?:00[579]|#555|#999)", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     CR: [, [, , "[28]\\d{7}", "\\d{8}"],
-        [, , "2[24-7]\\d{6}", "\\d{8}", , , "22123456"],
-        [, , "8[38]\\d{6}", "\\d{8}", , , "83123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CR", 506, "00", , , , , , , , [
-            [, "([28]\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[24-7]\\d{6}", "\\d{8}", , , "22123456"],
+    [, , "8[38]\\d{6}", "\\d{8}", , , "83123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CR", 506, "00", , , , , , , , [
+    [, "([28]\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CU: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CU", 53, "119", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CU", 53, "119", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     CV: [, [, , "[259]\\d{6}", "\\d{7}"],
-        [, , "2(?:2[1-7]|3[0-8]|4[12]|5[1256]|6\\d|7[1-3]|8[1-5])\\d{4}", "\\d{7}", , , "2211234"],
-        [, , "(?:9\\d|59)\\d{5}", "\\d{7}", , , "9911234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "CV", 238, "0", , , , , , , , [
-            [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:2[1-7]|3[0-8]|4[12]|5[1256]|6\\d|7[1-3]|8[1-5])\\d{4}", "\\d{7}", , , "2211234"],
+    [, , "(?:9\\d|59)\\d{5}", "\\d{7}", , , "9911234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "CV", 238, "0", , , , , , , , [
+    [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CY: [, [, , "[27-9]\\d{7}", "\\d{8}"],
-        [, , "2[2-6]\\d{6}", "\\d{8}", , , "22345678"],
-        [, , "7777\\d{4}|9(?:[69]\\d|7[67])\\d{5}", "\\d{8}", , , "96123456"],
-        [, , "8000\\d{4}", "\\d{8}", , , "80001234"],
-        [, , "9009\\d{4}", "\\d{8}", , , "90091234"],
-        [, , "NA", "NA"],
-        [, , "700\\d{5}", "\\d{8}", , , "70012345"],
-        [, , "NA", "NA"], "CY", 357, "00", , , , , , , , [
-            [, "([27-9]\\d)(\\d{6})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[2-6]\\d{6}", "\\d{8}", , , "22345678"],
+    [, , "7777\\d{4}|9(?:[69]\\d|7[67])\\d{5}", "\\d{8}", , , "96123456"],
+    [, , "8000\\d{4}", "\\d{8}", , , "80001234"],
+    [, , "9009\\d{4}", "\\d{8}", , , "90091234"],
+    [, , "NA", "NA"],
+    [, , "700\\d{5}", "\\d{8}", , , "70012345"],
+    [, , "NA", "NA"], "CY", 357, "00", , , , , , , , [
+    [, "([27-9]\\d)(\\d{6})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     CZ: [, [, , "[2-9]\\d{8}", "\\d{9}"],
-        [, , "2\\d{8}|(?:3[1257-9]|4[16-9]|5[13-9])\\d{7}", "\\d{9}", , , "212345678"],
-        [, , "60[1-8]\\d{6}|7[2379]\\d{7}", "\\d{9}", , , "601123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "90[0689]\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "8[134]\\d{7}", "\\d{9}", , , "811234567"],
-        [, , "70[01]\\d{6}", "\\d{9}", , , "700123456"],
-        [, , "NA", "NA"], "CZ", 420, "00", , , , , , , , [
-            [, "([2-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2\\d{8}|(?:3[1257-9]|4[16-9]|5[13-9])\\d{7}", "\\d{9}", , , "212345678"],
+    [, , "60[1-8]\\d{6}|7[2379]\\d{7}", "\\d{9}", , , "601123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "90[0689]\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "8[134]\\d{7}", "\\d{9}", , , "811234567"],
+    [, , "70[01]\\d{6}", "\\d{9}", , , "700123456"],
+    [, , "NA", "NA"], "CZ", 420, "00", , , , , , , , [
+    [, "([2-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     DE: [, [, , "(?:4[0-8]|[1-35-9]\\d)\\d{4,12}|49(?:4[1-8]|[0-35-7]\\d)\\d{2,7}", "\\d{2,14}"],
-        [, , "(?:[246]\\d{2}|3[02-9]\\d|5(?:0[2-8]|[38][0-8]|[124-6]\\d|[79][0-7])|[789](?:[1-9]\\d|0[2-9]))\\d{3,10}", "\\d{2,14}", , , "30123456"],
-        [, , "1(?:5\\d{9}|7(?:[0-57-9]|6\\d)\\d{7}|6[02]\\d{7,8}|63\\d{7})", "\\d{10,11}", , , "15123456789"],
-        [, , "800\\d{7,9}", "\\d{10,12}", , , "8001234567"],
-        [, , "900(?:[135]\\d{6}|9\\d{7})", "\\d{10,11}", , , "9001234567"],
-        [, , "180\\d{5,11}", "\\d{8,14}", , , "18012345"],
-        [, , "700\\d{8}", "\\d{11}", , , "70012345678"],
-        [, , "NA", "NA"], "DE", 49, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{4,11})", "$1/$2", ["3[02]|40|[68]9"], "0$1", ""],
-            [, "(\\d{3})(\\d{3,10})", "$1/$2", ["2(?:\\d1|0[2389]|1[24]|28|34)|3(?:[3-9][15]|40)|[4-8][1-9]1|9(?:06|[1-9]1)"], "0$1", ""],
-            [, "(\\d{4})(\\d{2,8})", "$1/$2", ["[24-6]|[7-9](?:\\d[1-9]|[1-9]\\d)|3(?:[3569][02-46-9]|4[2-4679]|7[2-467]|8[2-46-8])", "[24-6]|[7-9](?:\\d[1-9]|[1-9]\\d)|3(?:3(?:0[1-467]|2[127-9]|3[124578]|[46][1246]|7[1257-9]|8[1256]|9[145])|4(?:2[135]|3[1357]|4[13578]|6[1246]|7[1356]|9[1346])|5(?:0[14]|2[1-3589]|3[1357]|4[1246]|6[1-4]|7[1346]|8[13568]|9[1246])|6(?:0[356]|2[1-489]|3[124-6]|4[1347]|6[13]|7[12579]|8[1-356]|9[135])|7(?:2[1-7]|3[1357]|4[145]|6[1-5]|7[1-4])|8(?:21|3[1468]|4[1347]|6[0135-9]|7[1467]|8[136])|9(?:0[12479]|2[1358]|3[1357]|4[134679]|6[1-9]|7[136]|8[147]|9[1468]))"], "0$1", ""],
-            [, "(\\d{5})(\\d{1,6})", "$1/$2", ["3"], "0$1", ""],
-            [, "([18]\\d{2})(\\d{7,9})", "$1 $2", ["1[5-7]|800"], "0$1", ""],
-            [, "(\\d{3})(\\d)(\\d{4,10})", "$1 $2 $3", ["(?:18|90)0", "180|900[1359]"], "0$1", ""],
-            [, "(700)(\\d{4})(\\d{4})", "$1 $2 $3", ["700"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[246]\\d{2}|3[02-9]\\d|5(?:0[2-8]|[38][0-8]|[124-6]\\d|[79][0-7])|[789](?:[1-9]\\d|0[2-9]))\\d{3,10}", "\\d{2,14}", , , "30123456"],
+    [, , "1(?:5\\d{9}|7(?:[0-57-9]|6\\d)\\d{7}|6[02]\\d{7,8}|63\\d{7})", "\\d{10,11}", , , "15123456789"],
+    [, , "800\\d{7,9}", "\\d{10,12}", , , "8001234567"],
+    [, , "900(?:[135]\\d{6}|9\\d{7})", "\\d{10,11}", , , "9001234567"],
+    [, , "180\\d{5,11}", "\\d{8,14}", , , "18012345"],
+    [, , "700\\d{8}", "\\d{11}", , , "70012345678"],
+    [, , "NA", "NA"], "DE", 49, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{4,11})", "$1/$2", ["3[02]|40|[68]9"], "0$1", ""],
+    [, "(\\d{3})(\\d{3,10})", "$1/$2", ["2(?:\\d1|0[2389]|1[24]|28|34)|3(?:[3-9][15]|40)|[4-8][1-9]1|9(?:06|[1-9]1)"], "0$1", ""],
+    [, "(\\d{4})(\\d{2,8})", "$1/$2", ["[24-6]|[7-9](?:\\d[1-9]|[1-9]\\d)|3(?:[3569][02-46-9]|4[2-4679]|7[2-467]|8[2-46-8])", "[24-6]|[7-9](?:\\d[1-9]|[1-9]\\d)|3(?:3(?:0[1-467]|2[127-9]|3[124578]|[46][1246]|7[1257-9]|8[1256]|9[145])|4(?:2[135]|3[1357]|4[13578]|6[1246]|7[1356]|9[1346])|5(?:0[14]|2[1-3589]|3[1357]|4[1246]|6[1-4]|7[1346]|8[13568]|9[1246])|6(?:0[356]|2[1-489]|3[124-6]|4[1347]|6[13]|7[12579]|8[1-356]|9[135])|7(?:2[1-7]|3[1357]|4[145]|6[1-5]|7[1-4])|8(?:21|3[1468]|4[1347]|6[0135-9]|7[1467]|8[136])|9(?:0[12479]|2[1358]|3[1357]|4[134679]|6[1-9]|7[136]|8[147]|9[1468]))"], "0$1", ""],
+    [, "(\\d{5})(\\d{1,6})", "$1/$2", ["3"], "0$1", ""],
+    [, "([18]\\d{2})(\\d{7,9})", "$1 $2", ["1[5-7]|800"], "0$1", ""],
+    [, "(\\d{3})(\\d)(\\d{4,10})", "$1 $2 $3", ["(?:18|90)0", "180|900[1359]"], "0$1", ""],
+    [, "(700)(\\d{4})(\\d{4})", "$1 $2 $3", ["700"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     DJ: [, [, , "[2-8]\\d{5}", "\\d{6}"],
-        [, , "(?:25|3[0-6]|42)\\d{4}", "\\d{6}", , , "251234"],
-        [, , "(?:[5-7]\\d|8[0-7])\\d{4}", "\\d{6}", , , "601234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "DJ", 253, "00", , , , , , , , [
-            [, "([2-8]\\d)(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:25|3[0-6]|42)\\d{4}", "\\d{6}", , , "251234"],
+    [, , "(?:[5-7]\\d|8[0-7])\\d{4}", "\\d{6}", , , "601234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "DJ", 253, "00", , , , , , , , [
+    [, "([2-8]\\d)(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     DK: [, [, , "[1-9]\\d{7}", "\\d{8}"],
-        [, , "(?:3[2-9]|4[3-9]|5[4-9]|6[2-9]|7[02-9]|8[26-9]|9[6-9])\\d{6}", "\\d{8}", , , "32123456"],
-        [, , "(?:2[0-9]|3[0-2]|4[0-2]|5[0-3]|6[01]|72|99)\\d{6}", "\\d{8}", , , "20123456"],
-        [, , "80\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "90\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "DK", 45, "00", , , , , , , , [
-            [, "([1-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3[2-9]|4[3-9]|5[4-9]|6[2-9]|7[02-9]|8[26-9]|9[6-9])\\d{6}", "\\d{8}", , , "32123456"],
+    [, , "(?:2[0-9]|3[0-2]|4[0-2]|5[0-3]|6[01]|72|99)\\d{6}", "\\d{8}", , , "20123456"],
+    [, , "80\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "90\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "DK", 45, "00", , , , , , , , [
+    [, "([1-9]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     DM: [, [, , "[7-9]\\d{9}", "\\d{7,10}"],
-        [, , "767(?:2(?:55|66)|4(?:2[01]|4[0-25-9])|50[0-4])\\d{4}", "\\d{7,10}", , , "7674201234"],
-        [, , "767(?:2(?:[2346]5|7[5-7])|31[5-7]|61[4-6])\\d{4}", "\\d{10}", , , "7672251234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "DM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "767"],
+    [, , "767(?:2(?:55|66)|4(?:2[01]|4[0-25-9])|50[0-4])\\d{4}", "\\d{7,10}", , , "7674201234"],
+    [, , "767(?:2(?:[2346]5|7[5-7])|31[5-7]|61[4-6])\\d{4}", "\\d{10}", , , "7672251234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "DM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "767"],
     DO: [, [, , "[89]\\d{9}", "\\d{7,10}"],
-        [, , "8[024]9[2-9]\\d{6}", "\\d{7,10}", , , "8092345678"],
-        [, , "8[024]9[2-9]\\d{6}", "\\d{7,10}", , , "8092345678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "DO", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "8[024]9"],
+    [, , "8[024]9[2-9]\\d{6}", "\\d{7,10}", , , "8092345678"],
+    [, , "8[024]9[2-9]\\d{6}", "\\d{7,10}", , , "8092345678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "DO", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "8[024]9"],
     DZ: [, [, , "(?:[1-4]|[5-9]\\d)\\d{7}", "\\d{8,9}"],
-        [, , "(?:1\\d|2[014-79]|3[0-8]|4[0135689])\\d{6}|9619\\d{5}", "\\d{8,9}", , , "12345678"],
-        [, , "(?:5[56]|6[69]|7[79])\\d{7}", "\\d{9}", , , "551234567"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "80[3-689]1\\d{5}", "\\d{9}", , , "808123456"],
-        [, , "80[12]1\\d{5}", "\\d{9}", , , "801123456"],
-        [, , "NA", "NA"],
-        [, , "98[23]\\d{6}", "\\d{9}", , , "983123456"], "DZ", 213, "00", "0", , , "0", , , , [
-            [, "([1-4]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-4]"], "0$1", ""],
-            [, "([5-8]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-8]"], "0$1", ""],
-            [, "(9\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1\\d|2[014-79]|3[0-8]|4[0135689])\\d{6}|9619\\d{5}", "\\d{8,9}", , , "12345678"],
+    [, , "(?:5[56]|6[69]|7[79])\\d{7}", "\\d{9}", , , "551234567"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "80[3-689]1\\d{5}", "\\d{9}", , , "808123456"],
+    [, , "80[12]1\\d{5}", "\\d{9}", , , "801123456"],
+    [, , "NA", "NA"],
+    [, , "98[23]\\d{6}", "\\d{9}", , , "983123456"], "DZ", 213, "00", "0", , , "0", , , , [
+    [, "([1-4]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[1-4]"], "0$1", ""],
+    [, "([5-8]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[5-8]"], "0$1", ""],
+    [, "(9\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     EC: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "EC", 593, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "EC", 593, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     EE: [, [, , "[3-9]\\d{6,7}|800\\d{6,7}", "\\d{6,10}"],
-        [, , "(?:3[23589]|4[3-8]|6\\d|7[1-9]|88)\\d{5}", "\\d{7}", , , "3212345"],
-        [, , "(?:5\\d|8[1-5])\\d{6}|5(?:[02]\\d{2}|1(?:[0-8]\\d|95)|5[0-478]\\d|64[0-4]|65[1-589])\\d{3}", "\\d{7,8}", , , "51234567"],
-        [, , "800(?:0\\d{3}|1\\d|[2-9])\\d{3}", "\\d{7,10}", , , "80012345"],
-        [, , "900\\d{4}", "\\d{7}", , , "9001234"],
-        [, , "NA", "NA"],
-        [, , "70\\d{5}", "\\d{7}", , , "7012345"],
-        [, , "NA", "NA"], "EE", 372, "00", , , , , , , , [
-            [, "([34-79]\\d{2})(\\d{4})", "$1 $2", ["[34679]|5(?:[0-2]|5[0-478]|6[45])", "[34679]|5(?:[02]|1(?:[0-8]|95)|5[0-478]|6(?:4[0-4]|5[1-589]))"], "", ""],
-            [, "(8000)(\\d{3})(\\d{3})", "$1 $2 $3", ["800", "8000"], "", ""],
-            [, "([58]\\d{3})(\\d{3,4})", "$1 $2", ["5|8(?:00|[1-5])", "5|8(?:00[1-9]|[1-5])"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3[23589]|4[3-8]|6\\d|7[1-9]|88)\\d{5}", "\\d{7}", , , "3212345"],
+    [, , "(?:5\\d|8[1-5])\\d{6}|5(?:[02]\\d{2}|1(?:[0-8]\\d|95)|5[0-478]\\d|64[0-4]|65[1-589])\\d{3}", "\\d{7,8}", , , "51234567"],
+    [, , "800(?:0\\d{3}|1\\d|[2-9])\\d{3}", "\\d{7,10}", , , "80012345"],
+    [, , "900\\d{4}", "\\d{7}", , , "9001234"],
+    [, , "NA", "NA"],
+    [, , "70\\d{5}", "\\d{7}", , , "7012345"],
+    [, , "NA", "NA"], "EE", 372, "00", , , , , , , , [
+    [, "([34-79]\\d{2})(\\d{4})", "$1 $2", ["[34679]|5(?:[0-2]|5[0-478]|6[45])", "[34679]|5(?:[02]|1(?:[0-8]|95)|5[0-478]|6(?:4[0-4]|5[1-589]))"], "", ""],
+    [, "(8000)(\\d{3})(\\d{3})", "$1 $2 $3", ["800", "8000"], "", ""],
+    [, "([58]\\d{3})(\\d{3,4})", "$1 $2", ["5|8(?:00|[1-5])", "5|8(?:00[1-9]|[1-5])"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     EG: [, [, , "1\\d{4,9}|[2-689]\\d{7,9}", "\\d{5,10}"],
-        [, , "(?:1[35][23]|2[23]\\d|3\\d|4(?:0[2-4]|[578][23]|64)|5(?:0[234]|[57][23])|6[24-689]3|8(?:[28][2-4]|42|6[23])|9(?:[25]2|3[24]|6[23]|7[2-4]))\\d{6}|1[69]\\d{3}", "\\d{5,9}", , , "234567890"],
-        [, , "1[0-246-9]\\d{7}", "\\d{9}", , , "101234567"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "EG", 20, "00", "0", , , "0", , , , [
-            [, "(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1", ""],
-            [, "(\\d{2})(\\d{7})", "$1 $2", ["[14-6]|[89][2-9]"], "0$1", ""],
-            [, "([89]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]00"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[35][23]|2[23]\\d|3\\d|4(?:0[2-4]|[578][23]|64)|5(?:0[234]|[57][23])|6[24-689]3|8(?:[28][2-4]|42|6[23])|9(?:[25]2|3[24]|6[23]|7[2-4]))\\d{6}|1[69]\\d{3}", "\\d{5,9}", , , "234567890"],
+    [, , "1[0-246-9]\\d{7}", "\\d{9}", , , "101234567"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "EG", 20, "00", "0", , , "0", , , , [
+    [, "(\\d)(\\d{7,8})", "$1 $2", ["[23]"], "0$1", ""],
+    [, "(\\d{2})(\\d{7})", "$1 $2", ["[14-6]|[89][2-9]"], "0$1", ""],
+    [, "([89]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["[89]00"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ER: [, [, , "[178]\\d{6}", "\\d{6,7}"],
-        [, , "1(?:1[12568]|20|40|55|6[146])\\d{4}|8\\d{6}", "\\d{6,7}", , , "8370362"],
-        [, , "17[1-3]\\d{4}|7\\d{6}", "\\d{7}", , , "7123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ER", 291, "00", "0", , , "0", , , , [
-            [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1(?:1[12568]|20|40|55|6[146])\\d{4}|8\\d{6}", "\\d{6,7}", , , "8370362"],
+    [, , "17[1-3]\\d{4}|7\\d{6}", "\\d{7}", , , "7123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ER", 291, "00", "0", , , "0", , , , [
+    [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ES: [, [, , "[5-9]\\d{8}", "\\d{9}"],
-        [, , "[89][1-8]\\d{7}", "\\d{9}", , , "812345678"],
-        [, , "6\\d{8}", "\\d{9}", , , "612345678"],
-        [, , "[89]00\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "80[367]\\d{6}", "\\d{9}", , , "803123456"],
-        [, , "90[12]\\d{6}", "\\d{9}", , , "901123456"],
-        [, , "(?:51|70)\\d{7}", "\\d{9}", , , "701234567"],
-        [, , "NA", "NA"], "ES", 34, "00", , , , , , , , [
-            [, "([5-9]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[89][1-8]\\d{7}", "\\d{9}", , , "812345678"],
+    [, , "6\\d{8}", "\\d{9}", , , "612345678"],
+    [, , "[89]00\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "80[367]\\d{6}", "\\d{9}", , , "803123456"],
+    [, , "90[12]\\d{6}", "\\d{9}", , , "901123456"],
+    [, , "(?:51|70)\\d{7}", "\\d{9}", , , "701234567"],
+    [, , "NA", "NA"], "ES", 34, "00", , , , , , , , [
+    [, "([5-9]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     ET: [, [, , "[1-59]\\d{8}", "\\d{7,9}"],
-        [, , "(?:11(?:1(?:1[124]|2[2-57]|3[1-5]|5[5-8]|8[6-8])|2(?:13|3[6-8]|5[89]|7[05-9]|8[2-6])|3(?:2[01]|3[0-289]|4[1289]|7[1-4]|87)|4(?:1[69]|3[2-49]|4[0-23]|6[5-8])|5(?:1[57]|44|5[0-4])|6(?:18|2[69]|4[5-7]|5[1-5]|6[0-59]|8[015-8]))|2(?:2(?:11[1-9]|22[0-7]|33\\d|44[1467]|66[1-68])|5(?:11[124-6]|33[2-8]|44[1467]|55[14]|66[1-3679]|77[124-79]|880))|3(?:3(?:11[0-46-8]|22[0-6]|33[0134689]|44[04]|55[0-6]|66[01467])|4(?:44[0-8]|55[0-69]|66[0-3]|77[1-5]))|4(?:6(?:22[0-24-7]|33[1-5]|44[13-69]|55[14-689]|660|88[1-4])|7(?:11[1-9]|22[1-9]|33[13-7]|44[13-6]|55[1-689]))|5(?:7(?:227|55[05]|(?:66|77)[14-8])|8(?:11[149]|22[013-79]|33[0-68]|44[013-8]|550|66[1-5]|77\\d)))\\d{4}", "\\d{7,9}", , , "111112345"],
-        [, , "91(?:1(?:[146]\\d|2[0-5]|3[4-6]|50|7[2-6]|8[46-9])|31\\d|4(?:3[0-2489]|7[0-3])|5(?:3[23]|7[3-5])|6(?:58|8[23])|7(?:5[57]|8[01])|8(?:3[45]|7[67]))\\d{4}", "\\d{9}", , , "911123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ET", 251, "00", "0", , , "0", , , , [
-            [, "([1-59]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:11(?:1(?:1[124]|2[2-57]|3[1-5]|5[5-8]|8[6-8])|2(?:13|3[6-8]|5[89]|7[05-9]|8[2-6])|3(?:2[01]|3[0-289]|4[1289]|7[1-4]|87)|4(?:1[69]|3[2-49]|4[0-23]|6[5-8])|5(?:1[57]|44|5[0-4])|6(?:18|2[69]|4[5-7]|5[1-5]|6[0-59]|8[015-8]))|2(?:2(?:11[1-9]|22[0-7]|33\\d|44[1467]|66[1-68])|5(?:11[124-6]|33[2-8]|44[1467]|55[14]|66[1-3679]|77[124-79]|880))|3(?:3(?:11[0-46-8]|22[0-6]|33[0134689]|44[04]|55[0-6]|66[01467])|4(?:44[0-8]|55[0-69]|66[0-3]|77[1-5]))|4(?:6(?:22[0-24-7]|33[1-5]|44[13-69]|55[14-689]|660|88[1-4])|7(?:11[1-9]|22[1-9]|33[13-7]|44[13-6]|55[1-689]))|5(?:7(?:227|55[05]|(?:66|77)[14-8])|8(?:11[149]|22[013-79]|33[0-68]|44[013-8]|550|66[1-5]|77\\d)))\\d{4}", "\\d{7,9}", , , "111112345"],
+    [, , "91(?:1(?:[146]\\d|2[0-5]|3[4-6]|50|7[2-6]|8[46-9])|31\\d|4(?:3[0-2489]|7[0-3])|5(?:3[23]|7[3-5])|6(?:58|8[23])|7(?:5[57]|8[01])|8(?:3[45]|7[67]))\\d{4}", "\\d{9}", , , "911123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ET", 251, "00", "0", , , "0", , , , [
+    [, "([1-59]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     FI: [, [, , "[1-9]\\d{4,11}", "\\d{5,12}"],
-        [, , "1(?:0[1-9]\\d{3,7}|[35689][1-8]\\d{3,9}|[47]\\d{5,10})|2(?:0(?:[16-8]\\d{3,7}|2[14-9]\\d{1,6}|[3-5]\\d{2,7}|9[0-7]\\d{1,6})|[1-8]\\d{3,9}|9\\d{4,8})|3(?:0[1-9]\\d{3,7}|[1-8]\\d{3,9}|9\\d{4,8})|[5689][1-8]\\d{3,9}|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{2,7})", "\\d{5,12}", , , "1312345678"],
-        [, , "4\\d{5,10}|50\\d{4,8}", "\\d{6,11}", , , "412345678"],
-        [, , "800\\d{4,7}", "\\d{7,10}", , , "8001234567"],
-        [, , "[67]00\\d{5,6}", "\\d{8,9}", , , "600123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "FI", 358, "00|99[049]", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{4,10})", "$1 $2", ["2[09]|[14]|50|7[135]"], "0$1", ""],
-            [, "(\\d)(\\d{4,11})", "$1 $2", ["[25689][1-8]|3"], "0$1", ""],
-            [, "([6-8]00)(\\d{4,7})", "$1 $2", ["[6-8]0"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1(?:0[1-9]\\d{3,7}|[35689][1-8]\\d{3,9}|[47]\\d{5,10})|2(?:0(?:[16-8]\\d{3,7}|2[14-9]\\d{1,6}|[3-5]\\d{2,7}|9[0-7]\\d{1,6})|[1-8]\\d{3,9}|9\\d{4,8})|3(?:0[1-9]\\d{3,7}|[1-8]\\d{3,9}|9\\d{4,8})|[5689][1-8]\\d{3,9}|7(?:1\\d{7}|3\\d{8}|5[03-9]\\d{2,7})", "\\d{5,12}", , , "1312345678"],
+    [, , "4\\d{5,10}|50\\d{4,8}", "\\d{6,11}", , , "412345678"],
+    [, , "800\\d{4,7}", "\\d{7,10}", , , "8001234567"],
+    [, , "[67]00\\d{5,6}", "\\d{8,9}", , , "600123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "FI", 358, "00|99[049]", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{4,10})", "$1 $2", ["2[09]|[14]|50|7[135]"], "0$1", ""],
+    [, "(\\d)(\\d{4,11})", "$1 $2", ["[25689][1-8]|3"], "0$1", ""],
+    [, "([6-8]00)(\\d{4,7})", "$1 $2", ["[6-8]0"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     FJ: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "FJ", 679, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "FJ", 679, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     FK: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "FK", 500, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "FK", 500, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     FM: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "FM", 691, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "FM", 691, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     FO: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "FO", 298, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "FO", 298, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     FR: [, [, , "[1-9]\\d{8}", "\\d{9}"],
-        [, , "[1-5]\\d{8}", "\\d{9}", , , "123456789"],
-        [, , "6\\d{8}|7[5-9]\\d{7}", "\\d{9}", , , "612345678"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "89[1-37-9]\\d{6}", "\\d{9}", , , "891123456"],
-        [, , "8(?:1[019]|2[0156]|84|90)\\d{6}", "\\d{9}", , , "810123456"],
-        [, , "NA", "NA"],
-        [, , "9\\d{8}", "\\d{9}", , , "912345678"], "FR", 33, "[04579]0", "0", , , "0", , "00", , [
-            [, "([1-79])(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[1-79]"], "0$1", ""],
-            [, "(8\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[1-5]\\d{8}", "\\d{9}", , , "123456789"],
+    [, , "6\\d{8}|7[5-9]\\d{7}", "\\d{9}", , , "612345678"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "89[1-37-9]\\d{6}", "\\d{9}", , , "891123456"],
+    [, , "8(?:1[019]|2[0156]|84|90)\\d{6}", "\\d{9}", , , "810123456"],
+    [, , "NA", "NA"],
+    [, , "9\\d{8}", "\\d{9}", , , "912345678"], "FR", 33, "[04579]0", "0", , , "0", , "00", , [
+    [, "([1-79])(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["[1-79]"], "0$1", ""],
+    [, "(8\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "0 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     GA: [, [, , "[4-9]\\d{5}|0\\d{7}", "\\d{6,8}"],
-        [, , "(?:4(?:[04-8]\\d|2[04])|(?:5[04-689]|6[024-9]|7\\d|8[236]|9[02368])\\d)\\d{3}", "\\d{6}", , , "441234"],
-        [, , "0(?:5(?:0[89]|3[0-4]|8[0-26]|9[238])|6(?:0[3-7]|1[01]|2[0-7]|6[0-589]|71|83|9[57])|7(?:1[2-5]|2[89]|3[35-9]|4[01]|5[0-347-9]|[67]\\d|8[457-9]|9[0146]))\\d{4}", "\\d{8}", , , "06031234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GA", 241, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[4-9]"], "", ""],
-            [, "(0\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:4(?:[04-8]\\d|2[04])|(?:5[04-689]|6[024-9]|7\\d|8[236]|9[02368])\\d)\\d{3}", "\\d{6}", , , "441234"],
+    [, , "0(?:5(?:0[89]|3[0-4]|8[0-26]|9[238])|6(?:0[3-7]|1[01]|2[0-7]|6[0-589]|71|83|9[57])|7(?:1[2-5]|2[89]|3[35-9]|4[01]|5[0-347-9]|[67]\\d|8[457-9]|9[0146]))\\d{4}", "\\d{8}", , , "06031234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GA", 241, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", ["[4-9]"], "", ""],
+    [, "(0\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["0"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GB: [, [, , "\\d{7,10}", "\\d{4,10}"],
-        [, , "1(?:1[3-8]|[2-69]1)\\d{7}|1(?:2(?:0[024-9]|2[3-9]|3[3-79]|4[1-689]|[58][02-9]|6[0-4789]|7[013-9]|9\\d)|3(?:0\\d|[25][02-9]|3[02-579]|[468][0-46-9]|7[1235679]|9[24578])|4(?:0[03-9]|2[02-5789]|[37]\\d|4[02-69]|5[0-8]|[69][0-79]|8[02-5789])|5(?:0[1235-9]|2[024-9]|3[015689]|4[02-9]|5[03-9]|6\\d|7[0-35-9]|8[0-468]|9[0-5789])|6(?:0[034689]|2[0-35689]|3[013-9]|4[1-467]|5[0-69]|6[13-9]|7[0-8]|8[013-9]|9[0124578])|7(?:0[0246-9]|2\\d|3[023678]|4[03-9]|5[0-46-9]|6[013-9]|7[0-35-9]|8[024-9]|9[02-9])|8(?:0[35-9]|2[1-5789]|3[02-578]|4[0-578]|5[124-9]|6[2-69]|7\\d|8[02-9]|9[02569])|9(?:0[02-589]|2[02-689]|3[1-5789]|4[2-9]|5[0-579]|6[234789]|7[0124578]|8\\d|9[2-57]))\\d{6}|1(?:2(?:0(?:46[1-4]|87[2-9])|545[1-79]|76(?:2\\d|3[1-8]|6[1-6])|9(?:7(?:2[0-4]|3[2-5])|8(?:2[2-8]|7[0-4789]|8[345])))|3(?:638[2-5]|647[23]|8(?:47[04-9]|64[015789]))|4(?:044[1-7]|20(?:2[23]|8\\d)|6(?:0(?:30|5[2-57]|6[1-8]|7[2-8])|140)|8(?:052|87[123]))|5(?:24(?:3[2-79]|6\\d)|276\\d|6(?:26[06-9]|686))|6(?:06(?:4\\d|7[4-79])|295[567]|35[34]\\d|47(?:24|61)|59(?:5[08]|6[67]|74)|955[0-4])|7(?:26(?:6[13-9]|7[0-7])|442\\d|50(?:2[0-3]|[3-68]2|76))|8(?:27[56]\\d|37(?:5[2-5]|8[239])|84(?:3[2-58]))|9(?:0(?:0(?:6[1-8]|85)|52\\d)|3583|4(?:66[1-8]|9(?:2[01]|81))|63(?:23|3[1-4])|9561))\\d{3}|176888[234678]\\d{2}|16977[23]\\d{3}|2(?:0[01378]|3[0189]|4[017]|8[0-46-9]|9[012])\\d{7}|(?:3[0347]|55)\\d{8}", "\\d{4,10}", , , "1212345678"],
-        [, , "7(?:[1-4]\\d\\d|5(?:0[0-8]|[13-9]\\d|2[0-35-9])|7(?:0[1-9]|[1-7]\\d|8[02-9]|9[0-689])|8(?:[014-9]\\d|[23][0-8])|9(?:[04-9]\\d|1[02-9]|2[0135-9]|3[0-689]))\\d{6}", "\\d{10}", , , "7400123456"],
-        [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
-        [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
-        [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
-        [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
-        [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "GB", 44, "00", "0", " x", , "0", , , , [
-            [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["2|5[56]|7[06]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:1|\\d1)|3|9[018]"], "0$1", ""],
-            [, "(\\d{5})(\\d{4,5})", "$1 $2", ["1(?:38|5[23]|69|76|94)", "1(?:387|5(?:24|39)|697|768|946)", "1(?:3873|5(?:242|39[456])|697[347]|768[347]|9467)"], "0$1", ""],
-            [, "(1\\d{3})(\\d{5,6})", "$1 $2", ["1"], "0$1", ""],
-            [, "(7\\d{3})(\\d{6})", "$1 $2", ["7[1-5789]"], "0$1", ""],
-            [, "(800)(\\d{4})", "$1 $2", ["800", "8001", "80011", "800111", "8001111"], "0$1", ""],
-            [, "(845)(46)(4\\d)", "$1 $2 $3", ["845", "8454", "84546", "845464"], "0$1", ""],
-            [, "(8\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["8(?:4[2-5]|7[0-3])"], "0$1", ""],
-            [, "(80\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", ""],
-            [, "([58]00)(\\d{6})", "$1 $2", ["[58]00"], "0$1", ""]
-        ], , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"], 1],
+    [, , "1(?:1[3-8]|[2-69]1)\\d{7}|1(?:2(?:0[024-9]|2[3-9]|3[3-79]|4[1-689]|[58][02-9]|6[0-4789]|7[013-9]|9\\d)|3(?:0\\d|[25][02-9]|3[02-579]|[468][0-46-9]|7[1235679]|9[24578])|4(?:0[03-9]|2[02-5789]|[37]\\d|4[02-69]|5[0-8]|[69][0-79]|8[02-5789])|5(?:0[1235-9]|2[024-9]|3[015689]|4[02-9]|5[03-9]|6\\d|7[0-35-9]|8[0-468]|9[0-5789])|6(?:0[034689]|2[0-35689]|3[013-9]|4[1-467]|5[0-69]|6[13-9]|7[0-8]|8[013-9]|9[0124578])|7(?:0[0246-9]|2\\d|3[023678]|4[03-9]|5[0-46-9]|6[013-9]|7[0-35-9]|8[024-9]|9[02-9])|8(?:0[35-9]|2[1-5789]|3[02-578]|4[0-578]|5[124-9]|6[2-69]|7\\d|8[02-9]|9[02569])|9(?:0[02-589]|2[02-689]|3[1-5789]|4[2-9]|5[0-579]|6[234789]|7[0124578]|8\\d|9[2-57]))\\d{6}|1(?:2(?:0(?:46[1-4]|87[2-9])|545[1-79]|76(?:2\\d|3[1-8]|6[1-6])|9(?:7(?:2[0-4]|3[2-5])|8(?:2[2-8]|7[0-4789]|8[345])))|3(?:638[2-5]|647[23]|8(?:47[04-9]|64[015789]))|4(?:044[1-7]|20(?:2[23]|8\\d)|6(?:0(?:30|5[2-57]|6[1-8]|7[2-8])|140)|8(?:052|87[123]))|5(?:24(?:3[2-79]|6\\d)|276\\d|6(?:26[06-9]|686))|6(?:06(?:4\\d|7[4-79])|295[567]|35[34]\\d|47(?:24|61)|59(?:5[08]|6[67]|74)|955[0-4])|7(?:26(?:6[13-9]|7[0-7])|442\\d|50(?:2[0-3]|[3-68]2|76))|8(?:27[56]\\d|37(?:5[2-5]|8[239])|84(?:3[2-58]))|9(?:0(?:0(?:6[1-8]|85)|52\\d)|3583|4(?:66[1-8]|9(?:2[01]|81))|63(?:23|3[1-4])|9561))\\d{3}|176888[234678]\\d{2}|16977[23]\\d{3}|2(?:0[01378]|3[0189]|4[017]|8[0-46-9]|9[012])\\d{7}|(?:3[0347]|55)\\d{8}", "\\d{4,10}", , , "1212345678"],
+    [, , "7(?:[1-4]\\d\\d|5(?:0[0-8]|[13-9]\\d|2[0-35-9])|7(?:0[1-9]|[1-7]\\d|8[02-9]|9[0-689])|8(?:[014-9]\\d|[23][0-8])|9(?:[04-9]\\d|1[02-9]|2[0135-9]|3[0-689]))\\d{6}", "\\d{10}", , , "7400123456"],
+    [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
+    [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
+    [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
+    [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
+    [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "GB", 44, "00", "0", " x", , "0", , , , [
+    [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["2|5[56]|7[06]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:1|\\d1)|3|9[018]"], "0$1", ""],
+    [, "(\\d{5})(\\d{4,5})", "$1 $2", ["1(?:38|5[23]|69|76|94)", "1(?:387|5(?:24|39)|697|768|946)", "1(?:3873|5(?:242|39[456])|697[347]|768[347]|9467)"], "0$1", ""],
+    [, "(1\\d{3})(\\d{5,6})", "$1 $2", ["1"], "0$1", ""],
+    [, "(7\\d{3})(\\d{6})", "$1 $2", ["7[1-5789]"], "0$1", ""],
+    [, "(800)(\\d{4})", "$1 $2", ["800", "8001", "80011", "800111", "8001111"], "0$1", ""],
+    [, "(845)(46)(4\\d)", "$1 $2 $3", ["845", "8454", "84546", "845464"], "0$1", ""],
+    [, "(8\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["8(?:4[2-5]|7[0-3])"], "0$1", ""],
+    [, "(80\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", ""],
+    [, "([58]00)(\\d{6})", "$1 $2", ["[58]00"], "0$1", ""]
+    ], , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"], 1],
     GD: [, [, , "[489]\\d{9}", "\\d{7,10}"],
-        [, , "473(?:2(?:3[0-2]|69)|3(?:2[89]|86)|4(?:08|3[5-9]|4[0-49]|5[5-79]|68|73|90)|63[68]|7(?:58|84)|938)\\d{4}", "\\d{7,10}", , , "4732691234"],
-        [, , "473(?:4(?:0[3-79]|1[04-9]|20|58)|53[3-8])\\d{4}", "\\d{10}", , , "4734031234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GD", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "473"],
+    [, , "473(?:2(?:3[0-2]|69)|3(?:2[89]|86)|4(?:08|3[5-9]|4[0-49]|5[5-79]|68|73|90)|63[68]|7(?:58|84)|938)\\d{4}", "\\d{7,10}", , , "4732691234"],
+    [, , "473(?:4(?:0[3-79]|1[04-9]|20|58)|53[3-8])\\d{4}", "\\d{10}", , , "4734031234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GD", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "473"],
     GE: [, [, , "[1-3579]\\d{7}|8\\d{8}", "\\d{3,9}"],
-        [, , "(?:122|2(?:22|36|5[03])|3(?:1[0-35-8]|[24-6]\\d|3[1-35679]|7[0-39]|9[1-35-7])|44[2-6])\\d{5}", "\\d{3,8}", , , "32123456"],
-        [, , "(?:5[1578]|6[28]|7[0147-9]|9[0135-9])\\d{6}", "\\d{8}", , , "55123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GE", 995, "8~10", "8", , , "8", , , , [
-            [, "(32)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["32"], "8 $1", ""],
-            [, "(\\d{3})(\\d{5})", "$1 $2", ["2|3[13-79]|446"], "8 $1", ""],
-            [, "(\\d{4})(\\d{3,4})", "$1 $2", ["44[2-5]"], "8 $1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[5679]"], "8 $1", ""],
-            [, "(800)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "8 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:122|2(?:22|36|5[03])|3(?:1[0-35-8]|[24-6]\\d|3[1-35679]|7[0-39]|9[1-35-7])|44[2-6])\\d{5}", "\\d{3,8}", , , "32123456"],
+    [, , "(?:5[1578]|6[28]|7[0147-9]|9[0135-9])\\d{6}", "\\d{8}", , , "55123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GE", 995, "8~10", "8", , , "8", , , , [
+    [, "(32)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["32"], "8 $1", ""],
+    [, "(\\d{3})(\\d{5})", "$1 $2", ["2|3[13-79]|446"], "8 $1", ""],
+    [, "(\\d{4})(\\d{3,4})", "$1 $2", ["44[2-5]"], "8 $1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[5679]"], "8 $1", ""],
+    [, "(800)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["8"], "8 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     GF: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GF", 594, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GF", 594, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     GG: [, [, , "[15789]\\d{6,9}", "\\d{6,10}"],
-        [, , "1481\\d{6}", "\\d{6,10}", , , "1481456789"],
-        [, , "7(?:781|839|911)\\d{6}", "\\d{10}", , , "7781123456"],
-        [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
-        [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
-        [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
-        [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
-        [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "GG", 44, "00", "0", " x", , "0", , , , , , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"]
+    [, , "1481\\d{6}", "\\d{6,10}", , , "1481456789"],
+    [, , "7(?:781|839|911)\\d{6}", "\\d{10}", , , "7781123456"],
+    [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
+    [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
+    [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
+    [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
+    [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "GG", 44, "00", "0", " x", , "0", , , , , , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"]
     ],
     GH: [, [, , "[235]\\d{6,8}", "\\d{7,9}"],
-        [, , "3(?:0[237]\\d|[167](?:2[0-6]|7\\d)|2(?:2[0-5]|7\\d)|3(?:2[0-37]|7\\d)|4(?:[27]\\d|30)|5(?:2[0-7]|7\\d)|8(?:2[0-2]|7\\d)|9(?:20|7\\d))\\d{5}", "\\d{7,9}", , , "302345678"],
-        [, , "2(?:(?:[47]\\d|08)\\d{6}|[368]\\d{7})|54\\d{7}", "\\d{9}", , , "231234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GH", 233, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "3(?:0[237]\\d|[167](?:2[0-6]|7\\d)|2(?:2[0-5]|7\\d)|3(?:2[0-37]|7\\d)|4(?:[27]\\d|30)|5(?:2[0-7]|7\\d)|8(?:2[0-2]|7\\d)|9(?:20|7\\d))\\d{5}", "\\d{7,9}", , , "302345678"],
+    [, , "2(?:(?:[47]\\d|08)\\d{6}|[368]\\d{7})|54\\d{7}", "\\d{9}", , , "231234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GH", 233, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     GI: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GI", 350, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GI", 350, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     GL: [, [, , "[1-689]\\d{5}", "\\d{6}"],
-        [, , "(?:19|3[1-6]|6[14689]|8[14-79]|9\\d)\\d{4}", "\\d{6}", , , "321000"],
-        [, , "[245][2-9]\\d{4}", "\\d{6}", , , "221234"],
-        [, , "80\\d{4}", "\\d{6}", , , "801234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "3[89]\\d{4}", "\\d{6}", , , "381234"], "GL", 299, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:19|3[1-6]|6[14689]|8[14-79]|9\\d)\\d{4}", "\\d{6}", , , "321000"],
+    [, , "[245][2-9]\\d{4}", "\\d{6}", , , "221234"],
+    [, , "80\\d{4}", "\\d{6}", , , "801234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "3[89]\\d{4}", "\\d{6}", , , "381234"], "GL", 299, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GM: [, [, , "[3-9]\\d{6}", "\\d{7}"],
-        [, , "(?:4(?:[23]\\d{2}|4(?:1[024679]|[6-9]\\d))|5(?:54[0-7]|6(?:[67]\\d)|7(?:1[04]|2[035]|3[58]|48))|8\\d{3})\\d{3}", "\\d{7}", , , "5661234"],
-        [, , "[3679]\\d{6}", "\\d{7}", , , "3012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GM", 220, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:4(?:[23]\\d{2}|4(?:1[024679]|[6-9]\\d))|5(?:54[0-7]|6(?:[67]\\d)|7(?:1[04]|2[035]|3[58]|48))|8\\d{3})\\d{3}", "\\d{7}", , , "5661234"],
+    [, , "[3679]\\d{6}", "\\d{7}", , , "3012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GM", 220, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GN: [, [, , "[3567]\\d{7}", "\\d{8}"],
-        [, , "30(?:24|3[12]|4[1-35-7]|5[13]|6[189]|[78]1|9[1478])\\d{4}", "\\d{8}", , , "30241234"],
-        [, , "55\\d{6}|6(?:0(?:2\\d|3[3467]|5[2457-9])|[2457]\\d{2}|3(?:[14]0|35))\\d{4}", "\\d{8}", , , "60201234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GN", 224, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "30(?:24|3[12]|4[1-35-7]|5[13]|6[189]|[78]1|9[1478])\\d{4}", "\\d{8}", , , "30241234"],
+    [, , "55\\d{6}|6(?:0(?:2\\d|3[3467]|5[2457-9])|[2457]\\d{2}|3(?:[14]0|35))\\d{4}", "\\d{8}", , , "60201234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GN", 224, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GP: [, [, , "[56]\\d{8}", "\\d{9}"],
-        [, , "590(?:1[12]|2[0-68]|3[28]|4[126-8]|5[067]|6[018]|[89]\\d)\\d{4}", "\\d{9}", , , "590201234"],
-        [, , "690(?:00|[3-5]\\d|6[0-57-9]|7[1-6]|8[0-6]|9[09])\\d{4}", "\\d{9}", , , "690301234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GP", 590, "00", "0", , , "0", , , , [
-            [, "([56]90)(\\d{2})(\\d{4})", "$1 $2-$3", , "0$1", ""]
-        ], , [, , "NA", "NA"], 1],
+    [, , "590(?:1[12]|2[0-68]|3[28]|4[126-8]|5[067]|6[018]|[89]\\d)\\d{4}", "\\d{9}", , , "590201234"],
+    [, , "690(?:00|[3-5]\\d|6[0-57-9]|7[1-6]|8[0-6]|9[09])\\d{4}", "\\d{9}", , , "690301234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GP", 590, "00", "0", , , "0", , , , [
+    [, "([56]90)(\\d{2})(\\d{4})", "$1 $2-$3", , "0$1", ""]
+    ], , [, , "NA", "NA"], 1],
     GQ: [, [, , "[23589]\\d{8}", "\\d{6,9}"],
-        [, , "3(?:3(?:3\\d[7-9]|[0-24-9]\\d[46])|5\\d{2}[7-9])\\d{4}", "\\d{6,9}", , , "333091234"],
-        [, , "(?:222|551)\\d{6}", "\\d{6,9}", , , "222123456"],
-        [, , "80\\d[1-9]\\d{5}", "\\d{6,9}", , , "800123456"],
-        [, , "90\\d[1-9]\\d{5}", "\\d{6,9}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GQ", 240, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[235]"], "", ""],
-            [, "(\\d{3})(\\d{6})", "$1 $2", ["[89]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "3(?:3(?:3\\d[7-9]|[0-24-9]\\d[46])|5\\d{2}[7-9])\\d{4}", "\\d{6,9}", , , "333091234"],
+    [, , "(?:222|551)\\d{6}", "\\d{6,9}", , , "222123456"],
+    [, , "80\\d[1-9]\\d{5}", "\\d{6,9}", , , "800123456"],
+    [, , "90\\d[1-9]\\d{5}", "\\d{6,9}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GQ", 240, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[235]"], "", ""],
+    [, "(\\d{3})(\\d{6})", "$1 $2", ["[89]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GR: [, [, , "[26-9]\\d{9}", "\\d{10}"],
-        [, , "2(?:1\\d{2}|2(?:3[1-8]|4[1-7]|5[1-4]|6[1-8]|7[1-5]|[289][1-9])|3(?:1\\d|2[1-5]|3[1-4]|[45][1-3]|7[1-7]|8[1-6]|9[1-79])|4(?:1\\d|2[1-8]|3[1-4]|4[13-5]|6[1-578]|9[1-5])|5(?:1\\d|2[1-3]|4[124]|5[1-6]|[39][1-4])|6(?:1\\d|3[24]|4[1-7]|5[13-9]|[269][1-6]|7[14]|8[1-35])|7(?:1\\d|[23][1-5]|4[1-7]|5[1-57]|6[134]|9[15-7])|8(?:1\\d|2[1-5]|[34][1-4]|9[1-7]))\\d{6}", "\\d{10}", , , "2123456789"],
-        [, , "69\\d{8}", "\\d{10}", , , "6912345678"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "90[19]\\d{7}", "\\d{10}", , , "9091234567"],
-        [, , "8(?:0[16]|12|25)\\d{7}", "\\d{10}", , , "8011234567"],
-        [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
-        [, , "NA", "NA"], "GR", 30, "00", , , , , , , , [
-            [, "([27]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["21|7"], "", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["2[2-9]1|[689]"], "", ""],
-            [, "(2\\d{3})(\\d{6})", "$1 $2", ["2[2-9][02-9]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:1\\d{2}|2(?:3[1-8]|4[1-7]|5[1-4]|6[1-8]|7[1-5]|[289][1-9])|3(?:1\\d|2[1-5]|3[1-4]|[45][1-3]|7[1-7]|8[1-6]|9[1-79])|4(?:1\\d|2[1-8]|3[1-4]|4[13-5]|6[1-578]|9[1-5])|5(?:1\\d|2[1-3]|4[124]|5[1-6]|[39][1-4])|6(?:1\\d|3[24]|4[1-7]|5[13-9]|[269][1-6]|7[14]|8[1-35])|7(?:1\\d|[23][1-5]|4[1-7]|5[1-57]|6[134]|9[15-7])|8(?:1\\d|2[1-5]|[34][1-4]|9[1-7]))\\d{6}", "\\d{10}", , , "2123456789"],
+    [, , "69\\d{8}", "\\d{10}", , , "6912345678"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "90[19]\\d{7}", "\\d{10}", , , "9091234567"],
+    [, , "8(?:0[16]|12|25)\\d{7}", "\\d{10}", , , "8011234567"],
+    [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
+    [, , "NA", "NA"], "GR", 30, "00", , , , , , , , [
+    [, "([27]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["21|7"], "", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["2[2-9]1|[689]"], "", ""],
+    [, "(2\\d{3})(\\d{6})", "$1 $2", ["2[2-9][02-9]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GT: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GT", 502, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GT", 502, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     GU: [, [, , "[689]\\d{9}", "\\d{7,10}"],
-        [, , "671(?:3\\d{2}|47\\d|56\\d|6[3-5]\\d|7(?:3\\d|89)|828)\\d{4}", "\\d{7,10}", , , "6713123456"],
-        [, , "671(?:3\\d{2}|47\\d|56\\d|6[3-5]\\d|7(?:3\\d|89)|828)\\d{4}", "\\d{7,10}", , , "6713123456"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GU", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "671"],
+    [, , "671(?:3\\d{2}|47\\d|56\\d|6[3-5]\\d|7(?:3\\d|89)|828)\\d{4}", "\\d{7,10}", , , "6713123456"],
+    [, , "671(?:3\\d{2}|47\\d|56\\d|6[3-5]\\d|7(?:3\\d|89)|828)\\d{4}", "\\d{7,10}", , , "6713123456"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GU", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "671"],
     GW: [, [, , "[3567]\\d{6}", "\\d{7}"],
-        [, , "3(?:2[0125]|3[1245]|4[12]|5[1-4]|70|9[1-467])\\d{4}", "\\d{7}", , , "3201234"],
-        [, , "[5-7]\\d{6}", "\\d{7}", , , "5012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GW", 245, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "3(?:2[0125]|3[1245]|4[12]|5[1-4]|70|9[1-467])\\d{4}", "\\d{7}", , , "3201234"],
+    [, , "[5-7]\\d{6}", "\\d{7}", , , "5012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GW", 245, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     GY: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "GY", 592, "001", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "GY", 592, "001", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     HK: [, [, , "[235-7]\\d{7}|8\\d{7,8}|9\\d{7,10}", "\\d{8,11}"],
-        [, , "[23]\\d{7}", "\\d{8}", , , "21234567"],
-        [, , "[5-79]\\d{7}", "\\d{8}", , , "51234567"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "900\\d{8}", "\\d{11}", , , "90012345678"],
-        [, , "NA", "NA"],
-        [, , "8[1-3]\\d{6}", "\\d{8}"],
-        [, , "NA", "NA"], "HK", 852, "00", , , , , , , , [
-            [, "(\\d{4})(\\d{4})", "$1 $2", ["[235-7]|[89](?:0[1-9]|[1-9])"], "", ""],
-            [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["800"], "", ""],
-            [, "(900)(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["900"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[23]\\d{7}", "\\d{8}", , , "21234567"],
+    [, , "[5-79]\\d{7}", "\\d{8}", , , "51234567"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "900\\d{8}", "\\d{11}", , , "90012345678"],
+    [, , "NA", "NA"],
+    [, , "8[1-3]\\d{6}", "\\d{8}"],
+    [, , "NA", "NA"], "HK", 852, "00", , , , , , , , [
+    [, "(\\d{4})(\\d{4})", "$1 $2", ["[235-7]|[89](?:0[1-9]|[1-9])"], "", ""],
+    [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["800"], "", ""],
+    [, "(900)(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["900"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     HN: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "HN", 504, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "HN", 504, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     HR: [, [, , "[1-7]\\d{5,8}|[89]\\d{6,11}", "\\d{6,12}"],
-        [, , "(?:1|6[029])\\d{7}|(?:2[0-3]|3[1-5]|4[02-47-9]|5[1-3])\\d{6}", "\\d{6,9}", , , "12345678"],
-        [, , "9[12589]\\d{6,10}", "\\d{8,12}", , , "912345678"],
-        [, , "80[01]\\d{4,7}", "\\d{7,10}", , , "8001234567"],
-        [, , "6[145]\\d{4,7}", "\\d{6,9}", , , "611234"],
-        [, , "NA", "NA"],
-        [, , "7[45]\\d{4,7}", "\\d{6,9}", , , "741234567"],
-        [, , "NA", "NA"], "HR", 385, "00", "0", , , "0", , , , [
-            [, "(1)(\\d{4})(\\d{3})", "$1 $2 $3", ["1"], "0$1", ""],
-            [, "(6[029])(\\d{4})(\\d{3})", "$1 $2 $3", ["6[029]"], "0$1", ""],
-            [, "([2-5]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-5]"], "0$1", ""],
-            [, "(9[12589])(\\d{3,4})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1", ""],
-            [, "(9[12589])(\\d{3,4})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"], "0$1", ""],
-            [, "(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["6[145]|7"], "0$1", ""],
-            [, "(\\d{2})(\\d{3,4})(\\d{3})", "$1 $2 $3", ["6[145]|7"], "0$1", ""],
-            [, "(80[01])(\\d{2})(\\d{2,3})", "$1 $2 $3", ["8"], "0$1", ""],
-            [, "(80[01])(\\d{3,4})(\\d{3})", "$1 $2 $3", ["8"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1|6[029])\\d{7}|(?:2[0-3]|3[1-5]|4[02-47-9]|5[1-3])\\d{6}", "\\d{6,9}", , , "12345678"],
+    [, , "9[12589]\\d{6,10}", "\\d{8,12}", , , "912345678"],
+    [, , "80[01]\\d{4,7}", "\\d{7,10}", , , "8001234567"],
+    [, , "6[145]\\d{4,7}", "\\d{6,9}", , , "611234"],
+    [, , "NA", "NA"],
+    [, , "7[45]\\d{4,7}", "\\d{6,9}", , , "741234567"],
+    [, , "NA", "NA"], "HR", 385, "00", "0", , , "0", , , , [
+    [, "(1)(\\d{4})(\\d{3})", "$1 $2 $3", ["1"], "0$1", ""],
+    [, "(6[029])(\\d{4})(\\d{3})", "$1 $2 $3", ["6[029]"], "0$1", ""],
+    [, "([2-5]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[2-5]"], "0$1", ""],
+    [, "(9[12589])(\\d{3,4})(\\d{3,4})", "$1 $2 $3", ["9"], "0$1", ""],
+    [, "(9[12589])(\\d{3,4})(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["9"], "0$1", ""],
+    [, "(\\d{2})(\\d{2})(\\d{2,3})", "$1 $2 $3", ["6[145]|7"], "0$1", ""],
+    [, "(\\d{2})(\\d{3,4})(\\d{3})", "$1 $2 $3", ["6[145]|7"], "0$1", ""],
+    [, "(80[01])(\\d{2})(\\d{2,3})", "$1 $2 $3", ["8"], "0$1", ""],
+    [, "(80[01])(\\d{3,4})(\\d{3})", "$1 $2 $3", ["8"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     HT: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "HT", 509, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "HT", 509, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     HU: [, [, , "\\d{8,9}", "\\d{6,9}"],
-        [, , "(?:1\\d|2(?:1\\d|[2-9])|3[2-7]|4[24-9]|5[2-79]|6[23689]|7(?:1\\d|[2-9])|8[2-57-9]|9[2-69])\\d{6}", "\\d{6,9}", , , "12345678"],
-        [, , "(?:[237]0|31)\\d{7}", "\\d{9}", , , "201234567"],
-        [, , "80\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "9[01]\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "40\\d{6}", "\\d{8}", , , "40123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "HU", 36, "00", "06", , , "06", , , , [
-            [, "(1)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "($1)", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "($1)", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1\\d|2(?:1\\d|[2-9])|3[2-7]|4[24-9]|5[2-79]|6[23689]|7(?:1\\d|[2-9])|8[2-57-9]|9[2-69])\\d{6}", "\\d{6,9}", , , "12345678"],
+    [, , "(?:[237]0|31)\\d{7}", "\\d{9}", , , "201234567"],
+    [, , "80\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "9[01]\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "40\\d{6}", "\\d{8}", , , "40123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "HU", 36, "00", "06", , , "06", , , , [
+    [, "(1)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "($1)", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-9]"], "($1)", ""]
+    ], , [, , "NA", "NA"]
     ],
     ID: [, [, , "[1-9]\\d{6,10}", "\\d{5,11}"],
-        [, , "2[124]\\d{7,8}|(?:2(?:[35][1-4]|6[0-8]|7[1-6]|8\\d|9[1-8])|3(?:1|2[1-578]|3[1-68]|4[1-3]|5[1-8]|6[1-3568]|7[0-46]|8\\d)|4(?:0[1-589]|1[01347-9]|2[0-36-8]|3[0-24-68]|5[1-378]|6[1-5]|7[134]|8[1245])|5(?:1[1-35-9]|2[25-8]|3[1246-9]|4[1-3589]|5[1-46]|6[1-8])|6(?:19?|[25]\\d|3[1-469]|4[1-6])|7(?:1[1-46-9]|2[14-9]|[36]\\d|4[1-8]|5[1-9]|7[0-36-9])|9(?:0[12]|1[0134-8]|2[0-479]|5[125-8]|6[23679]|7[159]|8[01346]))\\d{5,8}", "\\d{5,10}", , , "612345678"],
-        [, , "8[1-35-9]\\d{7,9}", "\\d{9,11}", , , "812345678"],
-        [, , "177\\d{6,8}|800\\d{5,7}", "\\d{8,11}", , , "8001234567"],
-        [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ID", 62, "0(?:0[1789]|10(?:00|1[67]))", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{7,8})", "$1 $2", ["2[124]|[36]1"], "(0$1)", ""],
-            [, "(\\d{3})(\\d{5,7})", "$1 $2", ["[4579]|2[035-9]|[36][02-9]"], "(0$1)", ""],
-            [, "(8\\d{2})(\\d{3,4})(\\d{3,4})", "$1-$2-$3", ["8[1-35-9]"], "0$1", ""],
-            [, "(177)(\\d{6,8})", "$1 $2", ["1"], "0$1", ""],
-            [, "(800)(\\d{5,7})", "$1 $2", ["800"], "0$1", ""],
-            [, "(809)(\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["809"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[124]\\d{7,8}|(?:2(?:[35][1-4]|6[0-8]|7[1-6]|8\\d|9[1-8])|3(?:1|2[1-578]|3[1-68]|4[1-3]|5[1-8]|6[1-3568]|7[0-46]|8\\d)|4(?:0[1-589]|1[01347-9]|2[0-36-8]|3[0-24-68]|5[1-378]|6[1-5]|7[134]|8[1245])|5(?:1[1-35-9]|2[25-8]|3[1246-9]|4[1-3589]|5[1-46]|6[1-8])|6(?:19?|[25]\\d|3[1-469]|4[1-6])|7(?:1[1-46-9]|2[14-9]|[36]\\d|4[1-8]|5[1-9]|7[0-36-9])|9(?:0[12]|1[0134-8]|2[0-479]|5[125-8]|6[23679]|7[159]|8[01346]))\\d{5,8}", "\\d{5,10}", , , "612345678"],
+    [, , "8[1-35-9]\\d{7,9}", "\\d{9,11}", , , "812345678"],
+    [, , "177\\d{6,8}|800\\d{5,7}", "\\d{8,11}", , , "8001234567"],
+    [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ID", 62, "0(?:0[1789]|10(?:00|1[67]))", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{7,8})", "$1 $2", ["2[124]|[36]1"], "(0$1)", ""],
+    [, "(\\d{3})(\\d{5,7})", "$1 $2", ["[4579]|2[035-9]|[36][02-9]"], "(0$1)", ""],
+    [, "(8\\d{2})(\\d{3,4})(\\d{3,4})", "$1-$2-$3", ["8[1-35-9]"], "0$1", ""],
+    [, "(177)(\\d{6,8})", "$1 $2", ["1"], "0$1", ""],
+    [, "(800)(\\d{5,7})", "$1 $2", ["800"], "0$1", ""],
+    [, "(809)(\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["809"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IE: [, [, , "[124-9]\\d{6,9}", "\\d{5,10}"],
-        [, , "1\\d{7,8}|(?:2[24-9]|4(?:0[24]|7)|5(?:0[45]|8)|6[237-9]|9[3-9])\\d{5}|(?:45|[569]1|818)\\d{6}|(?:4[12469]|5[3679]|6[56]|7[14]|9[04])\\d{7}|21\\d{6,7}|(?:23|4[34]|52|64)\\d{5,7}|48\\d{8}", "\\d{5,10}", , , "2212345"],
-        [, , "8[35-9]\\d{7}", "\\d{9}", , , "850123456"],
-        [, , "1800\\d{6}", "\\d{10}", , , "1800123456"],
-        [, , "15(?:1[2-9]|[2-8]0|59|9[089])\\d{6}", "\\d{10}", , , "1520123456"],
-        [, , "18[59]0\\d{6}", "\\d{10}", , , "1850123456"],
-        [, , "700\\d{6}", "\\d{9}", , , "700123456"],
-        [, , "76\\d{7}", "\\d{9}", , , "761234567"], "IE", 353, "00", "0", , , "0", , , , [
-            [, "(1)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1"], "(0$1)", ""],
-            [, "(\\d{2})(\\d{5})", "$1 $2", ["2[2-9]|4[347]|5[2-58]|6[2-47-9]|9[3-9]"], "(0$1)", ""],
-            [, "(\\d{3})(\\d{5})", "$1 $2", ["40[24]|50[45]"], "(0$1)", ""],
-            [, "(48)(\\d{4})(\\d{4})", "$1 $2 $3", ["48"], "(0$1)", ""],
-            [, "(818)(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "(0$1)", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[24-69]|7[14]"], "(0$1)", ""],
-            [, "([78]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["76|8[35-9]"], "0$1", ""],
-            [, "(700)(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1", ""],
-            [, "(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:8[059]|5)", "1(?:8[059]0|5)"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1\\d{7,8}|(?:2[24-9]|4(?:0[24]|7)|5(?:0[45]|8)|6[237-9]|9[3-9])\\d{5}|(?:45|[569]1|818)\\d{6}|(?:4[12469]|5[3679]|6[56]|7[14]|9[04])\\d{7}|21\\d{6,7}|(?:23|4[34]|52|64)\\d{5,7}|48\\d{8}", "\\d{5,10}", , , "2212345"],
+    [, , "8[35-9]\\d{7}", "\\d{9}", , , "850123456"],
+    [, , "1800\\d{6}", "\\d{10}", , , "1800123456"],
+    [, , "15(?:1[2-9]|[2-8]0|59|9[089])\\d{6}", "\\d{10}", , , "1520123456"],
+    [, , "18[59]0\\d{6}", "\\d{10}", , , "1850123456"],
+    [, , "700\\d{6}", "\\d{9}", , , "700123456"],
+    [, , "76\\d{7}", "\\d{9}", , , "761234567"], "IE", 353, "00", "0", , , "0", , , , [
+    [, "(1)(\\d{3,4})(\\d{4})", "$1 $2 $3", ["1"], "(0$1)", ""],
+    [, "(\\d{2})(\\d{5})", "$1 $2", ["2[2-9]|4[347]|5[2-58]|6[2-47-9]|9[3-9]"], "(0$1)", ""],
+    [, "(\\d{3})(\\d{5})", "$1 $2", ["40[24]|50[45]"], "(0$1)", ""],
+    [, "(48)(\\d{4})(\\d{4})", "$1 $2 $3", ["48"], "(0$1)", ""],
+    [, "(818)(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "(0$1)", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[24-69]|7[14]"], "(0$1)", ""],
+    [, "([78]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["76|8[35-9]"], "0$1", ""],
+    [, "(700)(\\d{3})(\\d{3})", "$1 $2 $3", ["70"], "0$1", ""],
+    [, "(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:8[059]|5)", "1(?:8[059]0|5)"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IL: [, [, , "[1-57-9]\\d{6,9}", "\\d{7,10}"],
-        [, , "(?:[2-489]|7[2-46-8])\\d{7}", "\\d{7,9}", , , "21234567"],
-        [, , "5[024679]\\d{7}", "\\d{9}", , , "501234567"],
-        [, , "1(?:80[01]\\d{3}|255)\\d{3}", "\\d{7,10}", , , "1800123456"],
-        [, , "1(?:212|(?:919|200)\\d{2})\\d{4}", "\\d{8,10}", , , "1919123456"],
-        [, , "1(?:700|809)\\d{6}", "\\d{10}", , , "1700123456"],
-        [, , "NA", "NA"],
-        [, , "77\\d{7}", "\\d{9}", , , "771234567"], "IL", 972, "0(?:0|1[2-48])", "0", , , "0", , , , [
-            [, "([2-489])(\\d{3})(\\d{4})", "$1-$2-$3", ["[2-489]"], "0$1", ""],
-            [, "([57]\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1", ""],
-            [, "(1)([7-9]\\d{2})(\\d{3})(\\d{3})", "$1-$2-$3-$4", ["1[7-9]"], "$1", ""],
-            [, "(1255)(\\d{3})", "$1-$2", ["125"], "$1", ""],
-            [, "(1200)(\\d{3})(\\d{3})", "$1-$2-$3", ["120"], "$1", ""],
-            [, "(1212)(\\d{2})(\\d{2})", "$1-$2-$3", ["121"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[2-489]|7[2-46-8])\\d{7}", "\\d{7,9}", , , "21234567"],
+    [, , "5[024679]\\d{7}", "\\d{9}", , , "501234567"],
+    [, , "1(?:80[01]\\d{3}|255)\\d{3}", "\\d{7,10}", , , "1800123456"],
+    [, , "1(?:212|(?:919|200)\\d{2})\\d{4}", "\\d{8,10}", , , "1919123456"],
+    [, , "1(?:700|809)\\d{6}", "\\d{10}", , , "1700123456"],
+    [, , "NA", "NA"],
+    [, , "77\\d{7}", "\\d{9}", , , "771234567"], "IL", 972, "0(?:0|1[2-48])", "0", , , "0", , , , [
+    [, "([2-489])(\\d{3})(\\d{4})", "$1-$2-$3", ["[2-489]"], "0$1", ""],
+    [, "([57]\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["[57]"], "0$1", ""],
+    [, "(1)([7-9]\\d{2})(\\d{3})(\\d{3})", "$1-$2-$3-$4", ["1[7-9]"], "$1", ""],
+    [, "(1255)(\\d{3})", "$1-$2", ["125"], "$1", ""],
+    [, "(1200)(\\d{3})(\\d{3})", "$1-$2-$3", ["120"], "$1", ""],
+    [, "(1212)(\\d{2})(\\d{2})", "$1-$2-$3", ["121"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IM: [, [, , "[15789]\\d{6,9}", "\\d{6,10}"],
-        [, , "1624\\d{6}", "\\d{6,10}", , , "1624456789"],
-        [, , "7[569]24\\d{6}", "\\d{10}", , , "7924123456"],
-        [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
-        [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
-        [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
-        [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
-        [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "IM", 44, "00", "0", " x", , "0", , , , , , [, , "7624\\d{6}", "\\d{10}", , , "7624123456"]
+    [, , "1624\\d{6}", "\\d{6,10}", , , "1624456789"],
+    [, , "7[569]24\\d{6}", "\\d{10}", , , "7924123456"],
+    [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
+    [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
+    [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
+    [, , "70\\d{8}", "\\d{10}", , , "7012345678"],
+    [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "IM", 44, "00", "0", " x", , "0", , , , , , [, , "7624\\d{6}", "\\d{10}", , , "7624123456"]
     ],
     IN: [, [, , "[1-9]\\d{9,10}", "\\d{6,11}"],
-        [, , "(?:11|2[02]|33|4[04]|79|80)[2-6]\\d{7}|(?:1(?:2[0-249]|3[0-25]|4[145]|[59][14]|6[014]|7[1257]|8[01346])|2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[126-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:[136][25]|22|4[28]|5[12]|[78]1|9[15])|6(?:12|[2345]1|57|6[13]|7[14]|80)|7(?:12|2[14]|3[134]|4[47]|5[15]|[67]1|88)|8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91))[2-6]\\d{6}|(?:(?:1(?:2[35-8]|3[346-9]|4[236-9]|[59][0235-9]|6[235-9]|7[34689]|8[257-9])|2(?:1[134689]|3[24-8]|4[2-8]|5[25689]|6[2-4679]|7[13-79]|8[2-479]|9[235-9])|3(?:01|1[79]|2[1-5]|4[25-8]|5[125689]|6[235-7]|7[157-9]|8[2-467])|4(?:1[14578]|2[5689]|3[2-467]|5[4-7]|6[35]|73|8[2689]|9[2389])|5(?:[16][146-9]|2[14-8]|3[1346]|4[14-69]|5[46]|7[2-4]|8[2-8]|9[246])|6(?:1[1358]|2[2457]|3[2-4]|4[235-7]|5[2-689]|6[24-58]|7[23-689]|8[1-6])|8(?:1[1357-9]|2[235-8]|3[03-57-9]|4[0-24-9]|5\\d|6[2457-9]|7[1-6]|8[1256]|9[2-4]))\\d|7(?:(?:1[013-9]|2[0235-9]|3[2679]|4[1-35689]|5[2-46-9]|[67][02-9]|9\\d)\\d|8(?:2[0-6]|[013-8]\\d)))[2-6]\\d{5}", "\\d{6,10}", , , "1123456789"],
-        [, , "(?:7(?:39[89]|5(?:50|6[6-8]|79|[89][7-9])|6(?:0[027]|20|3[19]|54|65|7[67]|9[6-9])|7(?:0[89]|3[589]|42|60|9[5-9])|8(?:[03][07-9]|14|2[7-9]|4[25]|6[09]))\\d|9\\d{4}|8(?:(?:0[01589]|1[024])\\d|8(?:[079]\\d|44)|9[057-9]\\d)\\d)\\d{5}", "\\d{10}", , , "9123456789"],
-        [, , "1(?:800\\d?|600)\\d{6}", "\\d{10,11}", , , "1800123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "IN", 91, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{2})(\\d{6})", "$1 $2 $3", ["7(?:39|5[5-9]|[67][02-9]|8[0-6])|8(?:0[01589]|1[024]|8[0479]|9[057-9])|9", "7(?:39|5(?:50|[6-9])|[67][02-9]|8[0-6])|8(?:0[01589]|1[024]|8(?:[079]|44)|9[057-9])|9"], "0$1", ""],
-            [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["11|2[02]|33|4[04]|79|80[2-6]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:2[0-249]|3[0-25]|4[145]|[569][14]|7[1257]|8[1346]|[68][1-9])"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568]|9[14])"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["4(?:1[36]|2[1-47]|3[15]|5[12]|6[126-9]|7[0-24-9]|8[013-57]|9[014-7])"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["5(?:[136][25]|22|4[28]|5[12]|[78]1|9[15])"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["6(?:12|[2345]1|57|6[13]|7[14]|80)"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7(?:12|2[14]|3[134]|4[47]|5[15]|[67]1|88)", "7(?:12|2[14]|3[134]|4[47]|5(?:1|5[1-9])|[67]1|88)"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91)"], "0$1", ""],
-            [, "(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[2-579]|[68][1-9])|[2-8]"], "0$1", ""],
-            [, "(1600)(\\d{2})(\\d{4})", "$1 $2 $3", ["160", "1600"], "$1", ""],
-            [, "(1800)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["180", "1800"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:11|2[02]|33|4[04]|79|80)[2-6]\\d{7}|(?:1(?:2[0-249]|3[0-25]|4[145]|[59][14]|6[014]|7[1257]|8[01346])|2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568]|9[14])|3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])|4(?:1[36]|2[1-47]|3[15]|5[12]|6[126-9]|7[0-24-9]|8[013-57]|9[014-7])|5(?:[136][25]|22|4[28]|5[12]|[78]1|9[15])|6(?:12|[2345]1|57|6[13]|7[14]|80)|7(?:12|2[14]|3[134]|4[47]|5[15]|[67]1|88)|8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91))[2-6]\\d{6}|(?:(?:1(?:2[35-8]|3[346-9]|4[236-9]|[59][0235-9]|6[235-9]|7[34689]|8[257-9])|2(?:1[134689]|3[24-8]|4[2-8]|5[25689]|6[2-4679]|7[13-79]|8[2-479]|9[235-9])|3(?:01|1[79]|2[1-5]|4[25-8]|5[125689]|6[235-7]|7[157-9]|8[2-467])|4(?:1[14578]|2[5689]|3[2-467]|5[4-7]|6[35]|73|8[2689]|9[2389])|5(?:[16][146-9]|2[14-8]|3[1346]|4[14-69]|5[46]|7[2-4]|8[2-8]|9[246])|6(?:1[1358]|2[2457]|3[2-4]|4[235-7]|5[2-689]|6[24-58]|7[23-689]|8[1-6])|8(?:1[1357-9]|2[235-8]|3[03-57-9]|4[0-24-9]|5\\d|6[2457-9]|7[1-6]|8[1256]|9[2-4]))\\d|7(?:(?:1[013-9]|2[0235-9]|3[2679]|4[1-35689]|5[2-46-9]|[67][02-9]|9\\d)\\d|8(?:2[0-6]|[013-8]\\d)))[2-6]\\d{5}", "\\d{6,10}", , , "1123456789"],
+    [, , "(?:7(?:39[89]|5(?:50|6[6-8]|79|[89][7-9])|6(?:0[027]|20|3[19]|54|65|7[67]|9[6-9])|7(?:0[89]|3[589]|42|60|9[5-9])|8(?:[03][07-9]|14|2[7-9]|4[25]|6[09]))\\d|9\\d{4}|8(?:(?:0[01589]|1[024])\\d|8(?:[079]\\d|44)|9[057-9]\\d)\\d)\\d{5}", "\\d{10}", , , "9123456789"],
+    [, , "1(?:800\\d?|600)\\d{6}", "\\d{10,11}", , , "1800123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "IN", 91, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{2})(\\d{6})", "$1 $2 $3", ["7(?:39|5[5-9]|[67][02-9]|8[0-6])|8(?:0[01589]|1[024]|8[0479]|9[057-9])|9", "7(?:39|5(?:50|[6-9])|[67][02-9]|8[0-6])|8(?:0[01589]|1[024]|8(?:[079]|44)|9[057-9])|9"], "0$1", ""],
+    [, "(\\d{2})(\\d{4})(\\d{4})", "$1 $2 $3", ["11|2[02]|33|4[04]|79|80[2-6]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:2[0-249]|3[0-25]|4[145]|[569][14]|7[1257]|8[1346]|[68][1-9])"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["2(?:1[257]|3[013]|4[01]|5[0137]|6[0158]|78|8[1568]|9[14])"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["3(?:26|4[1-3]|5[34]|6[01489]|7[02-46]|8[159])"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["4(?:1[36]|2[1-47]|3[15]|5[12]|6[126-9]|7[0-24-9]|8[013-57]|9[014-7])"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["5(?:[136][25]|22|4[28]|5[12]|[78]1|9[15])"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["6(?:12|[2345]1|57|6[13]|7[14]|80)"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["7(?:12|2[14]|3[134]|4[47]|5[15]|[67]1|88)", "7(?:12|2[14]|3[134]|4[47]|5(?:1|5[1-9])|[67]1|88)"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["8(?:16|2[014]|3[126]|6[136]|7[078]|8[34]|91)"], "0$1", ""],
+    [, "(\\d{4})(\\d{3})(\\d{3})", "$1 $2 $3", ["1(?:[2-579]|[68][1-9])|[2-8]"], "0$1", ""],
+    [, "(1600)(\\d{2})(\\d{4})", "$1 $2 $3", ["160", "1600"], "$1", ""],
+    [, "(1800)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["180", "1800"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IO: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "IO", 246, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "IO", 246, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     IQ: [, [, , "[1-7]\\d{7,9}", "\\d{6,10}"],
-        [, , "1\\d{7}|(?:2[13-5]|3[02367]|4[023]|5[03]|6[026])\\d{6,7}", "\\d{6,9}", , , "12345678"],
-        [, , "7[5-9]\\d{8}", "\\d{10}", , , "7912345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "IQ", 964, "00", "0", , , "0", , , , [
-            [, "(1)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1", ""],
-            [, "([2-6]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-6]"], "0$1", ""],
-            [, "(7[5-9]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1\\d{7}|(?:2[13-5]|3[02367]|4[023]|5[03]|6[026])\\d{6,7}", "\\d{6,9}", , , "12345678"],
+    [, , "7[5-9]\\d{8}", "\\d{10}", , , "7912345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "IQ", 964, "00", "0", , , "0", , , , [
+    [, "(1)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "0$1", ""],
+    [, "([2-6]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[2-6]"], "0$1", ""],
+    [, "(7[5-9]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["7"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IR: [, [, , "[1-9]\\d{9}", "\\d{7,10}"],
-        [, , "[1-8]\\d{9}", "\\d{7,10}", , , "2123456789"],
-        [, , "9(?:1\\d|3[1-8])\\d{7}", "\\d{10}", , , "9123456789"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "IR", 98, "00", "0", , , "0", , , , [
-            [, "(21)(\\d{4})(\\d{4})", "$1 $2 $3", ["21"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[13-89]|2[02-9]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[1-8]\\d{9}", "\\d{7,10}", , , "2123456789"],
+    [, , "9(?:1\\d|3[1-8])\\d{7}", "\\d{10}", , , "9123456789"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "IR", 98, "00", "0", , , "0", , , , [
+    [, "(21)(\\d{4})(\\d{4})", "$1 $2 $3", ["21"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[13-89]|2[02-9]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     IS: [, [, , "[4-9]\\d{6}|38\\d{7}", "\\d{7,9}"],
-        [, , "(?:4(?:1[0-245]|2[0-7]|[37][0-8]|4[0245]|5[0-356]|6\\d|8[0-46-8]|9[013-79])|5(?:05|[156]\\d|2[02578]|3[013-6]|4[03-6]|7[0-2578]|8[0-25-9]|9[013-689])|87[23])\\d{4}", "\\d{7}", , , "4101234"],
-        [, , "38[59]\\d{6}|(?:6(?:1[014-8]|2[0-8]|3[0-27-9]|4[0-29]|5[029]|[67][0-69]|[89]\\d)|7(?:5[057]|7[0-7])|8(?:2[0-5]|[469]\\d|5[1-9]))\\d{4}", "\\d{7,9}", , , "6101234"],
-        [, , "800\\d{4}", "\\d{7}", , , "8001234"],
-        [, , "90\\d{5}", "\\d{7}", , , "9011234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "49[013-79]\\d{4}", "\\d{7}", , , "4931234"], "IS", 354, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", ["[4-9]"], "", ""],
-            [, "(3\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["3"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:4(?:1[0-245]|2[0-7]|[37][0-8]|4[0245]|5[0-356]|6\\d|8[0-46-8]|9[013-79])|5(?:05|[156]\\d|2[02578]|3[013-6]|4[03-6]|7[0-2578]|8[0-25-9]|9[013-689])|87[23])\\d{4}", "\\d{7}", , , "4101234"],
+    [, , "38[59]\\d{6}|(?:6(?:1[014-8]|2[0-8]|3[0-27-9]|4[0-29]|5[029]|[67][0-69]|[89]\\d)|7(?:5[057]|7[0-7])|8(?:2[0-5]|[469]\\d|5[1-9]))\\d{4}", "\\d{7,9}", , , "6101234"],
+    [, , "800\\d{4}", "\\d{7}", , , "8001234"],
+    [, , "90\\d{5}", "\\d{7}", , , "9011234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "49[013-79]\\d{4}", "\\d{7}", , , "4931234"], "IS", 354, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", ["[4-9]"], "", ""],
+    [, "(3\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["3"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     IT: [, [, , "[01389]\\d{5,10}", "\\d{6,11}"],
-        [, , "0\\d{7,10}", "\\d{8,11}", , , "0212345678"],
-        [, , "3\\d{8,9}", "\\d{9,10}", , , "312345678"],
-        [, , "80(?:0\\d{6}|3\\d{3})", "\\d{6,9}", , , "800123456"],
-        [, , "89(?:2\\d{3}|9\\d{6})", "\\d{6,9}", , , "899123456"],
-        [, , "84[78]\\d{6,7}", "\\d{9,10}", , , "8481234567"],
-        [, , "178\\d{6,7}", "\\d{9,10}", , , "1781234567"],
-        [, , "NA", "NA"], "IT", 39, "00", , , , , , , , [
-            [, "(0[26])(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[26]"], "", ""],
-            [, "(0[26])(\\d{4})(\\d{5})", "$1 $2 $3", ["0[26]"], "", ""],
-            [, "(0[26])(\\d{6})", "$1 $2", ["0[26]"], "", ""],
-            [, "(0\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0(?:[13-57-9][0159]|36)"], "", ""],
-            [, "(0\\d{2})(\\d{5,6})", "$1 $2", ["0(?:[13-57-9][0159]|36)"], "", ""],
-            [, "(0\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["0[13-57-9]"], "", ""],
-            [, "(0\\d{3})(\\d{4,6})", "$1 $2", ["0[13-57-9]"], "", ""],
-            [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[13]|8(?:00|4[78])"], "", ""],
-            [, "(\\d{3})(\\d{3,6})", "$1 $2", ["8(?:03|9)"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "0\\d{7,10}", "\\d{8,11}", , , "0212345678"],
+    [, , "3\\d{8,9}", "\\d{9,10}", , , "312345678"],
+    [, , "80(?:0\\d{6}|3\\d{3})", "\\d{6,9}", , , "800123456"],
+    [, , "89(?:2\\d{3}|9\\d{6})", "\\d{6,9}", , , "899123456"],
+    [, , "84[78]\\d{6,7}", "\\d{9,10}", , , "8481234567"],
+    [, , "178\\d{6,7}", "\\d{9,10}", , , "1781234567"],
+    [, , "NA", "NA"], "IT", 39, "00", , , , , , , , [
+    [, "(0[26])(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0[26]"], "", ""],
+    [, "(0[26])(\\d{4})(\\d{5})", "$1 $2 $3", ["0[26]"], "", ""],
+    [, "(0[26])(\\d{6})", "$1 $2", ["0[26]"], "", ""],
+    [, "(0\\d{2})(\\d{3,4})(\\d{4})", "$1 $2 $3", ["0(?:[13-57-9][0159]|36)"], "", ""],
+    [, "(0\\d{2})(\\d{5,6})", "$1 $2", ["0(?:[13-57-9][0159]|36)"], "", ""],
+    [, "(0\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["0[13-57-9]"], "", ""],
+    [, "(0\\d{3})(\\d{4,6})", "$1 $2", ["0[13-57-9]"], "", ""],
+    [, "(\\d{3})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[13]|8(?:00|4[78])"], "", ""],
+    [, "(\\d{3})(\\d{3,6})", "$1 $2", ["8(?:03|9)"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     JE: [, [, , "[15789]\\d{6,9}", "\\d{6,10}"],
-        [, , "1534\\d{6}", "\\d{6,10}", , , "1534456789"],
-        [, , "7(?:509|7(?:00|97)|829|937)\\d{6}", "\\d{10}", , , "7797123456"],
-        [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
-        [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
-        [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
-        [, , "701511\\d{4}", "\\d{10}", , , "7015115678"],
-        [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "JE", 44, "00", "0", " x", , "0", , , , , , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"]
+    [, , "1534\\d{6}", "\\d{6,10}", , , "1534456789"],
+    [, , "7(?:509|7(?:00|97)|829|937)\\d{6}", "\\d{10}", , , "7797123456"],
+    [, , "80(?:0(?:1111|\\d{6,7})|8\\d{7})|500\\d{6}", "\\d{7}(?:\\d{2,3})?", , , "8001234567"],
+    [, , "(?:87[123]|9(?:[01]\\d|8[0-3]))\\d{7}", "\\d{10}", , , "9012345678"],
+    [, , "8(?:4(?:5464\\d|[2-5]\\d{7})|70\\d{7})", "\\d{7}(?:\\d{3})?", , , "8431234567"],
+    [, , "701511\\d{4}", "\\d{10}", , , "7015115678"],
+    [, , "56\\d{8}", "\\d{10}", , , "5612345678"], "JE", 44, "00", "0", " x", , "0", , , , , , [, , "76(?:0[012]|2[356]|4[0134]|5[49]|6[0-369]|77|81|9[39])\\d{6}", "\\d{10}", , , "7640123456"]
     ],
     JM: [, [, , "[89]\\d{9}", "\\d{7,10}"],
-        [, , "876(?:(?:5[0-26]|6\\d|7[1-6]|9[2-8])\\d{5}|(?:7(?:0[2-689]|8[056]|9[45])|9(?:0[1-8]|1[02378]|9[2-468]))\\d{4})", "\\d{7,10}", , , "8765123456"],
-        [, , "876(?:(?:21|[348]\\d|5[78]|77)\\d|7(?:0[07]|8[1-47-9]|9[0-36-9])|9(?:[01]9|9[0579]))\\d{4}", "\\d{10}", , , "8762101234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "JM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "876"],
+    [, , "876(?:(?:5[0-26]|6\\d|7[1-6]|9[2-8])\\d{5}|(?:7(?:0[2-689]|8[056]|9[45])|9(?:0[1-8]|1[02378]|9[2-468]))\\d{4})", "\\d{7,10}", , , "8765123456"],
+    [, , "876(?:(?:21|[348]\\d|5[78]|77)\\d|7(?:0[07]|8[1-47-9]|9[0-36-9])|9(?:[01]9|9[0579]))\\d{4}", "\\d{10}", , , "8762101234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "JM", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "876"],
     JO: [, [, , "[235-9]\\d{7,8}", "\\d{7,9}"],
-        [, , "[2356][2-8]\\d{6}", "\\d{7,8}", , , "62345678"],
-        [, , "7(?:4[5-7]|55|7[5-79]|8[5-8]|9[05-9])\\d{6}", "\\d{9}", , , "790123456"],
-        [, , "80\\d{6}", "\\d{8}", , , "80012345"],
-        [, , "90\\d{6}", "\\d{8}", , , "90012345"],
-        [, , "(?:8[57]\\d|810)\\d{5}", "\\d{8}", , , "85012345"],
-        [, , "70\\d{7}", "\\d{9}", , , "700123456"],
-        [, , "NA", "NA"], "JO", 962, "00", "0", , , "0", , , , [
-            [, "([2356])(\\d{3})(\\d{4})", "$1 $2 $3", ["[2356]"], "(0$1)", ""],
-            [, "(7)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["7[457-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{5,6})", "$1 $2", ["70|[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2356][2-8]\\d{6}", "\\d{7,8}", , , "62345678"],
+    [, , "7(?:4[5-7]|55|7[5-79]|8[5-8]|9[05-9])\\d{6}", "\\d{9}", , , "790123456"],
+    [, , "80\\d{6}", "\\d{8}", , , "80012345"],
+    [, , "90\\d{6}", "\\d{8}", , , "90012345"],
+    [, , "(?:8[57]\\d|810)\\d{5}", "\\d{8}", , , "85012345"],
+    [, , "70\\d{7}", "\\d{9}", , , "700123456"],
+    [, , "NA", "NA"], "JO", 962, "00", "0", , , "0", , , , [
+    [, "([2356])(\\d{3})(\\d{4})", "$1 $2 $3", ["[2356]"], "(0$1)", ""],
+    [, "(7)(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4 $5", ["7[457-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{5,6})", "$1 $2", ["70|[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     JP: [, [, , "\\d{9,10}", "\\d{9,10}"],
-        [, , "(?:1[1-9][1-9]|9(?:[3-9][1-9]|2\\d)|(?:[36][1-9]|[24578][2-9])\\d)\\d{6}", "\\d{9}", , , "312345678"],
-        [, , "[7-9]0\\d{8}", "\\d{10}", , , "7012345678"],
-        [, , "120\\d{6}", "\\d{9}", , , "120123456"],
-        [, , "990\\d{6}", "\\d{9}", , , "990123456"],
-        [, , "NA", "NA"],
-        [, , "60\\d{7}", "\\d{9}", , , "601234567"],
-        [, , "50\\d{8}", "\\d{10}", , , "5012345678"], "JP", 81, "010", "0", , , "0", , , , [
-            [, "(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3", ["(?:12|99)0"], "0$1", ""],
-            [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57-9]0"], "0$1", ""],
-            [, "(\\d{4})(\\d)(\\d{4})", "$1-$2-$3", ["1(?:26|3[79]|4[56]|5[4-68]|6[3-5])|5(?:76|97)|499|746|8(?:3[89]|63|47|51)|9(?:49|80|9[16])", "1(?:267|3(?:7[247]|9[278])|4(?:5[67]|66)|5(?:47|58|64|8[67])|6(?:3[245]|48|5[4-68]))|5(?:76|97)9|499[2468]|7468|8(?:3(?:8[78]|96)|636|477|51[24])|9(?:496|802|9(?:1[23]|69))", "1(?:267|3(?:7[247]|9[278])|4(?:5[67]|66)|5(?:47|58|64|8[67])|6(?:3[245]|48|5[4-68]))|5(?:769|979[2-69])|499[2468]|7468|8(?:3(?:8[78]|96[2457-9])|636[2-57-9]|477|51[24])|9(?:496|802|9(?:1[23]|69))"], "0$1", ""],
-            [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["1(?:2[3-6]|3[3-9]|4[2-6]|5[2-8]|[68][2-7]|7[2-689]|9[1-578])|2(?:2[034-9]|3[3-58]|4[0-468]|5[04-8]|6[013-8]|7[06-9]|8[02-57-9]|9[13])|4(?:2[28]|3[689]|6[035-7]|7[05689]|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9[4-9])|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9[014-9])|8(?:2[49]|3[3-8]|4[5-8]|5[2-9]|6[35-9]|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9[3-7])", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9[2-8])|3(?:7[2-56]|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5[4-7]|6[2-9]|8[2-8]|9[236-9])|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3[34]|[4-7]))", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9(?:[3578]|20|4[04-9]|6[56]))|3(?:7(?:[2-5]|6[0-59])|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5(?:[467]|5[014-9])|6(?:[2-8]|9[02-69])|8[2-8]|9(?:[236-8]|9[23]))|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3(?:3[02-9]|4[0-24689])|4[2-69]|[5-7]))", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9(?:[3578]|20|4[04-9]|6(?:5[25]|60)))|3(?:7(?:[2-5]|6[0-59])|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5(?:[467]|5[014-9])|6(?:[2-8]|9[02-69])|8[2-8]|9(?:[236-8]|9[23]))|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3(?:3[02-9]|4[0-24689])|4[2-69]|[5-7]))"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1|2(?:23|5[5-89]|64|78|8[39]|91)|4(?:2[2689]|64|7[347])|5(?:[2-589]|39)|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93)", "1|2(?:23|5(?:[57]|[68]0|9[19])|64|78|8[39]|917)|4(?:2(?:[68]|20|9[178])|64|7[347])|5(?:[2-589]|39[67])|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93[34])", "1|2(?:23|5(?:[57]|[68]0|9(?:17|99))|64|78|8[39]|917)|4(?:2(?:[68]|20|9[178])|64|7[347])|5(?:[2-589]|39[67])|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93(?:31|4))"], "0$1", ""],
-            [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["2(?:9[14-79]|74|[34]7|[56]9)|82|993"], "0$1", ""],
-            [, "(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["[36]|4(?:2[09]|7[01])"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[2479]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[1-9][1-9]|9(?:[3-9][1-9]|2\\d)|(?:[36][1-9]|[24578][2-9])\\d)\\d{6}", "\\d{9}", , , "312345678"],
+    [, , "[7-9]0\\d{8}", "\\d{10}", , , "7012345678"],
+    [, , "120\\d{6}", "\\d{9}", , , "120123456"],
+    [, , "990\\d{6}", "\\d{9}", , , "990123456"],
+    [, , "NA", "NA"],
+    [, , "60\\d{7}", "\\d{9}", , , "601234567"],
+    [, , "50\\d{8}", "\\d{10}", , , "5012345678"], "JP", 81, "010", "0", , , "0", , , , [
+    [, "(\\d{3})(\\d{3})(\\d{3})", "$1-$2-$3", ["(?:12|99)0"], "0$1", ""],
+    [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["[57-9]0"], "0$1", ""],
+    [, "(\\d{4})(\\d)(\\d{4})", "$1-$2-$3", ["1(?:26|3[79]|4[56]|5[4-68]|6[3-5])|5(?:76|97)|499|746|8(?:3[89]|63|47|51)|9(?:49|80|9[16])", "1(?:267|3(?:7[247]|9[278])|4(?:5[67]|66)|5(?:47|58|64|8[67])|6(?:3[245]|48|5[4-68]))|5(?:76|97)9|499[2468]|7468|8(?:3(?:8[78]|96)|636|477|51[24])|9(?:496|802|9(?:1[23]|69))", "1(?:267|3(?:7[247]|9[278])|4(?:5[67]|66)|5(?:47|58|64|8[67])|6(?:3[245]|48|5[4-68]))|5(?:769|979[2-69])|499[2468]|7468|8(?:3(?:8[78]|96[2457-9])|636[2-57-9]|477|51[24])|9(?:496|802|9(?:1[23]|69))"], "0$1", ""],
+    [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["1(?:2[3-6]|3[3-9]|4[2-6]|5[2-8]|[68][2-7]|7[2-689]|9[1-578])|2(?:2[034-9]|3[3-58]|4[0-468]|5[04-8]|6[013-8]|7[06-9]|8[02-57-9]|9[13])|4(?:2[28]|3[689]|6[035-7]|7[05689]|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9[4-9])|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9[014-9])|8(?:2[49]|3[3-8]|4[5-8]|5[2-9]|6[35-9]|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9[3-7])", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9[2-8])|3(?:7[2-56]|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5[4-7]|6[2-9]|8[2-8]|9[236-9])|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3[34]|[4-7]))", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9(?:[3578]|20|4[04-9]|6[56]))|3(?:7(?:[2-5]|6[0-59])|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5(?:[467]|5[014-9])|6(?:[2-8]|9[02-69])|8[2-8]|9(?:[236-8]|9[23]))|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3(?:3[02-9]|4[0-24689])|4[2-69]|[5-7]))", "1(?:2[3-6]|3[3-9]|4[2-6]|5(?:[236-8]|[45][2-69])|[68][2-7]|7[2-689]|9[1-578])|2(?:2(?:[04-9]|3[23])|3[3-58]|4[0-468]|5(?:5[78]|7[2-4]|[0468][2-9])|6(?:[0135-8]|4[2-5])|7(?:[0679]|8[2-7])|8(?:[024578]|3[25-9]|9[6-9])|9(?:11|3[2-4]))|4(?:2(?:2[2-9]|8[237-9])|3[689]|6[035-7]|7(?:[059][2-8]|[68])|80|9[3-5])|5(?:3[1-36-9]|4[4578]|5[013-8]|6[1-9]|7[2-8]|8[14-7]|9(?:[89][2-8]|[4-7]))|7(?:2[15]|3[5-9]|4[02-9]|6[135-8]|7[0-4689]|9(?:[017-9]|4[6-8]|5[2-478]|6[2-589]))|8(?:2(?:4[4-8]|9(?:[3578]|20|4[04-9]|6(?:5[25]|60)))|3(?:7(?:[2-5]|6[0-59])|[3-6][2-9]|8[2-5])|4[5-8]|5[2-9]|6(?:[37]|5(?:[467]|5[014-9])|6(?:[2-8]|9[02-69])|8[2-8]|9(?:[236-8]|9[23]))|7[579]|8[03-579]|9[2-8])|9(?:[23]0|4[02-46-9]|5[0245-79]|6[4-9]|7[2-47-9]|8[02-7]|9(?:3(?:3[02-9]|4[0-24689])|4[2-69]|[5-7]))"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1|2(?:23|5[5-89]|64|78|8[39]|91)|4(?:2[2689]|64|7[347])|5(?:[2-589]|39)|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93)", "1|2(?:23|5(?:[57]|[68]0|9[19])|64|78|8[39]|917)|4(?:2(?:[68]|20|9[178])|64|7[347])|5(?:[2-589]|39[67])|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93[34])", "1|2(?:23|5(?:[57]|[68]0|9(?:17|99))|64|78|8[39]|917)|4(?:2(?:[68]|20|9[178])|64|7[347])|5(?:[2-589]|39[67])|8(?:[46-9]|3[279]|2[124589])|9(?:[235-8]|93(?:31|4))"], "0$1", ""],
+    [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["2(?:9[14-79]|74|[34]7|[56]9)|82|993"], "0$1", ""],
+    [, "(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["[36]|4(?:2[09]|7[01])"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["[2479]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     KE: [, [, , "\\d{6,10}", "\\d{4,10}"],
-        [, , "(?:20|4[0-6]|5\\d|6[0-24-9])\\d{4,7}", "\\d{4,9}", , , "202012345"],
-        [, , "7(?:1[0-6]|2\\d|3[2-8]|5[0-2]|7[023])\\d{6}", "\\d{9}", , , "712123456"],
-        [, , "8(?:00|88)\\d{6,7}", "\\d{9,10}", , , "800123456"],
-        [, , "9(?:00|1)\\d{6,7}", "\\d{8,10}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KE", 254, "000", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{4,7})", "$1 $2", ["[2-6]|91"], "0$1", ""],
-            [, "(\\d{3})(\\d{6,7})", "$1 $2", ["[78]|90"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:20|4[0-6]|5\\d|6[0-24-9])\\d{4,7}", "\\d{4,9}", , , "202012345"],
+    [, , "7(?:1[0-6]|2\\d|3[2-8]|5[0-2]|7[023])\\d{6}", "\\d{9}", , , "712123456"],
+    [, , "8(?:00|88)\\d{6,7}", "\\d{9,10}", , , "800123456"],
+    [, , "9(?:00|1)\\d{6,7}", "\\d{8,10}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KE", 254, "000", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{4,7})", "$1 $2", ["[2-6]|91"], "0$1", ""],
+    [, "(\\d{3})(\\d{6,7})", "$1 $2", ["[78]|90"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     KG: [, [, , "[356-8]\\d{8}", "\\d{5,9}"],
-        [, , "(?:3(?:1(?:2\\d|3[1-9]|52|6[1-8])|2(?:22|3[0-479]|6[0-7])|4(?:22|5[6-9]|6[0-4])|5(?:22|3[4-7]|59|6[0-5])|6(?:22|5[35-7]|6[0-3])|7(?:22|3[468]|4[1-8]|59|6\\d|7[5-7])|9(?:22|4[1-7]|6[0-8]))|6(?:09|12|2[2-4])\\d)\\d{5}", "\\d{5,9}", , , "312123456"],
-        [, , "5[124-7]\\d{7}|7(?:0[05]|7\\d)\\d{6}", "\\d{9}", , , "700123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KG", 996, "00", "0", , , "0", , , , [
-            [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["31[25]|[5-8]"], "0$1", ""],
-            [, "(\\d{4})(\\d{5})", "$1 $2", ["3(?:1[36]|[2-9])"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3(?:1(?:2\\d|3[1-9]|52|6[1-8])|2(?:22|3[0-479]|6[0-7])|4(?:22|5[6-9]|6[0-4])|5(?:22|3[4-7]|59|6[0-5])|6(?:22|5[35-7]|6[0-3])|7(?:22|3[468]|4[1-8]|59|6\\d|7[5-7])|9(?:22|4[1-7]|6[0-8]))|6(?:09|12|2[2-4])\\d)\\d{5}", "\\d{5,9}", , , "312123456"],
+    [, , "5[124-7]\\d{7}|7(?:0[05]|7\\d)\\d{6}", "\\d{9}", , , "700123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KG", 996, "00", "0", , , "0", , , , [
+    [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["31[25]|[5-8]"], "0$1", ""],
+    [, "(\\d{4})(\\d{5})", "$1 $2", ["3(?:1[36]|[2-9])"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     KH: [, [, , "[1-9]\\d{7,9}", "\\d{6,10}"],
-        [, , "(?:2[3-6]|3[2-6]|4[2-4]|[5-7][2-5])[2-47-9]\\d{5}", "\\d{6,8}", , , "23456789"],
-        [, , "(?:(?:1[0-35-9]|9[1-49])[1-9]|85[2-689])\\d{5}", "\\d{8}", , , "91234567"],
-        [, , "1800(?:1\\d|2[09])\\d{4}", "\\d{10}", , , "1800123456"],
-        [, , "1900(?:1\\d|2[09])\\d{4}", "\\d{10}", , , "1900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KH", 855, "00[178]", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1\\d[1-9]|[2-9]"], "0$1", ""],
-            [, "(1[89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[89]0"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[3-6]|3[2-6]|4[2-4]|[5-7][2-5])[2-47-9]\\d{5}", "\\d{6,8}", , , "23456789"],
+    [, , "(?:(?:1[0-35-9]|9[1-49])[1-9]|85[2-689])\\d{5}", "\\d{8}", , , "91234567"],
+    [, , "1800(?:1\\d|2[09])\\d{4}", "\\d{10}", , , "1800123456"],
+    [, , "1900(?:1\\d|2[09])\\d{4}", "\\d{10}", , , "1900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KH", 855, "00[178]", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1\\d[1-9]|[2-9]"], "0$1", ""],
+    [, "(1[89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[89]0"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     KI: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KI", 686, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KI", 686, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     KM: [, [, , "[37]\\d{6}", "\\d{7}"],
-        [, , "7(?:6[0-37-9]|7[0-57-9])\\d{4}", "\\d{7}", , , "7712345"],
-        [, , "3[23]\\d{5}", "\\d{7}", , , "3212345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KM", 269, "00", , , , , , , , [
-            [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "7(?:6[0-37-9]|7[0-57-9])\\d{4}", "\\d{7}", , , "7712345"],
+    [, , "3[23]\\d{5}", "\\d{7}", , , "3212345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KM", 269, "00", , , , , , , , [
+    [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     KN: [, [, , "[89]\\d{9}", "\\d{7,10}"],
-        [, , "869(?:2(?:29|36)|4(?:6[5-9]|70))\\d{4}", "\\d{7,10}", , , "8692361234"],
-        [, , "869(?:5(?:5[6-8]|6[5-7])|66[2-9]|76[2-5])\\d{4}", "\\d{10}", , , "8695561234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KN", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "869"],
+    [, , "869(?:2(?:29|36)|4(?:6[5-9]|70))\\d{4}", "\\d{7,10}", , , "8692361234"],
+    [, , "869(?:5(?:5[6-8]|6[5-7])|66[2-9]|76[2-5])\\d{4}", "\\d{10}", , , "8695561234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KN", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "869"],
     KP: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KP", 850, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KP", 850, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     KR: [, [, , "[1-79]\\d{3,9}|8\\d{8}", "\\d{4,10}"],
-        [, , "1(?:5(?:44|66|77|88|99)|6(?:00|44|6[16]|70|88))\\d{4}|(?:2|[34][1-3]|5[1-5]|6[1-4])(?:1\\d{2,3}|[2-9]\\d{6,7})", "\\d{4,10}", , , "22123456"],
-        [, , "1[0-25-9]\\d{7,8}", "\\d{9,10}", , , "1023456789"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "60[2-9]\\d{6}", "\\d{9}", , , "602345678"],
-        [, , "NA", "NA"],
-        [, , "50\\d{8}", "\\d{10}", , , "5012345678"],
-        [, , "70\\d{8}", "\\d{10}", , , "7012345678"], "KR", 82, "00(?:[124-68]|[37]\\d{2})", "0", , , "0(?:8[1-46-8]|85\\d{2})?", , , , [
-            [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["1(?:0|1[19]|[69]9|5[458])|[57]0", "1(?:0|1[19]|[69]9|5(?:44|59|8))|[57]0"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1(?:[169][2-8]|[78]|5[1-4])|[68]0|[3-9][1-9][2-9]", "1(?:[169][2-8]|[78]|5(?:[1-3]|4[56]))|[68]0|[3-9][1-9][2-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d)(\\d{4})", "$1-$2-$3", ["131", "1312"], "0$1", ""],
-            [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["131", "131[13-9]"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["13[2-9]"], "0$1", ""],
-            [, "(\\d{2})(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3-$4", ["30"], "0$1", ""],
-            [, "(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["2(?:[26]|3[0-467])", "2(?:[26]|3(?:01|1[45]|2[17-9]|39|4|6[67]|7[078]))"], "0$1", ""],
-            [, "(\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["2(?:3[0-35-9]|[457-9])", "2(?:3(?:0[02-9]|1[0-36-9]|2[02-6]|3[0-8]|6[0-589]|7[1-69]|[589])|[457-9])"], "0$1", ""],
-            [, "(\\d)(\\d{3,4})", "$1-$2", ["21[0-46-9]"], "0$1", ""],
-            [, "(\\d{2})(\\d{3,4})", "$1-$2", ["[3-9][1-9]1", "[3-9][1-9]1(?:[0-46-9])"], "0$1", ""],
-            [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[46-9]|6[04678])", "1(?:5(?:44|66|77|88|99)|6(?:00|44|6[16]|70|88))"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1(?:5(?:44|66|77|88|99)|6(?:00|44|6[16]|70|88))\\d{4}|(?:2|[34][1-3]|5[1-5]|6[1-4])(?:1\\d{2,3}|[2-9]\\d{6,7})", "\\d{4,10}", , , "22123456"],
+    [, , "1[0-25-9]\\d{7,8}", "\\d{9,10}", , , "1023456789"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "60[2-9]\\d{6}", "\\d{9}", , , "602345678"],
+    [, , "NA", "NA"],
+    [, , "50\\d{8}", "\\d{10}", , , "5012345678"],
+    [, , "70\\d{8}", "\\d{10}", , , "7012345678"], "KR", 82, "00(?:[124-68]|[37]\\d{2})", "0", , , "0(?:8[1-46-8]|85\\d{2})?", , , , [
+    [, "(\\d{2})(\\d{4})(\\d{4})", "$1-$2-$3", ["1(?:0|1[19]|[69]9|5[458])|[57]0", "1(?:0|1[19]|[69]9|5(?:44|59|8))|[57]0"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3", ["1(?:[169][2-8]|[78]|5[1-4])|[68]0|[3-9][1-9][2-9]", "1(?:[169][2-8]|[78]|5(?:[1-3]|4[56]))|[68]0|[3-9][1-9][2-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d)(\\d{4})", "$1-$2-$3", ["131", "1312"], "0$1", ""],
+    [, "(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3", ["131", "131[13-9]"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", ["13[2-9]"], "0$1", ""],
+    [, "(\\d{2})(\\d{2})(\\d{3})(\\d{4})", "$1-$2-$3-$4", ["30"], "0$1", ""],
+    [, "(\\d)(\\d{4})(\\d{4})", "$1-$2-$3", ["2(?:[26]|3[0-467])", "2(?:[26]|3(?:01|1[45]|2[17-9]|39|4|6[67]|7[078]))"], "0$1", ""],
+    [, "(\\d)(\\d{3})(\\d{4})", "$1-$2-$3", ["2(?:3[0-35-9]|[457-9])", "2(?:3(?:0[02-9]|1[0-36-9]|2[02-6]|3[0-8]|6[0-589]|7[1-69]|[589])|[457-9])"], "0$1", ""],
+    [, "(\\d)(\\d{3,4})", "$1-$2", ["21[0-46-9]"], "0$1", ""],
+    [, "(\\d{2})(\\d{3,4})", "$1-$2", ["[3-9][1-9]1", "[3-9][1-9]1(?:[0-46-9])"], "0$1", ""],
+    [, "(\\d{4})(\\d{4})", "$1-$2", ["1(?:5[46-9]|6[04678])", "1(?:5(?:44|66|77|88|99)|6(?:00|44|6[16]|70|88))"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     KW: [, [, , "[12569]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:18\\d|2(?:[23]\\d{2}|4[1-35-9]\\d|5(?:0[034]|[2-46]\\d|5[1-3]|7[1-7])))\\d{4}", "\\d{7,8}", , , "22345678"],
-        [, , "(?:5[05]|6[05-7]|9[0479])\\d{6}", "\\d{8}", , , "50012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KW", 965, "00", "0", , , "0", , , , [
-            [, "(\\d{4})(\\d{3,4})", "$1 $2", ["[1269]"], "0$1", ""],
-            [, "(5[05]\\d)(\\d{5})", "$1 $2", ["5"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:18\\d|2(?:[23]\\d{2}|4[1-35-9]\\d|5(?:0[034]|[2-46]\\d|5[1-3]|7[1-7])))\\d{4}", "\\d{7,8}", , , "22345678"],
+    [, , "(?:5[05]|6[05-7]|9[0479])\\d{6}", "\\d{8}", , , "50012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KW", 965, "00", "0", , , "0", , , , [
+    [, "(\\d{4})(\\d{3,4})", "$1 $2", ["[1269]"], "0$1", ""],
+    [, "(5[05]\\d)(\\d{5})", "$1 $2", ["5"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     KY: [, [, , "[389]\\d{9}", "\\d{7,10}"],
-        [, , "345(?:2(?:22|44)|444|6(?:23|38|40)|7(?:6[6-9]|77)|8(?:00|1[45]|25|4[89]|88)|9(?:14|4[035-9]))\\d{4}", "\\d{7,10}", , , "3452221234"],
-        [, , "345(?:32[3-79]|5(?:1[467]|2[5-7]|4[5-9])|9(?:1[679]|2[4-9]|3[89]))\\d{4}", "\\d{10}", , , "3453231234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}|345976\\d{4}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KY", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "345"],
+    [, , "345(?:2(?:22|44)|444|6(?:23|38|40)|7(?:6[6-9]|77)|8(?:00|1[45]|25|4[89]|88)|9(?:14|4[035-9]))\\d{4}", "\\d{7,10}", , , "3452221234"],
+    [, , "345(?:32[3-79]|5(?:1[467]|2[5-7]|4[5-9])|9(?:1[679]|2[4-9]|3[89]))\\d{4}", "\\d{10}", , , "3453231234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}|345976\\d{4}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KY", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "345"],
     KZ: [, [, , "(?:[67]\\d{2}|80[09])\\d{7}", "\\d{10}"],
-        [, , "7(?:1(?:0(?:[23]\\d|4[023]|59|63)|1(?:[23]\\d|4[0-79]|59)|2(?:[23]\\d|59)|3(?:2\\d|3[1-7]|4[1235-9]|59)|4(?:2\\d|3[013-79]|4[0-58]|5[1-79])|5(?:2\\d|3[1-8]|4[1-7]|59)|6(?:22|[34]\\d|5[19])|72\\d|8(?:[27]\\d|3[1-46-9]|4[0-4]|))|2(?:1(?:[23]\\d|4[46-9]|5[3469])|2(?:2\\d|3[0679]|46|5[12679]|)|3(?:[234]\\d|5[139]|)|4(?:22|3[1235-8])|5(?:[23]\\d|4[0124-8]|59)|6(?:22|3[1-9]|4[0-4]|59)|7(?:[23]\\d|40|5[279]|7\\d)|8(?:[23]\\d|4[0-3]|59)|9(?:2\\d|3[12478]|59))|3622)\\d{5}", "\\d{10}", , , "7123456789"],
-        [, , "7(?:0[01257]\\d{2}|1[2-578]9[01]|2(?:[13-6]9[01]|7(?:58|9[01]))|6[02-4]\\d{2}|7[157]\\d{2})\\d{5}|6\\d{9}", "\\d{10}", , , "7129012345"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "KZ", 7, "8~10", "8", , , "8", , , , , , [, , "NA", "NA"]
+    [, , "7(?:1(?:0(?:[23]\\d|4[023]|59|63)|1(?:[23]\\d|4[0-79]|59)|2(?:[23]\\d|59)|3(?:2\\d|3[1-7]|4[1235-9]|59)|4(?:2\\d|3[013-79]|4[0-58]|5[1-79])|5(?:2\\d|3[1-8]|4[1-7]|59)|6(?:22|[34]\\d|5[19])|72\\d|8(?:[27]\\d|3[1-46-9]|4[0-4]|))|2(?:1(?:[23]\\d|4[46-9]|5[3469])|2(?:2\\d|3[0679]|46|5[12679]|)|3(?:[234]\\d|5[139]|)|4(?:22|3[1235-8])|5(?:[23]\\d|4[0124-8]|59)|6(?:22|3[1-9]|4[0-4]|59)|7(?:[23]\\d|40|5[279]|7\\d)|8(?:[23]\\d|4[0-3]|59)|9(?:2\\d|3[12478]|59))|3622)\\d{5}", "\\d{10}", , , "7123456789"],
+    [, , "7(?:0[01257]\\d{2}|1[2-578]9[01]|2(?:[13-6]9[01]|7(?:58|9[01]))|6[02-4]\\d{2}|7[157]\\d{2})\\d{5}|6\\d{9}", "\\d{10}", , , "7129012345"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "KZ", 7, "8~10", "8", , , "8", , , , , , [, , "NA", "NA"]
     ],
     LA: [, [, , "[2-57]\\d{7,9}", "\\d{6,10}"],
-        [, , "(?:[2-57]1|54)\\d{6}", "\\d{6,8}", , , "21212862"],
-        [, , "20(?:[23]|5[4-6]|77|9[89])\\d{6}", "\\d{9,10}", , , "202345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LA", 856, "00", "0", , , "0", , , , [
-            [, "(20)([23])(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20[23]"], "0$1", ""],
-            [, "(20)([579]\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20[579]"], "0$1", ""],
-            [, "([2-57]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["21|[3-57]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[2-57]1|54)\\d{6}", "\\d{6,8}", , , "21212862"],
+    [, , "20(?:[23]|5[4-6]|77|9[89])\\d{6}", "\\d{9,10}", , , "202345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LA", 856, "00", "0", , , "0", , , , [
+    [, "(20)([23])(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20[23]"], "0$1", ""],
+    [, "(20)([579]\\d)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["20[579]"], "0$1", ""],
+    [, "([2-57]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["21|[3-57]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     LB: [, [, , "[13-9]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:[14-6]\\d|[7-9][2-9])\\d{5}", "\\d{7}", , , "1123456"],
-        [, , "(?:3\\d|7(?:0\\d|1[167]))\\d{5}", "\\d{7,8}", , , "71123456"],
-        [, , "NA", "NA"],
-        [, , "8[01]\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "9[01]\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LB", 961, "00", "0", , , "0", , , , [
-            [, "([13-6])(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-6]"], "0$1", ""],
-            [, "([7-9][01])(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9][01]"], "0$1", ""],
-            [, "([7-9][2-9])(\\d{2})(\\d{3})", "$1 $2 $3", ["[7-9][2-9]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[14-6]\\d|[7-9][2-9])\\d{5}", "\\d{7}", , , "1123456"],
+    [, , "(?:3\\d|7(?:0\\d|1[167]))\\d{5}", "\\d{7,8}", , , "71123456"],
+    [, , "NA", "NA"],
+    [, , "8[01]\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "9[01]\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LB", 961, "00", "0", , , "0", , , , [
+    [, "([13-6])(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-6]"], "0$1", ""],
+    [, "([7-9][01])(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9][01]"], "0$1", ""],
+    [, "([7-9][2-9])(\\d{2})(\\d{3})", "$1 $2 $3", ["[7-9][2-9]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     LC: [, [, , "[789]\\d{9}", "\\d{7,10}"],
-        [, , "758(?:234|4(?:5[0-9]|6[2-9]|8[0-2])|638|758)\\d{4}", "\\d{7,10}", , , "7582345678"],
-        [, , "758(?:28[4-7]|384|4(?:6[01]|8[4-9])|5(?:1[89]|20|84)|7(?:1[2-9]|2[0-4]))\\d{4}", "\\d{10}", , , "7582845678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "758"],
+    [, , "758(?:234|4(?:5[0-9]|6[2-9]|8[0-2])|638|758)\\d{4}", "\\d{7,10}", , , "7582345678"],
+    [, , "758(?:28[4-7]|384|4(?:6[01]|8[4-9])|5(?:1[89]|20|84)|7(?:1[2-9]|2[0-4]))\\d{4}", "\\d{10}", , , "7582845678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "758"],
     LI: [, [, , "(?:66|80|90)\\d{7}|[237-9]\\d{6}", "\\d{7,9}"],
-        [, , "(?:2(?:17|3\\d|6[02-58]|96)|3(?:02|7[01357]|8[048]|9[0269])|870)\\d{4}", "\\d{7}", , , "2345678"],
-        [, , "66(?:[0178][0-4]|2[025-9]|[36]\\d|4[129]|5[45]|9[019])\\d{5}|7(?:4[2-59]|56|[6-9]\\d)\\d{4}", "\\d{7,9}", , , "661234567"],
-        [, , "80(?:0(?:07|2[238]|79|\\d{4})|9\\d{2})\\d{2}", "\\d{7,9}", , , "8002222"],
-        [, , "NA", "NA"],
-        [, , "90(?:0(?:2[278]|79|\\d{4})|1(?:23|\\d{4})|6(?:66|\\d{4}))\\d{2}", "\\d{7,9}", , , "9002222"],
-        [, , "701\\d{4}", "\\d{7}", , , "7011234"],
-        [, , "NA", "NA"], "LI", 423, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[23]|7[4-9]|87"], "", ""],
-            [, "(6\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["6"], "", ""],
-            [, "([7-9]0\\d)(\\d{2})(\\d{2})", "$1 $2 $3", ["[7-9]0"], "", ""],
-            [, "([89]0\\d)(\\d{2})(\\d{2})(\\d{2})", "0$1 $2 $3 $4", ["[89]0"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:17|3\\d|6[02-58]|96)|3(?:02|7[01357]|8[048]|9[0269])|870)\\d{4}", "\\d{7}", , , "2345678"],
+    [, , "66(?:[0178][0-4]|2[025-9]|[36]\\d|4[129]|5[45]|9[019])\\d{5}|7(?:4[2-59]|56|[6-9]\\d)\\d{4}", "\\d{7,9}", , , "661234567"],
+    [, , "80(?:0(?:07|2[238]|79|\\d{4})|9\\d{2})\\d{2}", "\\d{7,9}", , , "8002222"],
+    [, , "NA", "NA"],
+    [, , "90(?:0(?:2[278]|79|\\d{4})|1(?:23|\\d{4})|6(?:66|\\d{4}))\\d{2}", "\\d{7,9}", , , "9002222"],
+    [, , "701\\d{4}", "\\d{7}", , , "7011234"],
+    [, , "NA", "NA"], "LI", 423, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", ["[23]|7[4-9]|87"], "", ""],
+    [, "(6\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["6"], "", ""],
+    [, "([7-9]0\\d)(\\d{2})(\\d{2})", "$1 $2 $3", ["[7-9]0"], "", ""],
+    [, "([89]0\\d)(\\d{2})(\\d{2})(\\d{2})", "0$1 $2 $3 $4", ["[89]0"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     LK: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LK", 94, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LK", 94, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     LR: [, [, , "(?:[27]\\d|[4-6])\\d{6}", "\\d{7,8}"],
-        [, , "2\\d{7}", "\\d{8}", , , "21234567"],
-        [, , "(?:4[67]|5\\d|7\\d{2}|6[4-8])\\d{5}", "\\d{7,8}", , , "4612345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LR", 231, "00", "0", , , "0", , , , [
-            [, "([27]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[27]"], "0$1", ""],
-            [, "([4-6])(\\d{3})(\\d{3})", "$1 $2 $3", ["[4-6]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2\\d{7}", "\\d{8}", , , "21234567"],
+    [, , "(?:4[67]|5\\d|7\\d{2}|6[4-8])\\d{5}", "\\d{7,8}", , , "4612345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LR", 231, "00", "0", , , "0", , , , [
+    [, "([27]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[27]"], "0$1", ""],
+    [, "([4-6])(\\d{3})(\\d{3})", "$1 $2 $3", ["[4-6]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     LS: [, [, , "[2568]\\d{7}", "\\d{8}"],
-        [, , "2\\d{7}", "\\d{8}", , , "22123456"],
-        [, , "[56]\\d{7}", "\\d{8}", , , "50123456"],
-        [, , "800[256]\\d{4}", "\\d{8}", , , "80021234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LS", 266, "00", , , , , , , , [
-            [, "(\\d{4})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2\\d{7}", "\\d{8}", , , "22123456"],
+    [, , "[56]\\d{7}", "\\d{8}", , , "50123456"],
+    [, , "800[256]\\d{4}", "\\d{8}", , , "80021234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LS", 266, "00", , , , , , , , [
+    [, "(\\d{4})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     LT: [, [, , "[3-9]\\d{7}", "\\d{8}"],
-        [, , "(?:3[1478]|4[124-6]|52)\\d{6}", "\\d{8}", , , "31234567"],
-        [, , "6\\d{7}", "\\d{8}", , , "61234567"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "90[0239]\\d{5}", "\\d{8}", , , "90012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LT", 370, "00", "8", , , "8", , , , [
-            [, "([34]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["37|4(?:1|5[45]|6[2-4])"], "8 $1", ""],
-            [, "([3-689]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["3[148]|4(?:[24]|6[09])|5(?:[0189]|28)|[689]"], "8 $1", ""],
-            [, "(5)(2[0-79]\\d)(\\d{4})", "$1 $2 $3", ["52[0-79]"], "8 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3[1478]|4[124-6]|52)\\d{6}", "\\d{8}", , , "31234567"],
+    [, , "6\\d{7}", "\\d{8}", , , "61234567"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "90[0239]\\d{5}", "\\d{8}", , , "90012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LT", 370, "00", "8", , , "8", , , , [
+    [, "([34]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["37|4(?:1|5[45]|6[2-4])"], "8 $1", ""],
+    [, "([3-689]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["3[148]|4(?:[24]|6[09])|5(?:[0189]|28)|[689]"], "8 $1", ""],
+    [, "(5)(2[0-79]\\d)(\\d{4})", "$1 $2 $3", ["52[0-79]"], "8 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     LU: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LU", 352, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LU", 352, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     LV: [, [, , "[2689]\\d{7}", "\\d{8}"],
-        [, , "6\\d{7}", "\\d{8}", , , "61234567"],
-        [, , "2\\d{7}", "\\d{8}", , , "21234567"],
-        [, , "80\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "90\\d{6}", "\\d{8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LV", 371, "00", , , , , , , , [
-            [, "([2689]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "6\\d{7}", "\\d{8}", , , "61234567"],
+    [, , "2\\d{7}", "\\d{8}", , , "21234567"],
+    [, , "80\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "90\\d{6}", "\\d{8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LV", 371, "00", , , , , , , , [
+    [, "([2689]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     LY: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "LY", 218, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "LY", 218, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     MA: [, [, , "[5689]\\d{8}", "\\d{9}"],
-        [, , "5(?:2(?:[015-7]\\d{2}|(?:[28][2-9]|3[2-7]|4[2-8])\\d|9(?:0\\d|[89]0))|3(?:[0-4]\\d{2}|(?:[57][2-9]|6[2-8]|9[3-9])\\d|8(?:0\\d|[89]0)))\\d{4}", "\\d{9}", , , "520123456"],
-        [, , "6(?:00|33|[15-7]\\d|4[0-8]|99)\\d{6}", "\\d{9}", , , "650123456"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "89\\d{7}", "\\d{9}", , , "891234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MA", 212, "00", "0", , , "0", , , , [
-            [, "([56]\\d{2})(\\d{6})", "$1-$2", ["5(?:2[015-7]|3[0-4])|6"], "0$1", ""],
-            [, "([58]\\d{3})(\\d{5})", "$1-$2", ["5(?:2[2-489]|3[5-9])|892", "5(?:2(?:[2-48]|90)|3(?:[5-79]|80))|892"], "0$1", ""],
-            [, "(5\\d{4})(\\d{4})", "$1-$2", ["5(?:29|38)", "5(?:29|38)[89]"], "0$1", ""],
-            [, "(8[09])(\\d{7})", "$1-$2", ["8(?:0|9[013-9])"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "5(?:2(?:[015-7]\\d{2}|(?:[28][2-9]|3[2-7]|4[2-8])\\d|9(?:0\\d|[89]0))|3(?:[0-4]\\d{2}|(?:[57][2-9]|6[2-8]|9[3-9])\\d|8(?:0\\d|[89]0)))\\d{4}", "\\d{9}", , , "520123456"],
+    [, , "6(?:00|33|[15-7]\\d|4[0-8]|99)\\d{6}", "\\d{9}", , , "650123456"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "89\\d{7}", "\\d{9}", , , "891234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MA", 212, "00", "0", , , "0", , , , [
+    [, "([56]\\d{2})(\\d{6})", "$1-$2", ["5(?:2[015-7]|3[0-4])|6"], "0$1", ""],
+    [, "([58]\\d{3})(\\d{5})", "$1-$2", ["5(?:2[2-489]|3[5-9])|892", "5(?:2(?:[2-48]|90)|3(?:[5-79]|80))|892"], "0$1", ""],
+    [, "(5\\d{4})(\\d{4})", "$1-$2", ["5(?:29|38)", "5(?:29|38)[89]"], "0$1", ""],
+    [, "(8[09])(\\d{7})", "$1-$2", ["8(?:0|9[013-9])"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     MC: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MC", 377, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MC", 377, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     MD: [, [, , "[256-9]\\d{7}", "\\d{8}"],
-        [, , "(?:2(?:1[0569]|2\\d|3[015-7]|4[1-46-9]|5[0-24689]|6[2-589]|7[1-37]|9[1347-9])|5(?:33|5[257]))\\d{5}", "\\d{5,8}", , , "22212345"],
-        [, , "(?:6(?:50|7[12]|[89]\\d)|7(?:80|9\\d))\\d{5}", "\\d{8}", , , "65012345"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "900\\d{5}", "\\d{8}", , , "90012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MD", 373, "00", "0", , , "0", , , , [
-            [, "(22)(\\d{3})(\\d{3})", "$1 $2 $3", ["22"], "0$1", ""],
-            [, "([25-7]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["2[13-79]|[5-7]"], "0$1", ""],
-            [, "([89]00)(\\d{5})", "$1 $2", ["[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:1[0569]|2\\d|3[015-7]|4[1-46-9]|5[0-24689]|6[2-589]|7[1-37]|9[1347-9])|5(?:33|5[257]))\\d{5}", "\\d{5,8}", , , "22212345"],
+    [, , "(?:6(?:50|7[12]|[89]\\d)|7(?:80|9\\d))\\d{5}", "\\d{8}", , , "65012345"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "900\\d{5}", "\\d{8}", , , "90012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MD", 373, "00", "0", , , "0", , , , [
+    [, "(22)(\\d{3})(\\d{3})", "$1 $2 $3", ["22"], "0$1", ""],
+    [, "([25-7]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["2[13-79]|[5-7]"], "0$1", ""],
+    [, "([89]00)(\\d{5})", "$1 $2", ["[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ME: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ME", 382, "99", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ME", 382, "99", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     MG: [, [, , "[23]\\d{8}", "\\d{7,9}"],
-        [, , "2(?:0(?:(?:2\\d|4[47]|5[3467]|6[279]|8[268]|9[245])\\d|7(?:2[29]|[35]\\d))|210\\d)\\d{4}", "\\d{7,9}", , , "202123456"],
-        [, , "3[02-4]\\d{7}", "\\d{9}", , , "301234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MG", 261, "00", "0", , , "0", , , , [
-            [, "([23]\\d)(\\d{2})(\\d{3})(\\d{2})", "$1 $2 $3 $4", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:0(?:(?:2\\d|4[47]|5[3467]|6[279]|8[268]|9[245])\\d|7(?:2[29]|[35]\\d))|210\\d)\\d{4}", "\\d{7,9}", , , "202123456"],
+    [, , "3[02-4]\\d{7}", "\\d{9}", , , "301234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MG", 261, "00", "0", , , "0", , , , [
+    [, "([23]\\d)(\\d{2})(\\d{3})(\\d{2})", "$1 $2 $3 $4", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     MF: [, [, , "[56]\\d{8}", "\\d{9}"],
-        [, , "590(?:10|2[79]|5[128]|[78]7)\\d{4}", "\\d{9}", , , "590271234"],
-        [, , "690(?:10|2[27]|66|77|8[78])\\d{4}", "\\d{9}", , , "690221234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MF", 590, "00", "0", , , "0", , , , , , [, , "NA", "NA"]
+    [, , "590(?:10|2[79]|5[128]|[78]7)\\d{4}", "\\d{9}", , , "590271234"],
+    [, , "690(?:10|2[27]|66|77|8[78])\\d{4}", "\\d{9}", , , "690221234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MF", 590, "00", "0", , , "0", , , , , , [, , "NA", "NA"]
     ],
     MH: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MH", 692, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MH", 692, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"]
     ],
     MK: [, [, , "[2-578]\\d{7}", "\\d{8}"],
-        [, , "(?:2\\d|3[1-4]|4[2-8])\\d{6}", "\\d{6,8}", , , "22212345"],
-        [, , "7\\d{7}", "\\d{8}", , , "72345678"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "5[02-9]\\d{6}", "\\d{8}", , , "50012345"],
-        [, , "8(?:0[1-9]|[1-9]\\d)\\d{5}", "\\d{8}", , , "80123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MK", 389, "00", "0", , , "0", , , , [
-            [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
-            [, "([347]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[347]"], "0$1", ""],
-            [, "([58]\\d{2})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[58]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2\\d|3[1-4]|4[2-8])\\d{6}", "\\d{6,8}", , , "22212345"],
+    [, , "7\\d{7}", "\\d{8}", , , "72345678"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "5[02-9]\\d{6}", "\\d{8}", , , "50012345"],
+    [, , "8(?:0[1-9]|[1-9]\\d)\\d{5}", "\\d{8}", , , "80123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MK", 389, "00", "0", , , "0", , , , [
+    [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
+    [, "([347]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[347]"], "0$1", ""],
+    [, "([58]\\d{2})(\\d)(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[58]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ML: [, [, , "[246-8]\\d{7}", "\\d{8}"],
-        [, , "(?:2(?:0(?:2[0-589]|7[027-9])|1(?:2[5-7]|[3-689]\\d))|442\\d)\\d{4}", "\\d{8}", , , "20212345"],
-        [, , "(?:6(?:[569]\\d)|7(?:[08][1-9]|[3579][0-4]|4[014-7]|6\\d))\\d{5}", "\\d{8}", , , "65012345"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ML", 223, "00", "0", , , "0", , , , [
-            [, "([246-8]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:0(?:2[0-589]|7[027-9])|1(?:2[5-7]|[3-689]\\d))|442\\d)\\d{4}", "\\d{8}", , , "20212345"],
+    [, , "(?:6(?:[569]\\d)|7(?:[08][1-9]|[3579][0-4]|4[014-7]|6\\d))\\d{5}", "\\d{8}", , , "65012345"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ML", 223, "00", "0", , , "0", , , , [
+    [, "([246-8]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     MM: [, [, , "[124-8]\\d{5,7}|9\\d{7,8}", "\\d{5,9}"],
-        [, , "(?:1\\d|2|4[2-6]|5[2-9]|6\\d|7[0-5]|8[1-6])\\d{5}|1333\\d{4}", "\\d{5,8}", , , "1234567"],
-        [, , "9(?:[25689]\\d|444)\\d{5}", "\\d{8,9}", , , "92123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MM", 95, "00", , , , , , , , [
-            [, "(1)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "", ""],
-            [, "(1)(3)(33\\d)(\\d{3})", "$1 $2 $3 $4", ["133", "1333"], "", ""],
-            [, "(2)(\\d{2})(\\d{3})", "$1 $2 $3", ["2"], "", ""],
-            [, "(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[4-8]"], "", ""],
-            [, "(9444)(\\d{5})", "$1 $2", ["94"], "", ""],
-            [, "(9)([25689]\\d{2})(\\d{4})", "$1 $2 $3", ["9[25689]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1\\d|2|4[2-6]|5[2-9]|6\\d|7[0-5]|8[1-6])\\d{5}|1333\\d{4}", "\\d{5,8}", , , "1234567"],
+    [, , "9(?:[25689]\\d|444)\\d{5}", "\\d{8,9}", , , "92123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MM", 95, "00", , , , , , , , [
+    [, "(1)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "", ""],
+    [, "(1)(3)(33\\d)(\\d{3})", "$1 $2 $3 $4", ["133", "1333"], "", ""],
+    [, "(2)(\\d{2})(\\d{3})", "$1 $2 $3", ["2"], "", ""],
+    [, "(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[4-8]"], "", ""],
+    [, "(9444)(\\d{5})", "$1 $2", ["94"], "", ""],
+    [, "(9)([25689]\\d{2})(\\d{4})", "$1 $2 $3", ["9[25689]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     MN: [, [, , "[127-9]\\d{7}", "\\d{8}"],
-        [, , "(?:[12](?:1\\d|2[1-37]|3[2-8]|4[2-68]|5[1-4689])|70)\\d{6}", "\\d{8}", , , "70123456"],
-        [, , "(?:88|9[1569])\\d{6}", "\\d{8}", , , "88123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MN", 976, "001", "0", , , "0", , , , [
-            [, "([127-9]\\d)(\\d{2})(\\d{4})", "$1 $2 $3", ["[12]1|[7-9]"], "0$1", ""],
-            [, "([12]2\\d)(\\d{5})", "$1 $2", ["[12]2[1-3]"], "0$1", ""],
-            [, "([12]\\d{3})(\\d{4})", "$1 $2", ["[12](?:27|[3-5])", "[12](?:27|[3-5]\\d)2"], "0$1", ""],
-            [, "([12]\\d{4})(\\d{3})", "$1 $2", ["[12](?:27|[3-5])", "[12](?:27|[3-5]\\d)[4-9]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[12](?:1\\d|2[1-37]|3[2-8]|4[2-68]|5[1-4689])|70)\\d{6}", "\\d{8}", , , "70123456"],
+    [, , "(?:88|9[1569])\\d{6}", "\\d{8}", , , "88123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MN", 976, "001", "0", , , "0", , , , [
+    [, "([127-9]\\d)(\\d{2})(\\d{4})", "$1 $2 $3", ["[12]1|[7-9]"], "0$1", ""],
+    [, "([12]2\\d)(\\d{5})", "$1 $2", ["[12]2[1-3]"], "0$1", ""],
+    [, "([12]\\d{3})(\\d{4})", "$1 $2", ["[12](?:27|[3-5])", "[12](?:27|[3-5]\\d)2"], "0$1", ""],
+    [, "([12]\\d{4})(\\d{3})", "$1 $2", ["[12](?:27|[3-5])", "[12](?:27|[3-5]\\d)[4-9]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     MO: [, [, , "[268]\\d{7}", "\\d{8}"],
-        [, , "(?:28[2-57-9]|8[2-57-9]\\d)\\d{5}", "\\d{8}", , , "28212345"],
-        [, , "6[26]\\d{6}", "\\d{8}", , , "66123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MO", 853, "00", , , , , , , , [
-            [, "([268]\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:28[2-57-9]|8[2-57-9]\\d)\\d{5}", "\\d{8}", , , "28212345"],
+    [, , "6[26]\\d{6}", "\\d{8}", , , "66123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MO", 853, "00", , , , , , , , [
+    [, "([268]\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     MP: [, [, , "[689]\\d{9}", "\\d{7,10}"],
-        [, , "670(?:2(?:3[3-5]|88|56)|32[23]|4[38]3|532|6(?:64|70|8\\d))\\d{4}", "\\d{7,10}", , , "6702345678"],
-        [, , "670(?:2(?:3[3-5]|88|56)|32[23]|4[38]3|532|6(?:64|70|8\\d))\\d{4}", "\\d{7,10}", , , "6702345678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MP", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "670"],
+    [, , "670(?:2(?:3[3-5]|88|56)|32[23]|4[38]3|532|6(?:64|70|8\\d))\\d{4}", "\\d{7,10}", , , "6702345678"],
+    [, , "670(?:2(?:3[3-5]|88|56)|32[23]|4[38]3|532|6(?:64|70|8\\d))\\d{4}", "\\d{7,10}", , , "6702345678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MP", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "670"],
     MQ: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MQ", 596, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MQ", 596, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     MR: [, [, , "[2-7]\\d{6}", "\\d{7}"],
-        [, , "5(?:1[035]|2[0-69]|3[0348]|4[468]|5[02-467]|6[39]|7[4-69])\\d{4}", "\\d{7}", , , "5131234"],
-        [, , "(?:[23][0-4]|4[3-5]|6\\d|7[0-7])\\d{5}", "\\d{7}", , , "3123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MR", 222, "00", , , , , , , , [
-            [, "([2-7]\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "5(?:1[035]|2[0-69]|3[0348]|4[468]|5[02-467]|6[39]|7[4-69])\\d{4}", "\\d{7}", , , "5131234"],
+    [, , "(?:[23][0-4]|4[3-5]|6\\d|7[0-7])\\d{5}", "\\d{7}", , , "3123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MR", 222, "00", , , , , , , , [
+    [, "([2-7]\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     MS: [, [, , "[689]\\d{9}", "\\d{7,10}"],
-        [, , "664491\\d{4}", "\\d{7,10}", , , "6644912345"],
-        [, , "664492\\d{4}", "\\d{10}", , , "6644923456"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "664"],
+    [, , "664491\\d{4}", "\\d{7,10}", , , "6644912345"],
+    [, , "664492\\d{4}", "\\d{10}", , , "6644923456"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002123456"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MS", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "664"],
     MT: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MT", 356, "00", "21", , , "21", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MT", 356, "00", "21", , , "21", , , 1, , , [, , "NA", "NA"]
     ],
     MU: [, [, , "[2-9]\\d{6}", "\\d{7}"],
-        [, , "(?:2(?:[034789]\\d|1[0-8]|2[0-79])|4(?:[013-8]\\d|2[4-7])|[56]\\d{2}|8(?:14|3[129]))\\d{4}", "\\d{7}", , , "2012345"],
-        [, , "(?:25\\d|4(?:2[12389]|9\\d)|7\\d{2}|87[15-7]|9[1-8]\\d)\\d{4}", "\\d{7}", , , "2512345"],
-        [, , "80[012]\\d{4}", "\\d{7}", , , "8001234"],
-        [, , "30\\d{5}", "\\d{7}", , , "3012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MU", 230, "020", , , , , , , , [
-            [, "([2-9]\\d{2})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:[034789]\\d|1[0-8]|2[0-79])|4(?:[013-8]\\d|2[4-7])|[56]\\d{2}|8(?:14|3[129]))\\d{4}", "\\d{7}", , , "2012345"],
+    [, , "(?:25\\d|4(?:2[12389]|9\\d)|7\\d{2}|87[15-7]|9[1-8]\\d)\\d{4}", "\\d{7}", , , "2512345"],
+    [, , "80[012]\\d{4}", "\\d{7}", , , "8001234"],
+    [, , "30\\d{5}", "\\d{7}", , , "3012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MU", 230, "020", , , , , , , , [
+    [, "([2-9]\\d{2})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     MV: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MV", 960, "020", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MV", 960, "020", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     MW: [, [, , "(?:[13-5]|[27]\\d{2}|[89](?:\\d{2})?)\\d{6}", "\\d{7,9}"],
-        [, , "(?:1[2-9]|21\\d{2})\\d{5}", "\\d{7,9}", , , "1234567"],
-        [, , "(?:[3-5]|77|8(?:8\\d)?|9(?:9\\d)?)\\d{6}", "\\d{7,9}", , , "991234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MW", 265, "00", "0", , , "0", , , , [
-            [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-5]"], "0$1", ""],
-            [, "(2\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1", ""],
-            [, "(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1", ""],
-            [, "(\\d)(\\d{3,4})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[2-9]|21\\d{2})\\d{5}", "\\d{7,9}", , , "1234567"],
+    [, , "(?:[3-5]|77|8(?:8\\d)?|9(?:9\\d)?)\\d{6}", "\\d{7,9}", , , "991234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MW", 265, "00", "0", , , "0", , , , [
+    [, "(\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[13-5]"], "0$1", ""],
+    [, "(2\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "0$1", ""],
+    [, "(\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["7"], "0$1", ""],
+    [, "(\\d)(\\d{3,4})(\\d{3,4})", "$1 $2 $3", ["[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     MX: [, [, , "[1-9]\\d{9,10}", "\\d{7,11}"],
-        [, , "(?:33|55|81)\\d{8}|(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-58]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7}", "\\d{7,10}", , , "2221234567"],
-        [, , "1(?:(?:33|55|81)\\d{8}|(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-58]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7})", "\\d{11}", , , "12221234567"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MX", 52, "0[09]", "01", , , "0[12]|04[45](\\d{10})", "1$1", , , [
-            [, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], "01 $1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[12457-9]|5[89]|8[02-9]|9[0-35-9]"], "01 $1", ""],
-            [, "1([358]\\d)(\\d{4})(\\d{4})", "045 $1 $2 $3", ["1(?:33|55|81)"], "$1", ""],
-            [, "1(\\d{3})(\\d{3})(\\d{4})", "045 $1 $2 $3", ["1(?:[2467]|3[12457-9]|5[89]|8[2-9]|9[1-35-9])"], "$1", ""]
-        ],
-        [
-            [, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], , ""],
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[12457-9]|5[89]|8[02-9]|9[0-35-9]"], , ""],
-            [, "(1)([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3 $4", ["1(?:33|55|81)"], , ""],
-            [, "(1)(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1(?:[2467]|3[12457-9]|5[89]|8[2-9]|9[1-35-9])"], , ""]
-        ],
-        [, , "NA", "NA"]
+    [, , "(?:33|55|81)\\d{8}|(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-58]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7}", "\\d{7,10}", , , "2221234567"],
+    [, , "1(?:(?:33|55|81)\\d{8}|(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-58]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))\\d{7})", "\\d{11}", , , "12221234567"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MX", 52, "0[09]", "01", , , "0[12]|04[45](\\d{10})", "1$1", , , [
+    [, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], "01 $1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[12457-9]|5[89]|8[02-9]|9[0-35-9]"], "01 $1", ""],
+    [, "1([358]\\d)(\\d{4})(\\d{4})", "045 $1 $2 $3", ["1(?:33|55|81)"], "$1", ""],
+    [, "1(\\d{3})(\\d{3})(\\d{4})", "045 $1 $2 $3", ["1(?:[2467]|3[12457-9]|5[89]|8[2-9]|9[1-35-9])"], "$1", ""]
+    ],
+    [
+    [, "([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3", ["33|55|81"], , ""],
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3", ["[2467]|3[12457-9]|5[89]|8[02-9]|9[0-35-9]"], , ""],
+    [, "(1)([358]\\d)(\\d{4})(\\d{4})", "$1 $2 $3 $4", ["1(?:33|55|81)"], , ""],
+    [, "(1)(\\d{3})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1(?:[2467]|3[12457-9]|5[89]|8[2-9]|9[1-35-9])"], , ""]
+    ],
+    [, , "NA", "NA"]
     ],
     MY: [, [, , "[13-9]\\d{7,9}", "\\d{6,10}"],
-        [, , "(?:3\\d{2}|[4-79]\\d|8[2-9])\\d{6}", "\\d{6,9}", , , "312345678"],
-        [, , "1[0-46-9]\\d{7}", "\\d{9}", , , "123456789"],
-        [, , "1[38]00\\d{6}", "\\d{10}", , , "1300123456"],
-        [, , "1600\\d{6}", "\\d{10}", , , "1600123456"],
-        [, , "NA", "NA"],
-        [, , "1700\\d{6}", "\\d{10}", , , "1700123456"],
-        [, , "154\\d{7}", "\\d{10}", , , "1541234567"], "MY", 60, "00", "0", , , "0", , , , [
-            [, "([4-79])(\\d{3})(\\d{4})", "$1-$2 $3", ["[4-79]"], "0$1", ""],
-            [, "(3)(\\d{4})(\\d{4})", "$1-$2 $3", ["3"], "0$1", ""],
-            [, "([18]\\d)(\\d{3})(\\d{3,4})", "$1-$2 $3", ["1[0-46-9][1-9]|8"], "0$1", ""],
-            [, "(1)([36-8]00)(\\d{2})(\\d{4})", "$1-$2-$3-$4", ["1[36-8]0"], "", ""],
-            [, "(154)(\\d{3})(\\d{4})", "$1-$2 $3", ["15"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3\\d{2}|[4-79]\\d|8[2-9])\\d{6}", "\\d{6,9}", , , "312345678"],
+    [, , "1[0-46-9]\\d{7}", "\\d{9}", , , "123456789"],
+    [, , "1[38]00\\d{6}", "\\d{10}", , , "1300123456"],
+    [, , "1600\\d{6}", "\\d{10}", , , "1600123456"],
+    [, , "NA", "NA"],
+    [, , "1700\\d{6}", "\\d{10}", , , "1700123456"],
+    [, , "154\\d{7}", "\\d{10}", , , "1541234567"], "MY", 60, "00", "0", , , "0", , , , [
+    [, "([4-79])(\\d{3})(\\d{4})", "$1-$2 $3", ["[4-79]"], "0$1", ""],
+    [, "(3)(\\d{4})(\\d{4})", "$1-$2 $3", ["3"], "0$1", ""],
+    [, "([18]\\d)(\\d{3})(\\d{3,4})", "$1-$2 $3", ["1[0-46-9][1-9]|8"], "0$1", ""],
+    [, "(1)([36-8]00)(\\d{2})(\\d{4})", "$1-$2-$3-$4", ["1[36-8]0"], "", ""],
+    [, "(154)(\\d{3})(\\d{4})", "$1-$2 $3", ["15"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     MZ: [, [, , "[28]\\d{7,8}", "\\d{8,9}"],
-        [, , "2(?:[1346]\\d|5[0-2]|[78][12]|93)\\d{5}", "\\d{8}", , , "21123456"],
-        [, , "8[24]\\d{7}", "\\d{9}", , , "821234567"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "MZ", 258, "00", , , , , , , , [
-            [, "([28]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2|8[24]"], "", ""],
-            [, "(80\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["80"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:[1346]\\d|5[0-2]|[78][12]|93)\\d{5}", "\\d{8}", , , "21123456"],
+    [, , "8[24]\\d{7}", "\\d{9}", , , "821234567"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "MZ", 258, "00", , , , , , , , [
+    [, "([28]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2|8[24]"], "", ""],
+    [, "(80\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["80"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     NA: [, [, , "[68]\\d{5,9}", "\\d{4,10}"],
-        [, , "6(?:1(?:[136]|2\\d?)\\d|2(?:[25]\\d?|[134678])\\d|3(?:2\\d{0,3}|4\\d{1,2}|[135-8]\\d?)|4(?:[13-8]\\d|2\\d{1,2})|(?:5(?:[16-7]\\d|[3-58]\\d?|2\\d{1,2}))|6\\d{0,4}|7\\d{0,3})\\d{4}", "\\d{4,10}", , , "612012345"],
-        [, , "8(?:1(?:1[0-24]|[2-4]\\d|50|6[0-2])|5\\d{2})\\d{5}", "\\d{9}", , , "811012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "88\\d{6}", "\\d{8}", , , "88123456"], "NA", 264, "00", "0", , , "0", , , , [
-            [, "(8\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["8[15]"], "0$1", ""],
-            [, "(632532)(\\d{2,4})", "$1 $2", ["632", "6325", "63253", "632532"], "0$1", ""],
-            [, "(6\\d)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["6(?:1|[245][1-7]|3[125-7]|6[1256]|7[1236])"], "0$1", ""],
-            [, "(6\\d)(\\d{4,5})", "$1 $2", ["6(?:3[12567]|5[3-5]|6[1256]|7[1236])"], "0$1", ""],
-            [, "(6\\d{2})(\\d{4,6})", "$1 $2", ["6[2356]8"], "0$1", ""],
-            [, "(6\\d{3})(\\d{4,5})", "$1 $2", ["6(?:34|6[34]|75)", "6(?:342|6[34]|751)"], "0$1", ""],
-            [, "(88)(\\d{3})(\\d{3})", "$1 $2 $3", ["88"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "6(?:1(?:[136]|2\\d?)\\d|2(?:[25]\\d?|[134678])\\d|3(?:2\\d{0,3}|4\\d{1,2}|[135-8]\\d?)|4(?:[13-8]\\d|2\\d{1,2})|(?:5(?:[16-7]\\d|[3-58]\\d?|2\\d{1,2}))|6\\d{0,4}|7\\d{0,3})\\d{4}", "\\d{4,10}", , , "612012345"],
+    [, , "8(?:1(?:1[0-24]|[2-4]\\d|50|6[0-2])|5\\d{2})\\d{5}", "\\d{9}", , , "811012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "88\\d{6}", "\\d{8}", , , "88123456"], "NA", 264, "00", "0", , , "0", , , , [
+    [, "(8\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["8[15]"], "0$1", ""],
+    [, "(632532)(\\d{2,4})", "$1 $2", ["632", "6325", "63253", "632532"], "0$1", ""],
+    [, "(6\\d)(\\d{2,3})(\\d{4})", "$1 $2 $3", ["6(?:1|[245][1-7]|3[125-7]|6[1256]|7[1236])"], "0$1", ""],
+    [, "(6\\d)(\\d{4,5})", "$1 $2", ["6(?:3[12567]|5[3-5]|6[1256]|7[1236])"], "0$1", ""],
+    [, "(6\\d{2})(\\d{4,6})", "$1 $2", ["6[2356]8"], "0$1", ""],
+    [, "(6\\d{3})(\\d{4,5})", "$1 $2", ["6(?:34|6[34]|75)", "6(?:342|6[34]|751)"], "0$1", ""],
+    [, "(88)(\\d{3})(\\d{3})", "$1 $2 $3", ["88"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     NC: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NC", 687, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NC", 687, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     NE: [, [, , "[029]\\d{7}", "\\d{8}"],
-        [, , "2(?:0(?:20|3[1-7]|4[134]|5[14]|6[14578]|7[1-578])|1(?:4[145]|5[14]|6[14-68]|7[169]|88))\\d{4}", "\\d{8}", , , "20201234"],
-        [, , "9[03467]\\d{6}", "\\d{8}", , , "93123456"],
-        [, , "08\\d{6}", "\\d{8}", , , "08123456"],
-        [, , "09\\d{6}", "\\d{8}", , , "09123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NE", 227, "00", , , , , , , , [
-            [, "([029]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[29]|09"], "", ""],
-            [, "(08)(\\d{3})(\\d{3})", "$1 $2 $3", ["08"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:0(?:20|3[1-7]|4[134]|5[14]|6[14578]|7[1-578])|1(?:4[145]|5[14]|6[14-68]|7[169]|88))\\d{4}", "\\d{8}", , , "20201234"],
+    [, , "9[03467]\\d{6}", "\\d{8}", , , "93123456"],
+    [, , "08\\d{6}", "\\d{8}", , , "08123456"],
+    [, , "09\\d{6}", "\\d{8}", , , "09123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NE", 227, "00", , , , , , , , [
+    [, "([029]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[29]|09"], "", ""],
+    [, "(08)(\\d{3})(\\d{3})", "$1 $2 $3", ["08"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     NF: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NF", 672, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NF", 672, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     NG: [, [, , "[1-69]\\d{5,8}|[78]\\d{5,13}", "\\d{5,14}"],
-        [, , "[12]\\d{6,7}|9\\d{7}|(?:4[023568]|5[02368]|6[02-469]|7[569]|8[2-9])\\d{6}|(?:4[47]|5[14579]|6[1578]|7[0-357])\\d{5,6}|(?:78|41)\\d{5}", "\\d{5,9}", , , "12345678"],
-        [, , "(?:70[3-9]|8(?:0[2-9]|1[23]))\\d{7}|(?:702[1-9]|819[01])\\d{6}", "\\d{10}", , , "8021234567"],
-        [, , "800\\d{7,11}", "\\d{10,14}", , , "80017591759"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "700\\d{7,11}", "\\d{10,14}", , , "7001234567"],
-        [, , "NA", "NA"], "NG", 234, "009", "0", , , "0", , , , [
-            [, "([129])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[129]"], "0$1", ""],
-            [, "([3-8]\\d)(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[3-6]|7(?:[1-79]|0[1-9])|8[2-9]"], "0$1", ""],
-            [, "([78]\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["70[03-9]|8(?:0|1[23])"], "0$1", ""],
-            [, "([78]\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["702|819"], "0$1", ""],
-            [, "([78]00)(\\d{4})(\\d{4,5})", "$1 $2 $3", ["[78]00"], "0$1", ""],
-            [, "([78]00)(\\d{5})(\\d{5,6})", "$1 $2 $3", ["[78]00"], "0$1", ""],
-            [, "(78)(\\d{2})(\\d{3})", "$1 $2 $3", ["78"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[12]\\d{6,7}|9\\d{7}|(?:4[023568]|5[02368]|6[02-469]|7[569]|8[2-9])\\d{6}|(?:4[47]|5[14579]|6[1578]|7[0-357])\\d{5,6}|(?:78|41)\\d{5}", "\\d{5,9}", , , "12345678"],
+    [, , "(?:70[3-9]|8(?:0[2-9]|1[23]))\\d{7}|(?:702[1-9]|819[01])\\d{6}", "\\d{10}", , , "8021234567"],
+    [, , "800\\d{7,11}", "\\d{10,14}", , , "80017591759"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "700\\d{7,11}", "\\d{10,14}", , , "7001234567"],
+    [, , "NA", "NA"], "NG", 234, "009", "0", , , "0", , , , [
+    [, "([129])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[129]"], "0$1", ""],
+    [, "([3-8]\\d)(\\d{3})(\\d{2,3})", "$1 $2 $3", ["[3-6]|7(?:[1-79]|0[1-9])|8[2-9]"], "0$1", ""],
+    [, "([78]\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["70[03-9]|8(?:0|1[23])"], "0$1", ""],
+    [, "([78]\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["702|819"], "0$1", ""],
+    [, "([78]00)(\\d{4})(\\d{4,5})", "$1 $2 $3", ["[78]00"], "0$1", ""],
+    [, "([78]00)(\\d{5})(\\d{5,6})", "$1 $2 $3", ["[78]00"], "0$1", ""],
+    [, "(78)(\\d{2})(\\d{3})", "$1 $2 $3", ["78"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     NI: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NI", 505, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NI", 505, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     NL: [, [, , "[1-9]\\d{6,9}", "\\d{7,10}"],
-        [, , "(?:1[0135-8]|2[02-69]|3[0-68]|4[0135-9]|[57]\\d|8[478])\\d{7}", "\\d{9}", , , "101234567"],
-        [, , "6[1-58]\\d{7}", "\\d{9}", , , "612345678"],
-        [, , "800\\d{4,7}", "\\d{7,10}", , , "8001234"],
-        [, , "90[069]\\d{4,7}", "\\d{7,10}", , , "9001234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "85\\d{7}", "\\d{9}"], "NL", 31, "00", "0", , , "0", , , , [
-            [, "([1-578]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1[035]|2[0346]|3[03568]|4[0356]|5[0358]|7|8[458]"], "0$1", ""],
-            [, "([1-5]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[16-8]|2[259]|3[124]|4[17-9]|5[124679]"], "0$1", ""],
-            [, "(6)(\\d{8})", "$1 $2", ["6"], "0$1", ""],
-            [, "([89]0\\d)(\\d{4,7})", "$1 $2", ["80|9"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[0135-8]|2[02-69]|3[0-68]|4[0135-9]|[57]\\d|8[478])\\d{7}", "\\d{9}", , , "101234567"],
+    [, , "6[1-58]\\d{7}", "\\d{9}", , , "612345678"],
+    [, , "800\\d{4,7}", "\\d{7,10}", , , "8001234"],
+    [, , "90[069]\\d{4,7}", "\\d{7,10}", , , "9001234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "85\\d{7}", "\\d{9}"], "NL", 31, "00", "0", , , "0", , , , [
+    [, "([1-578]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1[035]|2[0346]|3[03568]|4[0356]|5[0358]|7|8[458]"], "0$1", ""],
+    [, "([1-5]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[16-8]|2[259]|3[124]|4[17-9]|5[124679]"], "0$1", ""],
+    [, "(6)(\\d{8})", "$1 $2", ["6"], "0$1", ""],
+    [, "([89]0\\d)(\\d{4,7})", "$1 $2", ["80|9"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     NO: [, [, , "0\\d{4}|[2-9]\\d{7}", "\\d{5}(?:\\d{3})?"],
-        [, , "0\\d{4}|(?:2[1-4]|3[1-3578]|5[1-35-7]|6[1-4679]|7\\d)\\d{6}|81(?:0(?:0[7-9]|1\\d)|5\\d{2})\\d{3}", "\\d{5}(?:\\d{3})?", , , "21234567"],
-        [, , "(?:4[015-8]|9\\d)\\d{6}", "\\d{8}", , , "41234567"],
-        [, , "80[01]\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "82[09]\\d{5}", "\\d{8}", , , "82012345"],
-        [, , "810(?:0[0-6]|[2-8]\\d)\\d{3}", "\\d{8}", , , "81021234"],
-        [, , "880\\d{5}", "\\d{8}", , , "88012345"],
-        [, , "NA", "NA"], "NO", 47, "00", , , , , , , , [
-            [, "([489]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[489]"], "", ""],
-            [, "([235-7]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[235-7]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "0\\d{4}|(?:2[1-4]|3[1-3578]|5[1-35-7]|6[1-4679]|7\\d)\\d{6}|81(?:0(?:0[7-9]|1\\d)|5\\d{2})\\d{3}", "\\d{5}(?:\\d{3})?", , , "21234567"],
+    [, , "(?:4[015-8]|9\\d)\\d{6}", "\\d{8}", , , "41234567"],
+    [, , "80[01]\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "82[09]\\d{5}", "\\d{8}", , , "82012345"],
+    [, , "810(?:0[0-6]|[2-8]\\d)\\d{3}", "\\d{8}", , , "81021234"],
+    [, , "880\\d{5}", "\\d{8}", , , "88012345"],
+    [, , "NA", "NA"], "NO", 47, "00", , , , , , , , [
+    [, "([489]\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3", ["[489]"], "", ""],
+    [, "([235-7]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[235-7]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     NP: [, [, , "[1-8]\\d{5,7}|98[45]\\d{7}", "\\d{6,10}"],
-        [, , "(?:1[014-6]|2[13-79]|3[135-8]|4[146-9]|5[135-7]|6[13-9]|7[15-9]|8[1-4679]|9[1-79])\\d{6}", "\\d{6,8}", , , "14567890"],
-        [, , "98[45]\\d{7}", "\\d{10}", , , "9841234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NP", 977, "00", "0", , , "0", , , , [
-            [, "(1)([4-6]\\d{3})(\\d{3})", "$1 $2 $3", ["1[4-6]"], "0$1", ""],
-            [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[01]|[2-8]|9[1-79]"], "0$1", ""],
-            [, "(98[45])(\\d{3})(\\d{4})", "$1 $2 $3", ["98"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[014-6]|2[13-79]|3[135-8]|4[146-9]|5[135-7]|6[13-9]|7[15-9]|8[1-4679]|9[1-79])\\d{6}", "\\d{6,8}", , , "14567890"],
+    [, , "98[45]\\d{7}", "\\d{10}", , , "9841234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NP", 977, "00", "0", , , "0", , , , [
+    [, "(1)([4-6]\\d{3})(\\d{3})", "$1 $2 $3", ["1[4-6]"], "0$1", ""],
+    [, "(\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["1[01]|[2-8]|9[1-79]"], "0$1", ""],
+    [, "(98[45])(\\d{3})(\\d{4})", "$1 $2 $3", ["98"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     NR: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NR", 674, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NR", 674, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     NU: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NU", 683, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NU", 683, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     NZ: [, [, , "[2-9]\\d{7,9}", "\\d{7,10}"],
-        [, , "(?:3[2-79]|[479][2-689]|6[235-9])\\d{6}|24099\\d{3}", "\\d{7,8}", , , "32345678"],
-        [, , "2(?:[027]\\d{7}|9\\d{6,7}|1(?:0\\d{5,7}|[12]\\d{5,6}|[3-9]\\d{5})|4[1-9]\\d{6}|8\\d{7,8})", "\\d{8,10}", , , "211234567"],
-        [, , "(?:800|508)\\d{6,7}", "\\d{9,10}", , , "800123456"],
-        [, , "900\\d{6,7}", "\\d{9,10}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "NZ", 64, "00", "0", , , "0", , , , [
-            [, "([34679])(\\d{3})(\\d{4})", "$1-$2 $3", ["[3467]|9[1-9]"], "0$1", ""],
-            [, "(21)(\\d{4})(\\d{3,4})", "$1 $2 $3", ["21"], "0$1", ""],
-            [, "([2589]\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2[0247-9]|5|[89]00"], "0$1", ""],
-            [, "(2[019])(\\d{3})(\\d{3})", "$1 $2 $3", ["2[019]"], "0$1", ""],
-            [, "(24099)(\\d{3})", "$1 $2", ["240", "2409", "24099"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3[2-79]|[479][2-689]|6[235-9])\\d{6}|24099\\d{3}", "\\d{7,8}", , , "32345678"],
+    [, , "2(?:[027]\\d{7}|9\\d{6,7}|1(?:0\\d{5,7}|[12]\\d{5,6}|[3-9]\\d{5})|4[1-9]\\d{6}|8\\d{7,8})", "\\d{8,10}", , , "211234567"],
+    [, , "(?:800|508)\\d{6,7}", "\\d{9,10}", , , "800123456"],
+    [, , "900\\d{6,7}", "\\d{9,10}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "NZ", 64, "00", "0", , , "0", , , , [
+    [, "([34679])(\\d{3})(\\d{4})", "$1-$2 $3", ["[3467]|9[1-9]"], "0$1", ""],
+    [, "(21)(\\d{4})(\\d{3,4})", "$1 $2 $3", ["21"], "0$1", ""],
+    [, "([2589]\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["2[0247-9]|5|[89]00"], "0$1", ""],
+    [, "(2[019])(\\d{3})(\\d{3})", "$1 $2 $3", ["2[019]"], "0$1", ""],
+    [, "(24099)(\\d{3})", "$1 $2", ["240", "2409", "24099"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     OM: [, [, , "(?:2[3-6]|5|9[2-9])\\d{6}|800\\d{5,6}", "\\d{7,9}"],
-        [, , "2[3-6]\\d{6}", "\\d{8}", , , "23123456"],
-        [, , "9[2-9]\\d{6}", "\\d{8}", , , "92123456"],
-        [, , "8007\\d{4,5}|500\\d{4}", "\\d{7,9}", , , "80071234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "OM", 968, "00", , , , , , , , [
-            [, "(2\\d)(\\d{6})", "$1 $2", ["2"], "", ""],
-            [, "(9\\d{3})(\\d{4})", "$1 $2", ["9"], "", ""],
-            [, "([58]00)(\\d{4,6})", "$1 $2", ["[58]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[3-6]\\d{6}", "\\d{8}", , , "23123456"],
+    [, , "9[2-9]\\d{6}", "\\d{8}", , , "92123456"],
+    [, , "8007\\d{4,5}|500\\d{4}", "\\d{7,9}", , , "80071234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "OM", 968, "00", , , , , , , , [
+    [, "(2\\d)(\\d{6})", "$1 $2", ["2"], "", ""],
+    [, "(9\\d{3})(\\d{4})", "$1 $2", ["9"], "", ""],
+    [, "([58]00)(\\d{4,6})", "$1 $2", ["[58]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     PA: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PA", 507, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PA", 507, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     PE: [, [, , "[14-9]\\d{7,8}", "\\d{6,9}"],
-        [, , "(?:1\\d|4[1-4]|5[1-46]|6[1-7]|7[2-46]|8[2-4])\\d{6}", "\\d{6,8}", , , "11234567"],
-        [, , "9\\d{8}", "\\d{9}", , , "912345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PE", 51, "00", "0", " Anexo ", , "0", , , , [
-            [, "(1)(\\d{7})", "$1 $2", ["1"], "($1)", ""],
-            [, "([4-8]\\d)(\\d{6})", "$1 $2", ["[4-8]"], "($1)", ""],
-            [, "(9\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1\\d|4[1-4]|5[1-46]|6[1-7]|7[2-46]|8[2-4])\\d{6}", "\\d{6,8}", , , "11234567"],
+    [, , "9\\d{8}", "\\d{9}", , , "912345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PE", 51, "00", "0", " Anexo ", , "0", , , , [
+    [, "(1)(\\d{7})", "$1 $2", ["1"], "($1)", ""],
+    [, "([4-8]\\d)(\\d{6})", "$1 $2", ["[4-8]"], "($1)", ""],
+    [, "(9\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["9"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     PF: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PF", 689, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PF", 689, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     PG: [, [, , "[1-9]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:3\\d{2}|4[257]\\d|5[34]\\d|6(?:29|4[1-9])|85[02-46-9]|9[78]\\d)\\d{4}", "\\d{7}", , , "3123456"],
-        [, , "(?:68|7(?:[126]\\d|3[34689]))\\d{5}", "\\d{7,8}", , , "6812345"],
-        [, , "180\\d{4}", "\\d{7}", , , "1801234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "275\\d{4}", "\\d{7}", , , "2751234"], "PG", 675, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", ["[1-689]"], "", ""],
-            [, "(7[1-36]\\d)(\\d{2})(\\d{3})", "$1 $2 $3", ["7[1-36]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3\\d{2}|4[257]\\d|5[34]\\d|6(?:29|4[1-9])|85[02-46-9]|9[78]\\d)\\d{4}", "\\d{7}", , , "3123456"],
+    [, , "(?:68|7(?:[126]\\d|3[34689]))\\d{5}", "\\d{7,8}", , , "6812345"],
+    [, , "180\\d{4}", "\\d{7}", , , "1801234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "275\\d{4}", "\\d{7}", , , "2751234"], "PG", 675, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", ["[1-689]"], "", ""],
+    [, "(7[1-36]\\d)(\\d{2})(\\d{3})", "$1 $2 $3", ["7[1-36]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     PH: [, [, , "[2-9]\\d{7,9}|1800\\d{7,9}", "\\d{7,13}"],
-        [, , "(?:2|3[2-68]|4[2-9]|5[2-6]|6[2-58]|7[24578]|8[2-8])\\d{7}", "\\d{7,9}", , , "21234567"],
-        [, , "9(?:0[5-9]|1[025-9]|2[0-36-9]|3[0235-9]|7[349]|[89]9)\\d{7}", "\\d{10}", , , "9051234567"],
-        [, , "1800\\d{7,9}", "\\d{11,13}", , , "180012345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PH", 63, "00", "0", , , "0", , , , [
-            [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "(0$1)", ""],
-            [, "(\\d{4})(\\d{5})", "$1 $2", ["3(?:23|39|46)|4(?:2[3-6]|[35]9|4[26]|76)|5(?:22|44)|642|8(?:62|8[245])", "3(?:230|397|461)|4(?:2(?:35|[46]4|51)|396|4(?:22|63)|59[347]|76[15])|5(?:221|446)|642[23]|8(?:622|8(?:[24]2|5[13]))"], "(0$1)", ""],
-            [, "(\\d{5})(\\d{4})", "$1 $2", ["346|4(?:27|9[35])|883", "3469|4(?:279|9(?:30|56))|8834"], "(0$1)", ""],
-            [, "([3-8]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-8]"], "(0$1)", ""],
-            [, "(9\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
-            [, "(1800)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "", ""],
-            [, "(1800)(\\d{1,2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2|3[2-68]|4[2-9]|5[2-6]|6[2-58]|7[24578]|8[2-8])\\d{7}", "\\d{7,9}", , , "21234567"],
+    [, , "9(?:0[5-9]|1[025-9]|2[0-36-9]|3[0235-9]|7[349]|[89]9)\\d{7}", "\\d{10}", , , "9051234567"],
+    [, , "1800\\d{7,9}", "\\d{11,13}", , , "180012345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PH", 63, "00", "0", , , "0", , , , [
+    [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "(0$1)", ""],
+    [, "(\\d{4})(\\d{5})", "$1 $2", ["3(?:23|39|46)|4(?:2[3-6]|[35]9|4[26]|76)|5(?:22|44)|642|8(?:62|8[245])", "3(?:230|397|461)|4(?:2(?:35|[46]4|51)|396|4(?:22|63)|59[347]|76[15])|5(?:221|446)|642[23]|8(?:622|8(?:[24]2|5[13]))"], "(0$1)", ""],
+    [, "(\\d{5})(\\d{4})", "$1 $2", ["346|4(?:27|9[35])|883", "3469|4(?:279|9(?:30|56))|8834"], "(0$1)", ""],
+    [, "([3-8]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[3-8]"], "(0$1)", ""],
+    [, "(9\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
+    [, "(1800)(\\d{3})(\\d{4})", "$1 $2 $3", ["1"], "", ""],
+    [, "(1800)(\\d{1,2})(\\d{3})(\\d{4})", "$1 $2 $3 $4", ["1"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     PK: [, [, , "1\\d{8}|[2-8]\\d{5,11}|9(?:[013-9]\\d{4,9}|2\\d(?:111\\d{6}|\\d{3,7}))", "\\d{6,12}"],
-        [, , "(?:21|42)[2-9]\\d{7}|(?:2[25]|4[0146-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]\\d{6}|(?:2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:1|2[2-8]|3[27-9]|4[2-6]|6[3569]|9[25-8]))[2-9]\\d{5,6}|58[126]\\d{7}", "\\d{6,10}", , , "2123456789"],
-        [, , "3(?:0\\d|1[2-5]|2[1-3]|3[1-6]|4[2-6]|64)\\d{7}", "\\d{10}", , , "3012345678"],
-        [, , "800\\d{5}", "\\d{8}", , , "80012345"],
-        [, , "900\\d{5}", "\\d{8}", , , "90012345"],
-        [, , "(?:2(?:[125]|3[2358]|4[2-4]|9[2-8])|4(?:[0-246-9]|5[3479])|5(?:[1-35-7]|4[2-467])|6(?:[1-8]|0[468])|7(?:[14]|2[236])|8(?:[16]|2[2-689]|3[23578]|4[3478]|5[2356])|9(?:1|22|3[27-9]|4[2-6]|6[3569]|9[2-7]))111\\d{6}", "\\d{11,12}", , , "21111825888"],
-        [, , "122\\d{6}", "\\d{9}", , , "122044444"],
-        [, , "NA", "NA"], "PK", 92, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(111)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)1", "(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)11", "(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)111"], "(0$1)", ""],
-            [, "(\\d{3})(111)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["(?:2[349]|45|54|60|72|8[2-5]|9[2-9])", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d1", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d11", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d111"], "(0$1)", ""],
-            [, "(\\d{2})(\\d{7,8})", "$1 $2", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]"], "(0$1)", ""],
-            [, "(\\d{3})(\\d{6,7})", "$1 $2", ["2[349]|45|54|60|72|8[2-5]|9[2-9]", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d[2-9]"], "(0$1)", ""],
-            [, "(3\\d{2})(\\d{7})", "$1 $2", ["3"], "0$1", ""],
-            [, "([15]\\d{3})(\\d{5,6})", "$1 $2", ["58[12]|1"], "(0$1)", ""],
-            [, "(586\\d{2})(\\d{5})", "$1 $2", ["586"], "(0$1)", ""],
-            [, "([89]00)(\\d{3})(\\d{2})", "$1 $2 $3", ["[89]00"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:21|42)[2-9]\\d{7}|(?:2[25]|4[0146-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]\\d{6}|(?:2(?:3[2358]|4[2-4]|9[2-8])|45[3479]|54[2-467]|60[468]|72[236]|8(?:2[2-689]|3[23578]|4[3478]|5[2356])|9(?:1|2[2-8]|3[27-9]|4[2-6]|6[3569]|9[25-8]))[2-9]\\d{5,6}|58[126]\\d{7}", "\\d{6,10}", , , "2123456789"],
+    [, , "3(?:0\\d|1[2-5]|2[1-3]|3[1-6]|4[2-6]|64)\\d{7}", "\\d{10}", , , "3012345678"],
+    [, , "800\\d{5}", "\\d{8}", , , "80012345"],
+    [, , "900\\d{5}", "\\d{8}", , , "90012345"],
+    [, , "(?:2(?:[125]|3[2358]|4[2-4]|9[2-8])|4(?:[0-246-9]|5[3479])|5(?:[1-35-7]|4[2-467])|6(?:[1-8]|0[468])|7(?:[14]|2[236])|8(?:[16]|2[2-689]|3[23578]|4[3478]|5[2356])|9(?:1|22|3[27-9]|4[2-6]|6[3569]|9[2-7]))111\\d{6}", "\\d{11,12}", , , "21111825888"],
+    [, , "122\\d{6}", "\\d{9}", , , "122044444"],
+    [, , "NA", "NA"], "PK", 92, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(111)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)1", "(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)11", "(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)111"], "(0$1)", ""],
+    [, "(\\d{3})(111)(\\d{3})(\\d{3})", "$1 $2 $3 $4", ["(?:2[349]|45|54|60|72|8[2-5]|9[2-9])", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d1", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d11", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d111"], "(0$1)", ""],
+    [, "(\\d{2})(\\d{7,8})", "$1 $2", ["(?:2[125]|4[0-246-9]|5[1-35-7]|6[1-8]|7[14]|8[16]|91)[2-9]"], "(0$1)", ""],
+    [, "(\\d{3})(\\d{6,7})", "$1 $2", ["2[349]|45|54|60|72|8[2-5]|9[2-9]", "(?:2[349]|45|54|60|72|8[2-5]|9[2-9])\\d[2-9]"], "(0$1)", ""],
+    [, "(3\\d{2})(\\d{7})", "$1 $2", ["3"], "0$1", ""],
+    [, "([15]\\d{3})(\\d{5,6})", "$1 $2", ["58[12]|1"], "(0$1)", ""],
+    [, "(586\\d{2})(\\d{5})", "$1 $2", ["586"], "(0$1)", ""],
+    [, "([89]00)(\\d{3})(\\d{2})", "$1 $2 $3", ["[89]00"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     PL: [, [, , "[1-9]\\d{8}", "\\d{9}"],
-        [, , "(?:1[2-8]|2[2-59]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])\\d{7}", "\\d{9}", , , "123456789"],
-        [, , "(?:5[013]|6[069]|7[289]|88)\\d{7}", "\\d{9}", , , "512345678"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "70\\d{7}", "\\d{9}", , , "701234567"],
-        [, , "801\\d{6}", "\\d{9}", , , "801234567"],
-        [, , "NA", "NA"],
-        [, , "39\\d{7}", "\\d{9}", , , "391234567"], "PL", 48, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[124]|3[2-4]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145]"], "", ""],
-            [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["39|5[013]|6[069]|7[0289]|8[08]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[2-8]|2[2-59]|3[2-4]|4[1-468]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145])\\d{7}", "\\d{9}", , , "123456789"],
+    [, , "(?:5[013]|6[069]|7[289]|88)\\d{7}", "\\d{9}", , , "512345678"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "70\\d{7}", "\\d{9}", , , "701234567"],
+    [, , "801\\d{6}", "\\d{9}", , , "801234567"],
+    [, , "NA", "NA"],
+    [, , "39\\d{7}", "\\d{9}", , , "391234567"], "PL", 48, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[124]|3[2-4]|5[24-689]|6[1-3578]|7[14-7]|8[1-79]|9[145]"], "", ""],
+    [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["39|5[013]|6[069]|7[0289]|8[08]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     PM: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PM", 508, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PM", 508, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     PR: [, [, , "[789]\\d{9}", "\\d{7,10}"],
-        [, , "(?:787|939)[2-9]\\d{6}", "\\d{7,10}", , , "7872345678"],
-        [, , "(?:787|939)[2-9]\\d{6}", "\\d{7,10}", , , "7872345678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PR", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "787|939"],
+    [, , "(?:787|939)[2-9]\\d{6}", "\\d{7,10}", , , "7872345678"],
+    [, , "(?:787|939)[2-9]\\d{6}", "\\d{7,10}", , , "7872345678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PR", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "787|939"],
     PS: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PS", 970, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PS", 970, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     PT: [, [, , "[2-46-9]\\d{8}", "\\d{9}"],
-        [, , "2(?:[12]\\d|[35][1-689]|4[1-59]|6[1-35689]|7[1-9]|8[1-69]|9[1256])\\d{6}", "\\d{9}", , , "212345678"],
-        [, , "9(?:[136]\\d{2}|2[25-79]\\d|4(?:80|9\\d))\\d{5}", "\\d{9}", , , "912345678"],
-        [, , "4\\d{8}|80[02]\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "71\\d{7}", "\\d{9}", , , "712345678"],
-        [, , "808\\d{6}", "\\d{9}", , , "808123456"],
-        [, , "NA", "NA"],
-        [, , "30\\d{7}", "\\d{9}", , , "301234567"], "PT", 351, "00", , , , , , , , [
-            [, "([2-46-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2(?:[12]\\d|[35][1-689]|4[1-59]|6[1-35689]|7[1-9]|8[1-69]|9[1256])\\d{6}", "\\d{9}", , , "212345678"],
+    [, , "9(?:[136]\\d{2}|2[25-79]\\d|4(?:80|9\\d))\\d{5}", "\\d{9}", , , "912345678"],
+    [, , "4\\d{8}|80[02]\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "71\\d{7}", "\\d{9}", , , "712345678"],
+    [, , "808\\d{6}", "\\d{9}", , , "808123456"],
+    [, , "NA", "NA"],
+    [, , "30\\d{7}", "\\d{9}", , , "301234567"], "PT", 351, "00", , , , , , , , [
+    [, "([2-46-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     PW: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PW", 680, "011", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PW", 680, "011", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     PY: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "PY", 595, "002", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "PY", 595, "002", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     QA: [, [, , "[3-8]\\d{6,7}", "\\d{7,8}"],
-        [, , "44\\d{6}", "\\d{7,8}", , , "44123456"],
-        [, , "(?:33|55|66|77)\\d{6}", "\\d{7,8}", , , "33123456"],
-        [, , "800\\d{4}", "\\d{7,8}", , , "8001234"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "QA", 974, "00", , , , , , , , [
-            [, "(8\\d{2})(\\d{4})", "$1 $2", ["8"], "", ""],
-            [, "([3-7]\\d{3})(\\d{4})", "$1 $2", ["[3-7]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "44\\d{6}", "\\d{7,8}", , , "44123456"],
+    [, , "(?:33|55|66|77)\\d{6}", "\\d{7,8}", , , "33123456"],
+    [, , "800\\d{4}", "\\d{7,8}", , , "8001234"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "QA", 974, "00", , , , , , , , [
+    [, "(8\\d{2})(\\d{4})", "$1 $2", ["8"], "", ""],
+    [, "([3-7]\\d{3})(\\d{4})", "$1 $2", ["[3-7]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     RE: [, [, , "[268]\\d{8}", "\\d{9}"],
-        [, , "262\\d{6}", "\\d{9}", , , "262161234"],
-        [, , "6(?:9[23]|47)\\d{6}", "\\d{9}", , , "692123456"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "89[1-37-9]\\d{6}", "\\d{9}", , , "891123456"],
-        [, , "8(?:1[019]|2[0156]|84|90)\\d{6}", "\\d{9}", , , "810123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "RE", 262, "00", "0", , , "0", , , , [
-            [, "([268]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "0$1", ""]
-        ], , [, , "NA", "NA"], 1, "262|6[49]|8"],
+    [, , "262\\d{6}", "\\d{9}", , , "262161234"],
+    [, , "6(?:9[23]|47)\\d{6}", "\\d{9}", , , "692123456"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "89[1-37-9]\\d{6}", "\\d{9}", , , "891123456"],
+    [, , "8(?:1[019]|2[0156]|84|90)\\d{6}", "\\d{9}", , , "810123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "RE", 262, "00", "0", , , "0", , , , [
+    [, "([268]\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "0$1", ""]
+    ], , [, , "NA", "NA"], 1, "262|6[49]|8"],
     RO: [, [, , "[237-9]\\d{8}", "\\d{9}"],
-        [, , "[23][13-6]\\d{7}", "\\d{9}", , , "211234567"],
-        [, , "7[1-8]\\d{7}", "\\d{9}", , , "712345678"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "90[036]\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "801\\d{6}", "\\d{9}", , , "801123456"],
-        [, , "802\\d{6}", "\\d{9}", , , "802123456"],
-        [, , "NA", "NA"], "RO", 40, "00", "0", " int ", , "0", , , , [
-            [, "([237]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[23]1|7"], "0$1", ""],
-            [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[23][02-9]|[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[23][13-6]\\d{7}", "\\d{9}", , , "211234567"],
+    [, , "7[1-8]\\d{7}", "\\d{9}", , , "712345678"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "90[036]\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "801\\d{6}", "\\d{9}", , , "801123456"],
+    [, , "802\\d{6}", "\\d{9}", , , "802123456"],
+    [, , "NA", "NA"], "RO", 40, "00", "0", " int ", , "0", , , , [
+    [, "([237]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[23]1|7"], "0$1", ""],
+    [, "(\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["[23][02-9]|[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     RS: [, [, , "[1-46-9]\\d{4,11}", "\\d{5,12}"],
-        [, , "[1-3]\\d{6,9}", "\\d{5,10}", , , "1012345"],
-        [, , "6[0-689]\\d{3,10}", "\\d{5,12}", , , "6012345"],
-        [, , "800\\d{3,6}", "\\d{6,9}", , , "80012345"],
-        [, , "(?:9[0-2]|42)\\d{4,7}", "\\d{6,9}", , , "90012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "RS", 381, "00", "0", , , "0", , , , [
-            [, "([23]\\d{2})(\\d{4,7})", "$1 $2", ["(?:2[389]|39)0"], "0$1", ""],
-            [, "([1-4]\\d)(\\d{4,8})", "$1 $2", ["1|2(?:[0-24-7]|[389][1-9])|3(?:[0-8]|9[1-9])|42"], "0$1", ""],
-            [, "(6[0-689])(\\d{3,10})", "$1 $2", ["6"], "0$1", ""],
-            [, "([89]\\d{2})(\\d{3,6})", "$1 $2", ["[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[1-3]\\d{6,9}", "\\d{5,10}", , , "1012345"],
+    [, , "6[0-689]\\d{3,10}", "\\d{5,12}", , , "6012345"],
+    [, , "800\\d{3,6}", "\\d{6,9}", , , "80012345"],
+    [, , "(?:9[0-2]|42)\\d{4,7}", "\\d{6,9}", , , "90012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "RS", 381, "00", "0", , , "0", , , , [
+    [, "([23]\\d{2})(\\d{4,7})", "$1 $2", ["(?:2[389]|39)0"], "0$1", ""],
+    [, "([1-4]\\d)(\\d{4,8})", "$1 $2", ["1|2(?:[0-24-7]|[389][1-9])|3(?:[0-8]|9[1-9])|42"], "0$1", ""],
+    [, "(6[0-689])(\\d{3,10})", "$1 $2", ["6"], "0$1", ""],
+    [, "([89]\\d{2})(\\d{3,6})", "$1 $2", ["[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     RU: [, [, , "[3489]\\d{9}", "\\d{10}"],
-        [, , "(?:3(?:0[12]|4[1-35-79]|5[1-3]|8[1-58]|9[0145])|4(?:01|1[1356]|2[13467]|7[1-5]|8[1-7]|9[1-689])|8(?:1[1-8]|2[01]|3[13-6]|4[0-8]|5[15]|6[1-35-7]|7[1-37-9]))\\d{7}", "\\d{10}", , , "3011234567"],
-        [, , "9\\d{9}", "\\d{10}", , , "9123456789"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "RU", 7, "8~10", "8", , , "8", , , , [
-            [, "([3489]\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[34689]"], "8 ($1)", ""],
-            [, "([67]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[67]"], "8 ($1)", ""]
-        ], , [, , "NA", "NA"], 1],
+    [, , "(?:3(?:0[12]|4[1-35-79]|5[1-3]|8[1-58]|9[0145])|4(?:01|1[1356]|2[13467]|7[1-5]|8[1-7]|9[1-689])|8(?:1[1-8]|2[01]|3[13-6]|4[0-8]|5[15]|6[1-35-7]|7[1-37-9]))\\d{7}", "\\d{10}", , , "3011234567"],
+    [, , "9\\d{9}", "\\d{10}", , , "9123456789"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "809\\d{7}", "\\d{10}", , , "8091234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "RU", 7, "8~10", "8", , , "8", , , , [
+    [, "([3489]\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2-$3-$4", ["[34689]"], "8 ($1)", ""],
+    [, "([67]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", ["[67]"], "8 ($1)", ""]
+    ], , [, , "NA", "NA"], 1],
     RW: [, [, , "[27-9]\\d{8}", "\\d{9}"],
-        [, , "25\\d{7}", "\\d{9}", , , "250123456"],
-        [, , "7[258]\\d{7}", "\\d{9}", , , "720123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "900\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "RW", 250, "000", "0", , , "0", , , , [
-            [, "(25\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "$1", ""],
-            [, "([7-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "25\\d{7}", "\\d{9}", , , "250123456"],
+    [, , "7[258]\\d{7}", "\\d{9}", , , "720123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "900\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "RW", 250, "000", "0", , , "0", , , , [
+    [, "(25\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["2"], "$1", ""],
+    [, "([7-9]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[7-9]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SA: [, [, , "[1-9]\\d{7,10}", "\\d{7,11}"],
-        [, , "(?:1[24-7]|2[24-8]|3[35-8]|4[34-68]|6[2-5]|7[235-7])\\d{6}", "\\d{7,8}", , , "12345678"],
-        [, , "(?:5[013-69]\\d|8111)\\d{6}", "\\d{9,10}", , , "512345678"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "9200\\d{7}", "\\d{11}", , , "92001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SA", 966, "00", "0", , , "0", , , , [
-            [, "([1-467])(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-467]"], "0$1", ""],
-            [, "(9200)(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
-            [, "(5\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1", ""],
-            [, "(800)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", ""],
-            [, "(8111)(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[24-7]|2[24-8]|3[35-8]|4[34-68]|6[2-5]|7[235-7])\\d{6}", "\\d{7,8}", , , "12345678"],
+    [, , "(?:5[013-69]\\d|8111)\\d{6}", "\\d{9,10}", , , "512345678"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "9200\\d{7}", "\\d{11}", , , "92001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SA", 966, "00", "0", , , "0", , , , [
+    [, "([1-467])(\\d{3})(\\d{4})", "$1 $2 $3", ["[1-467]"], "0$1", ""],
+    [, "(9200)(\\d{3})(\\d{4})", "$1 $2 $3", ["9"], "0$1", ""],
+    [, "(5\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["5"], "0$1", ""],
+    [, "(800)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "0$1", ""],
+    [, "(8111)(\\d{3})(\\d{3})", "$1 $2 $3", ["81"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SB: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SB", 677, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SB", 677, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     SC: [, [, , "[2-8]\\d{5}", "\\d{6}"],
-        [, , "(?:2(?:1[78]|2[14-69]|3[2-4]|4[1-36-8]|6[167]|[89]\\d)|3(?:2[1-6]|4[4-6]|55|6[016]|7\\d|8[0-589]|9[0-5])|5(?:5\\d|6[0-2])|6(?:0[0-27-9]|1[0-478]|2[145]|3[02-4]|4[124]|6[015]|7\\d|8[1-3])|78[0138])\\d{3}", "\\d{6}", , , "217123"],
-        [, , "(?:5(?:[1247-9]\\d|6[3-9])|7(?:[14679]\\d|2[1-9]|8[24-79]))\\d{3}", "\\d{6}", , , "510123"],
-        [, , "8000\\d{2}", "\\d{6}", , , "800000"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
+    [, , "(?:2(?:1[78]|2[14-69]|3[2-4]|4[1-36-8]|6[167]|[89]\\d)|3(?:2[1-6]|4[4-6]|55|6[016]|7\\d|8[0-589]|9[0-5])|5(?:5\\d|6[0-2])|6(?:0[0-27-9]|1[0-478]|2[145]|3[02-4]|4[124]|6[015]|7\\d|8[1-3])|78[0138])\\d{3}", "\\d{6}", , , "217123"],
+    [, , "(?:5(?:[1247-9]\\d|6[3-9])|7(?:[14679]\\d|2[1-9]|8[24-79]))\\d{3}", "\\d{6}", , , "510123"],
+    [, , "8000\\d{2}", "\\d{6}", , , "800000"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
 
-        [, , "4[1-37]\\d{4}", "\\d{6}", , , "410123"], "SC", 248, "0[0-2]", , , , , , "00", , [
-            [, "(\\d{3})(\\d{3})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "4[1-37]\\d{4}", "\\d{6}", , , "410123"], "SC", 248, "0[0-2]", , , , , , "00", , [
+    [, "(\\d{3})(\\d{3})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     SD: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SD", 249, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SD", 249, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     SE: [, [, , "\\d{7,10}", "\\d{5,10}"],
-        [, , "1(?:0[1-8]\\d{6}|[136]\\d{5,7}|(?:2[0-35]|4[0-4]|5[0-25-9]|7[13-6]|[89]\\d)\\d{5,6})|2(?:[136]\\d{5,7}|(?:2[0-7]|4[0136-8]|5[0-38]|7[018]|8[01]|9[0-57])\\d{5,6})|3(?:[356]\\d{5,7}|(?:0[0-4]|1\\d|2[0-25]|4[056]|7[0-2]|8[0-3]|9[023])\\d{5,6})|4(?:[0246]\\d{5,7}|(?:1[01-8]|3[0135]|5[14-79]|7[0-246-9]|8[0156]|9[0-689])\\d{5,6})|5(?:0[0-6]|1[1-5]|2[0-68]|3[0-4]|4\\d|5[0-5]|6[03-5]|7[013]|8[0-79]|9[01])\\d{5,6}|6(?:[03]\\d{5,7}|(?:1[1-3]|2[0-4]|4[02-57]|5[0-37]|6[0-3]|7[0-2]|8[0247]|9[0-356])\\d{5,6})|8\\d{6,8}|9(?:0\\d{5,7}|(?:1[0-68]|2\\d|3[02-59]|4[0-4]|5[0-4]|6[01]|7[0135-8]|8[01])\\d{5,6})", "\\d{5,9}", , , "8123456"],
-        [, , "7[02-46]\\d{7}", "\\d{9}", , , "701234567"],
-        [, , "20\\d{4,7}", "\\d{6,9}", , , "201234567"],
-        [, , "9(?:00|39|44)\\d{7}", "\\d{10}", , , "9001234567"],
-        [, , "77\\d{7}", "\\d{9}", , , "771234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SE", 46, "00", "0", , , "0", , , , [
-            [, "(8)(\\d{2,3})(\\d{2,3})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1", ""],
-            [, "([1-69]\\d)(\\d{2,3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[013689]|2[0136]|3[1356]|4[0246]|54|6[03]|90"], "0$1", ""],
-            [, "([1-69]\\d)(\\d{3})(\\d{2})", "$1 $2 $3", ["1[13689]|2[136]|3[1356]|4[0246]|54|6[03]|90"], "0$1", ""],
-            [, "(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[2457]|2[2457-9]|3[0247-9]|4[1357-9]|5[0-35-9]|6[124-9]|9(?:[125-8]|3[0-5]|4[0-3])"], "0$1", ""],
-            [, "(\\d{3})(\\d{2,3})(\\d{2})", "$1 $2 $3", ["1[2457]|2[2457-9]|3[0247-9]|4[1357-9]|5[0-35-9]|6[124-9]|9(?:[125-8]|3[0-5]|4[0-3])"], "0$1", ""],
-            [, "(7[02-467])(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7[02-467]"], "0$1", ""],
-            [, "(20)(\\d{2,3})(\\d{2})", "$1 $2 $3", ["20"], "0$1", ""],
-            [, "(9[034]\\d)(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["9[034]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "1(?:0[1-8]\\d{6}|[136]\\d{5,7}|(?:2[0-35]|4[0-4]|5[0-25-9]|7[13-6]|[89]\\d)\\d{5,6})|2(?:[136]\\d{5,7}|(?:2[0-7]|4[0136-8]|5[0-38]|7[018]|8[01]|9[0-57])\\d{5,6})|3(?:[356]\\d{5,7}|(?:0[0-4]|1\\d|2[0-25]|4[056]|7[0-2]|8[0-3]|9[023])\\d{5,6})|4(?:[0246]\\d{5,7}|(?:1[01-8]|3[0135]|5[14-79]|7[0-246-9]|8[0156]|9[0-689])\\d{5,6})|5(?:0[0-6]|1[1-5]|2[0-68]|3[0-4]|4\\d|5[0-5]|6[03-5]|7[013]|8[0-79]|9[01])\\d{5,6}|6(?:[03]\\d{5,7}|(?:1[1-3]|2[0-4]|4[02-57]|5[0-37]|6[0-3]|7[0-2]|8[0247]|9[0-356])\\d{5,6})|8\\d{6,8}|9(?:0\\d{5,7}|(?:1[0-68]|2\\d|3[02-59]|4[0-4]|5[0-4]|6[01]|7[0135-8]|8[01])\\d{5,6})", "\\d{5,9}", , , "8123456"],
+    [, , "7[02-46]\\d{7}", "\\d{9}", , , "701234567"],
+    [, , "20\\d{4,7}", "\\d{6,9}", , , "201234567"],
+    [, , "9(?:00|39|44)\\d{7}", "\\d{10}", , , "9001234567"],
+    [, , "77\\d{7}", "\\d{9}", , , "771234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SE", 46, "00", "0", , , "0", , , , [
+    [, "(8)(\\d{2,3})(\\d{2,3})(\\d{2})", "$1 $2 $3 $4", ["8"], "0$1", ""],
+    [, "([1-69]\\d)(\\d{2,3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[013689]|2[0136]|3[1356]|4[0246]|54|6[03]|90"], "0$1", ""],
+    [, "([1-69]\\d)(\\d{3})(\\d{2})", "$1 $2 $3", ["1[13689]|2[136]|3[1356]|4[0246]|54|6[03]|90"], "0$1", ""],
+    [, "(\\d{3})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["1[2457]|2[2457-9]|3[0247-9]|4[1357-9]|5[0-35-9]|6[124-9]|9(?:[125-8]|3[0-5]|4[0-3])"], "0$1", ""],
+    [, "(\\d{3})(\\d{2,3})(\\d{2})", "$1 $2 $3", ["1[2457]|2[2457-9]|3[0247-9]|4[1357-9]|5[0-35-9]|6[124-9]|9(?:[125-8]|3[0-5]|4[0-3])"], "0$1", ""],
+    [, "(7[02-467])(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["7[02-467]"], "0$1", ""],
+    [, "(20)(\\d{2,3})(\\d{2})", "$1 $2 $3", ["20"], "0$1", ""],
+    [, "(9[034]\\d)(\\d{2})(\\d{2})(\\d{3})", "$1 $2 $3 $4", ["9[034]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SG: [, [, , "[13689]\\d{7,10}", "\\d{8,11}"],
-        [, , "[36]\\d{7}", "\\d{8}", , , "31234567"],
-        [, , "[89]\\d{7}", "\\d{8}", , , "81234567"],
-        [, , "1?800\\d{7}", "\\d{10,11}", , , "18001234567"],
-        [, , "1900\\d{7}", "\\d{11}", , , "19001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SG", 65, "0[0-3][0-9]", , , , , , , , [
-            [, "([3689]\\d{3})(\\d{4})", "$1 $2", ["[369]|8[1-9]"], "", ""],
-            [, "(1[89]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["1[89]"], "", ""],
-            [, "(800)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[36]\\d{7}", "\\d{8}", , , "31234567"],
+    [, , "[89]\\d{7}", "\\d{8}", , , "81234567"],
+    [, , "1?800\\d{7}", "\\d{10,11}", , , "18001234567"],
+    [, , "1900\\d{7}", "\\d{11}", , , "19001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SG", 65, "0[0-3][0-9]", , , , , , , , [
+    [, "([3689]\\d{3})(\\d{4})", "$1 $2", ["[369]|8[1-9]"], "", ""],
+    [, "(1[89]00)(\\d{3})(\\d{4})", "$1 $2 $3", ["1[89]"], "", ""],
+    [, "(800)(\\d{3})(\\d{4})", "$1 $2 $3", ["80"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     SH: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SH", 290, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SH", 290, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     SI: [, [, , "[1-7]\\d{6,7}|[89]\\d{4,7}", "\\d{5,8}"],
-        [, , "(?:1\\d|2[2-8]|3[4-8]|4[24-8]|[57][3-8])\\d{6}", "\\d{7,8}", , , "11234567"],
-        [, , "(?:[37][01]|4[019]|51|64)\\d{6}", "\\d{8}", , , "31234567"],
-        [, , "80\\d{4,6}", "\\d{6,8}", , , "80123456"],
-        [, , "90\\d{4,6}|89[1-3]\\d{2,5}", "\\d{5,8}", , , "90123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "(?:59|8[1-3])\\d{6}", "\\d{8}", , , "59012345"], "SI", 386, "00", "0", , , "0", , , , [
-            [, "(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[12]|3[4-8]|4[24-8]|5[3-8]|7[3-8]"], "(0$1)", ""],
-            [, "([3-7]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[37][01]|4[019]|51|64"], "0$1", ""],
-            [, "([89][09])(\\d{3,6})", "$1 $2", ["[89][09]"], "0$1", ""],
-            [, "([58]\\d{2})(\\d{5})", "$1 $2", ["59|8[1-3]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1\\d|2[2-8]|3[4-8]|4[24-8]|[57][3-8])\\d{6}", "\\d{7,8}", , , "11234567"],
+    [, , "(?:[37][01]|4[019]|51|64)\\d{6}", "\\d{8}", , , "31234567"],
+    [, , "80\\d{4,6}", "\\d{6,8}", , , "80123456"],
+    [, , "90\\d{4,6}|89[1-3]\\d{2,5}", "\\d{5,8}", , , "90123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "(?:59|8[1-3])\\d{6}", "\\d{8}", , , "59012345"], "SI", 386, "00", "0", , , "0", , , , [
+    [, "(\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["[12]|3[4-8]|4[24-8]|5[3-8]|7[3-8]"], "(0$1)", ""],
+    [, "([3-7]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["[37][01]|4[019]|51|64"], "0$1", ""],
+    [, "([89][09])(\\d{3,6})", "$1 $2", ["[89][09]"], "0$1", ""],
+    [, "([58]\\d{2})(\\d{5})", "$1 $2", ["59|8[1-3]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SK: [, [, , "[2-689]\\d{8}", "\\d{9}"],
-        [, , "[2-5]\\d{8}", "\\d{9}", , , "212345678"],
-        [, , "9(?:0[1-8]|1[0-24-9]|4[0489])\\d{6}", "\\d{9}", , , "912123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "9(?:[78]\\d{7}|00\\d{6})", "\\d{9}", , , "900123456"],
-        [, , "8[5-9]\\d{7}", "\\d{9}", , , "850123456"],
-        [, , "NA", "NA"],
-        [, , "6(?:5[0-4]|9[0-6])\\d{6}", "\\d{9}", , , "690123456"], "SK", 421, "00", "0", , , "0", , , , [
-            [, "(2)(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3 $4", ["2"], "0$1", ""],
-            [, "([3-5]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1/$2 $3 $4", ["[3-5]"], "0$1", ""],
-            [, "([689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[689]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2-5]\\d{8}", "\\d{9}", , , "212345678"],
+    [, , "9(?:0[1-8]|1[0-24-9]|4[0489])\\d{6}", "\\d{9}", , , "912123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "9(?:[78]\\d{7}|00\\d{6})", "\\d{9}", , , "900123456"],
+    [, , "8[5-9]\\d{7}", "\\d{9}", , , "850123456"],
+    [, , "NA", "NA"],
+    [, , "6(?:5[0-4]|9[0-6])\\d{6}", "\\d{9}", , , "690123456"], "SK", 421, "00", "0", , , "0", , , , [
+    [, "(2)(\\d{3})(\\d{3})(\\d{2})", "$1/$2 $3 $4", ["2"], "0$1", ""],
+    [, "([3-5]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1/$2 $3 $4", ["[3-5]"], "0$1", ""],
+    [, "([689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[689]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SL: [, [, , "[2-578]\\d{7}", "\\d{6,8}"],
-        [, , "[235]2[2-4][2-9]\\d{4}", "\\d{6,8}", , , "22221234"],
-        [, , "(?:25|3[03]|44|5[056]|7[6-8]|88)[1-9]\\d{5}", "\\d{6,8}", , , "25123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SL", 232, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{6})", "$1 $2", , "(0$1)", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[235]2[2-4][2-9]\\d{4}", "\\d{6,8}", , , "22221234"],
+    [, , "(?:25|3[03]|44|5[056]|7[6-8]|88)[1-9]\\d{5}", "\\d{6,8}", , , "25123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SL", 232, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{6})", "$1 $2", , "(0$1)", ""]
+    ], , [, , "NA", "NA"]
     ],
     SM: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SM", 378, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SM", 378, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     SN: [, [, , "[37]\\d{8}", "\\d{9}"],
-        [, , "3(?:010|3(?:8[1-9]|9[2-9]))\\d{5}", "\\d{9}", , , "301012345"],
-        [, , "7(?:0[1256]0|6(?:1[23]|2[89]|3[3489]|4[6-9]|5[1-389]|6[6-9]|7[45]|8[3-8])|7(?:1[014-8]|2[0-7]|3[0-35-8]|4[0-6]|[56]\\d|7[0-589]|8[01]|9[0-6]))\\d{5}", "\\d{9}", , , "701012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "33301\\d{4}", "\\d{9}", , , "333011234"], "SN", 221, "00", , , , , , , , [
-            [, "(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "3(?:010|3(?:8[1-9]|9[2-9]))\\d{5}", "\\d{9}", , , "301012345"],
+    [, , "7(?:0[1256]0|6(?:1[23]|2[89]|3[3489]|4[6-9]|5[1-389]|6[6-9]|7[45]|8[3-8])|7(?:1[014-8]|2[0-7]|3[0-35-8]|4[0-6]|[56]\\d|7[0-589]|8[01]|9[0-6]))\\d{5}", "\\d{9}", , , "701012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "33301\\d{4}", "\\d{9}", , , "333011234"], "SN", 221, "00", , , , , , , , [
+    [, "(\\d{2})(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     SO: [, [, , "[13-59]\\d{6,7}", "\\d{7,8}"],
-        [, , "(?:5[57-9]|[134]\\d)\\d{5}", "\\d{7}", , , "5522010"],
-        [, , "(?:9[01]|15)\\d{6}", "\\d{8}", , , "90792024"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SO", 252, "00", , , , , , , , [
-            [, "([13-5])(\\d{6})", "$1 $2", ["[13-5]"], "", ""],
-            [, "([19]\\d)(\\d{6})", "$1 $2", ["[19]"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:5[57-9]|[134]\\d)\\d{5}", "\\d{7}", , , "5522010"],
+    [, , "(?:9[01]|15)\\d{6}", "\\d{8}", , , "90792024"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SO", 252, "00", , , , , , , , [
+    [, "([13-5])(\\d{6})", "$1 $2", ["[13-5]"], "", ""],
+    [, "([19]\\d)(\\d{6})", "$1 $2", ["[19]"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     SR: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SR", 597, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SR", 597, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     ST: [, [, , "[29]\\d{6}", "\\d{7}"],
-        [, , "22\\d{5}", "\\d{7}", , , "2221234"],
-        [, , "9[89]\\d{5}", "\\d{7}", , , "9812345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ST", 239, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "22\\d{5}", "\\d{7}", , , "2221234"],
+    [, , "9[89]\\d{5}", "\\d{7}", , , "9812345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ST", 239, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     SV: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SV", 503, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SV", 503, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     SY: [, [, , "[1-59]\\d{7,8}", "\\d{6,9}"],
-        [, , "(?:1(?:1\\d?|4\\d|[2356])|2[1-35]|3(?:1\\d|[34])|4[13]|5[1-3])\\d{6}", "\\d{6,9}", , , "112345678"],
-        [, , "9(?:3[23]|4[457]|55|6[67]|88|9[19])\\d{6}", "\\d{9}", , , "944567890"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SY", 963, "00", "0", , , "0", , , , [
-            [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-5]"], "0$1", ""],
-            [, "(9[3-689])(\\d{4})(\\d{3})", "$1 $2 $3", ["9"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1(?:1\\d?|4\\d|[2356])|2[1-35]|3(?:1\\d|[34])|4[13]|5[1-3])\\d{6}", "\\d{6,9}", , , "112345678"],
+    [, , "9(?:3[23]|4[457]|55|6[67]|88|9[19])\\d{6}", "\\d{9}", , , "944567890"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SY", 963, "00", "0", , , "0", , , , [
+    [, "(\\d{2})(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-5]"], "0$1", ""],
+    [, "(9[3-689])(\\d{4})(\\d{3})", "$1 $2 $3", ["9"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     SZ: [, [, , "[2-7]\\d{6,7}", "\\d{7,8}"],
-        [, , "2?(?:2(?:0[07]|[13]7|2[57])|3(?:0[34]|[1278]3|3[23]|[46][34])|(?:40[4-69]|16|2[12]|3[57]|[4578]2|67)|5(?:0[5-7]|1[6-9]|[23][78]|48|5[01]))\\d{4}", "\\d{7,8}", , , "2171234"],
-        [, , "(?:6|7[67])\\d{6}", "\\d{7,8}", , , "76123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "SZ", 268, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", ["[2-6]"], "", ""],
-            [, "(\\d{4})(\\d{4})", "$1 $2", ["7"], "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2?(?:2(?:0[07]|[13]7|2[57])|3(?:0[34]|[1278]3|3[23]|[46][34])|(?:40[4-69]|16|2[12]|3[57]|[4578]2|67)|5(?:0[5-7]|1[6-9]|[23][78]|48|5[01]))\\d{4}", "\\d{7,8}", , , "2171234"],
+    [, , "(?:6|7[67])\\d{6}", "\\d{7,8}", , , "76123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "SZ", 268, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", ["[2-6]"], "", ""],
+    [, "(\\d{4})(\\d{4})", "$1 $2", ["7"], "", ""]
+    ], , [, , "NA", "NA"]
     ],
     TC: [, [, , "[689]\\d{9}", "\\d{7,10}"],
-        [, , "649(?:712|9(?:4\\d|50))\\d{4}", "\\d{7,10}", , , "6497121234"],
-        [, , "649(?:2(?:3[12]|4[1-5])|3(?:3[1-39]|4[1-57])|4[34][12])\\d{4}", "\\d{10}", , , "6492311234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "64971[01]\\d{4}", "\\d{10}", , , "6497101234"], "TC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "649"],
+    [, , "649(?:712|9(?:4\\d|50))\\d{4}", "\\d{7,10}", , , "6497121234"],
+    [, , "649(?:2(?:3[12]|4[1-5])|3(?:3[1-39]|4[1-57])|4[34][12])\\d{4}", "\\d{10}", , , "6492311234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "64971[01]\\d{4}", "\\d{10}", , , "6497101234"], "TC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "649"],
     TD: [, [, , "[2679]\\d{7}", "\\d{8}"],
-        [, , "22(?:[3789]0|5[0-5]|6[89])\\d{4}", "\\d{8}", , , "22501234"],
-        [, , "(?:6(?:3[0-7]|6\\d)|77\\d|9(?:5[0-4]|9\\d))\\d{5}", "\\d{8}", , , "63012345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TD", 235, "00|16", , , , , , "00", , [
-            [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "22(?:[3789]0|5[0-5]|6[89])\\d{4}", "\\d{8}", , , "22501234"],
+    [, , "(?:6(?:3[0-7]|6\\d)|77\\d|9(?:5[0-4]|9\\d))\\d{5}", "\\d{8}", , , "63012345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TD", 235, "00|16", , , , , , "00", , [
+    [, "(\\d{2})(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     TF: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TF", 262, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TF", 262, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     TG: [, [, , "[02-9]\\d{6}", "\\d{7}"],
-        [, , "(?:2[2-7]|3[23]|44|55|66|77)\\d{5}", "\\d{7}", , , "2212345"],
-        [, , "(?:0[1-9]|7[56]|8[1-7]|9\\d)\\d{5}", "\\d{7}", , , "0112345"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TG", 228, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[2-7]|3[23]|44|55|66|77)\\d{5}", "\\d{7}", , , "2212345"],
+    [, , "(?:0[1-9]|7[56]|8[1-7]|9\\d)\\d{5}", "\\d{7}", , , "0112345"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TG", 228, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     TH: [, [, , "[2-8]\\d{7,8}|1\\d{9}", "\\d{8,10}"],
-        [, , "(?:2[1-9]|3[24-9]|4[2-5]|5[3-6]|7[3-7])\\d{6}", "\\d{8}", , , "21234567"],
-        [, , "8\\d{8}", "\\d{9}", , , "812345678"],
-        [, , "1800\\d{6}", "\\d{10}", , , "1800123456"],
-        [, , "1900\\d{6}", "\\d{10}", , , "1900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "60\\d{7}", "\\d{9}", , , "601234567"], "TH", 66, "00", "0", , , "0", , , , [
-            [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
-            [, "([3-7]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[3-7]"], "0$1", ""],
-            [, "(8)(\\d{4})(\\d{4})", "$1 $2 $3", ["8"], "0$1", ""],
-            [, "(1[89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[1-9]|3[24-9]|4[2-5]|5[3-6]|7[3-7])\\d{6}", "\\d{8}", , , "21234567"],
+    [, , "8\\d{8}", "\\d{9}", , , "812345678"],
+    [, , "1800\\d{6}", "\\d{10}", , , "1800123456"],
+    [, , "1900\\d{6}", "\\d{10}", , , "1900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "60\\d{7}", "\\d{9}", , , "601234567"], "TH", 66, "00", "0", , , "0", , , , [
+    [, "(2)(\\d{3})(\\d{4})", "$1 $2 $3", ["2"], "0$1", ""],
+    [, "([3-7]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[3-7]"], "0$1", ""],
+    [, "(8)(\\d{4})(\\d{4})", "$1 $2 $3", ["8"], "0$1", ""],
+    [, "(1[89]00)(\\d{3})(\\d{3})", "$1 $2 $3", ["1"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     TJ: [, [, , "[349]\\d{8}", "\\d{3,9}"],
-        [, , "(?:3(?:1[3-5]|2[245]|31|4[24-7]|5[25]|72)|4(?:46|74|87))\\d{6}", "\\d{3,9}", , , "372123456"],
-        [, , "9[0-35-9]\\d{7}", "\\d{9}", , , "917123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TJ", 992, "8~10", "8", , , "8", , , , [
-            [, "([349]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[34]7|91[78]"], "8$1", ""],
-            [, "([49]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[48]|9(?:19|[0235-9])"], "8$1", ""],
-            [, "(331700)(\\d)(\\d{2})", "$1 $2 $3", ["331", "3317", "33170", "331700"], "8$1", ""],
-            [, "(\\d{4})(\\d)(\\d{4})", "$1 $2 $3", ["3[1-5]", "3(?:[1245]|3(?:[02-9]|1[0-589]))"], "8$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3(?:1[3-5]|2[245]|31|4[24-7]|5[25]|72)|4(?:46|74|87))\\d{6}", "\\d{3,9}", , , "372123456"],
+    [, , "9[0-35-9]\\d{7}", "\\d{9}", , , "917123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TJ", 992, "8~10", "8", , , "8", , , , [
+    [, "([349]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[34]7|91[78]"], "8$1", ""],
+    [, "([49]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["4[48]|9(?:19|[0235-9])"], "8$1", ""],
+    [, "(331700)(\\d)(\\d{2})", "$1 $2 $3", ["331", "3317", "33170", "331700"], "8$1", ""],
+    [, "(\\d{4})(\\d)(\\d{4})", "$1 $2 $3", ["3[1-5]", "3(?:[1245]|3(?:[02-9]|1[0-589]))"], "8$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     TK: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TK", 690, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TK", 690, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     TL: [, [, , "[2-47-9]\\d{6}", "\\d{7}"],
-        [, , "(?:2[1-5]|3[1-9]|4[1-4])\\d{5}", "\\d{7}", , , "2112345"],
-        [, , "7[2-4]\\d{5}", "\\d{7}", , , "7212345"],
-        [, , "80\\d{5}", "\\d{7}", , , "8012345"],
-        [, , "90\\d{5}", "\\d{7}", , , "9012345"],
-        [, , "NA", "NA"],
-        [, , "70\\d{5}", "\\d{7}", , , "7012345"],
-        [, , "NA", "NA"], "TL", 670, "00", , , , , , , , [
-            [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2[1-5]|3[1-9]|4[1-4])\\d{5}", "\\d{7}", , , "2112345"],
+    [, , "7[2-4]\\d{5}", "\\d{7}", , , "7212345"],
+    [, , "80\\d{5}", "\\d{7}", , , "8012345"],
+    [, , "90\\d{5}", "\\d{7}", , , "9012345"],
+    [, , "NA", "NA"],
+    [, , "70\\d{5}", "\\d{7}", , , "7012345"],
+    [, , "NA", "NA"], "TL", 670, "00", , , , , , , , [
+    [, "(\\d{3})(\\d{4})", "$1 $2", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     TM: [, [, , "[1-6]\\d{7}", "\\d{8}"],
-        [, , "(?:12\\d|243|[3-5]22)\\d{5}", "\\d{8}", , , "12345678"],
-        [, , "6[6-8]\\d{6}", "\\d{8}", , , "66123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TM", 993, "8~10", "8", , , "8", , , , [
-            [, "([1-6]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "8 $1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:12\\d|243|[3-5]22)\\d{5}", "\\d{8}", , , "12345678"],
+    [, , "6[6-8]\\d{6}", "\\d{8}", , , "66123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TM", 993, "8~10", "8", , , "8", , , , [
+    [, "([1-6]\\d)(\\d{2})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "8 $1", ""]
+    ], , [, , "NA", "NA"]
     ],
     TN: [, [, , "[247-9]\\d{7}", "\\d{8}"],
-        [, , "7\\d{7}", "\\d{8}", , , "71234567"],
-        [, , "(?:2[0-7]|40|9\\d)\\d{6}", "\\d{8}", , , "20123456"],
-        [, , "NA", "NA"],
-        [, , "8[028]\\d{6}", "\\d{8}", , , "80123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TN", 216, "00", , , , , , , , [
-            [, "([247-9]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "7\\d{7}", "\\d{8}", , , "71234567"],
+    [, , "(?:2[0-7]|40|9\\d)\\d{6}", "\\d{8}", , , "20123456"],
+    [, , "NA", "NA"],
+    [, , "8[028]\\d{6}", "\\d{8}", , , "80123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TN", 216, "00", , , , , , , , [
+    [, "([247-9]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     TO: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TO", 676, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TO", 676, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     TR: [, [, , "[2-589]\\d{9}", "\\d{10}"],
-        [, , "[2-4]\\d{9}|850\\d{7}", "\\d{10}", , , "2123456789"],
-        [, , "5\\d{9}", "\\d{10}", , , "5123456789"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TR", 90, "00", "0", , , "0", , , , [
-            [, "([2-589]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2-4]\\d{9}|850\\d{7}", "\\d{10}", , , "2123456789"],
+    [, , "5\\d{9}", "\\d{10}", , , "5123456789"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TR", 90, "00", "0", , , "0", , , , [
+    [, "([2-589]\\d{2})(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     TT: [, [, , "[89]\\d{9}", "\\d{7,10}"],
-        [, , "868(?:2(?:01|2[1-4])|6(?:1[4-6]|2[1-9]|[3-6]\\d|7[0-79]|9[0-8])|82[12])\\d{4}", "\\d{7,10}", , , "8682211234"],
-        [, , "868(?:29\\d|3(?:0[1-9]|1[02-9]|[2-9]\\d)|4(?:[679]\\d|8[0-4])|6(?:20|78|8\\d)|7(?:1[02-9]|[2-9]\\d))\\d{4}", "\\d{10}", , , "8682911234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TT", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "868"],
+    [, , "868(?:2(?:01|2[1-4])|6(?:1[4-6]|2[1-9]|[3-6]\\d|7[0-79]|9[0-8])|82[12])\\d{4}", "\\d{7,10}", , , "8682211234"],
+    [, , "868(?:29\\d|3(?:0[1-9]|1[02-9]|[2-9]\\d)|4(?:[679]\\d|8[0-4])|6(?:20|78|8\\d)|7(?:1[02-9]|[2-9]\\d))\\d{4}", "\\d{10}", , , "8682911234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TT", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "868"],
     TV: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TV", 688, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TV", 688, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     TW: [, [, , "[2-9]\\d{7,8}", "\\d{8,9}"],
-        [, , "[2-8]\\d{7,8}", "\\d{8,9}", , , "21234567"],
-        [, , "9\\d{8}", "\\d{9}", , , "912345678"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "900\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "TW", 886, "0(?:0[25679]|19)", "0", "#", , "0", , , , [
-            [, "([2-8])(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[2-7]|8[1-9]"], "0$1", ""],
-            [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["80|9"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "[2-8]\\d{7,8}", "\\d{8,9}", , , "21234567"],
+    [, , "9\\d{8}", "\\d{9}", , , "912345678"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "900\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "TW", 886, "0(?:0[25679]|19)", "0", "#", , "0", , , , [
+    [, "([2-8])(\\d{3,4})(\\d{4})", "$1 $2 $3", ["[2-7]|8[1-9]"], "0$1", ""],
+    [, "([89]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["80|9"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     TZ: [, [, , "\\d{9}", "\\d{7,9}"],
-        [, , "2[2-8]\\d{7}", "\\d{7,9}", , , "222345678"],
-        [, , "(?:6[158]|7[1-9])(?:\\d{7})", "\\d{9}", , , "612345678"],
-        [, , "80[08]\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "90\\d{7}", "\\d{9}", , , "900123456"],
-        [, , "8(?:40|6[01])\\d{6}", "\\d{9}", , , "840123456"],
-        [, , "NA", "NA"],
-        [, , "41\\d{7}", "\\d{9}", , , "412345678"], "TZ", 255, "00[056]", "0", , , "0", , , , [
-            [, "([24]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1", ""],
-            [, "([67]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1", ""],
-            [, "([89]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "2[2-8]\\d{7}", "\\d{7,9}", , , "222345678"],
+    [, , "(?:6[158]|7[1-9])(?:\\d{7})", "\\d{9}", , , "612345678"],
+    [, , "80[08]\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "90\\d{7}", "\\d{9}", , , "900123456"],
+    [, , "8(?:40|6[01])\\d{6}", "\\d{9}", , , "840123456"],
+    [, , "NA", "NA"],
+    [, , "41\\d{7}", "\\d{9}", , , "412345678"], "TZ", 255, "00[056]", "0", , , "0", , , , [
+    [, "([24]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["[24]"], "0$1", ""],
+    [, "([67]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["[67]"], "0$1", ""],
+    [, "([89]\\d{2})(\\d{2})(\\d{4})", "$1 $2 $3", ["[89]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     UA: [, [, , "[3-689]\\d{8}", "\\d{5,9}"],
-        [, , "(?:3[1-8]|4[13-8]|5[1-7]|6[12459])\\d{7}", "\\d{5,9}", , , "311234567"],
-        [, , "(?:39|50|6[36-8]|9[1-9])\\d{7}", "\\d{9}", , , "391234567"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "900\\d{6}", "\\d{9}", , , "900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "UA", 380, "0~0", "0", , , "0", , , , [
-            [, "([3-69]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["39|4(?:[45][0-5]|87)|5(?:0|6[37]|7[37])|6[36-8]|9[1-9]", "39|4(?:[45][0-5]|87)|5(?:0|6(?:3[14-7]|7)|7[37])|6[36-8]|9[1-9]"], "0$1", ""],
-            [, "([3-689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["3[1-8]2|4[1378]2|5(?:[12457]2|6[24])|6(?:[49]2|[12][29]|5[24])|8|90", "3(?:[1-46-8]2[013-9]|52)|4[1378]2|5(?:[12457]2|6[24])|6(?:[49]2|[12][29]|5[24])|8|90"], "0$1", ""],
-            [, "([3-6]\\d{3})(\\d{5})", "$1 $2", ["3(?:5[013-9]|[1-46-8])|4(?:[137][013-9]|6|[45][6-9]|8[4-6])|5(?:[1245][013-9]|6[0135-9]|3|7[4-6])|6(?:[49][013-9]|5[0135-9]|[12][13-8])", "3(?:5[013-9]|[1-46-8](?:22|[013-9]))|4(?:[137][013-9]|6|[45][6-9]|8[4-6])|5(?:[1245][013-9]|6(?:3[02389]|[015689])|3|7[4-6])|6(?:[49][013-9]|5[0135-9]|[12][13-8])"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:3[1-8]|4[13-8]|5[1-7]|6[12459])\\d{7}", "\\d{5,9}", , , "311234567"],
+    [, , "(?:39|50|6[36-8]|9[1-9])\\d{7}", "\\d{9}", , , "391234567"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "900\\d{6}", "\\d{9}", , , "900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "UA", 380, "0~0", "0", , , "0", , , , [
+    [, "([3-69]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["39|4(?:[45][0-5]|87)|5(?:0|6[37]|7[37])|6[36-8]|9[1-9]", "39|4(?:[45][0-5]|87)|5(?:0|6(?:3[14-7]|7)|7[37])|6[36-8]|9[1-9]"], "0$1", ""],
+    [, "([3-689]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["3[1-8]2|4[1378]2|5(?:[12457]2|6[24])|6(?:[49]2|[12][29]|5[24])|8|90", "3(?:[1-46-8]2[013-9]|52)|4[1378]2|5(?:[12457]2|6[24])|6(?:[49]2|[12][29]|5[24])|8|90"], "0$1", ""],
+    [, "([3-6]\\d{3})(\\d{5})", "$1 $2", ["3(?:5[013-9]|[1-46-8])|4(?:[137][013-9]|6|[45][6-9]|8[4-6])|5(?:[1245][013-9]|6[0135-9]|3|7[4-6])|6(?:[49][013-9]|5[0135-9]|[12][13-8])", "3(?:5[013-9]|[1-46-8](?:22|[013-9]))|4(?:[137][013-9]|6|[45][6-9]|8[4-6])|5(?:[1245][013-9]|6(?:3[02389]|[015689])|3|7[4-6])|6(?:[49][013-9]|5[0135-9]|[12][13-8])"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     UG: [, [, , "\\d{9}", "\\d{5,9}"],
-        [, , "3\\d{8}|4(?:[1-6]\\d|7[136]|8[1356]|96)\\d{6}|20(?:0\\d|24)\\d{5}", "\\d{5,9}", , , "312345678"],
-        [, , "7(?:[1578]\\d|0[0-4])\\d{6}", "\\d{9}", , , "712345678"],
-        [, , "800[123]\\d{5}", "\\d{9}", , , "800123456"],
-        [, , "90[123]\\d{6}", "\\d{9}", , , "901123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "UG", 256, "00[057]", "0", , , "0", , , , [
-            [, "([247-9]\\d{2})(\\d{6})", "$1 $2", ["[7-9]|200|4(?:6[45]|[7-9])"], "0$1", ""],
-            [, "([34]\\d)(\\d{7})", "$1 $2", ["3|4(?:[1-5]|6[0-36-9])"], "0$1", ""],
-            [, "(2024)(\\d{5})", "$1 $2", ["202"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "3\\d{8}|4(?:[1-6]\\d|7[136]|8[1356]|96)\\d{6}|20(?:0\\d|24)\\d{5}", "\\d{5,9}", , , "312345678"],
+    [, , "7(?:[1578]\\d|0[0-4])\\d{6}", "\\d{9}", , , "712345678"],
+    [, , "800[123]\\d{5}", "\\d{9}", , , "800123456"],
+    [, , "90[123]\\d{6}", "\\d{9}", , , "901123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "UG", 256, "00[057]", "0", , , "0", , , , [
+    [, "([247-9]\\d{2})(\\d{6})", "$1 $2", ["[7-9]|200|4(?:6[45]|[7-9])"], "0$1", ""],
+    [, "([34]\\d)(\\d{7})", "$1 $2", ["3|4(?:[1-5]|6[0-36-9])"], "0$1", ""],
+    [, "(2024)(\\d{5})", "$1 $2", ["202"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     US: [, [, , "[2-9]\\d{9}", "\\d{7,10}"],
-        [, , "(?:2(?:0[1-35-9]|1[02-9]|2[4589]|3[149]|4[08]|5[1-46]|6[0279]|7[06]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[014679]|47|5[12]|6[01]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|69|7[089]|8[04])|5(?:0[1-57-9]|1[0235-8]|[23]0|4[01]|5[19]|6[1-37]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[036]|3[016]|4[16]|5[017]|6[0-29]|78|8[12])|7(?:0[1-46-8]|1[2-9]|2[047]|3[124]|4[07]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-25]|4[3578]|5[06-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[058]|3[167]|4[0179]|5[1246]|7[0-3589]|8[059]))[2-9]\\d{6}", "\\d{7,10}", , , "2012345678"],
-        [, , "(?:2(?:0[1-35-9]|1[02-9]|2[4589]|3[149]|4[08]|5[1-46]|6[0279]|7[06]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[014679]|47|5[12]|6[01]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|69|7[089]|8[04])|5(?:0[1-57-9]|1[0235-8]|[23]0|4[01]|5[19]|6[1-37]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[036]|3[016]|4[16]|5[017]|6[0-29]|78|8[12])|7(?:0[1-46-8]|1[2-9]|2[047]|3[124]|4[07]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-25]|4[3578]|5[06-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[058]|3[167]|4[0179]|5[1246]|7[0-3589]|8[059]))[2-9]\\d{6}", "\\d{7,10}", , , "2012345678"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "US", 1, "011", "1", , , "1", , , 1, [
-            [, "(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3", , "", ""],
-            [, "(\\d{3})(\\d{4})", "$1-$2", , "", ""]
-        ],
-        [
-            [, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", , , ""]
-        ],
-        [, , "NA", "NA"], 1],
+    [, , "(?:2(?:0[1-35-9]|1[02-9]|2[4589]|3[149]|4[08]|5[1-46]|6[0279]|7[06]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[014679]|47|5[12]|6[01]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|69|7[089]|8[04])|5(?:0[1-57-9]|1[0235-8]|[23]0|4[01]|5[19]|6[1-37]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[036]|3[016]|4[16]|5[017]|6[0-29]|78|8[12])|7(?:0[1-46-8]|1[2-9]|2[047]|3[124]|4[07]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-25]|4[3578]|5[06-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[058]|3[167]|4[0179]|5[1246]|7[0-3589]|8[059]))[2-9]\\d{6}", "\\d{7,10}", , , "2012345678"],
+    [, , "(?:2(?:0[1-35-9]|1[02-9]|2[4589]|3[149]|4[08]|5[1-46]|6[0279]|7[06]|8[13])|3(?:0[1-57-9]|1[02-9]|2[0135]|3[014679]|47|5[12]|6[01]|8[056])|4(?:0[124-9]|1[02-579]|2[3-5]|3[0245]|4[0235]|69|7[089]|8[04])|5(?:0[1-57-9]|1[0235-8]|[23]0|4[01]|5[19]|6[1-37]|7[013-5]|8[056])|6(?:0[1-35-9]|1[024-9]|2[036]|3[016]|4[16]|5[017]|6[0-29]|78|8[12])|7(?:0[1-46-8]|1[2-9]|2[047]|3[124]|4[07]|5[47]|6[02359]|7[02-59]|8[156])|8(?:0[1-68]|1[02-8]|28|3[0-25]|4[3578]|5[06-9]|6[02-5]|7[028])|9(?:0[1346-9]|1[02-9]|2[058]|3[167]|4[0179]|5[1246]|7[0-3589]|8[059]))[2-9]\\d{6}", "\\d{7,10}", , , "2012345678"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "US", 1, "011", "1", , , "1", , , 1, [
+    [, "(\\d{3})(\\d{3})(\\d{4})", "($1) $2-$3", , "", ""],
+    [, "(\\d{3})(\\d{4})", "$1-$2", , "", ""]
+    ],
+    [
+    [, "(\\d{3})(\\d{3})(\\d{4})", "$1-$2-$3", , , ""]
+    ],
+    [, , "NA", "NA"], 1],
     UY: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "UY", 598, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "UY", 598, "00", "0", , , "0", , , 1, , , [, , "NA", "NA"]
     ],
     UZ: [, [, , "[679]\\d{8}", "\\d{7,9}"],
-        [, , "(?:6[125679]|7[0-69])\\d{7}", "\\d{7,9}", , , "612345678"],
-        [, , "9[0-57-9]\\d{7}", "\\d{7,9}", , , "912345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "UZ", 998, "8~10", "8", , , "8", , , , [
-            [, "([679]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "8$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:6[125679]|7[0-69])\\d{7}", "\\d{7,9}", , , "612345678"],
+    [, , "9[0-57-9]\\d{7}", "\\d{7,9}", , , "912345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "UZ", 998, "8~10", "8", , , "8", , , , [
+    [, "([679]\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", , "8$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     VA: [, [, , "06\\d{8}", "\\d{10}"],
-        [, , "06698\\d{5}", "\\d{10}", , , "0669812345"],
-        [, , "N/A", "N/A"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VA", 379, "00", , , , , , , , [
-            [, "(06)(\\d{4})(\\d{4})", "$1 $2 $3", , "", ""]
-        ], , [, , "NA", "NA"]
+    [, , "06698\\d{5}", "\\d{10}", , , "0669812345"],
+    [, , "N/A", "N/A"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VA", 379, "00", , , , , , , , [
+    [, "(06)(\\d{4})(\\d{4})", "$1 $2 $3", , "", ""]
+    ], , [, , "NA", "NA"]
     ],
     VC: [, [, , "(?:784|8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}"],
-        [, , "784(?:266|3(?:6[6-9]|7\\d|8[0-24-6])|4(?:38|5[0-36-8]|8\\d|9[01])|555|638|784)\\d{4}", "\\d{7,10}", , , "7842661234"],
-        [, , "784(?:4(?:3[0-24]|5[45]|9[2-5])|5(?:2[6-9]|3[0-3]|93))\\d{4}", "\\d{10}", , , "7844301234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "784"],
+    [, , "784(?:266|3(?:6[6-9]|7\\d|8[0-24-6])|4(?:38|5[0-36-8]|8\\d|9[01])|555|638|784)\\d{4}", "\\d{7,10}", , , "7842661234"],
+    [, , "784(?:4(?:3[0-24]|5[45]|9[2-5])|5(?:2[6-9]|3[0-3]|93))\\d{4}", "\\d{10}", , , "7844301234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VC", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "784"],
     VE: [, [, , "[24589]\\d{9}", "\\d{7,10}"],
-        [, , "(?:2(?:12|3[457-9]|[58][1-9]|[467]\\d|9[1-6])|50[01])\\d{7}", "\\d{7,10}", , , "2121234567"],
-        [, , "4(?:1[24-8]|2[46])\\d{7}", "\\d{10}", , , "4121234567"],
-        [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
-        [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VE", 58, "00", "0", , , "1\\d{2}|0", , , , [
-            [, "(\\d{3})(\\d{7})", "$1-$2", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:12|3[457-9]|[58][1-9]|[467]\\d|9[1-6])|50[01])\\d{7}", "\\d{7,10}", , , "2121234567"],
+    [, , "4(?:1[24-8]|2[46])\\d{7}", "\\d{10}", , , "4121234567"],
+    [, , "800\\d{7}", "\\d{10}", , , "8001234567"],
+    [, , "900\\d{7}", "\\d{10}", , , "9001234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VE", 58, "00", "0", , , "1\\d{2}|0", , , , [
+    [, "(\\d{3})(\\d{7})", "$1-$2", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     VG: [, [, , "(?:284|8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}"],
-        [, , "284(?:(?:229|4(?:46|9[45])|8(?:52|6[459]))\\d{4}|496[0-5]\\d{3})", "\\d{7,10}", , , "2842291234"],
-        [, , "284(?:(?:30[0-3]|4(?:4[0-5]|68|99)|54[0-4])\\d{4}|496[6-9]\\d{3})", "\\d{10}", , , "2843001234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VG", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "284"],
+    [, , "284(?:(?:229|4(?:46|9[45])|8(?:52|6[459]))\\d{4}|496[0-5]\\d{3})", "\\d{7,10}", , , "2842291234"],
+    [, , "284(?:(?:30[0-3]|4(?:4[0-5]|68|99)|54[0-4])\\d{4}|496[6-9]\\d{3})", "\\d{10}", , , "2843001234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VG", 1, "011", "1", , , "1", , , , , , [, , "NA", "NA"], , "284"],
     VI: [, [, , "340(?:6[49]2|7[17]\\d)\\d{4}|(?:8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}"],
-        [, , "340(?:6[49]2|7[17]\\d)\\d{4}|(?:8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}", , , "3406421234"],
-        [, , "340(?:6[49]2|7[17]\\d)\\d{4}|(?:8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}", , , "3406421234"],
-        [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
-        [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VI", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "340"],
+    [, , "340(?:6[49]2|7[17]\\d)\\d{4}|(?:8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}", , , "3406421234"],
+    [, , "340(?:6[49]2|7[17]\\d)\\d{4}|(?:8(?:00|66|77|88)|900)[2-9]\\d{6}", "\\d{7,10}", , , "3406421234"],
+    [, , "8(?:00|55|66|77|88)[2-9]\\d{6}", "\\d{10}", , , "8002345678"],
+    [, , "900[2-9]\\d{6}", "\\d{10}", , , "9002345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VI", 1, "011", "1", , , "1", , , 1, , , [, , "NA", "NA"], , "340"],
     VN: [, [, , "8\\d{5,8}|[1-79]\\d{7,9}", "\\d{7,10}"],
-        [, , "(?:2(?:[025-79]|1[0189]|[348][01])|3(?:[0136-9]|[25][01])|[48]\\d|5(?:[01][01]|[2-9])|6(?:[0-46-8]|5[01])|7(?:[02-79]|[18][01]))\\d{7}|69\\d{5,6}|80\\d{5}", "\\d{7,10}", , , "2101234567"],
-        [, , "(?:9\\d|1(?:2[1-35-9]|6[3-9]|99))\\d{7}", "\\d{9,10}", , , "912345678"],
-        [, , "1800\\d{4,6}", "\\d{8,10}", , , "1800123456"],
-        [, , "1900\\d{4,6}", "\\d{8,10}", , , "1900123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VN", 84, "00", "0", , , "0", , , , [
-            [, "([48])(\\d{4})(\\d{4})", "$1 $2 $3", ["[48]"], "0$1", ""],
-            [, "([235-7]\\d)(\\d{4})(\\d{3})", "$1 $2 $3", ["2[025-79]|3[0136-9]|5[2-9]|6[0-46-9]|7[02-79]"], "0$1", ""],
-            [, "(80)(\\d{5})", "$1 $2", ["80"], "0$1", ""],
-            [, "(69\\d)(\\d{4,5})", "$1 $2", ["69"], "0$1", ""],
-            [, "([235-7]\\d{2})(\\d{4})(\\d{3})", "$1 $2 $3", ["2[1348]|3[25]|5[01]|65|7[18]"], "0$1", ""],
-            [, "(9\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1", ""],
-            [, "(1[269]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:[26]|99)"], "0$1", ""],
-            [, "(1[89]00)(\\d{4,6})", "$1 $2", ["1(?:8|90)"], "$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:2(?:[025-79]|1[0189]|[348][01])|3(?:[0136-9]|[25][01])|[48]\\d|5(?:[01][01]|[2-9])|6(?:[0-46-8]|5[01])|7(?:[02-79]|[18][01]))\\d{7}|69\\d{5,6}|80\\d{5}", "\\d{7,10}", , , "2101234567"],
+    [, , "(?:9\\d|1(?:2[1-35-9]|6[3-9]|99))\\d{7}", "\\d{9,10}", , , "912345678"],
+    [, , "1800\\d{4,6}", "\\d{8,10}", , , "1800123456"],
+    [, , "1900\\d{4,6}", "\\d{8,10}", , , "1900123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VN", 84, "00", "0", , , "0", , , , [
+    [, "([48])(\\d{4})(\\d{4})", "$1 $2 $3", ["[48]"], "0$1", ""],
+    [, "([235-7]\\d)(\\d{4})(\\d{3})", "$1 $2 $3", ["2[025-79]|3[0136-9]|5[2-9]|6[0-46-9]|7[02-79]"], "0$1", ""],
+    [, "(80)(\\d{5})", "$1 $2", ["80"], "0$1", ""],
+    [, "(69\\d)(\\d{4,5})", "$1 $2", ["69"], "0$1", ""],
+    [, "([235-7]\\d{2})(\\d{4})(\\d{3})", "$1 $2 $3", ["2[1348]|3[25]|5[01]|65|7[18]"], "0$1", ""],
+    [, "(9\\d)(\\d{3})(\\d{2})(\\d{2})", "$1 $2 $3 $4", ["9"], "0$1", ""],
+    [, "(1[269]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", ["1(?:[26]|99)"], "0$1", ""],
+    [, "(1[89]00)(\\d{4,6})", "$1 $2", ["1(?:8|90)"], "$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     VU: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "VU", 678, "00", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "VU", 678, "00", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     WF: [, [],
-        [],
-        [],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "WF", 681, "19", , , , , , , 1, , , [, , "NA", "NA"]
+    [],
+    [],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "WF", 681, "19", , , , , , , 1, , , [, , "NA", "NA"]
     ],
     WS: [, [, , "[2-8]\\d{4,6}", "\\d{5,7}"],
-        [, , "(?:[2-5]\\d|6[1-9]|840\\d)\\d{3}", "\\d{5,7}", , , "22123"],
-        [, , "(?:60|7[25-7]\\d)\\d{4}", "\\d{6,7}", , , "601234"],
-        [, , "800\\d{3}", "\\d{6}", , , "800123"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "WS", 685, "0", "0", , , "0", , , , [
-            [, "(8[04]0)(\\d{3,4})", "$1 $2", ["8[04]0"], "0$1", ""],
-            [, "(7[25-7])(\\d{5})", "$1 $2", ["7[25-7]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:[2-5]\\d|6[1-9]|840\\d)\\d{3}", "\\d{5,7}", , , "22123"],
+    [, , "(?:60|7[25-7]\\d)\\d{4}", "\\d{6,7}", , , "601234"],
+    [, , "800\\d{3}", "\\d{6}", , , "800123"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "WS", 685, "0", "0", , , "0", , , , [
+    [, "(8[04]0)(\\d{3,4})", "$1 $2", ["8[04]0"], "0$1", ""],
+    [, "(7[25-7])(\\d{5})", "$1 $2", ["7[25-7]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     YE: [, [, , "[1-7]\\d{6,8}", "\\d{6,9}"],
-        [, , "(?:1(?:7\\d|[2-68])|2[2-68]|3[2358]|4[2-58]|5[2-6]|6[3-58]|7[24-68])\\d{5}", "\\d{6,8}", , , "1234567"],
-        [, , "7[137]\\d{7}", "\\d{9}", , , "712345678"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "YE", 967, "00", "0", , , "0", , , , [
-            [, "([1-7])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7[24-68]"], "0$1", ""],
-            [, "(7[137]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["7[137]"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1(?:7\\d|[2-68])|2[2-68]|3[2358]|4[2-58]|5[2-6]|6[3-58]|7[24-68])\\d{5}", "\\d{6,8}", , , "1234567"],
+    [, , "7[137]\\d{7}", "\\d{9}", , , "712345678"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "YE", 967, "00", "0", , , "0", , , , [
+    [, "([1-7])(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[1-6]|7[24-68]"], "0$1", ""],
+    [, "(7[137]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["7[137]"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     YT: [, [, , "[268]\\d{8}", "\\d{9}"],
-        [, , "2696[0-4]\\d{4}", "\\d{9}", , , "269601234"],
-        [, , "639\\d{6}", "\\d{9}", , , "639123456"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "YT", 262, "00", "0", , , "0", , , , , , [, , "NA", "NA"], , "269|63"],
+    [, , "2696[0-4]\\d{4}", "\\d{9}", , , "269601234"],
+    [, , "639\\d{6}", "\\d{9}", , , "639123456"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "YT", 262, "00", "0", , , "0", , , , , , [, , "NA", "NA"], , "269|63"],
     ZA: [, [, , "\\d{9}", "\\d{8,9}"],
-        [, , "(?:1[0-8]|2[1-478]|3[1-69]|4\\d|5[1346-8])\\d{7}", "\\d{8,9}", , , "101234567"],
-        [, , "(?:7[1-4689]|8[1-5789])\\d{7}", "\\d{9}", , , "711234567"],
-        [, , "80\\d{7}", "\\d{9}", , , "801234567"],
-        [, , "86\\d{7}", "\\d{9}", , , "861234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "87\\d{7}", "\\d{9}", , , "871234567"], "ZA", 27, "00", "0", , , "0", , , , [
-            [, "([1-578]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[0-8]|2[1-478]|3[1-69]|4\\d|5[1346-8])\\d{7}", "\\d{8,9}", , , "101234567"],
+    [, , "(?:7[1-4689]|8[1-5789])\\d{7}", "\\d{9}", , , "711234567"],
+    [, , "80\\d{7}", "\\d{9}", , , "801234567"],
+    [, , "86\\d{7}", "\\d{9}", , , "861234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "87\\d{7}", "\\d{9}", , , "871234567"], "ZA", 27, "00", "0", , , "0", , , , [
+    [, "([1-578]\\d)(\\d{3})(\\d{4})", "$1 $2 $3", , "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ZM: [, [, , "[289]\\d{8}", "\\d{9}"],
-        [, , "21[1-8]\\d{6}", "\\d{9}", , , "211234567"],
-        [, , "9(?:55|6[4-9]|7[4-9])\\d{6}", "\\d{9}", , , "955123456"],
-        [, , "800\\d{6}", "\\d{9}", , , "800123456"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"], "ZM", 260, "00", "0", , , "0", , , , [
-            [, "([29]\\d)(\\d{7})", "$1 $2", ["[29]"], "0$1", ""],
-            [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "21[1-8]\\d{6}", "\\d{9}", , , "211234567"],
+    [, , "9(?:55|6[4-9]|7[4-9])\\d{6}", "\\d{9}", , , "955123456"],
+    [, , "800\\d{6}", "\\d{9}", , , "800123456"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"], "ZM", 260, "00", "0", , , "0", , , , [
+    [, "([29]\\d)(\\d{7})", "$1 $2", ["[29]"], "0$1", ""],
+    [, "(800)(\\d{3})(\\d{3})", "$1 $2 $3", ["8"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ],
     ZW: [, [, , "2(?:[012457-9]\\d{3,8}|6\\d{3,6})|[13-79]\\d{4,8}|86\\d{8}", "\\d{3,10}"],
-        [, , "(?:1[3-9]|2(?:0[45]|[16]|2[28]|[49]8?|58[23]|7[246]|8[1346-9])|3(?:08?|17?|3[78]|[2456]|7[1569]|8[379])|5(?:[07-9]|1[78]|483|5(?:7?|8))|6(?:0|28|37?|[45][68][78]|98?)|848)\\d{3,6}|(?:2(?:27|5|7[135789]|8[25])|3[39]|5[1-46]|6[126-8])\\d{4,6}|2(?:0|70)\\d{5,6}|(?:4\\d|9[2-8])\\d{4,7}", "\\d{3,10}", , , "1312345"],
-        [, , "(?:[19]1|7[13])\\d{6,7}", "\\d{8,9}", , , "911234567"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "NA", "NA"],
-        [, , "86(?:1[12]|22|30|44|8[367]|99)\\d{6}", "\\d{10}", , , "8686123456"], "ZW", 263, "00", "0", , , "0", , , , [
-            [, "([49])(\\d{3})(\\d{2,5})", "$1 $2 $3", ["4|9[2-9]"], "0$1", ""],
-            [, "([179]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[19]1|7"], "0$1", ""],
-            [, "([1-356]\\d)(\\d{3,5})", "$1 $2", ["1[3-9]|2(?:[1-469]|0[0-35-9]|[45][0-79])|3(?:0[0-79]|1[0-689]|[24-69]|3[0-69])|5(?:[02-46-9]|[15][0-69])|6(?:[0145]|[29][0-79]|3[0-689]|[68][0-69])"], "0$1", ""],
-            [, "([1-356]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[3-9]|2(?:[1-469]|0[0-35-9]|[45][0-79])|3(?:0[0-79]|1[0-689]|[24-69]|3[0-69])|5(?:[02-46-9]|[15][0-69])|6(?:[0145]|[29][0-79]|3[0-689]|[68][0-69])"], "0$1", ""],
-            [, "([2356]\\d{2})(\\d{3,5})", "$1 $2", ["2(?:[278]|0[45]|48)|3(?:08|17|3[78]|[78])|5[15][78]|6(?:[29]8|37|[68][78])"], "0$1", ""],
-            [, "([2356]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2(?:[278]|0[45]|48)|3(?:08|17|3[78]|[78])|5[15][78]|6(?:[29]8|37|[68][78])"], "0$1", ""],
-            [, "([25]\\d{3})(\\d{3,5})", "$1 $2", ["(?:25|54)8", "258[23]|5483"], "0$1", ""],
-            [, "([25]\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["(?:25|54)8", "258[23]|5483"], "0$1", ""],
-            [, "(8\\d{3})(\\d{6})", "$1 $2", ["8"], "0$1", ""]
-        ], , [, , "NA", "NA"]
+    [, , "(?:1[3-9]|2(?:0[45]|[16]|2[28]|[49]8?|58[23]|7[246]|8[1346-9])|3(?:08?|17?|3[78]|[2456]|7[1569]|8[379])|5(?:[07-9]|1[78]|483|5(?:7?|8))|6(?:0|28|37?|[45][68][78]|98?)|848)\\d{3,6}|(?:2(?:27|5|7[135789]|8[25])|3[39]|5[1-46]|6[126-8])\\d{4,6}|2(?:0|70)\\d{5,6}|(?:4\\d|9[2-8])\\d{4,7}", "\\d{3,10}", , , "1312345"],
+    [, , "(?:[19]1|7[13])\\d{6,7}", "\\d{8,9}", , , "911234567"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "NA", "NA"],
+    [, , "86(?:1[12]|22|30|44|8[367]|99)\\d{6}", "\\d{10}", , , "8686123456"], "ZW", 263, "00", "0", , , "0", , , , [
+    [, "([49])(\\d{3})(\\d{2,5})", "$1 $2 $3", ["4|9[2-9]"], "0$1", ""],
+    [, "([179]\\d)(\\d{3})(\\d{3,4})", "$1 $2 $3", ["[19]1|7"], "0$1", ""],
+    [, "([1-356]\\d)(\\d{3,5})", "$1 $2", ["1[3-9]|2(?:[1-469]|0[0-35-9]|[45][0-79])|3(?:0[0-79]|1[0-689]|[24-69]|3[0-69])|5(?:[02-46-9]|[15][0-69])|6(?:[0145]|[29][0-79]|3[0-689]|[68][0-69])"], "0$1", ""],
+    [, "([1-356]\\d)(\\d{3})(\\d{3})", "$1 $2 $3", ["1[3-9]|2(?:[1-469]|0[0-35-9]|[45][0-79])|3(?:0[0-79]|1[0-689]|[24-69]|3[0-69])|5(?:[02-46-9]|[15][0-69])|6(?:[0145]|[29][0-79]|3[0-689]|[68][0-69])"], "0$1", ""],
+    [, "([2356]\\d{2})(\\d{3,5})", "$1 $2", ["2(?:[278]|0[45]|48)|3(?:08|17|3[78]|[78])|5[15][78]|6(?:[29]8|37|[68][78])"], "0$1", ""],
+    [, "([2356]\\d{2})(\\d{3})(\\d{3})", "$1 $2 $3", ["2(?:[278]|0[45]|48)|3(?:08|17|3[78]|[78])|5[15][78]|6(?:[29]8|37|[68][78])"], "0$1", ""],
+    [, "([25]\\d{3})(\\d{3,5})", "$1 $2", ["(?:25|54)8", "258[23]|5483"], "0$1", ""],
+    [, "([25]\\d{3})(\\d{3})(\\d{3})", "$1 $2 $3", ["(?:25|54)8", "258[23]|5483"], "0$1", ""],
+    [, "(8\\d{3})(\\d{6})", "$1 $2", ["8"], "0$1", ""]
+    ], , [, , "NA", "NA"]
     ]
 };
 goog.proto2.Serializer = function () {};
@@ -6523,7 +6523,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.isValidRegionCode_ = function (b) {
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.format = function (h, g) {
     var l = h.getCountryCodeOrDefault(),
-        k = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(h);
+    k = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(h);
     if (g == i18n.phonenumbers.PhoneNumberFormat.E164) {
         return this.formatNumberByFormat_(l, i18n.phonenumbers.PhoneNumberFormat.E164, k, "")
     }
@@ -6537,14 +6537,14 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.format = function (h, g) {
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.formatByPattern = function (x, w, v) {
     var u = x.getCountryCodeOrDefault(),
-        t = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(x),
-        s = this.getRegionCodeForCountryCode(u);
+    t = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(x),
+    s = this.getRegionCodeForCountryCode(u);
     if (!this.isValidRegionCode_(s)) {
         return t
     }
     for (var r = [], q = v.length, p = 0; p < q; ++p) {
         var o = v[p],
-            m = o.getNationalPrefixFormattingRuleOrDefault();
+        m = o.getNationalPrefixFormattingRuleOrDefault();
         if (m.length > 0) {
             var n = new i18n.phonenumbers.NumberFormat;
             n.mergeFrom(o);
@@ -6566,8 +6566,8 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.formatByPattern = function (x, w, v)
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.formatNationalNumberWithCarrierCode = function (h, g) {
     var l = h.getCountryCodeOrDefault(),
-        k = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(h),
-        j = this.getRegionCodeForCountryCode(l);
+    k = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(h),
+    j = this.getRegionCodeForCountryCode(l);
     if (!this.isValidRegionCode_(j)) {
         return k
     }
@@ -6580,8 +6580,8 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.formatOutOfCountryCallingNumber = fu
         return this.format(j, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL)
     }
     var p = j.getCountryCodeOrDefault(),
-        o = this.getRegionCodeForCountryCode(p),
-        n = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(j);
+    o = this.getRegionCodeForCountryCode(p),
+    n = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(j);
     if (!this.isValidRegionCode_(o)) {
         return n
     }
@@ -6596,7 +6596,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.formatOutOfCountryCallingNumber = fu
     }
     n = this.formatNationalNumber_(n, o, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL);
     var m = this.getMetadataForRegion(i),
-        l = m.getInternationalPrefixOrDefault();
+    l = m.getInternationalPrefixOrDefault();
     o = this.maybeGetFormattedExtension_(j, o);
     var k = "";
     if (i18n.phonenumbers.PhoneNumberUtil.matchesEntirely_(i18n.phonenumbers.PhoneNumberUtil.UNIQUE_INTERNATIONAL_PREFIX_, l)) {
@@ -6613,14 +6613,14 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.formatInOriginalFormat = function (d
         return this.format(d, i18n.phonenumbers.PhoneNumberFormat.NATIONAL)
     }
     switch (d.getCountryCodeSource()) {
-    case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN:
-        return this.format(d, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL);
-    case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITH_IDD:
-        return this.formatOutOfCountryCallingNumber(d, c);
-    case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN:
-        return this.format(d, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL).substring(1);
-    default:
-        return this.format(d, i18n.phonenumbers.PhoneNumberFormat.NATIONAL)
+        case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITH_PLUS_SIGN:
+            return this.format(d, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL);
+        case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITH_IDD:
+            return this.formatOutOfCountryCallingNumber(d, c);
+        case i18n.phonenumbers.PhoneNumber.CountryCodeSource.FROM_NUMBER_WITHOUT_PLUS_SIGN:
+            return this.format(d, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL).substring(1);
+        default:
+            return this.format(d, i18n.phonenumbers.PhoneNumberFormat.NATIONAL)
     }
 };
 i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber = function (d) {
@@ -6632,12 +6632,12 @@ i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber = function (d) {
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.formatNumberByFormat_ = function (f, e, h, g) {
     switch (e) {
-    case i18n.phonenumbers.PhoneNumberFormat.E164:
-        return i18n.phonenumbers.PhoneNumberUtil.PLUS_SIGN + f + h + g;
-    case i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL:
-        return i18n.phonenumbers.PhoneNumberUtil.PLUS_SIGN + f + " " + h + g;
-    default:
-        return h + g
+        case i18n.phonenumbers.PhoneNumberFormat.E164:
+            return i18n.phonenumbers.PhoneNumberUtil.PLUS_SIGN + f + h + g;
+        case i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL:
+            return i18n.phonenumbers.PhoneNumberUtil.PLUS_SIGN + f + " " + h + g;
+        default:
+            return h + g
     }
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.formatNationalNumber_ = function (f, e, h, g) {
@@ -6688,25 +6688,25 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.formatExtension_ = function (e, d) {
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.getNumberDescByType_ = function (d, c) {
     switch (c) {
-    case i18n.phonenumbers.PhoneNumberType.PREMIUM_RATE:
-        return d.getPremiumRate();
-    case i18n.phonenumbers.PhoneNumberType.TOLL_FREE:
-        return d.getTollFree();
-    case i18n.phonenumbers.PhoneNumberType.MOBILE:
-        return d.getMobile();
-    case i18n.phonenumbers.PhoneNumberType.FIXED_LINE:
-    case i18n.phonenumbers.PhoneNumberType.FIXED_LINE_OR_MOBILE:
-        return d.getFixedLine();
-    case i18n.phonenumbers.PhoneNumberType.SHARED_COST:
-        return d.getSharedCost();
-    case i18n.phonenumbers.PhoneNumberType.VOIP:
-        return d.getVoip();
-    case i18n.phonenumbers.PhoneNumberType.PERSONAL_NUMBER:
-        return d.getPersonalNumber();
-    case i18n.phonenumbers.PhoneNumberType.PAGER:
-        return d.getPager();
-    default:
-        return d.getGeneralDesc()
+        case i18n.phonenumbers.PhoneNumberType.PREMIUM_RATE:
+            return d.getPremiumRate();
+        case i18n.phonenumbers.PhoneNumberType.TOLL_FREE:
+            return d.getTollFree();
+        case i18n.phonenumbers.PhoneNumberType.MOBILE:
+            return d.getMobile();
+        case i18n.phonenumbers.PhoneNumberType.FIXED_LINE:
+        case i18n.phonenumbers.PhoneNumberType.FIXED_LINE_OR_MOBILE:
+            return d.getFixedLine();
+        case i18n.phonenumbers.PhoneNumberType.SHARED_COST:
+            return d.getSharedCost();
+        case i18n.phonenumbers.PhoneNumberType.VOIP:
+            return d.getVoip();
+        case i18n.phonenumbers.PhoneNumberType.PERSONAL_NUMBER:
+            return d.getPersonalNumber();
+        case i18n.phonenumbers.PhoneNumberType.PAGER:
+            return d.getPager();
+        default:
+            return d.getGeneralDesc()
     }
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.getNumberType = function (d) {
@@ -6783,8 +6783,8 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.isValidNumberForRegion = function (g
         return false
     }
     var j = this.getMetadataForRegion(f),
-        i = j.getGeneralDesc(),
-        h = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(g);
+    i = j.getGeneralDesc(),
+    h = i18n.phonenumbers.PhoneNumberUtil.getNationalSignificantNumber(g);
     if (!i.hasNationalNumberPattern()) {
         j = h.length;
         return j > i18n.phonenumbers.PhoneNumberUtil.MIN_LENGTH_FOR_NSN_ && j <= i18n.phonenumbers.PhoneNumberUtil.MAX_LENGTH_FOR_NSN_
@@ -6912,7 +6912,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.maybeExtractCountryCode = function (
         return 0
     }
     var m = new goog.string.StringBuffer(r),
-        l;
+    l;
     if (q != null) {
         l = q.getInternationalPrefix()
     }
@@ -6961,7 +6961,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.parsePrefixAsIdd_ = function (g, f) 
     var j = f.toString();
     if (j.search(g) == 0) {
         var i = j.match(g)[0].length,
-            h = j.substring(i).match(i18n.phonenumbers.PhoneNumberUtil.CAPTURING_DIGIT_PATTERN_);
+        h = j.substring(i).match(i18n.phonenumbers.PhoneNumberUtil.CAPTURING_DIGIT_PATTERN_);
         if (h && h[1] != null && h[1].length > 0) {
             if (i18n.phonenumbers.PhoneNumberUtil.normalizeHelper_(h[1], i18n.phonenumbers.PhoneNumberUtil.DIGIT_MAPPINGS, true) == "0") {
                 return false
@@ -7008,7 +7008,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.maybeStripNationalPrefix = function 
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.maybeStripExtension = function (h) {
     var g = h.toString(),
-        l = g.search(i18n.phonenumbers.PhoneNumberUtil.EXTN_PATTERN_);
+    l = g.search(i18n.phonenumbers.PhoneNumberUtil.EXTN_PATTERN_);
     if (l >= 0 && i18n.phonenumbers.PhoneNumberUtil.isViablePhoneNumber(g.substring(0, l))) {
         for (var k = g.match(i18n.phonenumbers.PhoneNumberUtil.EXTN_PATTERN_), j = k.length, i = 1; i < j; ++i) {
             if (k[i] != null && k[i].length > 0) {
@@ -7107,7 +7107,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.isNumberMatch = function (h, g) {
         return i18n.phonenumbers.PhoneNumberUtil.MatchType.NO_MATCH
     }
     var j = l.getCountryCodeOrDefault(),
-        i = k.getCountryCodeOrDefault();
+    i = k.getCountryCodeOrDefault();
     if (j != 0 && i != 0) {
         if (l.exactlySameAs(k)) {
             return i18n.phonenumbers.PhoneNumberUtil.MatchType.EXACT_MATCH
@@ -7130,7 +7130,7 @@ i18n.phonenumbers.PhoneNumberUtil.prototype.isNumberMatch = function (h, g) {
 };
 i18n.phonenumbers.PhoneNumberUtil.prototype.isNationalNumberSuffixOfTheOther_ = function (f, e) {
     var h = "" + f.getNationalNumber(),
-        g = "" + e.getNationalNumber();
+    g = "" + e.getNationalNumber();
     return goog.string.endsWith(h, g) || goog.string.endsWith(g, h)
 };
 i18n.phonenumbers.PhoneNumberUtil.matchesEntirely_ = function (e, d) {
@@ -7188,7 +7188,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.initializeCountrySpecificInfo_ = 
 i18n.phonenumbers.AsYouTypeFormatter.prototype.maybeCreateNewTemplate_ = function () {
     for (var f = this.possibleFormats_.length, e = 0; e < f; ++e) {
         var h = this.possibleFormats_[e],
-            g = h.getPatternOrDefault();
+        g = h.getPatternOrDefault();
         if (this.currentFormattingPattern_ == g) {
             return false
         }
@@ -7264,51 +7264,51 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputDigitWithOptionToRememberPos
     }
     f = this.normalizeAndAccrueDigitsAndPlusSign_(f, e);
     switch (this.accruedInputWithoutFormatting_.getLength()) {
-    case 0:
-    case 1:
-    case 2:
-        return this.accruedInput_.toString();
-    case 3:
-        if (this.attemptToExtractIdd_()) {
-            this.isExpectingCountryCode_ = true
-        } else {
-            this.removeNationalPrefixFromNationalNumber_();
-            return this.attemptToChooseFormattingPattern_()
-        }
-    case 4:
-    case 5:
-        if (this.isExpectingCountryCode_) {
-            if (this.attemptToExtractCountryCode_()) {
-                this.isExpectingCountryCode_ = false
+        case 0:
+        case 1:
+        case 2:
+            return this.accruedInput_.toString();
+        case 3:
+            if (this.attemptToExtractIdd_()) {
+                this.isExpectingCountryCode_ = true
+            } else {
+                this.removeNationalPrefixFromNationalNumber_();
+                return this.attemptToChooseFormattingPattern_()
             }
-            return this.prefixBeforeNationalNumber_.toString() + this.nationalNumber_.toString()
-        }
-    case 6:
-        if (this.isExpectingCountryCode_ && !this.attemptToExtractCountryCode_()) {
-            this.ableToFormat_ = false;
-            return this.accruedInput_.toString()
-        }
-    default:
-        if (this.possibleFormats_.length > 0) {
-            var h = this.inputDigitHelper_(f),
+        case 4:
+        case 5:
+            if (this.isExpectingCountryCode_) {
+                if (this.attemptToExtractCountryCode_()) {
+                    this.isExpectingCountryCode_ = false
+                }
+                return this.prefixBeforeNationalNumber_.toString() + this.nationalNumber_.toString()
+            }
+        case 6:
+            if (this.isExpectingCountryCode_ && !this.attemptToExtractCountryCode_()) {
+                this.ableToFormat_ = false;
+                return this.accruedInput_.toString()
+            }
+        default:
+            if (this.possibleFormats_.length > 0) {
+                var h = this.inputDigitHelper_(f),
                 g = this.attemptToFormatAccruedDigits_();
-            if (g.length > 0) {
-                return g
+                if (g.length > 0) {
+                    return g
+                }
+                this.narrowDownPossibleFormats_(this.nationalNumber_.toString());
+                if (this.maybeCreateNewTemplate_()) {
+                    return this.inputAccruedNationalNumber_()
+                }
+                return this.ableToFormat_ ? this.prefixBeforeNationalNumber_.toString() + h : h
+            } else {
+                return this.attemptToChooseFormattingPattern_()
             }
-            this.narrowDownPossibleFormats_(this.nationalNumber_.toString());
-            if (this.maybeCreateNewTemplate_()) {
-                return this.inputAccruedNationalNumber_()
-            }
-            return this.ableToFormat_ ? this.prefixBeforeNationalNumber_.toString() + h : h
-        } else {
-            return this.attemptToChooseFormattingPattern_()
-        }
     }
 };
 i18n.phonenumbers.AsYouTypeFormatter.prototype.attemptToFormatAccruedDigits_ = function () {
     for (var g = this.nationalNumber_.toString(), f = this.possibleFormats_.length, j = 0; j < f; ++j) {
         var i = this.possibleFormats_[j],
-            h = i.getPatternOrDefault();
+        h = i.getPatternOrDefault();
         if (RegExp("^(" + h + ")$").test(g)) {
             return this.prefixBeforeNationalNumber_.toString() + g.replace(RegExp(h, "g"), i.getFormat())
         }
@@ -7337,7 +7337,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.attemptToChooseFormattingPattern_
 };
 i18n.phonenumbers.AsYouTypeFormatter.prototype.inputAccruedNationalNumber_ = function () {
     var f = this.nationalNumber_.toString(),
-        e = f.length;
+    e = f.length;
     if (e > 0) {
         for (var h = "", g = 0; g < e; g++) {
             h = this.inputDigitHelper_(f.charAt(g))
@@ -7349,7 +7349,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputAccruedNationalNumber_ = fun
 };
 i18n.phonenumbers.AsYouTypeFormatter.prototype.removeNationalPrefixFromNationalNumber_ = function () {
     var e = this.nationalNumber_.toString(),
-        d = 0;
+    d = 0;
     if (this.currentMetaData_.getCountryCode() == 1 && e.charAt(0) == "1") {
         d = 1;
         this.prefixBeforeNationalNumber_.append("1 ");
@@ -7369,7 +7369,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.removeNationalPrefixFromNationalN
 };
 i18n.phonenumbers.AsYouTypeFormatter.prototype.attemptToExtractIdd_ = function () {
     var d = this.accruedInputWithoutFormatting_.toString(),
-        c = d.match(this.internationalPrefix_);
+    c = d.match(this.internationalPrefix_);
     if (c != null && c[0] != null && c[0].length > 0) {
         this.isInternationalFormatting_ = true;
         c = c[0].length;
@@ -7386,7 +7386,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.attemptToExtractCountryCode_ = fu
         return false
     }
     var d = new goog.string.StringBuffer,
-        c = this.phoneUtil_.extractCountryCode(this.nationalNumber_, d);
+    c = this.phoneUtil_.extractCountryCode(this.nationalNumber_, d);
     if (c == 0) {
         return false
     } else {
@@ -7431,10 +7431,10 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputDigitHelper_ = function (e) 
             return
         }
         var d = m.attr("id"),
-            f = a("#" + d + "_country"),
-            j = a("#" + d + "_country_selector"),
-            b = a("#" + d + "_feedback"),
-            c = a("#" + d + "_popup");
+        f = a("#" + d + "_country"),
+        j = a("#" + d + "_country_selector"),
+        b = a("#" + d + "_feedback"),
+        c = a("#" + d + "_popup");
         if (!k && f.val()) {
             k = f.val()
         } else {
@@ -7555,18 +7555,18 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputDigitHelper_ = function (e) 
             var b = parseInt(c.element.attr("maxlength")) - c.element.val().length;
             c.options.inputchanged.call(c.element, b);
             switch (c.currentState) {
-            case c.States.Normal:
-                if (b <= c.options.warningcount) {
-                    c.options.warningenter.call(c.element);
-                    c.currentState = c.States.Warning
-                }
-                break;
-            case c.States.Warning:
-                if (b > c.options.warningcount) {
-                    c.options.warningexit.call(c.element);
-                    c.currentState = c.States.Normal
-                }
-                break
+                case c.States.Normal:
+                    if (b <= c.options.warningcount) {
+                        c.options.warningenter.call(c.element);
+                        c.currentState = c.States.Warning
+                    }
+                    break;
+                case c.States.Warning:
+                    if (b > c.options.warningcount) {
+                        c.options.warningexit.call(c.element);
+                        c.currentState = c.States.Normal
+                    }
+                    break
             }
             if (b <= 0) {
                 c.options.limitreached.call(c.element)
@@ -7575,7 +7575,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputDigitHelper_ = function (e) 
     });
     a.fn.charCounter = function (c) {
         var b = a.makeArray(arguments),
-            d = b.slice(1);
+        d = b.slice(1);
         return this.each(function () {
             var e = a.data(this, "charCounter");
             if (e) {
@@ -7641,7 +7641,7 @@ i18n.phonenumbers.AsYouTypeFormatter.prototype.inputDigitHelper_ = function (e) 
     });
     a.fn.tabberizer = function (c) {
         var b = a.makeArray(arguments),
-            d = b.slice(1);
+        d = b.slice(1);
         return this.each(function () {
             var e = a.data(this, "tabberizer");
             if (e) {
