@@ -105,7 +105,7 @@ img{
 
 /*Header*/
 #selLogo {
-    padding: 10px 0 0 25px;
+    padding: 0px 0 0 25px;
     width: 234px;
 }	
 #selLogo h1{
@@ -117,7 +117,7 @@ img{
     text-decoration: none;
     width: 188px;}
 #selTopNav {
-    margin: 10px 0 0 0;
+    margin: 30px 0 0 0;
     padding: 0;
     width: auto;
 }
@@ -130,33 +130,34 @@ img{
     width:auto;
     float:left;
     font:normal 12px arial;
-    color:#8C8668;
+    color:#fff;
     text-transform:capitalize;
     padding:5px 0 0 0;
 }
 #selTopNav li.clsBg{
-    background:url(images/li_bg.png) no-repeat scroll center right;
     height:20px;
+    font:italic 12px arial;
 }
 #selTopNav .clsImage{
     border:1px solid #c9c9c9;
 }
 #selTopNav li a{
     text-decoration:none;
-    font:normal 12px arial;
-    color:#8c8668;
+    font:bold 12px arial;
+    color:#E9EEF6;
     margin:0 10px;
     display:block;
 }
 #selTopNav li a:hover{
-    text-decoration:underline;
+    color:#fff;
 }
 #selTopNav .clsLang{
     margin:0 10px!important;
     position:relative;
 }
 #selTopNav .clsListSpace{
-    background:url(images/listspace.png) no-repeat scroll left center;
+    background-color:#d5ab5e;
+    border-radius:5px;
     width:131px!important;
     text-align:center;
     height:28px;
@@ -165,11 +166,13 @@ img{
 }
 #selTopNav .clsListSpace a:hover{
     text-decoration:none!important;
+    background-color:#a68549;
+    border-radius:5px;
 }
 #selTopNav .clsListSpace a{
     margin:0!important;
     font:normal 12px arial;
-    color:#25251d;
+    color:#fff;
     line-height:27px;
 }
 /*Header Ends*/
@@ -305,19 +308,19 @@ img{
 
 }
 #search_form .clsSearch{
-    background-color:#A68549;
+    background-color:#d5ab5e;
     margin-left: 15px;
     height:36px;
 }
 .clsSearch{
-    background-color:#A68549;
+    background-color:#CCD5E6;
     width:275px;
     margin:10px 0 0 0;
     height:29px;
 }
 .clsSearch input{
     color:#fff;
-    background-color:#A68549;
+    background-color:#d5ab5e;
     background:url(images/magnify.png) no-repeat right top;
     text-align:center;
     cursor:pointer;

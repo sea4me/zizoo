@@ -90,9 +90,9 @@
                             if (strlen($this->dx_auth->get_username()) > 14):
                                 $query = $this->db->get_where('profiles', array('id' => $this->dx_auth->get_user_id()));
                                 $q = $query->result();
-                                echo $q[0]->Fname . ' ' . $q[0]->Lname;
+                                echo $q[0]->Fname . ' ' . $q[0]->Lname . '!';
                             else:
-                                echo $this->dx_auth->get_username();
+                                echo $this->dx_auth->get_username(). '!';
                             endif;
                             ?>&nbsp;&nbsp;</li>
                         <li class="clsBg"><?php echo anchor('func/dashboard/' . $this->dx_auth->get_user_id(), translate("Dashboard")); ?></li>
