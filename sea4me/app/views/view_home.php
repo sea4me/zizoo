@@ -23,23 +23,18 @@ $q = $query->result();
                         <div class="clsSearchBox clsFloatLeft">
                             <label for="location" class="inner_text" id="location_label" style="display:none;"><?php echo translate("Where are you going?"); ?> </label>
                             <input type="text" class="location rounded_left" autocomplete="off" id="location" name="location" />
-
                         </div>
                         
                     </div>
                     <p id="enter_location_error_message" class="bad" style="display:none; clear:both; margin-left: 27px; font-weight: bold; color:#fff;"><?php echo translate("Please set location"); ?></p>
                     <div class="cls_all clearfix">
-
                         <div class="cls_chat clearfix">
-                            <p><?php echo translate("Check in"); ?>:</p>
-                            <p><input type="text" id="checkin" class="checkin" name="checkin" value="mm/dd/yy" /></p>
+                            <p><input type="text" id="checkin" class="checkin" name="checkin" value="<?php echo translate("Check in"); ?>" /></p>
                         </div>
-                        <div class="cls_chat">
-                            <p><?php echo translate("Check out"); ?>:</p>
-                            <p><input type="text" id="checkout" class="checkout" name="checkout" value="mm/dd/yy" /></p>
+                        <div class="cls_chat clearfix">
+                            <p><input type="text" id="checkout" class="checkout" name="checkout" value="<?php echo translate("Check in"); ?>" /></p>
                         </div>
                         <div class="cls_chat clsNoPadding">
-                            <p><?php echo translate("Guests"); ?></p>
                             <div class="cls_chatsel">
                                 <p>
                                     <select name="number_of_guests" id="number_of_guests">

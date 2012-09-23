@@ -83,6 +83,7 @@ img{
 /*Top Header*/
 #TopHeader { 
     background-color:#667B99; 
+    border-bottom:1px solid #fff;
 }
 .clsTopHeader { background-color:#fff; height:63px; }
 .clsTopHeader img { vertical-align:top; position:absolute; top:0; left:358px; }
@@ -224,10 +225,10 @@ img{
 
 .cls_all {
 
-    padding: 0px 0 0 15px;
+    padding: 0px 0 0 25px;
     clear:both;
 }
-.cls_chat{ padding:0px 0px 20px 0;}
+
 #selBanner{
     width:675px;
     position: relative;
@@ -235,7 +236,7 @@ img{
 #selSearch .cls_chat p{
     font-size:12px;
     color:#949390; 
-    padding: 5px 0 0;
+    padding: 5px 0 5px;
     font:bold 12px "arial";
     width:80px;
 }
@@ -243,11 +244,10 @@ img{
     background-color: #E9EEF6;
     border: medium none;
     color: #949390;
-    /*height: 20px;
-    padding: 3px;*/
-    width: 100px;
-    border:1px solid #4e472b;
-
+    height: 36px;
+    width: 250px;
+    border-top:1px solid #667B99;
+    border-left:1px solid #667B99;
 }
 .cls_chat select{
     color:#949390;
@@ -258,9 +258,11 @@ img{
 }
 #selSearch .cls_chat select {
     border: medium none;
-    width:60px;
+    width:250px;
+    height:36px;
     background-color:#E9EEF6;
-    border:1px solid #4e472b;
+    border-top:1px solid #667B99;
+    border-left:1px solid #667B99;
 }
 /*Search*/
 #selSearch h2{
@@ -285,38 +287,39 @@ img{
 #search{
     padding:0;
     background-color:#CCD5E6;
-    margin: 10px 15px 3px 15px;
-    width:275px;
-    height:51px;
+    margin: 10px 15px 0 25px;
+    width:250px;
+    height:36px;
 }
 .clsSearchBox{
-    height: 24px;
-    margin: 13px 10px 0 10px;
+    height: 38px;
+    margin-bottom: 5px;
     padding: 0;
-    width: 265px;
+    width: 250px;
 }
 .clsSearchBox input{
     background:#E9EEF6;
-    height:24px;
-    width:246px;
+    height:36px;
+    width:250px;
     *width:230px;
-    padding:0 5px;
     color:#000000;
     font:normal 12px arial;
     line-height:22px;
     border:medium none;
+    border-top:1px solid #667B99;
+    border-left:1px solid #667B99;
 
 }
 #search_form .clsSearch{
     background-color:#d5ab5e;
-    margin-left: 15px;
-    height:36px;
+    margin-left: 25px;
+    height:38px;
 }
 .clsSearch{
     background-color:#CCD5E6;
-    width:275px;
-    margin:10px 0 0 0;
-    height:29px;
+    width:252px;
+    margin:0;
+    height:36px;
 }
 .clsSearch input{
     color:#fff;
@@ -325,10 +328,10 @@ img{
     text-align:center;
     cursor:pointer;
     border:none;
-    width:275px;
+    width:250px;
     height:35px;
-    padding:6px 0;
-    font:bold 12px arial;
+    padding:10px 0;
+    font:bold 16px arial;
     text-transform:uppercase;
 }
 /*Main Contentends*/
@@ -496,7 +499,7 @@ img{
 }
 
 .cls_bor h1{
-    margin-left: 15px;
+    margin:10px 0 10px 25px;
 }
 
 /*Edited By Karthikeyan*/
@@ -573,7 +576,7 @@ div#home_static div.paperstack div.content {
     padding-left:15px;
 }
 .cls_chat {
-    width:110px;
+    width:250px;
     float:left;
 }
 #main_content {
