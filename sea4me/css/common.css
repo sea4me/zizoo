@@ -314,6 +314,7 @@ img{
     background-color:#d5ab5e;
     margin-left: 25px;
     height:38px;
+    border-radius:3px;
 }
 .clsSearch{
     background-color:#CCD5E6;
@@ -331,8 +332,7 @@ img{
     width:250px;
     height:35px;
     padding:10px 0;
-    font:bold 16px arial;
-    text-transform:uppercase;
+    font:normal 16px arial;
 }
 /*Main Contentends*/
 /*Invites*/
@@ -519,15 +519,15 @@ img{
     font-weight:bold;
 }
 .ui-datepicker{
-    background-color: #60313E;
-    border: 1px solid #704952;
+    background-color: #667B99;
+    border: 1px solid #AFBBD2;
     display: none;
 }
 #ui-datepicker-div 
 {
     margin: 0 auto;
     padding: 10px;
-    width: 160px;
+    width: 230px;
 }
 
 #username, #password{
@@ -585,10 +585,11 @@ div#home_static div.paperstack div.content {
 }
 .ui-datepicker-title {
     text-align:center;
+    margin-bottom:3px;
     border-radius:4px;
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
-    background:#9C957C;
+    background:#CCD5E6;
 }
 .ui-datepicker-prev {
     background: url("images/calendar_prev_month.gif") no-repeat scroll 3px 3px transparent !important;
@@ -609,11 +610,13 @@ div#home_static div.paperstack div.content {
     width: 20px;
     margin:3px 0 0 0;
 }
-.ui-datepicker-calendar tr td.ui-datepicker-unselectable {
-    background:#3D3B35;
+.ui-datepicker-calendar {
+    background:#CCD5E6;
+    width:230px;
+    text-align:center;
 }
 .ui-datepicker-calendar tr td {
-    background:#9C957C;
+    background:#CCD5E6;
     font-size:12px;
     text-align:center;
 }
@@ -624,12 +627,15 @@ div#home_static div.paperstack div.content {
     text-decoration:none !important;
 }
 .ui-datepicker-calendar tr td.ui-datepicker-unselectable {
-    background:#3D3B35;
+    background:#AFBBD2;
     font-size:12px;
     text-align:center;
 }
+.ui-datepicker-calendar tr td.ui-datepicker-unselectable:hover{
+    background:#AFBBD2;
+}
 .ui-datepicker-calendar tr th span {
-    background:#60313E !important;
+    background:#CCD5E6 !important;
 }
 /* 26. 07. 2011 */
 .clsNor_Sign_In {
@@ -1085,7 +1091,7 @@ a.star_icon_container div.star_icon {
     background:#fff !important;
 }
 .ui-datepicker-calendar tr td:hover {
-    background:#3D3B35;
+    background:#D5AB5E;
 }
 .ui-datepicker-calendar tr td:hover a {
     color:#fff !important;
