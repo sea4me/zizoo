@@ -150,7 +150,7 @@ ul.ui-corner-all { -moz-border-radius: 0/*{cornerRadius}*/; -webkit-border-radiu
 
 #address_step2{}
 #map_container{margin-top:13px; overflow:hidden;}
-#map_canvas{width: 308px; height: 308px; float:right;}
+#map_canvas{width: 468px; height: 308px; float:right;}
 #map_canvas em {font-style: italic;}
 #map_canvas strong {font-weight: bold;}
 
