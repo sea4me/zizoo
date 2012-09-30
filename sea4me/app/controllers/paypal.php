@@ -35,7 +35,7 @@ class Paypal extends CI_Controller {
     }
 
     function index() {
-        if ((!$this->dx_auth->is_logged_in()) && (!$this->facebook->logged_in())) {
+        if (!$this->dx_auth->is_logged_in()) {
             $newdata = array(
                 'list_id' => $this->uri->segment(3),
                 'Lcheckin' => $this->input->post('checkin'),

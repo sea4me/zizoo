@@ -19,7 +19,7 @@ class Rooms extends CI_Controller {
     }
 
     public function index() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $sort = $this->input->get('f');
             $data['sort'] = $sort;
             $data['title'] = "short your List";
@@ -52,7 +52,7 @@ class Rooms extends CI_Controller {
     }
 
     public function sort_by_status() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $sort = $this->input->get('f');
             $data['sort'] = $sort;
             $data['title'] = "Manage Listings";
@@ -64,7 +64,7 @@ class Rooms extends CI_Controller {
     }
 
     public function showHide() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $sow_hide = $this->input->get('stat');
             $row_id = $this->input->get('rid');
 

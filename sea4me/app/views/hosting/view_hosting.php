@@ -20,7 +20,7 @@ if ($this->dx_auth->is_logged_in()) {
     //echo $result->id;
 }
 ?>
-<div class="clsDisign_Box" style="margin:10px 0 0 0">
+<div class="clsDisign_Box">
     <div class="clsTop_Pannel">
         <div class="clsTop_Left">
             <div class="clsTop_Right">

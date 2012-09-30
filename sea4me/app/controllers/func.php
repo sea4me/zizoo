@@ -199,7 +199,7 @@ class Func extends CI_Controller {
     }
 
     public function dashboard() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if (($this->dx_auth->is_logged_in())) {
             $data['title'] = "Your Dashboard";
             $data['message_element'] = "view_dashboard";
 
@@ -219,7 +219,7 @@ class Func extends CI_Controller {
     }
 
     public function editListing() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Edit your Listing";
             $data['message_element'] = "view_edit_listing";
@@ -236,7 +236,7 @@ class Func extends CI_Controller {
     }
 
     public function standbys() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "your standbys";
             $data['message_element'] = "view_standbys";
@@ -247,7 +247,7 @@ class Func extends CI_Controller {
     }
 
     public function points() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Know your Rank";
             $data['message_element'] = "view_points";
@@ -258,7 +258,7 @@ class Func extends CI_Controller {
     }
 
     public function promote() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $data['title'] = "your standbys";
             $data['message_element'] = "view_promote";
             $this->load->view('template', $data);
@@ -268,7 +268,7 @@ class Func extends CI_Controller {
     }
 
     public function edituserprofile() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Edit your Profile";
             $data['message_element'] = "view_edit_profile";
@@ -341,7 +341,7 @@ class Func extends CI_Controller {
     }
 
     public function editpricing() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $data['title'] = "Edit the price information for your site";
             $data['message_element'] = 'view_pricing';
             $this->load->view('template', $data);
@@ -352,7 +352,7 @@ class Func extends CI_Controller {
 
     //Stared List
     public function starred() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $star = $this->input->get('star');
             $this->db->where('id', $star);
             $this->db->select('starred');
@@ -528,7 +528,7 @@ class Func extends CI_Controller {
     }
 
     public function deletelisting() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $id = $this->uri->segment(3);
             $this->db->delete('list', array('id' => $id));
             $this->db->delete('price', array('id' => $id));
@@ -541,7 +541,7 @@ class Func extends CI_Controller {
 
     public function account() {
 
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Edit Account details";
             $data['message_element'] = "view_account";
@@ -555,7 +555,7 @@ class Func extends CI_Controller {
     # Choosing option to send or denay mail and notification
 
     public function notification() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Edit Account details";
             $data['message_element'] = "view_notification";
@@ -567,7 +567,7 @@ class Func extends CI_Controller {
 
 //Payout Preferences
     public function payout() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             if ($this->input->post()) {
                 $data['country'] = $this->input->post('country');
@@ -587,7 +587,7 @@ class Func extends CI_Controller {
     }
 
     public function payoutMethod() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $country = $this->input->post('country');
             $data['country'] = $country;
             $data['title'] = "Your Payment Method details";
@@ -599,7 +599,7 @@ class Func extends CI_Controller {
     }
 
     public function paypalInfo() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $country = '';
             $payout_type = '';
             if ($this->input->post()) {
@@ -617,7 +617,7 @@ class Func extends CI_Controller {
     }
 
     public function setDefault() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             if ($this->input->post('default_email')) {
                 //unset the previous default email
                 $this->db->where("default_email", "default");
@@ -643,7 +643,7 @@ class Func extends CI_Controller {
     #	Once you have reservations
     #   The money that you have earned will be displayed here.
     public function transaction() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $data['title'] = "Your Transaction details";
             $data['message_element'] = "view_transaction";
@@ -657,7 +657,7 @@ class Func extends CI_Controller {
     #	Reviews are allowed only at the end of a trip booked through dropinn.
     #	Recommendations are earned by inviting your friends to vouch for you.
     public function recommendation() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $username = $this->dx_auth->get_username();
             $user_id = $this->dx_auth->get_user_id();
             if ($this->input->post()) {
@@ -703,7 +703,7 @@ class Func extends CI_Controller {
     public function vouch() {
 
 
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             if (!$this->dx_auth->is_logged_in()) {
                 redirect('home/signup/');
@@ -730,7 +730,7 @@ class Func extends CI_Controller {
     //Delete the Friends Recommend
     public function deleteRecommend() {
 
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             if ($this->input->get('dlt')) {
                 $friend_id = $this->input->get('dlt');
@@ -747,7 +747,7 @@ class Func extends CI_Controller {
 
     //Setting
     public function emailSetting() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $data['offers'] = $this->input->post('offers');
             $data['news'] = $this->input->post('news');
             $data['upcoming_reservation'] = $this->input->post('upcoming_reservation');

@@ -10,7 +10,7 @@
 
 <div class="zshadow_bg">
     <div class="narrow_page_bg rounded_most">
-        <?php if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())): ?>
+        <?php if (($this->dx_auth->is_logged_in())): ?>
 
             <?php echo form_open("func/addNewEntry", array('id' => 'new_room_form')) ?>
 

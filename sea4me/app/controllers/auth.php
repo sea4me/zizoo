@@ -293,7 +293,7 @@ class Auth extends CI_Controller {
 
     function change_password() {
         // Check if user logged in or not
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $val = $this->form_validation;
 
             // Set form validation

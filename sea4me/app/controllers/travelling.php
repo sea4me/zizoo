@@ -35,7 +35,7 @@ class Travelling extends CI_Controller {
 
     //Current Trips
     public function current_trip() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $cur_user_id = $this->dx_auth->get_user_id();
             $conditions = array("reservation.userby" => $cur_user_id, "reservation.status" => 7);
             $data['result'] = $this->Trips_model->get_reservation_trips($conditions);
@@ -51,7 +51,7 @@ class Travelling extends CI_Controller {
     //Upcomming Trips
     public function upcomming_trips() {
 
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $cur_user_id = $this->dx_auth->get_user_id();
             $conditions = array("reservation.userby" => $cur_user_id, "reservation.status >=" => 1, "reservation.status <" => 7);
             $data['result'] = $this->Trips_model->get_reservation_trips($conditions);
@@ -67,7 +67,7 @@ class Travelling extends CI_Controller {
     //Previous Trips
     public function previous_trips() {
 
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
 
             $cur_user_id = $this->dx_auth->get_user_id();
             $conditions = array("reservation.userby" => $cur_user_id, "reservation.status >=" => 8);

@@ -103,7 +103,7 @@
             </div>
         </div>
         <!-- /left -->
-        <div id="main" style="float:right;width:698px;">
+        <div id="main" style="float:left;width:680px;">
 
             <div class="clsDisign_Box">
                 <div class="clsTop_Pannel">

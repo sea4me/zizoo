@@ -157,7 +157,7 @@ img{
     position:relative;
 }
 #selTopNav .clsListSpace{
-    background-color:#d5ab5e;
+    background-color:#DEB262;
     border-radius:5px;
     width:131px!important;
     text-align:center;
@@ -167,7 +167,7 @@ img{
 }
 #selTopNav .clsListSpace a:hover{
     text-decoration:none!important;
-    background-color:#a68549;
+    background-color:#deb262;
     border-radius:5px;
 }
 #selTopNav .clsListSpace a{
@@ -504,10 +504,9 @@ img{
 
 /*Edited By Karthikeyan*/
 #signup2{
-    background:url("images/command_center_bg.png") repeat-x scroll center top #F4F2E8;
-    margin: 0 auto;
+    margin:25px auto;
     padding: 10px;
-    width: 978px;
+    width: 360px;
 }
 #main_content a{
     color:#56544A;
@@ -541,7 +540,7 @@ div#home_static div.paperstack {
     width: 800px;
 }
 .v3_button{
-    background: url("images/search.png") no-repeat scroll left center transparent;
+    background-color: #E9EEF6;
     border: medium none;
     color: #fff;
     cursor: pointer;
@@ -639,13 +638,16 @@ div#home_static div.paperstack div.content {
 }
 /* 26. 07. 2011 */
 .clsNor_Sign_In {
+    background-color:#CCD5E6;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #AFBBD2;
     float:left;
-    width:460px;
-    border-right:1px solid #f5f5f5;
+    width:360px;
 }
 .clsFace_Book_Sign {
     float:right;
-    width: 465px;
+    width: 360px;
 }
 .clsTop_Cont_Sign {
     padding-bottom:15px;
@@ -674,16 +676,15 @@ div#home_static div.paperstack div.content {
     font-size:12px;
     color:#010101 !important;
 }
-.clsNor_Sign_In .inner p{
-    margin-left:75px;
-}
 .clsNor_Sign_In .inner p {
+    margin-top:10px;
+    margin-left:75px;
     color:#010101;
 }
 #section_signup h1 {
     font-size:24px;
     color:#56544a;
-    margin-bottom: 10px;
+    margin-bottom: 35px;
 }
 #section_signup .login_prompt {
     font-size:18px;
@@ -761,10 +762,11 @@ div#home_static div.paperstack div.content {
     padding: 0 0 2px !important;
 }
 #section_signin .v3_button, #section_signup .v3_button {
-    background:url(images/sign1.png) no-repeat center top;
+    background-color:#d5ab5e;
+    border-radius:5px;
     height:24px;
     width:75px;
-    color:#fbf2cb;
+    color:#fff;
     padding:0px !important;
 }
 #forgot_password_container h2 {
@@ -801,42 +803,8 @@ div#home_static div.paperstack div.content {
     font-weight: normal;
 }
 .clsH1_long_Border h1 {
-    background:url(images/border_long.png) no-repeat center bottom;
-    padding-left: 9px;
+    padding-left: 20px;
     font-size:22px;
-    padding-bottom: 23px;
-}
-.clsTop_Left {
-    background:url(images/dtlc.png) no-repeat left top;
-    height:11px;
-}
-.clsTop_Right {
-    background:url(images/dtrc.png) no-repeat right top;
-    height:11px;
-}
-.clsTop_Mid {
-    background:url(images/dtop.png) repeat-x right top;
-    margin:0 16px 0 15px;
-    height:11px;
-}
-.CenterPannel {
-    background:#fff url(images/dmid.png) repeat-x center top;
-    border-left:1px solid #dcdbd1;
-    border-right:1px solid #dcdbd1;
-    padding:0px 10px;
-}
-.clsBottom_Left {
-    background:url(images/dblc.png) no-repeat left top;
-    height:7px;
-}
-.clsBottom_Right {
-    background:url(images/dbrc.png) no-repeat right top;
-    height:7px;
-}
-.clsBottom_Mid {
-    background:url(images/dbttm.png) repeat-x right top;
-    margin:0 7px;
-    height:7px;
 }
 .clsSign_Up1_Lft {
     width:460px;
@@ -891,6 +859,7 @@ td {
 }
 .clsDes_Top_Spac .clsDisign_Box {
     margin:10px 0 0 0;
+    padding-bottom: 15px;
 }
 #email_middle {
     width:731px;
@@ -1136,9 +1105,6 @@ a.star_icon_container div.star_icon {
     text-decoration:none;
 }
 .clsSide_border_Samll h2 {
-    background:url(images/border_small.png) no-repeat center bottom;
-    padding-left: 5px;
-    padding-bottom: 13px;
 }
 .clsTab_Edit_UserPro td {
     padding:5px;
@@ -1147,7 +1113,7 @@ a.star_icon_container div.star_icon {
     text-decoration:none !important;
 }
 .Link_Green_Bg {
-    background:url(images/link_left_bg.png) no-repeat left top;
+    background-color:#d5ab5e;
     padding:0 0 0 10px;
     color: #FFFFFF !important;
     font-size: 12px !important;
@@ -1158,13 +1124,6 @@ a.star_icon_container div.star_icon {
 }
 .Link_Green_Bg span:hover {
     cursor:pointer;
-}
-.Link_Green_Bg span {
-    background:url(images/right_link_bg.png) no-repeat right top;
-    padding:0 10px 0 0;
-    display:block;
-    height: 29px;
-    text-align:center;
 }
 .View_Contact #feedback-unsubmitted .column label {
     float:left;
@@ -1530,10 +1489,9 @@ a.star_icon_container div.star_icon {
     padding:0px;
 }
 .clsBorder5 h1 {
-    background:url(images/border5.png) no-repeat center bottom;
-    padding-left: 5px;
     font-size: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px ridge #AFBBD2;
 }
 #Msg_Inbox_Small .clsMsg_User img {
     display: block;
@@ -1635,6 +1593,7 @@ a.star_icon_container div.star_icon {
     margin: 1px 0;
     overflow: hidden;
     padding: 3px;
+    padding-left: 20px;
 }
 #Msg_Inbox_Big .clsMsg_User {
     height: 50px;
@@ -1703,13 +1662,13 @@ a.star_icon_container div.star_icon {
     background:#DCDBD1 !important;
 }
 #command_center{
-    background:#f4f2e8 url(images/command_center_bg.png) center top repeat-x;
-    border: 1px solid #FFFFFF;
+    background-color:#CCD5E6;
+    border-radius:10px;
+    border:1px solid #AFBBD2;
     min-height: 500px;
-    padding: 8px 8px 8px 8px;
     margin: 0;
     color:#56544a;
-    padding: 10px;
+    margin: 15px;
     width: 978px;
 }
 #Single_Reservr_Blk {
@@ -1999,7 +1958,7 @@ a.star_icon_container div.star_icon {
     -webkit-border-radius:5px; /* Safari and Chrome */
     -khtml-border-radius:5px; /* Linux browsers */
     border-radius:5px; /* Opera 10.50, IE and CSS3 */
-    background:#55513a;
+    background:#E9EEF6;
     padding:5px 10px;
     color:#fff;
     border:none;

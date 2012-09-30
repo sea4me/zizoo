@@ -107,7 +107,7 @@ class Gallery extends CI_Model {
                     if ($pos == 1) {
                         $url = base_url() . 'images/no_avatar_thumb.jpg';
                     } else if ($pos == 2) {
-                        $url = base_url() . 'images/no_avatar-xlarge.jpg';
+                        $url = base_url() . 'images/captain.png';
                     } else {
                         $url = base_url() . 'images/no_avatar.jpg';
                     }
@@ -116,7 +116,7 @@ class Gallery extends CI_Model {
                 if ($pos == 1) {
                     $url = base_url() . 'images/no_avatar_thumb.jpg';
                 } else if ($pos == 2) {
-                    $url = base_url() . 'images/no_avatar-xlarge.jpg';
+                    $url = base_url() . 'images/captain.png';
                 } else {
                     $url = base_url() . 'images/no_avatar.jpg';
                 }

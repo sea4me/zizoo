@@ -15,7 +15,7 @@ else
             <div id="middle">
                 <div class="clsH1_long_Border">
                     <h1>
-                        <?php echo translate("Create a Free Account"); ?>
+                        <?php echo translate("Sign up for Sea4me"); ?>
                     </h1>
                 </div>
                 <div class="clsDisign_Box">
@@ -28,16 +28,10 @@ else
                         </div>
                     </div>
                     <div class="CenterPannel">
-                        <div class="clsSign_Up_Hole clearfix">
-                            <div class="clsSign_UP_Rft clsFloatRight">
-                                <p><span class="login_prompt">
-                                        <?php echo translate("Sign in using :"); ?>
-                                    </span></p>
-
-                            </div>
+                        <div class="clsNor_Sign_In clearfix">
                             <div class="clsFloatLeft clsSign_Up_Lt">
                                 <span class="login_prompt">
-                                    <?php echo translate("Or standard sign up:"); ?>
+                                    <?php echo translate("Create a Free Account:"); ?>
                                 </span> <?php echo form_open("home/submit", 'id="form"') ?>
                                 <div class="group">
                                     <div class="wide_box">
@@ -81,7 +75,7 @@ else
                                 </div>
                                 <!--  End of form for sign up -->
                             </div>
-                            `	<div style="clear:both"></div>
+                            <div style="clear:both"></div>
                         </div>
                     </div>
                     <div class="BottomPannel">
@@ -104,10 +98,7 @@ else
                             <?php echo translate("Welcome back - Sign in"); ?>
                         </h1>
                     </div>
-                    <p class="login_prompt">
-                        <?php echo translate("Sign In to Enjoy all the features of the web site"); ?>
-                    </p>
-                    <p><?php echo translate("Listing of new homes require login."); ?> </p></div>
+                </div>
                 <div class="clsDisign_Box">
                     <div class="clsTop_Pannel">
                         <div class="clsTop_Left">
@@ -155,15 +146,14 @@ else
                                     </div>
                                 </div>
                                 <div>
-                                    <input class='v3_button v3_green' name="SignIn" type='submit' style="float:left;margin-left:119px;padding:10px;" value='<?php echo translate("Sign in"); ?>'/>
-                                    <div style="float:left;width:250px;padding-top:10px;color:#5D5D5D;"> &nbsp; </div>
+                                    <input class='v3_button' name="SignIn" type='submit' style="float:left;margin-left:119px;padding:10px;" value='<?php echo translate("Sign in"); ?>'/>
                                     <div class="clear"></div>
                                 </div>
                                 <!--  Right side -->
                                 <div id="right_side">
                                     <div class="yellow_box">
                                         <div class="inner">
-                                            <p><span><?php echo translate("Create Your Account"); ?></span> &nbsp;
+                                            <p><span><?php echo translate("Create Your Account:"); ?></span> &nbsp;
                                                 <a href="#" onclick="$('#section_signin').hide();$('#section_signup').show();return false;"><?php echo translate("Sign up"); ?>
                                                 </a></p> </div>
                                     </div>

@@ -122,7 +122,7 @@ $confirm_new_password = array(
 
         </div><!-- /left -->
 
-        <div id="main" style="float:right;width:698px;">
+        <div id="main" style="float:left;width:698px;">
             <div class="clsDisign_Box">
                 <div class="clsTop_Pannel">
                     <div class="clsTop_Left">

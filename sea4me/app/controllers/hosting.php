@@ -32,7 +32,7 @@ class Hosting extends CI_Controller {
     }
 
     public function index() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $data['title'] = "Your Hosting data";
             $data['message_element'] = "hosting/view_hosting";
             $this->load->view('template', $data);
@@ -42,7 +42,7 @@ class Hosting extends CI_Controller {
     }
 
     public function my_reservation() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $conditions = array('userto' => $this->dx_auth->get_user_id(), 'status >=' => 3);
             $data['result'] = $this->Trips_model->get_reservation($conditions);
 
@@ -101,7 +101,7 @@ class Hosting extends CI_Controller {
     }
 
     public function policies() {
-        if (($this->dx_auth->is_logged_in()) || ($this->facebook->logged_in())) {
+        if ($this->dx_auth->is_logged_in()) {
             $data['title'] = "your standbys";
             $data['message_element'] = "hosting/view_policies";
             $this->load->view('template', $data);
