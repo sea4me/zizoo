@@ -8,7 +8,7 @@
     padding-bottom: 15px;
 }
 .clsEdit_Left_Bor h1 {
-    background:url(../images/border1.png) no-repeat center bottom;
+    border-bottom: 1px ridge #AFBBD2;
     padding-left: 5px;
     font-size: 20px;
     padding-bottom: 15px;
@@ -20,11 +20,13 @@
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffffffff')*/
 }
 #rooms {
-    background:#f4f2e8 url(../images/command_center_bg.png) center top repeat-x;
+    background-color:#CCD5E6;
+    border-radius:10px;
+    border:1px solid #AFBBD2;
+    min-height: 500px;
     padding: 10px;
     width: 970px;
-    min-height: 500px;
-    margin: 0;
+    margin: 15px;
     color:#4d4d4c;
 }
 #rooms #room_header {
@@ -1140,7 +1142,7 @@ span#dates_not_entered_inner {
     width: 973px;
     border:8px solid #c2ba9d;
     background:#e9e2c9;
-    margin-bottom:15px;
+    margin:15px;
     padding:15px 0
 }
 #new_hosting_actions h2 {

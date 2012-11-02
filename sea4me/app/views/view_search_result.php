@@ -1,6 +1,6 @@
 <link href="<?php echo base_url() . 'css/views/page2-datauri.css'; ?>" media="screen" rel="stylesheet" type="text/css" />
 
-<div id="v3_search" class="list_view rounded_more condensed_header_view" style='background: url("http://cogzidel.com/images/page2/v3/v3_search_bg.gif?1300304855") repeat-y scroll 0 0 white;' >
+<div id="v3_search" class="list_view rounded_more condensed_header_view" >
     <div id="search_header" class="rounded_top"></div>
     <!-- search_header -->
     <div id="search_params"> <?php echo form_open('search', array('id' => 'search_form')); ?>
@@ -287,7 +287,7 @@ if (is_array($room_types) > 0) {
 
 
 <?php translate("Loading...", $this->session->userdata('lang')); ?>
-        </div>-->
+        </div>
         <div id="search_filters_toggle" class="search_filters_toggle_on rounded_left"></div>
     </div>
 </div>

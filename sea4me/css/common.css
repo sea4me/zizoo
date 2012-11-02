@@ -792,6 +792,10 @@ div#home_static div.paperstack div.content {
     margin-bottom: 10px;
 }
 .clsNew_Common_Bg {
+    background-color:#CCD5E6;
+    border-radius:10px;
+    border:1px solid #AFBBD2;
+    margin:15px;
 }
 #edit_profile {
     padding:10px;
