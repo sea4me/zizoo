@@ -1,0 +1,16 @@
+/* 
+    Document   : custom
+    Created on : Oct 27, 2012, 5:51:02 PM
+    Author     : iBenito
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.hero-unit {
+  max-width: 800px;
+}
