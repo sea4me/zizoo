@@ -1,0 +1,5 @@
+ZizooBaseBundle_homepage:
+    pattern:  /
+    defaults: { _controller: ZizooBaseBundle:Page:index }
+    requirements:
+        _method:  GET
