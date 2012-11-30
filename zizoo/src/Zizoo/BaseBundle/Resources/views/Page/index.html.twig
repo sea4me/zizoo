@@ -1,8 +1,13 @@
 {% extends 'ZizooBaseBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1>Hello, world!</h1>
+    <h1>Boats!</h1>
     <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    {% for boat in boats %}    
+        <h2><a href="{{ path('ZizooBoatBundle_boat_show', { 'id': boat.id }) }}">{{ boat.name }}</a></h2>
+    {% else %}
+        <p>There are no blog entries for symblog</p>
+    {% endfor %}
     <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 {% endblock %}
     

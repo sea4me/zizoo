@@ -1,0 +1,6 @@
+ZizooBoatBundle_boat_show:
+    pattern:  /{id}
+    defaults: { _controller: ZizooBoatBundle:Boat:show }
+    requirements:
+        _method:  GET
+        id: \d+

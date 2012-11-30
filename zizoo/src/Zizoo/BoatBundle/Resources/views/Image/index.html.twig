@@ -1,0 +1,7 @@
+{% for image in images %}
+    <article class="image" id="image-{{ image.id }}">
+        <img src="{{ asset(['images/boats/', boat.id, '/', image.id, '.jpg']|join) }}" alt="{{ image.id }} image not found" class="large" />
+    </article>
+{% else %}
+    <p>There are no images for this boat.</p>
+{% endfor %}

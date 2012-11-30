@@ -1,0 +1,3 @@
+.boat { margin-bottom: 20px; }
+.boat img { width: 190px; float: left; padding: 5px; border: 1px solid #ccc; margin: 0 10px 10px 0; }
+.boat img.large { width: 300px; min-height: 165px; }

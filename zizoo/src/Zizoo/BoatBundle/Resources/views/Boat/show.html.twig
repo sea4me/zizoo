@@ -1,0 +1,33 @@
+{% extends 'ZizooBoatBundle::layout.html.twig' %}
+
+{% block title %}{{ boat.name }}{% endblock %}
+
+{% block body %}
+    <article class="boat">
+        <header>
+            <h2>{{ boat.title }}</h2>
+        </header>
+        <div>
+            <p>{{ boat.description }}</p>
+        </div>
+    </article>
+
+    <section class="details" id="details">
+        <h3>{{ boat.name }}</h3>
+        <p>City: {{ boat.city }}</p>
+        <p>Brand: {{ boat.brand }}</p>
+        <p>Model: {{ boat.model }}</p>
+        <p>Length: {{ boat.length }}</p>
+        <p>Cabins: {{ boat.cabins }}</p>
+        {% if boat.bathrooms %}
+            <p>Bathrooms: {{ boat.bathrooms }}</p>
+        {% endif %}
+        
+    </section>
+
+    <section class="images" id="images">
+        <h3>Images</h3>
+        {% include 'ZizooBoatBundle:Image:index.html.twig' with { 'images': images } %}
+    </section>
+
+{% endblock %}

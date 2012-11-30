@@ -3,3 +3,9 @@ ZizooBaseBundle_homepage:
     defaults: { _controller: ZizooBaseBundle:Page:index }
     requirements:
         _method:  GET
+        
+ZizooBaseBundle_about:
+    pattern:  /about
+    defaults: { _controller: ZizooBaseBundle:Page:about }
+    requirements:
+        _method:  GET
