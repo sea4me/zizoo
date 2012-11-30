@@ -1,0 +1,11 @@
+imports:
+    - { resource: parameters_local.yml }
+
+parameters:
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            YGREfaHmfclAfUpSlwRTL0sWAUQJxMrfcJ9XpbHjHWIx6ry2ZlC4lwNMBLL5GBKp
