@@ -1,0 +1,293 @@
+/* 40 dollar coupon */
+#forty_dollar_coupon{background:#FFFDBC; padding:15px 14px; border:1px solid #D1D1C9; font-size:15px; margin-bottom:10px; width:950px;}
+#forty_dollar_coupon h3{font-size:24px; font-weight:bold; padding:0 10px;}
+#forty_dollar_coupon ul{padding:10px;}
+#forty_dollar_coupon ul li{padding:2px 0;}
+#forty_dollar_coupon p{font-style:italic; padding:15px 10px 5px 10px; font-size:12px; color:#696969;}
+
+/* Post a room */
+#post_a_room{overflow:hidden; color:#56544A; padding:10px; margin:0 auto;}
+
+#post_a_room h2 {font-size: 18px;}
+
+* html #post_a_room { border-top: none; }
+#post_a_room_header{padding:0 0 0 9px; overflow:hidden; margin-bottom:20px;}
+#post_a_room_header h1{/*color:#33332f; font-size:34px; font-weight:normal; border:0; margin-bottom:0; letter-spacing:-.5px; width:385px; font-weight:bold; float:left*/;}
+#post_a_room_header h2{color: #615b34; font-size: 19px; font-weight: normal; line-height: 1.3em; margin-top: 6px; }
+
+#how_it_works_vid_screenshot{float: right; height: 125px; width: 210px; display:block;}
+
+
+#post_a_room ul#location li, ul#details li{color:#383831; font-size:13px; margin:0 23px; overflow:hidden; padding:5px;}
+#post_a_room ul#location li{margin:0;}
+#post_a_room ul#details li{padding:5px 0 15px 1px; margin:0;}
+#post_a_room label {width:150px; display:block; float:left; color:#56544A; margin: 3px 0;}
+#post_a_room #exact_address_prompt label {width: auto; float: none; display: inline;}
+#post_a_room .tall_label {margin: 8px 0;}
+#post_a_room #details .label_with_description { float: left; width: 150px; padding: 0; margin: 0; }
+#post_a_room #details .label_with_description .detail_description { color: #999; font-size: 11px; width: 125px; }
+#post_a_room ul#location li .label_with_description label, ul#details li .label_with_description label{ float: none; }
+#post_a_room select{float:left;}
+#post_a_room textarea{float:left;}
+
+#post_a_room .validated_phone_feedback{margin:10px 0px 0px 150px;width:320px;color:red;}
+
+#post_a_room label span.helper{font-size:12px; color:#878787;}
+#post_a_room .label_highlight{background:#FCF4A3; width:875px; margin-bottom:1px;}
+
+.vague_address_warning{border:3px solid #e5e186; margin:10px 0 0 0; padding:11px; background:#fffee2;}
+.vague_address_warning p{font-size: 13px; line-height: 1.4em !important; font-weight:bold;}
+#not_so_vague {width:262px; margin-left: 288px;}
+
+#didyoumean {font-size:13px; margin-top: 8px;}
+#didyoumean p {color: #F62792; font-size:13px; margin-bottom: 3px;}
+
+
+#exact_address_prompt{margin:22px 0 10px; font-size: 13px; font-weight: normal; line-height: 20px; padding:25px 10px; border:1px solid #7f9db9; background:#ffffff;}
+#exact_address_prompt p{padding:0 10px 10px 7px; font-weight:bold; font-style:italic; font-size:14px;}
+#exact_address_prompt input{height: auto !important; width: auto !important;}
+
+#exact_address_tip{color: #A7A7A7; display: block; line-height: 15px !important; padding:10px;}
+
+
+
+
+
+
+
+.signup_section{background:#ffffff; overflow:hidden; margin:18px 16px; padding-bottom:18px;} 
+h2.step{background:#e8f5ff;color:#7D90A0; font-size:16px; font-weight:bold; margin:2px 2px 15px; padding:4px 8px; text-transform:uppercase;}
+
+#hosting_price_native_label{padding-top:10px;}
+#price_native_select_container {width: 150px; float: left;}
+#price_native_select_container select {float: none; margin-top: 9px;}
+#email_label{padding-top:4px; width:100px;}
+
+
+/* from goog */
+#post_a_room textarea,
+#post_a_room input[type="text"]{/*background:none repeat scroll 0 0 #FFFFFF; border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:solid; border-width:1px; color:#a2a29c; font:17px arial,sans-serif normal; height:25px; margin:0; padding:5px 8px 0 6px;  width:300px;*/}
+#post_a_room .active{color:#333 !important;}
+
+#post_a_room input.large{width:300px;}
+#post_a_room input.medium{width:200px;}
+#post_a_room input.small{width:150px;}
+
+#post_a_room #contact_info input, #contact_info select { width:175px; }
+#post_a_room input.price_field { width:45px; float:none; margin-left:3px; }
+#post_a_room li.pricing_box input{font-size:14px;}
+
+#amenities ul.amenity_column li input{width:20px; float:left; margin:5px 2px; padding:0; cursor:pointer;}
+input:focus::-moz-focus-inner{border-color:transparent!important}
+
+/* 
+ * Step 1
+*/
+.step1 #post_room_step2{display:none;}
+
+.post_room_step1 h2,
+.post_room_step2 h2 {padding-bottom: 10px;}
+
+#post_a_room .header-badge {display: inline-block; font-weight: normal; font-size: 12px; color: white; line-height: 22px; border-radius: 3px;}
+#post_a_room h2 .header-badge {margin-left: 5px; position: relative; top: -3px;}
+#post_a_room #your_address .header-badge,
+#post_a_room label .header-badge {margin-right: 5px;}
+#post_a_room .header-badge span {padding:10px;}
+#post_a_room .header-badge b {display: inline-block; margin: 0 4px; position: relative; top: 1px; width:18px; height: 12px; background: url(../images/post_a_room/lock_eye.png) left top no-repeat;}
+* + html #post_a_room .header-badge b {position: static; margin-top: 2px; margin-bottom: 2px;}
+#post_a_room .protected-badge {background: #464645;}
+#post_a_room .protected-badge b {background-position: left top;}
+#post_a_room .public-badge {background: #464645;}
+#post_a_room .public-badge b {background-position: left bottom;}
+
+#post_a_room h2 .private_lock {width: 64px; height: 19px; display: inline-block; background-color: transparent !important; position: relative; top: 3px; margin-left: 4px;}
+#post_a_room .header_description {background: #b3ae97; padding:10px; line-height: 1.25em; font-size: 14px; color:#fff; border:1px solid #8f896e;  border-radius: 5px;
+                                  -moz-border-radius: 5px;
+                                  -webkit-border-radius: 5px;}
+
+
+/* post room new address bar */
+/* width is for autocomplete to compute properly */
+#address_section{padding:20px 0 0 0; overflow:hidden;}
+
+#address_section_label, #contact_info_section_label{color:#383831; float:left; font-size:15px; overflow:hidden; padding:10px 0 0 28px; width:150px;}
+#address_step1{overflow:hidden;}
+
+.get_started_subsection{border-top:1px dashed #A7A7A7; float:left; margin-top:10px; overflow:hidden; padding-top:20px; width:572px;}
+#contact_info_section{border-top:none;}
+.contact_info_section_field{width:572px; padding-bottom:10px; clear: both;}
+.contact_info_section_field label{color: #383831; display: block; float: left; font-size: 13px; width: 150px;}
+.contact_info_section_field input{width:300px !important;}
+#next_step_section{margin-top:50px; padding-bottom:20px; padding-top:25px;}
+
+#contact_info_action_area{float:left; overflow:hidden; width:572px;}
+#email_address_label{display:block;}
+#email_address_field{float:left !important; color:#b7b7b7 !important; width:330px !important;}
+#contact_info_options_separator{font-size:18px; font-weight:bold; text-align:center; padding:4px 20px 0; float:left; display:block;}
+#fb_button{float:left; color:#fff; background:#5972a8; width:118px; height:40px;}
+#login_spinner{position:absolute;padding-top:10px;padding-left:10px;display:none;}
+
+#submit_button_section1{float:left; margin-left:178px;}
+
+
+#post_a_room #location_search{width:412px;}
+
+ul.ui-autocomplete { color: #7D90A0;
+                     border:1px solid #C1BFA0 !important; border-top:none !important; margin-top:0 !important; width: 426px; list-style-position: outside; list-style: none; padding: 6px 0 8px 0; background-color:#f7f7f7; z-index:1 !important; /* -moz-border-radius-bottomright:10px; -moz-border-radius-bottomleft:10px; -moz-border-radius-topright:10px; -webkit-border-top-right-radius: 10px; */ }
+
+ul.ui-autocomplete li { background: #f7f7f7; cursor: pointer; font-family:Arial, Helvetica, sans-serif; margin: 0px; padding: 3px 11px; display: block; font-size: 15px; line-height: 19px; overflow: hidden; color:#3d93d4; }
+
+ul.ui-autocomplete li a{color:#3a82b9 !important;}
+ul.ui-autocomplete li a.ui-state-hover{border:none; background:none; cursor:pointer; font-weight:bold; text-decoration:none !important;}
+
+ul.ui-autocomplete li:hover { background: #cee5f2; }
+ul.ui-autocomplete li:hover a { font-weight:bold !important;}
+
+ul.ui-autocomplete strong{font-weight:bold;}
+
+/* override! */
+ul.ui-corner-all { -moz-border-radius: 0/*{cornerRadius}*/; -webkit-border-radius: 0/*{cornerRadius}*/; border-radius: 0/*{cornerRadius}*/;  -moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px; -webkit-border-bottom-right-radius: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-right-radius:10px; border-bottom-left-radius:10px;}
+
+#address_step2{}
+#map_container{margin-top:13px; overflow:hidden;}
+#map_canvas{width: 468px; height: 308px; float:right;}
+#map_canvas em {font-style: italic;}
+#map_canvas strong {font-weight: bold;}
+
+#step1_extras{overflow:hidden; font-size:15px; padding-right:10px; margin-bottom:5px; width: 430px; margin-right:10px; float:left;}
+#selected_address{margin-bottom:8px;}
+#your_address{ font-size:13px; color:#56544A; font-weight:normal;}
+#address_container {color: #33332F; font-size: 17px; font-weight: bold;}
+.street_level_address #address_apt{float: right; width: 228px;}
+
+#change_location_link{color:#fff !important; font-weight:normal; cursor:pointer; font-size:13px; font-style:normal; display: block; padding: 3px 10px; float: left; background:#464645; border:1px solid #464645;}
+#change_location_link:hover{text-decoration: none !important;}
+
+.pinpoint_enabler{display:none;}
+#pinpoint_controls{background:#F7F7F7;color:#343434; float:left; font-size:15px; font-weight:bold; margin-left:10px; padding:12px; text-align:center; width:240px;}
+
+#apt_field{border-left:6px solid #D5E9BD; margin-top:10px; padding-left:14px !important;}
+hr.dashed_line{ border:none; border-bottom:1px dashed #a7a7a7; height:1px; margin:16px 0; width:688px;}
+
+#error_summary{clear: both; padding:10px 0 0 0; font-size:13px; width:350px; margin:0 0 0 157px; font-weight:bold;}
+#error_summary p {padding-bottom: 10px;}
+#error_summary li{width:350px; padding-bottom:3px; font-size:13px;}
+#error_summary li.bad{list-style:circle; font-weight:normal !important;}
+
+.validation_error{border:1px solid red !important;}
+
+#address_apt{color:#A2A29C;}
+
+#post_a_room .tooltip img {margin-left:3px;}
+#post_a_room label .tooltip img {margin-top:2px}
+
+
+
+
+
+
+
+
+
+#post_a_room h3 { font-weight:bold;font-size:14px;margin-bottom:5px; }
+#post_a_room p { line-height:1em;}
+#post_a_room .group { width: 640px; padding:10px; margin-bottom:30px; background: url("/images/modules/messaging_tile_gray.png") repeat; }
+
+/* errors */
+#post_a_room ul#edit_errors{background:#ffffff; border:6px solid #e51e18; width:924px; padding:8px 0; margin-left:10px;}
+#post_a_room ul#edit_errors li{font-size:14px; color:#e51e18; float:left; width:884px; list-style:inside; list-style-type:disc; padding:4px 20px;}
+
+#post_a_room #middle { float:left; width:665px; margin-right:25px; }
+#post_a_room #right_side { float:left; width:260px; }
+
+#post_a_room #tip_outer { width: 230px; padding-bottom: 15px; background: url("/images/modules/post-room-tip-bubble.png") no-repeat left bottom; }
+#post_a_room #tip_outer .inner { padding-top: 10px; margin-bottom:5px; padding-left:15px; padding-right:15px; background: url("/images/modules/post-room-tip-bubble.png") no-repeat 0 0; }
+
+#post_a_room td.label { font-weight:bold; }
+#post_a_room #contact_info td.field { width:200px; }
+#post_a_room #contact_info td, #attributes td, #description td { padding: 0 0 5px 0; }
+
+
+/*pricing*/
+#post_a_room li.pricing_box{background:#f7f7f7; border:1px solid #c9c9c9; width:885px; margin-left:15px; padding:0; height:56px; margin-bottom:3px; font-size:14px; color:#a1a1a1;}
+#post_a_room li.pricing_box label{margin:0 10px 0 0; padding:18px 0 18px 12px; border-right:1px dotted #c9c9c9; height:20px; width:120px; font-weight:bold;}
+#post_a_room li.pricing_box span.pricing_box_data{display:block; margin-top:12px;}
+#post_a_room li.pricing_box span.currency_symbol{color:#222222; font-weight:bold;}
+
+#post_a_room span.additional_price_field, #post_a_room span.guests_included{font-weight:bold; color:#222222;}
+
+#post_a_room span.per_night_derived,
+#post_a_room span.per_night_derived span.currency_symbol,
+#post_a_room span.per_night_derived span.additional_price_field
+{font-size:14px !important; font-weight:normal !important; color:#A1A1A1 !important;}
+
+#post_a_room #type_of_property_box{width:914px; margin:20px 0 10px 0;}
+#post_a_room #type_of_property_box h3#type_of_property{padding:0 10px; font-size:24px; text-transform:capitalize;}
+#post_a_room #type_of_property_box p#type_of_property_description{padding:0 10px; font-size:14px;}
+
+/* Set it so we could calculate the offsetLeft */
+/* Add scroll-bars */
+#post_a_room div#room_type_scrollbar { position: relative; height: 190px; width: 914px; overflow: auto;}
+
+/* Max width here, for users without Javascript */
+/* Remove default margin */
+#post_a_room ul#room_types { display: block; height: 130px; width: 1704px; padding: 15px 0 0 5px; margin: 0; list-style: none; }
+#post_a_room ul#room_types li { display: block; float: left; padding: 0 18px 0 0;}
+#post_a_room ul#room_types img {cursor:pointer;}
+#post_a_room ul#room_types a { display: block; text-decoration: none; color:#333; position:relative; cursor:pointer;}
+
+/* We want a caption to display on the next line */
+#post_a_room ul#room_types li span {margin-top: 3px; text-align: center; font-size: 13px; font-weight:bold; display:block;}
+#post_a_room ul#room_types li img.room_type { border: 6px #afafa7 solid; width:112px; height:112px; background:#fff; display:block;}
+#post_a_room ul#room_types li a:hover img.room_type { border-color:#6e6e6e;}
+
+#post_a_room ul#room_types li img.checkbox { width:112px; height:112px; background:none; display:block; position:absolute; top:6px; left:6px;}
+
+#post_a_room ul#room_types li img.selected {border-color:#6e6e6e!important;}
+
+/* page stuff */
+#post_a_room #letter_count { color:#a2a2a2;font-size:22px;font-weight:bold; letter-spacing:-.25px;} 
+
+#post_a_room h2.step span.edit_room_icon{width:17px; height:17px; background:transparent url("../images/post_a_room/edit_room_icons.png") no-repeat 0 0; display:block; margin:2px 5px 0 0; float:left;}
+
+#post_a_room ul#location{}
+
+/* form helper stuff */
+#post_a_room div.form_helper p span.emphasis{font-weight:bold; font-style:italic;}
+#post_a_room div.form_helper img{vertical-align:text-top;}
+
+#post_a_room div.form_helper{height:20px; padding:2px 10px 6px 11px; width:250px; background:#fffcc8; border: 1px solid #e0d100; border-width:1px 1px 1px 0; -moz-border-radius: 0 5px 5px 0; -webkit-border-radius: 0 5px 5px 0; float:left;}
+#post_a_room #details div.form_helper{height:19px; padding:1px 10px 0 7px; width:200px; background:#fffcc8; float:left;}
+#post_a_room #details div#form_helper_description{height:87px; padding:3px 10px 0 10px; width:250px; margin-top:1px;}
+
+#post_a_room div.form_helper p{font-size:15px; color:#7e7d70;}
+#post_a_room #details div.form_helper p{font-size:13px;}
+
+#post_a_room div.photos_helper {height:50px; border-width:3px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; padding-top:9px;}
+
+#post_a_room #add_pictures{margin-top:10px; padding:7px 28px 14px;}
+#post_a_room #add_pictures hr{background:#e1e1e1; height:1px; margin-bottom:10px; border:none;}
+#post_a_room #add_pictures div{width:350px;}
+
+/********* EDIT A ROOM ************ (some of the post a room styles apply here) *******/
+
+/** Amenities **/
+#post_a_room div#submit_new_room{width:960px; float:left; height:100px;}
+
+span#post_it_click_message{display:block; float:left; margin:30px 0 0 10px;}
+
+/** Facebook **/
+ul#how_airbnb_works{overflow:hidden;}
+ul#how_airbnb_works li{ float: left; font-size: 12px; height: 125px; margin-right: 12px; padding: 10px; text-align: center; width: 275px; background:lightBlue;overflow:hidden;}
+
+#how_airbnb_works .title, #how_airbnb_works .message{display:block; width:275px;}
+#how_airbnb_works .title{font-size:20px; font-weight: bold;} 
+#how_airbnb_works .message{font-size:14px;}
+
+#facebook_sub_message{float:left;}
+
+#price_suggestion {
+    margin-left: 154px;
+    margin-top: 10px;
+}
+

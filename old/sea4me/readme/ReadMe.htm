@@ -1,0 +1,138 @@
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>DROPinn Readme Documentation</title>
+        <link href="images/styles.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+            <!--
+            .style1 {
+                color: #FF0000;
+                font-weight: bold;
+            }
+            -->
+        </style>
+    </head>
+
+    <body>
+
+        <p align="center"><img border="0" src="images/logo.png"></p>
+
+        <p align="center"><font face="Verdana"><b><font size="4">DROPinn Readme</font></b></font></p>
+        <hr>
+
+        <p align="left"><font face="Verdana"><b>1. Server Requirements</b></font></p>
+
+        <p align="left"><font face="Verdana"><b>2. Installation</b></font></p>
+
+        <p align="left"><font face="Verdana"><b>3. Template Customization </b></font></p>
+
+        <p align="left"><font face="Verdana"><b>4. Troubleshooting</b></font></p>
+
+        <p align="left"><font face="Verdana"><b>5. Version History</b></font></p>
+        <hr>
+
+        <p align="left"><font face="Verdana"><b>1. Server Requirements</b></font></p>
+    <li><font face="Verdana" size="2">Operating System: Linux, Windows </font></li>
+    <li><font face="Verdana" size="2">Web Server: Apache</font></li>
+    <li><font face="Verdana" size="2">PHP 5 or higher</font></li>
+    <li><font face="Verdana" size="2">MySQL 5 or Higher</font></li>
+    <li><font face="Verdana" size="2">Mod_rewrite </font></li>
+    <li><font face="Verdana" size="2">Cron Jobs</font></li>
+    <li><font size="2" face="Verdana">GD library</font></li>
+
+    <p align="left"><font face="Verdana"><b>2. Installation</b></font></p>
+
+    <TABLE CLASS="MYTABLE" width="827">
+
+
+
+        <TBODY>
+            <tr>
+                <td width="1268">
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2">
+                        <b>1.</b> Upload all files in the archieve to the root directory or subdirectory (i.e yoursite.com/install or yoursite.com/site/install).</font></p>
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2"><br>
+                        <b>2.</b> </font>Run the /install directory to install the system <font face="Verdana" size="2">(i.e yoursite.com/install)</font></p>
+                    <p><strong>Manual Installation </strong></p>
+                    <p><font face="Verdana" size="2"><strong>1.</strong>Edit the file app/config/config.php and edit your mysql 
+                        details in the following lines:</font></p>
+                    <p>$config['hostname'] = &quot;hostname&quot;;<br>
+                        $config['db_username'] = &quot;<font face="Verdana">mysqluser</font>&quot;;<br>
+                        $config['db_password'] = &quot;<font face="Verdana">mysqlpass</font>&quot;;<br>
+                        $config['db'] = &quot;<font face="Verdana">mysqlDB</font>&quot;;</p>
+                    <p><strong>2.</strong>$config['base_url']	= &quot;Site URL &quot;; <span style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2">(i.e yoursite.com/site)</font></span></p>
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2"><b>3.</b> In PhpMyAdmin, import the file install/install.sql to create the database 
+                        structure.</font></p>
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana" size="2"><br>
+                        <b>4.</b> Change the permission of the following folders and files to 0777:</font></p>
+                    <p style="margin-top: 0">
+                        /install<br>
+                        /install/config.php<br>
+                        /app/config<br>
+                        /app/config/config.php<br>
+                        /images<br>
+                        /images/users<br>
+                    </p>
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana"><b>5.</b>You are done  </font></p>
+                    <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+                    <p style="margin-top: 0; margin-bottom: 0"><b>6.</b> To access the admin 
+                        panel /backend <font face="Verdana" size="2">(i.e yoursite.com/backend)</font>, login with <b>username: what you entered password: what you entered</b> on the 
+                        login page</p>
+                    <font SIZE="2">
+                    <p style="margin-top: 0; margin-bottom: 0"></font></td>
+            </tr>
+        </TBODY>
+    </TABLE>
+
+    <p align="left"><font face="Verdana"><b>3. Template Customization </b></font></p>
+
+    <p align="left"><font face="Verdana" size="2">Editing Dropinn design is very 
+        simple by modifying the php and CSS files. The location of the template files for the design can be found in 
+        folder:</font></p>
+
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+        <font size="2" face="Verdana">/app/views/</font></p>
+
+    <p align="left" style="margin-top: 0; margin-bottom: 0">
+        <font face="Verdana" size="2">/app/views/includes(header.php|footer.php) -The location of the header/footer files.</font><font face="Verdana"><font size="2"><br>
+        /app/css/(front end CSS)<br>
+
+        </font></font>
+    </p>
+
+    <p align="left"><font face="Verdana"><b>4. Troubleshooting</b></font></p>
+
+    <TABLE CLASS="MYTABLE" width="827">
+
+
+
+        <TBODY>
+            <tr>
+                <td width="1268">
+                    <p style="margin-top: 0; margin-bottom: 0"><b><font face="Verdana" size="2">1. 
+                            Help, I am getting HTTP error 400 when accessing my site!</font></b></p>
+                    <p style="margin-top: 0; margin-bottom: 0"><font face="Verdana">You will 
+                        need to enable mod_rewrite option on your apache server</font></p>        </td>
+            </tr>
+        </TBODY>
+    </TABLE>
+
+
+    <p align="left"><font face="Verdana"><b>5. Version History</b></font></p>
+
+    <p align="left"><font face="Verdana" size="2">Dropinn version 1.0</font></p>
+
+    <p align="left"><b><font face="Verdana">6</font></b><font face="Verdana"><b>. 
+            License Agreement</b></font></p>
+
+
+    <p><font face="Verdana" size="2">If any queries,please email me at <strong> <a href="mailto:bala.k@cogzidel.com">bala.k@cogzidel.com</a></strong> or contact us from <strong> <a href="http://www.cogzidel.com/contact">http://www.cogzidel.com/contact</a></strong></font></p>
+    <p><strong>  <a href="http://www.cogzidel.com"><font face="verdana" size="2">http://www.cogzidel.com</font></a></strong></p>
+    <hr>
+    <p style="text-align: justify;">&nbsp;</p>
+
+    <p align="center">&nbsp;</p>
+</body>
+
+</html>
