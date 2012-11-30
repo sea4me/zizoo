@@ -1,3 +1,7 @@
+zizoo_boat:
+    resource: "@ZizooBoatBundle/Resources/config/routing.yml"
+    prefix:   /boat
+
 zizoo_base:
     resource: "@ZizooBaseBundle/Resources/config/routing.yml"
     prefix:   /zizoo
